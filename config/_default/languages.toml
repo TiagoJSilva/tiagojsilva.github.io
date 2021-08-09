@@ -1,0 +1,11 @@
+[en]
+  title = "Layer9"
+  languageName = "English"
+  weight = 1
+  contentdir = "content/en"
+
+[pt]
+  title = "Layer9"
+  languageName = "Português"
+  weight = 2
+  contentdir = "content/pt"

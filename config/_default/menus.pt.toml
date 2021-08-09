@@ -1,0 +1,35 @@
+[[main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "blog"
+  weight = 1
+
+[[main]]
+  identifier = "networking"
+  name = "Redes"
+  url = "networking"
+  weight = 2
+
+[[main]]
+  identifier = "microsoft"
+  name = "Microsoft"
+  url = "microsoft"
+  weight = 3
+
+  [[main]]
+  identifier = "unixlike"
+  name = "*nix"
+  url = "unixlike"
+  weight = 4
+
+[[main]]
+  identifier = "dev"
+  name = "Dev"
+  url = "dev"
+  weight = 5
+
+  [[main]]
+  identifier = "updates"
+  name = "Histórico"
+  url = "updates"
+  weight = 9
