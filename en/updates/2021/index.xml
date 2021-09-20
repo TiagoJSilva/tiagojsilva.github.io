@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2021 on Layer9</title>
+    <link>https://tiagojsilva.github.io/en/updates/2021/</link>
+    <description>Recent content in 2021 on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Mon, 20 Sep 2021 01:13:41 +0100</lastBuildDate>
+    
+        <atom:link href="https://tiagojsilva.github.io/en/updates/2021/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>PKI OpenSSL (pt 1)</title>
+        <link>https://tiagojsilva.github.io/en/sec/pki/opensslpki_1/</link>
+        <pubDate>Mon, 20 Sep 2021 01:13:41 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/sec/pki/opensslpki_1/</guid>
+        <description>OpenSSL-based PKI (part 1) Sources:
+https://openssl-ca.readthedocs.io/en/latest/index.html
+https://www.golinuxcloud.com/tutorial-pki-certificates-authority-ocsp/
+https://social.technet.microsoft.com/wiki/contents/articles/2900.offline-root-certification-authority-ca.aspx
+https://pki-tutorial.readthedocs.io/en/latest/index.html
+An airgapped Root CA The system that contains the RootCA is supposed to be airgapped, to be under controlled access, and to be used only for the emission of new CAs and revocation of compromised CAs. In this example, we can put everything on the same server, but one should try to separate the RootCA from the other CAs as much as possible.</description>
+      </item>
+      
+      <item>
+        <title>Cisco and Huawei simulated routers</title>
+        <link>https://tiagojsilva.github.io/en/networking/simul/gns3-ensp/</link>
+        <pubDate>Mon, 06 Sep 2021 03:10:41 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/networking/simul/gns3-ensp/</guid>
+        <description>Some time ago, I needed to simulate a heterogeneous network, with a Cisco router connected to another Huawei router.
+It wasn&amp;rsquo;t easy because IOS is not publicly available and the Huawei simulator, eNSP, is discontinued and only works on VirtualBox 5.
+To make this simulation, a CPU that supports VM nesting (Second-Level Address Translation - SLAT) is required.
+Simulation VM Create a Windows 7-based VM, with 4GB of RAM, 2 vCPUS and 4 network interfaces.</description>
+      </item>
+      
+      <item>
+        <title>Article comments</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-09-15_site-comments/</link>
+        <pubDate>Wed, 15 Sep 2021 14:19:12 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-09-15_site-comments/</guid>
+        <description>At first I did not intend to enable comments, but since humans are social animals, I went to see if I could set up a system without having to hack too much.
+At first I considered Disq.us, which comes with Hugo, but it has many issues.
+Zdoc has Utteranc.es pre-configured, and it has the advantages of being limited to GitHub users (all good people) and to be statically stored on a repo.</description>
+      </item>
+      
+      <item>
+        <title>The Updates section</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-09-04_updates-page/</link>
+        <pubDate>Wed, 08 Sep 2021 11:34:41 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-09-04_updates-page/</guid>
+        <description>Zdoc has an &amp;ldquo;Updates&amp;rdquo; section, but the articles inside it were created by hand. Since I&amp;rsquo;m lazy (laziest person in the world right here) and I don&amp;rsquo;t like to do things by hand when they can be automated, I tried to get some way of producing a Site Index without handcrafting each page.
+In WordPress and other dynamic platforms it&amp;rsquo;s dead easy, but on a static site like Hugo, all the proposed solutions involved plugins, NPM, Node.</description>
+      </item>
+      
+      <item>
+        <title>Achievement unlocked: Lightbox</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-09-02_lightbox/</link>
+        <pubDate>Thu, 02 Sep 2021 23:24:10 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-09-02_lightbox/</guid>
+        <description>One thing that I don&amp;rsquo;t like about Zdoc is all the space taken by the sidebars, leaving little space on the center for the articles and leaving the images quite small (especially when they are widescreen screenshots).
+I don&amp;rsquo;t understand enough HTML to try to widen the central column (apart from the built-in arrow on top that widens the content column but hides the TOC), but I can try to make the images be shown larger when you click on them.</description>
+      </item>
+      
+      <item>
+        <title>August 2021 Update</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-08-28_site-update/</link>
+        <pubDate>Sat, 28 Aug 2021 19:08:10 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-08-28_site-update/</guid>
+        <description>I&amp;rsquo;ve been messing about some things behind the curtains:
+Theme changes I wanted to use a Hugo theme for documentation (structured documents), if possible with an associated blog for less structured content.
+My wishlist was (in no particular order):
+ Light / dark theme Multilanguage (i18n) Several independent sections Ability to include in the code boxes not only line numbers but also prompts outside of the text, so that they were ignored when copying the contents of the box Have command output boxes with distinct formatting  I only found this theme, Zdoc, that had most of it (Docz seems to be shaping up as an alternative), but it still lacks a lot:</description>
+      </item>
+      
+      <item>
+        <title>Dotfiles</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/dotfiles/</link>
+        <pubDate>Sun, 15 Aug 2021 14:25:08 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/dotfiles/</guid>
+        <description>Linux Dotfiles I&amp;rsquo;ve been gathering settings that make my life easier by solving little nagging problems and papercuts.
+Publishing those files here allows me to download them wherever I create a new user account.
+The URL for downloading will be https://tiagojsilva.github.io/unix/dotfiles/file
+There&amp;rsquo;s a TAR archive of all the files, which you can install right in your home folder (~) with:
+1  wget -O- https://tiagojsilva.github.io/unix/dotfiles/dotfiles.tar | tar -xvf- -C ~   .</description>
+      </item>
+      
+      <item>
+        <title>Hello World</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-08-09_hello-world/</link>
+        <pubDate>Mon, 09 Aug 2021 22:16:15 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-08-09_hello-world/</guid>
+        <description>Sit down and take a load off.
+I have been fortunate to make professions of my passions; as a young&amp;rsquo;un, I had to choose one of them (Sound for Picture), but the swings and roundabouts of life led me to embrace another one, which is IT. By the end of it I ended up back where I had started, but I don&amp;rsquo;t consider it wasted time; I had wonderful teachers and colleagues, and learned a lot of stuff that I had always wanted to know.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

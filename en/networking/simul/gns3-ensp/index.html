@@ -1,0 +1,3475 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cisco and Huawei simulated routers – Layer9</title>
+    
+
+
+  
+  <script defer src="/js/fuse.min.c4bee9a8d44273d6154fe86006923d4131eb2e8069d8897687137c6f37f553e3.js"></script>
+
+
+
+<script src="/js/enquire.min.aa37bdcb743826eecdae5c5d177fc7d6552340f1b4378ffaa9c82b2c6111400b.js"></script>
+
+<script defer src="/js/lazysizes.min.5e11d056075a05065b9c0bfec44084a113fc2976c2952ec804dedb61c7662db9.js"></script>
+
+<script defer src="/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js"></script>
+
+<script defer src="/js/helper/fadeinout.min.9fb19682560d5fa5596fffec85da605067c4acc86aad05add4d8fff9d362a446.js"></script>
+
+<script>
+  "use strict";
+
+  window.onload = function() {
+    
+    var languagedir = JSON.parse("\"ltr\"");
+    
+    var baseurl = JSON.parse("\"https://tiagojsilva.github.io\"");
+    
+    var permalink = JSON.parse("\"https://tiagojsilva.github.io/en/networking/simul/gns3-ensp/\"");
+
+    
+    var toggleSidebarElem = document.getElementById("toggle-sidebar");
+    var toggleMenuElem = document.getElementById("toggle-menu");
+    var tocBodyElem = document.querySelector('.toc__body');
+    var tocLabelElem = document.querySelector('.toc__label');
+    var listMainElem = document.getElementById('list-main');
+    var listSideElem = document.getElementById('list-side');
+    var singleMenuElem = document.getElementById('single-menu');
+    var sliderIcons = document.querySelectorAll('.slider__icon');
+
+    toggleSidebarElem ?
+      toggleSidebarElem.addEventListener('change', function (e) {
+        if (e.target.checked) {
+          if (tocBodyElem) {
+            fadeIn(tocBodyElem, 200);
+          }
+          if (tocLabelElem) {
+            fadeIn(tocLabelElem, 200);
+          }
+          if (listMainElem && listSideElem) {
+            listMainElem.className = 'm';
+            listSideElem.className = 'r';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+
+        } else {
+          if (tocBodyElem) {
+            fadeOut(tocBodyElem, 200);
+          }
+          if (tocLabelElem) {
+            fadeOut(tocLabelElem, 200);
+          }
+          if (listMainElem && listSideElem) {
+            listMainElem.className = 'mr';
+            listSideElem.className = 'hide';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+        }
+      }) : null;
+
+    toggleMenuElem ?
+      toggleMenuElem.addEventListener('change', function (e) {
+        if (e.target.checked) {
+          if (listMainElem && singleMenuElem) {
+            listMainElem.className = 'm';
+            singleMenuElem.className = 'l';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+
+        } else {
+          if (listMainElem && singleMenuElem) {
+            listMainElem.className = 'lm';
+            singleMenuElem.className = 'hide';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+        }
+      }) : null;
+    
+
+
+    
+    var navCollapseBtn = document.getElementById('navCollapseBtn');
+    navCollapseBtn ? navCollapseBtn.addEventListener('click', function(e) {
+      var navCollapse = document.querySelector('.navbar__collapse');
+      
+      if (navCollapse) {
+        var dataOpen = navCollapse.getAttribute('data-open');
+
+        if (dataOpen === 'true') {
+          navCollapse.setAttribute('data-open', 'false');
+          navCollapse.style.maxHeight = 0;
+        } else {
+          navCollapse.setAttribute('data-open', 'true');
+          navCollapse.style.maxHeight = navCollapse.scrollHeight + "px";
+        }
+      }
+    }) : null;
+    
+
+
+    
+    var expandBtn = document.querySelectorAll('.expand__button');
+
+    for (let i = 0; i < expandBtn.length; i++) {
+      expandBtn[i].addEventListener("click", function () {
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          this.querySelector('svg').classList.add('expand-icon__right');
+          this.querySelector('svg').classList.remove('expand-icon__down');
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          this.querySelector('svg').classList.remove('expand-icon__right');
+          this.querySelector('svg').classList.add('expand-icon__down');
+        }
+      });
+    }
+    
+
+
+
+    
+    document.querySelectorAll('.tab') ? 
+    document.querySelectorAll('.tab').forEach(function(elem, idx) {
+      var containerId = elem.getAttribute('id');
+      var containerElem = elem;
+      var tabLinks = elem.querySelectorAll('.tab__link');
+      var tabContents = elem.querySelectorAll('.tab__content');
+      var ids = [];
+
+      tabLinks && tabLinks.length > 0 ?
+      tabLinks.forEach(function(link, index, self) {
+        link.onclick = function(e) {
+          for (var i = 0; i < self.length; i++) {
+            if (index === parseInt(i, 10)) {
+              if (!self[i].classList.contains('active')) {
+                self[i].classList.add('active');
+                tabContents[i].style.display = 'block';
+              }
+            } else {
+              self[i].classList.remove('active');
+              tabContents[i].style.display = 'none';
+            }
+          }
+        }
+      }) : null;
+    }) : null;
+    
+
+
+    
+    document.querySelectorAll('.codetab') ? 
+    document.querySelectorAll('.codetab').forEach(function(elem, idx) {
+      var containerId = elem.getAttribute('id');
+      var containerElem = elem;
+      var codetabLinks = elem.querySelectorAll('.codetab__link');
+      var codetabContents = elem.querySelectorAll('.codetab__content');
+      var ids = [];
+
+      codetabLinks && codetabLinks.length > 0 ?
+      codetabLinks.forEach(function(link, index, self) {
+        link.onclick = function(e) {
+          for (var i = 0; i < self.length; i++) {
+            if (index === parseInt(i, 10)) {
+              if (!self[i].classList.contains('active')) {
+                self[i].classList.add('active');
+                codetabContents[i].style.display = 'block';
+              }
+            } else {
+              self[i].classList.remove('active');
+              codetabContents[i].style.display = 'none';
+            }
+          }
+        }
+      }) : null;
+    }) : null;
+    
+
+    
+    
+    
+    var enableDarkMode = JSON.parse("true");
+    var root = document.getElementById('root');
+    var toggleToLightBtn = document.getElementById('toggleToLight');
+    var toggleToDarkBtn = document.getElementById('toggleToDark');
+
+    if (!enableDarkMode) {
+      root.className = 'theme__light';
+      localStorage.setItem('theme', 'light');
+    }
+    
+    if (toggleToDarkBtn) {
+      toggleToDarkBtn.onclick = function (e) {
+        root.className = 'theme__dark';
+        localStorage.setItem('theme', 'dark');
+        toggleToLightBtn.className = 'navbar__icons--icon';
+        toggleToDarkBtn.className = 'hide';
+      }
+    }
+
+    if (toggleToLightBtn) {
+      toggleToLightBtn.onclick = function (e) {
+        root.className = 'theme__light';
+        localStorage.setItem('theme', 'light');
+        toggleToLightBtn.className = 'hide';
+        toggleToDarkBtn.className = 'navbar__icons--icon';
+      }
+    }
+
+    
+    document.querySelectorAll('.menu__list').forEach(function(elem) {
+      if (elem.classList.contains('active')) {
+        elem.style.maxHeight = elem.scrollHeight + "px"; 
+      }
+    });
+    
+    document.querySelectorAll('.menu__title--collapse').forEach(function(elem) {
+      elem.addEventListener('click', function (e) {
+        var content = this.nextElementSibling;
+        var menuTitleIcon = this.querySelector('.menu__title--icon');
+        if (!content) {
+          return null;
+        }
+
+        var parent = elem.parentNode;
+        while (parent.classList.contains('menu__list') && parent.classList.contains('active')) {
+          parent.style.maxHeight = 100 * parent.children.length + "px";
+          parent = parent.parentNode;
+        }
+
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          content.classList.remove('active');
+          menuTitleIcon.classList.add('right');
+          
+          if (languagedir === 'rtl') {
+            menuTitleIcon.classList.remove('downrtl');
+          } else {
+            menuTitleIcon.classList.remove('down');
+          }
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.classList.add('active');
+          menuTitleIcon.classList.remove('right');
+          
+          if (languagedir === 'rtl') {
+            menuTitleIcon.classList.add('downrtl');
+          } else {
+            menuTitleIcon.classList.add('down');
+          }
+        }
+      });
+    });
+    
+
+
+    
+    var mobileLogo = document.getElementById('mobileLogo');
+    var modal = document.getElementById("myModal");
+    var drawer = document.getElementById('myDrawer');
+    var drawerCloseBtn = document.querySelector('.drawer__close');
+
+    var openDrawer = function() {
+      modal.style.opacity = 1;
+
+      if (languagedir === 'rtl') {
+        modal.style.right = 0;
+        drawer.style.right = 0;
+      } else {
+        modal.style.left = 0;
+        drawer.style.left = 0;
+      }
+    }
+
+    var closeDrawer = function() {
+      modal.style.opacity = 0;
+
+      if (languagedir === 'rtl') {
+        drawer.style.right = '-100%';
+      } else {
+        drawer.style.left = '-100%';
+      }
+
+      
+      setTimeout(function () {
+        if (languagedir === 'rtl') {
+          modal.style.right = '-100%';
+        } else {
+          modal.style.left = '-100%';
+        }
+      }, 250);
+    }
+
+    mobileLogo.onclick = function () {
+      openDrawer();
+      localStorage.setItem('isDrawerOpen', 'true');
+    }
+
+    modal.onclick = function () {
+      closeDrawer();
+      localStorage.setItem('isDrawerOpen', 'false');
+    }
+
+    drawerCloseBtn.onclick = function () {
+      closeDrawer();
+      localStorage.setItem('isDrawerOpen', 'false');
+    }
+  
+
+
+  
+    var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var tocElem = document.querySelector('.toc');
+    var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
+    var singleContentsElem = document.querySelector('.single__contents');
+    var dataBGImgs = document.querySelectorAll('div[data-bgimg]');
+
+    
+    var tocLevels = JSON.parse("[\"h2\",\"h3\",\"h4\"]");
+
+    if (tocLevels) {
+      tocLevels = tocLevels.toString();
+    } else {
+      tocLevels = "h1, h2, h3, h4, h5, h6";
+    }
+
+    
+    var isLandingBgImg = JSON.parse("null");
+    
+    var isHome = JSON.parse("false");
+
+    function setNavbarBG(scrollTop) {
+      if (isHome && isLandingBgImg && Object.keys(isLandingBgImg).length) {
+        if (isLandingBgImg.height <= scrollTop) {
+          dataBGImgs.forEach(function(elem) {
+            elem.setAttribute('data-bgimg', 'false');
+          });
+        } else {
+          dataBGImgs.forEach(function (elem) {
+            elem.setAttribute('data-bgimg', 'true');
+          });
+        }
+      }
+    }
+    setNavbarBG(lastScrollTop);
+
+    window.onscroll = function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop) { 
+        singleContentsElem ? 
+        singleContentsElem.querySelectorAll(tocLevels.toString()).forEach(function(elem) {
+          if (document.documentElement.scrollTop >= elem.offsetTop) {
+            if (tableOfContentsElem) {
+              var id = elem.getAttribute('id');
+              tocElem.querySelectorAll('a').forEach(function (elem) {
+                elem.classList.remove('active');
+              });
+              tocElem.querySelector('a[href="#' + id + '"]') ? 
+              tocElem.querySelector('a[href="#' + id + '"]').classList.add('active') : null;
+            }
+          }
+        }) : null;
+        setNavbarBG(st);
+      } else { 
+        singleContentsElem ? 
+        singleContentsElem.querySelectorAll(tocLevels.toString()).forEach(function(elem) {
+          if (document.documentElement.scrollTop >= elem.offsetTop) {
+            if (tableOfContentsElem) {
+              var id = elem.getAttribute('id');
+              tocElem.querySelectorAll('a').forEach(function (elem) {
+                elem.classList.remove('active');
+              });
+              tocElem.querySelector('a[href="#' + id + '"]') ? 
+              tocElem.querySelector('a[href="#' + id + '"]').classList.add('active') : null;
+            }
+          }
+        }) : null;
+        setNavbarBG(st);
+      }
+      lastScrollTop = st <= 0 ? 0 : st;
+    };
+    
+
+
+
+    
+    var mobileSearchInputElem = document.querySelector('#search-mobile');
+    var mobileSearchClassElem = document.querySelector('.mobile-search');
+    var mobileSearchBtnElem = document.querySelector('#mobileSearchBtn');
+    var mobileSearchCloseBtnElem = document.querySelector('#search-mobile-close');
+    var mobileSearchContainer = document.querySelector('#search-mobile-container');
+    var mobileSearchResultsElem = document.querySelector('#search-mobile-results');
+    var htmlElem = document.querySelector('html');
+
+    if (mobileSearchClassElem) {
+      mobileSearchClassElem.style.display = 'none';
+    }
+
+    mobileSearchBtnElem ? 
+    mobileSearchBtnElem.addEventListener('click', function () {
+      if (mobileSearchContainer) {
+        mobileSearchContainer.style.display = 'block';
+      }
+
+      if (mobileSearchInputElem) {
+        mobileSearchInputElem.focus();
+      }
+
+      if (htmlElem) {
+        htmlElem.style.overflowY = 'hidden';
+      }
+    }) : null;
+
+    mobileSearchCloseBtnElem ? 
+    mobileSearchCloseBtnElem.addEventListener('click', function() {
+      if (mobileSearchContainer) {
+        mobileSearchContainer.style.display = 'none';
+      }
+
+      if (mobileSearchInputElem) {
+        mobileSearchInputElem.value = '';
+      }
+      
+      if (mobileSearchResultsElem) {
+        while (mobileSearchResultsElem.firstChild) {
+          mobileSearchResultsElem.removeChild(mobileSearchResultsElem.firstChild);
+        }
+      }
+
+      if (htmlElem) {
+        htmlElem.style.overflowY = 'visible';
+      }
+    }) : null;
+
+    mobileSearchInputElem ? 
+    mobileSearchInputElem.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (mobileSearchContainer) {
+          mobileSearchContainer.style.display = 'none';
+        }
+        
+        if (mobileSearchInputElem) {
+          mobileSearchInputElem.value = '';
+        }
+
+        if (mobileSearchResultsElem) {
+          while (mobileSearchResultsElem.firstChild) {
+            mobileSearchResultsElem.removeChild(mobileSearchResultsElem.firstChild);
+          }
+        }
+        if (htmlElem) {
+          htmlElem.style.overflowY = 'visible';
+        }
+      }
+    }) : null;
+  
+
+
+  
+    var localTheme = localStorage.getItem('theme');
+    var rootEleme = document.getElementById('root');
+    var selectThemeElem = document.querySelectorAll('.select-theme');
+    var selectThemeItemElem = document.querySelectorAll('.select-theme__item');
+    
+    if (localTheme) {
+      selectThemeItemElem ? 
+      selectThemeItemElem.forEach(function (elem) {
+        if (elem.text.trim() === localTheme) {
+          elem.classList.add('is-active');
+        } else {
+          elem.classList.remove('is-active');
+        }
+      }) : null;
+    }
+
+    selectThemeItemElem ? 
+    selectThemeItemElem.forEach(function (v, i) {
+      v.addEventListener('click', function (e) {
+        var selectedThemeVariant = e.target.text.trim();
+        localStorage.setItem('theme', selectedThemeVariant);
+
+        rootEleme.removeAttribute('class');
+        rootEleme.classList.add(`theme__${selectedThemeVariant}`);
+        selectThemeElem.forEach(function(rootElem) {
+          rootElem.querySelectorAll('a').forEach(function (elem) {
+            if (elem.classList) {
+              if (elem.text.trim() === selectedThemeVariant) {
+                if (!elem.classList.contains('is-active')) {
+                  elem.classList.add('is-active');
+                }
+              } else {
+                if (elem.classList.contains('is-active')) {
+                  elem.classList.remove('is-active');
+                }
+              }
+            }
+          });
+        });
+
+        if (window.mermaid) {
+          if (selectedThemeVariant === "dark" || selectedThemeVariant === "hacker") {
+            mermaid.initialize({ theme: 'dark' });
+            location.reload();
+          } else {
+            mermaid.initialize({ theme: 'default' });
+            location.reload();
+          }
+        }
+
+        var utterances = document.querySelector('iframe');
+        if (utterances) {
+          utterances.contentWindow.postMessage({
+            type: 'set-theme',
+            theme: selectedThemeVariant === "dark" || selectedThemeVariant === "hacker" ? 'photon-dark' : selectedThemeVariant === 'kimbie' ? 'github-dark-orange' : 'github-light',
+          }, 'https://utteranc.es');
+        }
+      });
+    }) : null;
+  
+
+
+  
+    
+    var langprefix = JSON.parse("\"/en\"");
+    var searchResults = null;
+    var searchMenu = null;
+    var searchText = null;
+    
+    
+    var enableSearchHighlight = JSON.parse("true");
+    
+    var enableSearch = JSON.parse("true");
+
+    var fuse = null;
+
+    if (enableSearch) {
+      (function initFuse() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', baseurl + langprefix + "/index.json");
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            fuse = new Fuse(JSON.parse(xhr.response.toString('utf-8')), {
+              keys: ['title', 'description', 'content'],
+              includeMatches: enableSearchHighlight,
+              should: true,
+              threshold: 0.4,
+              location: 0,
+              distance: 100,
+              maxPatternLength: 32,
+              minMatchCharLength: 1,
+            });
+          }
+          else {
+            console.error(`[${xhr.status}]Error:`, xhr.statusText);
+          }
+        };
+        xhr.send();
+      })();
+    }
+    
+    function makeLi(ulElem, obj) {
+      var li = document.createElement('li');
+      li.className = 'search-result__item';
+      
+      var a = document.createElement('a');
+      a.innerHTML = obj.title;
+      a.setAttribute('class', 'search-result__item--title');
+      a.setAttribute('href', obj.permalink);
+
+      var descDiv = document.createElement('div');
+      descDiv.setAttribute('class', 'search-result__item--desc');
+      if (obj.description) {
+        descDiv.innerHTML = obj.description;
+      } else if (obj.content) {
+        descDiv.innerHTML = obj.content.substring(0, 80);
+      }
+      
+      li.appendChild(a);
+      li.appendChild(descDiv);
+      ulElem.appendChild(li);
+    }
+
+    function makeHighlightLi(ulElem, obj) {
+      var li = document.createElement('li');
+      li.className = 'search-result__item';
+      var descDiv = null;
+
+      var a = document.createElement('a');
+      a.innerHTML = obj.item.title;
+      a.setAttribute('class', 'search-result__item--title');
+      a.setAttribute('href', obj.item.uri);
+
+      if (obj.matches && obj.matches.length) {
+        for (var i = 0; i < obj.matches.length; i++) {
+          if ('title' === obj.matches[i].key) {
+            a = document.createElement('a');
+            a.innerHTML = generateHighlightedText(obj.matches[i].value, obj.matches[i].indices);
+            a.setAttribute('class', 'search-result__item--title');
+            a.setAttribute('href', obj.item.uri);
+          }
+          
+          if ('description' === obj.matches[i].key) {
+            descDiv = document.createElement('div');
+            descDiv.setAttribute('class', 'search-result__item--desc');
+            descDiv.innerHTML = generateHighlightedText(obj.item.description, obj.matches[i].indices);
+          } else if ('content' === obj.matches[i].key) {
+            if (!descDiv) {
+              descDiv = document.createElement('div');
+              descDiv.setAttribute('class', 'search-result__item--desc');
+              descDiv.innerHTML = generateHighlightedText(obj.item.content.substring(0, 80), obj.matches[i].indices);
+            }
+          } else {
+            if (obj.item.description) {
+              descDiv = document.createElement('div');
+              descDiv.setAttribute('class', 'search-result__item--desc');
+              descDiv.innerHTML = obj.item.description;
+            } else {
+              descDiv = document.createElement('div');
+              descDiv.setAttribute('class', 'search-result__item--desc');
+              descDiv.innerHTML = obj.item.content.substring(0, 80);
+            }
+          }
+        }
+
+        li.appendChild(a);
+        if (descDiv) {
+          li.appendChild(descDiv);
+        }
+        if (li) {
+          ulElem.appendChild(li);
+        }
+      }
+    }
+
+    function renderSearchResults(searchText, results) {
+      searchResults = document.getElementById('search-results');
+      searchMenu = document.getElementById('search-menu');
+      searchResults.setAttribute('class', 'dd is-active');
+      
+      var ul = document.createElement('ul');
+      ul.setAttribute('class', 'dd-content search-content');
+
+      if (results.length) {
+        results.forEach(function (result) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.setAttribute('href', result.uri);
+          a.setAttribute('class', 'dd-item');
+          a.appendChild(li);
+
+          var titleDiv = document.createElement('div');
+          titleDiv.innerHTML = result.title;
+          titleDiv.setAttribute('class', 'search-result__item--title');
+
+          var descDiv = document.createElement('div');
+          descDiv.setAttribute('class', 'search-result__item--desc');
+          if (result.description) {
+            descDiv.innerHTML = result.description;
+          } else if (result.content) {
+            descDiv.innerHTML = result.content.substring(0, 80);
+          }
+
+          li.appendChild(titleDiv);
+          li.appendChild(descDiv);
+          ul.appendChild(a);
+        });
+      } else {
+        var li = document.createElement('li');
+        li.setAttribute('class', 'dd-item');
+        li.innerText = 'No results found';
+        ul.appendChild(li);
+      }
+
+      while (searchMenu.hasChildNodes()) {
+        searchMenu.removeChild(
+          searchMenu.lastChild
+        );
+      }
+      
+      searchMenu.appendChild(ul);
+    }
+
+    function renderSearchHighlightResults(searchText, results) {
+      searchResults = document.getElementById('search-results');
+      searchMenu = document.getElementById('search-menu');
+      searchResults.setAttribute('class', 'dd is-active');
+
+      var ul = document.createElement('ul');
+      ul.setAttribute('class', 'dd-content search-content');
+
+      if (results.length) {
+        results.forEach(function (result) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          var descDiv = null;
+
+          a.setAttribute('href', result.item.uri);
+          a.setAttribute('class', 'dd-item');
+          a.appendChild(li);
+
+          var titleDiv = document.createElement('div');
+          titleDiv.innerHTML = result.item.title;
+          titleDiv.setAttribute('class', 'search-result__item--title');
+          
+          if (result.matches && result.matches.length) {
+            for (var i = 0; i < result.matches.length; i++) {
+              if ('title' === result.matches[i].key) {
+                titleDiv.innerHTML = generateHighlightedText(result.matches[i].value, result.matches[i].indices);
+              }
+
+              if ('description' === result.matches[i].key) {
+                descDiv = document.createElement('div');
+                descDiv.setAttribute('class', 'search-result__item--desc');
+                descDiv.innerHTML = generateHighlightedText(result.item.description, result.matches[i].indices);
+              } else if ('content' === result.matches[i].key) {
+                if (!descDiv) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'search-result__item--desc');
+                  descDiv.innerHTML = generateHighlightedText(result.item.content.substring(0, 80), result.matches[i].indices);
+                }
+              } else {
+                if (result.item.description) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'search-result__item--desc');
+                  descDiv.innerHTML = result.item.description;
+                } else {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'search-result__item--desc');
+                  descDiv.innerHTML = result.item.content.substring(0, 80);
+                }
+              }
+            }
+            
+            li.appendChild(titleDiv);
+            if (descDiv) {
+              li.appendChild(descDiv);
+            }
+            ul.appendChild(a);
+          }
+        });
+      } else {
+        var li = document.createElement('li');
+        li.setAttribute('class', 'dd-item');
+        li.innerText = 'No results found';
+        ul.appendChild(li);
+      }
+
+      while (searchMenu.hasChildNodes()) {
+        searchMenu.removeChild(
+          searchMenu.lastChild
+        );
+      }
+      searchMenu.appendChild(ul);
+    }
+
+    function renderSearchResultsMobile(searchText, results) {
+      searchResults = document.getElementById('search-mobile-results');
+
+      var content = document.createElement('div');
+      content.setAttribute('class', 'mobile-search__content');
+
+      if (results.length > 0) {
+        results.forEach(function (result) {
+          var item = document.createElement('a');
+          item.setAttribute('href', result.uri);
+          item.innerHTML = '<div class="mobile-search__item"><div class="mobile-search__item--title">📄 ' + result.title + '</div><div class="mobile-search__item--desc">' + (result.description ? result.description : result.content) + '</div></div>';
+          content.appendChild(item);
+        });
+      } else {
+        var item = document.createElement('span');
+        content.appendChild(item);
+      }
+
+      let wrap = document.getElementById('search-mobile-results');
+      while (wrap.firstChild) {
+        wrap.removeChild(wrap.firstChild)
+      }
+      searchResults.appendChild(content);      
+    }
+
+    function renderSearchHighlightResultsMobile(searchText, results) {
+      searchResults = document.getElementById('search-mobile-results');
+
+      var ul = document.createElement('div');
+      ul.setAttribute('class', 'mobile-search__content');
+
+      if (results.length) {
+        results.forEach(function (result) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          var descDiv = null;
+
+          a.setAttribute('href', result.item.uri);
+          a.appendChild(li);
+          li.setAttribute('class', 'mobile-search__item');
+
+          var titleDiv = document.createElement('div');
+          titleDiv.innerHTML = result.item.title;
+          titleDiv.setAttribute('class', 'mobile-search__item--title');
+          
+          if (result.matches && result.matches.length) {
+            for (var i = 0; i < result.matches.length; i++) {
+              if ('title' === result.matches[i].key) {
+                titleDiv.innerHTML = generateHighlightedText(result.matches[i].value, result.matches[i].indices);
+              }
+
+              if ('description' === result.matches[i].key) {
+                descDiv = document.createElement('div');
+                descDiv.setAttribute('class', 'mobile-search__item--desc');
+                descDiv.innerHTML = generateHighlightedText(result.item.description, result.matches[i].indices);
+              } else if ('content' === result.matches[i].key) {
+                if (!descDiv) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'mobile-search__item--desc');
+                  descDiv.innerHTML = generateHighlightedText(result.item.content.substring(0, 150), result.matches[i].indices);
+                }
+              } else {
+                if (result.item.description) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'mobile-search__item--desc');
+                  descDiv.innerHTML = result.item.description;
+                } else {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'mobile-search__item--desc');
+                  descDiv.innerHTML = result.item.content.substring(0, 150);
+                }
+              }
+            }
+            
+            li.appendChild(titleDiv);
+            if (descDiv) {
+              li.appendChild(descDiv);
+            }
+            ul.appendChild(a);
+          }
+        });
+      } else {
+        var item = document.createElement('span');
+        ul.appendChild(item);
+      }
+
+      let wrap = document.getElementById('search-mobile-results');
+      while (wrap.firstChild) {
+        wrap.removeChild(wrap.firstChild)
+      }
+      searchResults.appendChild(ul);
+    }
+
+    function generateHighlightedText(text, regions) {
+      if (!regions) {
+        return text;
+      }
+
+      var content = '', nextUnhighlightedRegionStartingIndex = 0;
+
+      regions.forEach(function(region) {
+        if (region[0] === region[1]) {
+          return null;
+        }
+        
+        content += '' +
+          text.substring(nextUnhighlightedRegionStartingIndex, region[0]) +
+          '<span class="search__highlight">' +
+            text.substring(region[0], region[1] + 1) +
+          '</span>' +
+        '';
+        nextUnhighlightedRegionStartingIndex = region[1] + 1;
+      });
+
+      content += text.substring(nextUnhighlightedRegionStartingIndex);
+
+      return content;
+    };
+
+    var searchElem = document.getElementById('search');
+    var searchMobile = document.getElementById('search-mobile');
+    var searchResultsContainer = document.getElementById('search-results');
+
+    searchElem ? 
+    searchElem.addEventListener('input', function(e) {
+      if (!e.target.value | window.innerWidth < 770) {
+        searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dd') : null;
+        return null;
+      }
+
+      searchText = e.target.value;
+      var results = fuse.search(e.target.value);
+
+      if (enableSearchHighlight) {
+        renderSearchHighlightResults(searchText, results);
+      } else {
+        renderSearchResults(searchText, results);
+      }
+
+      var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
+      dropdownItems ? dropdownItems.forEach(function (item) {
+        item.addEventListener('mousedown', function (e) {
+          e.target.click();
+        });
+      }) : null;
+    }) : null;
+
+    searchElem ? 
+    searchElem.addEventListener('blur', function() {
+      if (window.innerWidth < 770) {
+        return null;
+      }
+      searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dd') : null;
+    }) : null;
+
+    searchElem ? 
+    searchElem.addEventListener('click', function(e) {
+      if (window.innerWidth < 770) {
+        return null;
+      }
+      if (!e.target.value) {
+        searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dd') : null;
+        return null;
+      }
+
+      searchText = e.target.value;
+      var results = fuse.search(e.target.value);
+
+      if (enableSearchHighlight) {
+        renderSearchHighlightResults(searchText, results);
+      } else {
+        renderSearchResults(searchText, results);
+      }
+
+      var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
+      dropdownItems ? dropdownItems.forEach(function (item) {
+        item.addEventListener('mousedown', function (e) {
+          e.target.click();
+        });
+      }) : null;
+    }) : null;
+
+    var searchMenuElem = document.getElementById("search-menu");
+    var activeItem = document.querySelector('#search-menu .dd-item.is-active');
+    var activeIndex = null;
+    var items = null;
+    var searchContainerMaxHeight = 350;
+
+    searchElem ? 
+    searchElem.addEventListener('keydown', function(e) {
+      if (window.innerWidth < 770) {
+        return null;
+      }
+
+      var items = document.querySelectorAll('#search-menu .dd-item');
+      
+      if (e.key === 'ArrowDown') {
+        if (activeIndex === null) {
+          activeIndex = 0;
+          items[activeIndex].classList.remove('is-active');
+        } else {
+          items[activeIndex].classList.remove('is-active');
+          activeIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+        }
+        items[activeIndex].classList.add('is-active');
+
+        let overflowedPixel = items[activeIndex].offsetTop + items[activeIndex].clientHeight - searchContainerMaxHeight;
+        if (overflowedPixel > 0) {
+          document.querySelector(".search-content").scrollTop += items[activeIndex].getBoundingClientRect().height;
+        } else if (activeIndex === 0) {
+          document.querySelector(".search-content").scrollTop = 0;
+        }
+      } else if (e.key === 'ArrowUp') {
+        if (activeIndex === null) {
+          activeIndex = items.length - 1;
+          items[activeIndex].classList.remove('is-active');
+        } else {
+          items[activeIndex].classList.remove('is-active');
+          activeIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+        }
+        items[activeIndex].classList.add('is-active');
+        
+        let overflowedPixel = items[activeIndex].offsetTop + items[activeIndex].clientHeight - searchContainerMaxHeight;
+        if (overflowedPixel < 0) {
+          document.querySelector(".search-content").scrollTop -= items[activeIndex].getBoundingClientRect().height;
+        } else {
+          document.querySelector(".search-content").scrollTop = overflowedPixel + items[activeIndex].getBoundingClientRect().height;
+        }
+      } else if (e.key === 'Enter') {
+        var currentItemLink = items[activeIndex].getAttribute('href');
+        if (currentItemLink) {
+          location.href = currentItemLink;
+        }
+      } else if (e.key === 'Escape') {
+        e.target.value = null;
+        if (searchResults) {
+          searchResults.classList.remove('is-active');
+        }
+      }
+    }) : null;
+
+    searchMobile ? 
+    searchMobile.addEventListener('input', function(e) {
+      if (!e.target.value) {
+        let wrap = document.getElementById('search-mobile-results');
+        while (wrap.firstChild) {
+          wrap.removeChild(wrap.firstChild);
+        }
+        return null;
+      }
+
+      searchText = e.target.value;
+      var results = fuse.search(e.target.value);
+      
+      if (enableSearchHighlight) {
+        renderSearchHighlightResultsMobile(searchText, results);
+      } else {
+        renderSearchResultsMobile(searchText, results);
+      }
+
+      var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
+      dropdownItems ? dropdownItems.forEach(function (item) {
+        item.addEventListener('mousedown', function (e) {
+          e.target.click();
+        });
+      }) : null;
+    }) : null;
+  
+  }
+</script>
+
+<link rel="stylesheet" href="/css/lightbox.css">
+
+    
+
+
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+    <meta name="description" content="Omelets with no eggs..." />
+<meta name="keywords" content="">
+<meta name="created" content="2021-09-06T03:10:41&#43;0100">
+<meta name="modified" content="2021-09-06T03:10:41&#43;0100">
+
+
+<meta property="og:site_name" content="Layer9">
+<meta property="og:title" content="Cisco and Huawei simulated routers">
+<meta property="og:url" content="https://tiagojsilva.github.io/en/networking/simul/gns3-ensp/">
+<meta property="og:type" content="article">
+
+<meta name="generator" content="Hugo 0.83.1" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://tiagojsilva.github.io/en/networking/simul/gns3-ensp/">
+<link rel="manifest" href="/manifest.json">
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "headline": "Cisco and Huawei simulated routers",
+    "datePublished": "2021-09-06T03:10:41+01:00",
+    "dateModified": "2021-09-06T03:10:41+01:00",
+    "url" : "https://tiagojsilva.github.io/en/networking/simul/gns3-ensp/",
+    "description": "Omelets with no eggs...",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://tiagojsilva.github.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Layer9",
+      "url": "https://tiagojsilva.github.io"
+    }
+  }
+</script>
+
+    
+
+</head>
+
+
+<body id="root" class="theme__light">
+    <script>
+        var rootElem = document.getElementById('root');
+        var themeOptions = JSON.parse("[\"light\",\"dark\"]");
+        var localTheme = localStorage.getItem('theme');
+
+        if (localTheme) {
+            if (themeOptions && themeOptions.length > 0) {
+                themeOptions.includes(localTheme) ? 
+                rootElem.className = `theme__${localTheme}` :
+                rootElem.className = `theme__${themeOptions[0]}`;
+            }
+        }
+    </script>
+    
+    <div id="container">
+        <div id="myDrawer" class="drawer" style="">
+  <div class="drawer__header">
+    <a href="/" class="drawer__header--text">
+      Layer9
+    </a>
+    <div class="grow"></div>
+    <div class="drawer__close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/></svg>
+    </div>
+  </div>
+
+  <div class="drawer__body">
+    <div class="menu">
+  <h6 class="menu__label">
+    
+      Cisco and Huawei simulated routers
+    
+  </h6>
+  <ul>
+    
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse active" data-depth="0" data-permalink="https://tiagojsilva.github.io/en/networking/simul/">
+    <span class="menu__title--collapse-text">
+      Simulation
+    </span>
+    <span class="menu__title--icon down">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list active" data-data=/simul/ data-link=https://tiagojsilva.github.io/en/networking/simul/gns3-ensp/>
+    
+      
+        
+        
+        <li>
+          <a href="https://tiagojsilva.github.io/en/networking/simul/gns3-ensp/" class="menu__title active" data-depth="0">Cisco and Huawei simulated routers</a>
+        </li>
+      
+    
+  </ul>
+  
+
+    
+  </ul>
+</div>
+
+
+
+<script>
+  var menuTitle = document.querySelectorAll('.menu__title');
+  var modal = document.getElementById("myModal");
+  var drawer = document.getElementById('myDrawer');
+
+  var closeDrawer = function () {
+    setTimeout(function () {
+      modal.style.opacity = 0;
+      drawer.style.left = '-100%';
+      modal.style.left = '-100%';
+    }, 250);
+  }
+
+  menuTitle ? 
+  menuTitle.forEach(function(elem) {
+    elem.onclick = function() {
+      closeDrawer();
+      localStorage.setItem('isDrawerOpen', 'false');
+    }
+  }) : null;
+</script>
+  </div>
+</div>
+<div id="myModal" class="modal" style=""></div>
+
+<script>
+  var isDrawerOpen = localStorage.getItem('isDrawerOpen');
+  var modal = document.getElementById("myModal");
+  var drawer = document.getElementById('myDrawer');
+  
+  
+  var languagedir = JSON.parse("\"ltr\"");
+
+  var openDrawer = function () {
+    modal.style.opacity = 1;
+    
+    if (languagedir === "rtl") {
+      modal.style.right = 0;
+      drawer.style.right = 0;
+    } else {
+      modal.style.left = 0;
+      drawer.style.left = 0;
+    }
+  }
+
+  if (isDrawerOpen && isDrawerOpen === 'true') {
+    openDrawer();
+  }
+</script>
+        
+<nav class="nav">
+  <div class="navbar__wrapper" data-bgimg="false">
+    <div class="divider">
+      <div class="navbar lmr">
+        <div id="siteLogo" class="navbar__logo--wrapper">
+  
+    <a href="/en/" title="" rel="home" class="navbar__logo--link">
+      <img src="/logo.png" alt="Home" class="navbar__logo">
+    </a>
+  
+  
+    <a href="/en/" title="" rel="home" class="navbar__logo--text-link">
+      <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
+    </a>
+  
+</div>
+        
+        <div class="navbar__menu--wrapper">
+          <div id="tabletLogo" class="hide">
+  
+  <a href="/en/" rel="home" class="navbar__logo--link">
+    <img src="/logo.png" alt="Home" class="navbar__logo">
+  </a>
+  
+</div>
+          <div id="mobileLogo" class="hide">
+  <a href="#" class="navbar__logo--link">
+    <div class="navbar__icons--icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"/></svg>
+    </div>
+  </a>
+</div>
+          <span id="navMenuMobile" class="hide">
+  <button id="navCollapseBtn" class="navbar__dropdown--title" aria-label="Section Menu" data-dir="ltr">
+    
+      networking
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
+  </button>
+  <div class="navbar__collapse" data-open="false">
+  <ul>
+    
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/en/blog" class="">Blog</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item active">
+    <a href="/en/networking" class="active">Networking</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/en/microsoft" class="">Microsoft</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/en/unixlike" class="">*nix</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/en/dev" class="">Dev</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/en/sec" class="">Security</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/en/updates" class="">Updates</a>
+  </li>
+
+  </ul>
+</div>
+</span>
+          <ul id="navMenu" class="navbar__menu">
+            
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/en/blog" data-bgimg="false">Blog</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item active">
+    <a href="/en/networking" data-bgimg="false">Networking</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/en/microsoft" data-bgimg="false">Microsoft</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/en/unixlike" data-bgimg="false">*nix</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/en/dev" data-bgimg="false">Dev</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/en/sec" data-bgimg="false">Security</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/en/updates" data-bgimg="false">Updates</a>
+  </li>
+
+          </ul>
+        </div>
+        <div class="grow"></div>
+        <div id="siteSearch">
+          
+
+<div class="search" data-bgimg="false">
+  <span class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+  </span>
+  <input id="search" aria-label="Site Search" class="input" type="text" autocomplete="off" placeholder="Search">
+  <div id="search-results" class="dropdown">
+    <div id="search-menu" class="dropdown-menu">
+    </div>
+  </div>
+</div>
+
+
+        </div>
+        <div id="mobileSearch" class="hide">
+          
+<div id="mobileSearchBtn" class="mobile-search__btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+</div>
+
+<div id="search-mobile-container" class="mobile-search hide">
+  <div class="mobile-search__top">
+    <input id="search-mobile" type="text" aria-label="Mobile Search" placeholder="Search..." class="mobile-search__top--input"/>
+    <div id="search-mobile-close" class="mobile-search__top--icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path opacity=".87" fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"/></svg>
+    </div>
+  </div>
+  <div id="search-mobile-results" class="mobile-search__body">
+    
+  </div>
+</div>
+
+        </div>
+        <div class="navbar__icons">
+  
+<div class="dropdown">
+  <button class="lang__dropdown navbar__icons--icon" aria-label="Select Site Language">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M12.65 15.67c.14-.36.05-.77-.23-1.05l-2.09-2.06.03-.03c1.74-1.94 2.98-4.17 3.71-6.53h1.94c.54 0 .99-.45.99-.99v-.02c0-.54-.45-.99-.99-.99H10V3c0-.55-.45-1-1-1s-1 .45-1 1v1H1.99c-.54 0-.99.45-.99.99 0 .55.45.99.99.99h10.18C11.5 7.92 10.44 9.75 9 11.35c-.81-.89-1.49-1.86-2.06-2.88-.16-.29-.45-.47-.78-.47-.69 0-1.13.75-.79 1.35.63 1.13 1.4 2.21 2.3 3.21L3.3 16.87c-.4.39-.4 1.03 0 1.42.39.39 1.02.39 1.42 0L9 14l2.02 2.02c.51.51 1.38.32 1.63-.35zM17.5 10c-.6 0-1.14.37-1.35.94l-3.67 9.8c-.24.61.22 1.26.87 1.26.39 0 .74-.24.88-.61l.89-2.39h4.75l.9 2.39c.14.36.49.61.88.61.65 0 1.11-.65.88-1.26l-3.67-9.8c-.22-.57-.76-.94-1.36-.94zm-1.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+  </button>
+  <div class="dropdown-content lang__dropdown--content">
+    
+    
+    
+      
+      
+        
+        
+          
+            
+              <a href="https://tiagojsilva.github.io/en/networking/simul/gns3-ensp/" data-lang="en" class="lang__dropdown--item active">English</a>
+            
+          
+        
+      
+        
+      
+    
+      
+      
+        
+      
+        
+        
+          
+            
+              <a href="https://tiagojsilva.github.io/pt/networking/simul/gns3-ensp/" data-lang="pt" class="lang__dropdown--item">Português</a>
+            
+          
+        
+      
+    
+  </div>
+</div>
+
+  
+<button id="toggleToDark" class="navbar__icons--icon" aria-label="Toggle to dark mode">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><path fill="currentColor" d="M20 15.31L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+</button>
+<button id="toggleToLight" class="navbar__icons--icon" aria-label="Toggle to light mode">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path fill="currentColor" d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+</button>
+<script>
+  var theme = localStorage.getItem('theme');
+  var toggleToLightBtn = document.getElementById('toggleToLight');
+  var toggleToDarkBtn = document.getElementById('toggleToDark');
+
+  if (theme && theme === 'dark') {
+    toggleToLightBtn.className = 'navbar__icons--icon';
+    toggleToDarkBtn.className = 'hide';
+  } else {
+    toggleToLightBtn.className = 'hide';
+    toggleToDarkBtn.className = 'navbar__icons--icon';
+  }
+</script>
+
+  <div class="navbar__icons--icon">
+    <a href="https://github.com/TiagoJSilva" title="Github repository" aria-label="Github repository" target="_blank" rel="noreferrer">
+    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22"><path d="M10.9,2.1c-4.6,0.5-8.3,4.2-8.8,8.7c-0.5,4.7,2.2,8.9,6.3,10.5C8.7,21.4,9,21.2,9,20.8v-1.6c0,0-0.4,0.1-0.9,0.1 c-1.4,0-2-1.2-2.1-1.9c-0.1-0.4-0.3-0.7-0.6-1C5.1,16.3,5,16.3,5,16.2C5,16,5.3,16,5.4,16c0.6,0,1.1,0.7,1.3,1c0.5,0.8,1.1,1,1.4,1 c0.4,0,0.7-0.1,0.9-0.2c0.1-0.7,0.4-1.4,1-1.8c-2.3-0.5-4-1.8-4-4c0-1.1,0.5-2.2,1.2-3C7.1,8.8,7,8.3,7,7.6c0-0.4,0-0.9,0.2-1.3 C7.2,6.1,7.4,6,7.5,6c0,0,0.1,0,0.1,0C8.1,6.1,9.1,6.4,10,7.3C10.6,7.1,11.3,7,12,7s1.4,0.1,2,0.3c0.9-0.9,2-1.2,2.5-1.3 c0,0,0.1,0,0.1,0c0.2,0,0.3,0.1,0.4,0.3C17,6.7,17,7.2,17,7.6c0,0.8-0.1,1.2-0.2,1.4c0.7,0.8,1.2,1.8,1.2,3c0,2.2-1.7,3.5-4,4 c0.6,0.5,1,1.4,1,2.3v2.6c0,0.3,0.3,0.6,0.7,0.5c3.7-1.5,6.3-5.1,6.3-9.3C22,6.1,16.9,1.4,10.9,2.1z"/></svg>
+    </a>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  var siteLogo = document.getElementById('siteLogo');
+  var tabletLogo = document.getElementById('tabletLogo');
+  var mobileLogo = document.getElementById('mobileLogo');
+  var navMenu = document.getElementById('navMenu');
+  var navMenuMobile = document.getElementById('navMenuMobile');
+  var siteSearch = document.getElementById('siteSearch');
+  var mobileSearch = document.getElementById('mobileSearch');
+  
+  enquire.register("screen and (max-width:1280px)", {
+    match: function () {
+      siteLogo.className = 'navbar__logo--wrapper';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = '';
+      mobileSearch.className = 'hide';
+    },
+    unmatch: function () {
+      siteLogo.className = 'navbar__logo--wrapper';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = '';
+      mobileSearch.className = 'hide';
+    },
+  }).register("screen and (max-width:960px)", {
+    match: function () {
+      siteLogo.className = 'hide';
+      tabletLogo.className = '';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = 'hide';
+      mobileSearch.className = 'navbar__icons--icon';
+    },
+    unmatch: function () {
+      siteLogo.className = 'navbar__logo--wrapper';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = '';
+      mobileSearch.className = 'hide';
+    },
+  }).register("screen and (max-width:600px)", {
+    match: function () {
+      siteLogo.className = 'hide';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = '';
+      navMenu.className = 'hide';
+      navMenuMobile.className = '';
+      siteSearch.className = 'hide';
+      mobileSearch.className = 'navbar__icons--icon';
+    },
+    unmatch: function () {
+      siteLogo.className = 'hide';
+      tabletLogo.className = '';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = 'hide';
+      mobileSearch.className = 'navbar__icons--icon';
+    },
+  });
+</script>
+
+        
+  <div class="top">
+  <div class="header__wrapper bgcolor__header">
+    <div class="divider">
+      <div class="lmr">
+        <h2 class="title">Cisco and Huawei simulated routers</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__wrapper bgcolor__breadcrumb">
+    <div class="divider">
+      <div class="lmr flexbox">
+        
+          <nav class="breadcrumb" aria-label="breadcrumbs" data-is-blog="false">
+  
+  <ol>
+    
+  
+  
+  
+  
+  
+  
+  
+  <li >
+    
+      <a href="https://tiagojsilva.github.io/en/" class="capitalize">Layer9</a>
+    
+  </li>
+  
+  
+  <li >
+    
+      <a href="https://tiagojsilva.github.io/en/networking/" class="capitalize">Networks</a>
+    
+  </li>
+  
+  
+  <li >
+    
+      <a href="https://tiagojsilva.github.io/en/networking/simul/" class="capitalize">Simulation</a>
+    
+  </li>
+  
+  
+  <li  class="is-active" >
+    
+      <span>Cisco and Huawei simulated routers</span>
+    
+  </li>
+  
+  </ol>
+  
+</nav>
+        
+        <div class="grow"></div>
+        
+  <label class="switch switch__rel">
+    
+      <input id="toggle-sidebar" aria-label="Toggle Sidebar Visibility" type="checkbox" checked />
+      <span class="slider">
+        <span class="slider__icon ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </span>
+        <span class="slider__icon hide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
+        </span>
+      </span>
+    
+    
+  </label>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+  
+
+<div class="mid">
+  <div class="divider">
+    
+    <nav id="single-menu" class="l" data-dir="ltr">
+      
+        <div class="menu">
+  <h6 class="menu__label">
+    
+      Cisco and Huawei simulated routers
+    
+  </h6>
+  <ul>
+    
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse active" data-depth="0" data-permalink="https://tiagojsilva.github.io/en/networking/simul/">
+    <span class="menu__title--collapse-text">
+      Simulation
+    </span>
+    <span class="menu__title--icon down">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list active" data-data=/simul/ data-link=https://tiagojsilva.github.io/en/networking/simul/gns3-ensp/>
+    
+      
+        
+        
+        <li>
+          <a href="https://tiagojsilva.github.io/en/networking/simul/gns3-ensp/" class="menu__title active" data-depth="0">Cisco and Huawei simulated routers</a>
+        </li>
+      
+    
+  </ul>
+  
+
+    
+  </ul>
+</div>
+
+
+      
+    </nav>
+
+    <article id="list-main" class="m" data-dir="ltr">
+      <div class="single" data-display="block">
+  
+
+  <article class="single__contents" data-dir="ltr">
+    <p>Some time ago, I needed to simulate a heterogeneous network, with a Cisco router connected to another Huawei router.<br />
+It wasn&rsquo;t easy because IOS is not publicly available and the Huawei simulator, eNSP, is discontinued and only works on VirtualBox 5.<br />
+To make this simulation, a CPU that supports VM nesting (<a href="https://en.wikipedia.org/wiki/Second_Level_Address_Translation" target="_blank">Second-Level Address Translation - SLAT</a>) is required.</p>
+<h2 id="simulation-vm">Simulation VM</h2>
+<p>Create a Windows 7-based VM, with 4GB of RAM, 2 vCPUS and 4 network interfaces.It may be possible to lower RAM for 2GB, but this has not been tested; 1GB <strong>has</strong> been tested and is insufficient.<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image1.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image1.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image1.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+<br />
+In order for the ARP protocol of the simulated routers to not complain that there are duplicate IPs in different MACs, it&rsquo;s necessary to do <em><strong>MAC Spoofing</strong></em> on purpose, placing in the MAC configuration of each VirtualBox interface the MAC of the simulated router interface that it will represent. <br />
+First the MAC is left in the standard setting, and then after we raise the simulated routers we take note of the MAC of each router&rsquo;s interface, switch off the VM, and introduces this MAC in the corresponding VirtualBox interface configuration before bringing back the VM.<br />
+Cisco&rsquo;s simulated router can change its MACs to duplicate the default VirtualBox MACs, so this step is optional for the Cisco&rsquo;s interfaces; the same is supposed to be possible in the Huawei router, but although it is described in the manual, the simulation of the AR2220 can not change its MACs, so this step is <em><strong>required</strong></em> for the simulated Huawei router to work.</p>
+<p>The final settings are:</p>
+<h4 id="virtual-interface-1">Virtual Interface 1</h4>
+<ul>
+<li><em>Internal Network:</em> <strong>WAN</strong></li>
+<li><em>Promiscuous: <strong>Allow All</strong></em></li>
+</ul>
+<h4 id="virtual-interface-2">Virtual Interface 2</h4>
+<ul>
+<li><em>Internal Network:</em> <strong>LAN</strong></li>
+<li><em>Promiscuous: <strong>Allow All</strong></em></li>
+</ul>
+<h4 id="virtual-interface-3">Virtual Interface 3</h4>
+<ul>
+<li><em>Internal Network:</em> <strong>WAN</strong></li>
+<li><u>Always</u> with the same MAC as the corresponding external interface of the Huawei router</li>
+<li><em>Promiscuous: <strong>Allow All</strong></em></li>
+</ul>
+<h4 id="virtual-interface-4">Virtual Interface 4</h4>
+<ul>
+<li><em>Internal Network:</em> <strong>LAN</strong></li>
+<li><u>Always</u> with the same MAC as the corresponding external interface of the Huawei router</li>
+<li><em>Promiscuous: <strong>Allow All</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image2.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image2.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image2.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</li>
+</ul>
+<h3 id="guests-network-configuration">Guest&rsquo;s network configuration</h3>
+<p><em><strong>Control Panel, Network Connections</strong></em></p>
+<h4 id="virtual-interface-1s-real-interface">Virtual Interface 1&rsquo;s &ldquo;real&rdquo; interface</h4>
+<p>(confirm, for example, by disconnecting the virtual network cable)<br />
+Name: <strong>C-Outside</strong> or <strong>Cisco-EXT</strong><br />
+IP: <strong>10.5.222.4</strong><br />
+<em>Netmask</em>: <strong>255.255.0.0</strong><br />
+<em>Gateway</em>: &ndash;</p>
+<h4 id="virtual-interface-2s-real-interface">Virtual Interface 2&rsquo;s &ldquo;real&rdquo; interface</h4>
+<p>Name: <strong>C-Inside</strong> or <strong>Cisco-INT</strong><br />
+IP: <strong>10.10.0.58</strong><br />
+<em>Netmask:</em> <strong>255.255.255.248</strong><br />
+<em>Gateway:</em> &ndash;</p>
+<h4 id="virtual-interface-3s-real-interface">Virtual Interface 3&rsquo;s &ldquo;real&rdquo; interface</h4>
+<p>Name: <strong>H-Outside</strong> or <strong>Huawei-EXT</strong><br />
+IP: <strong>10.5.222.6</strong><br />
+<em>Netmask</em>: <strong>255.255.0.0</strong><br />
+<em>Gateway</em>: &ndash;</p>
+<h4 id="virtual-interface-4s-real-interface">Virtual Interface 4&rsquo;s &ldquo;real&rdquo; interface</h4>
+<p>Name: <strong>H-Inside</strong> or <strong>Huawei-INT</strong><br />
+IP: <strong>10.10.0.59</strong><br />
+<em>Netmask</em>: <strong>255.255.255.248</strong><br />
+<em>Gateway</em>: &ndash;</p>
+<h3 id="software-to-install">Software to install</h3>
+<ul>
+<li>VirtualBox 5.2.x and its Extension Pack</li>
+<li>Winpcap 4.1.3</li>
+<li>Wireshark-win64 3.2.5</li>
+<li>eNSP V100R002C00B510 Setup</li>
+<li>GNS3 2.2.x or higher (don&rsquo;t install GNS3 VM)</li>
+</ul>
+<h3 id="finish-the-simulation-vms-configuration">Finish the simulation VM&rsquo;s configuration</h3>
+<p>Save all projects, close all programs, turn off the VM (<em><strong>Shutdown</strong></em>)<br />
+On the VM&rsquo;s <em><strong>Network</strong></em> properties, change each virtual interface&rsquo;s MAC address to the same MAC of the router port that will connect to it <br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image3.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image3.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image3.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Boot the VM up again, open the projects and configure the routers.</p>
+<h2 id="gns3-setup-for-cisco-7200-router-simulation">GNS3 setup for Cisco 7200 Router Simulation</h2>
+<h3 id="create-a-template--for-the-cisco-7200">Create a template  for the Cisco 7200</h3>
+<p>Click on the first option of the bar on the left, <em>Browse Routers</em><br />
+<em><strong>+ New template</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image4.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image4.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image4.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p><em><strong>Install appliance from server</strong></em><br />
+<em><strong>Next</strong></em><br />
+Pick <em><strong>Routers &gt; Cisco 7200 / Dynamips</strong></em><br />
+<em><strong>Install</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image5.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image5.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image5.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p><em><strong>Install on this computer</strong></em><br />
+<em><strong>Next</strong></em><br />
+<em><strong>Allow custom files</strong></em><br />
+On the warning *Do you want to proceed? <em><strong>Yes</strong></em><br />
+Choose the <em>.image</em> file (which is <em>Missing</em>) and click on the <em><strong>Import</strong></em> button below it.<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image6.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image6.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image6.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Choose the <em><strong>c7200-adventerprisek9-mz.152-4.S3.bin</strong></em> file that has the checksum <em>79ffe4050b2cac60d51af8b953bb02b7</em>. I do not know how I found this file, surely it fell from the back of a truck and I certainly have no permission to use it (nor do you). The official Cisco IOS images for academic use are included in the (paid) membership for <a href="https://learningnetworkstore.cisco.com/cisco-modeling-labs-personal/cisco-cml-personal" target="_blank">VIRL - Cisco Modeling Labs</a><br />
+<em><strong>Open</strong></em><br />
+<em>This is not the correct file</em><br />
+<em><strong>Yes</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image7.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image7.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image7.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>It turns to <em>Ready to Install</em><br />
+Alternatively, click on <em>Create a new version</em> and create version <em>152-4.S3</em><br />
+Select the original version or newly created version, and<br />
+<em><strong>Next</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image8.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image8.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image8.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p><em>Do you want to install?</em><br />
+<em><strong>Yes</strong></em></p>
+<h3 id="create-a-new-topology-for-the-cisco-router">Create a new topology for the Cisco router</h3>
+<p>Create a new project.<br />
+Drag a Cisco 7200 router from the template we created.<br />
+Right-click, <em><strong>Configure</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image9.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image9.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image9.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>We need to add extra network interfaces to the router by inserting interface boards:<br />
+Tab <em><strong>Slots</strong></em><br />
+<em>Slot 1: <strong>PA-GE</strong></em><br />
+<em>Slot 2: <strong>PA-GE</strong></em><br />
+<em><strong>OK</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image10.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image10.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image10.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Click on the left bar&rsquo;s pane (<em>Browse End Devices</em>).<br />
+Drag two <em><strong>Clouds</strong></em> to the topology and give them appropriate names<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image11.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image11.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image11.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Click on the cable on the left bar (<em>Add links</em>) - the cursor switches to a <strong>+</strong><br />
+Click the <em>router</em>, select a port<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image12.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image12.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image12.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Click on one of the <em>Clouds</em>, and choose the Windows' network interface that will be used for this port<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image13.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image13.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image13.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Do the same with the other <em>Cloud</em>.<br />
+Right-click on the router, <em><strong>Start</strong></em> to boot it up.<br />
+Right-click on the router, <em><strong>Console</strong></em> to open the serial console<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image14.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image14.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image14.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Click on <strong>Enter</strong> (RETURN), and the simulated router boots already on privileged mode (<em><strong>#</strong></em>)<br />
+Make a note of the MACs of the router interfaces you want to connect to the outside of the topology, because we need to put these MACs in the respective VirtualBox 6 virtual interfaces:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-#:ios.txt" data-lang="#:ios.txt">show interface gig1/0
+</code></pre></td></tr></table>
+</div>
+</div><pre style="font-style: italic; font-size: 0.79rem">
+
+GigabitEthernet1/0 is administratively down, line protocol is down
+Hardware is 82543, address is ca01.0438.001c (bia **ca01.0438.001c**)
+
+</pre>
+<h2 id="simulated-huawei-router">Simulated Huawei router</h2>
+<h3 id="ensp-setup-for-simulated-huawei-ar2220-router">eNSP setup for simulated Huawei AR2220 router</h3>
+<p>Unlike the Cisco simulation, the use of eNSP images is free (especially because it is a Linux that simulates the actual software and not a copy of the real software in itself as it is the case of IOS images).</p>
+<h4 id="create-a-new-topology-for-the-huawei-router">Create a new topology for the Huawei router</h4>
+<p>Click the <em><strong>New Topo</strong></em> button<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image15.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image15.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image15.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Drag an AR2220 router<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image16.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image16.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image16.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Drag two <em><strong>Clouds</strong></em> and name them<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image17.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image17.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image17.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Right-click on a <em>cloud</em>, <em><strong>Settings</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image18.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image18.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image18.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>On the <em><strong>Outside</strong></em> cloud, right-click, <em><strong>Settings</strong></em><br />
+<em><u>Port Building</u></em><br />
+<em>Binding info:</em> <em><strong>UDP</strong></em><br />
+<em>Port type:</em> <em><strong>Ethernet</strong></em><br />
+<em><strong>Add</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image19.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image19.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image19.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p><em>Binding info:</em> select interface 3<br />
+<em>Port type:</em> <em><strong>Ethernet</strong></em><br />
+<em><strong>Add</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image20.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image20.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image20.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p><em><u>Port Map Setting</u></em><br />
+<em>Port type:</em> <em><strong>Ethernet</strong></em><br />
+<em>Local Port: <strong>1</strong></em><br />
+<em>Remote Port: <strong>2</strong></em><br />
+<em><strong>Two-way Channel</strong></em><br />
+<em><strong>Add</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image21.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image21.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image21.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Close the window<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image22.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image22.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image22.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>On the <em><strong>Inside</strong></em> cloud, right-click, <em><strong>Settings</strong></em><br />
+<em><u>Port Building</u></em><br />
+<em>Binding info:</em> <em><strong>UDP</strong></em><br />
+<em>Port type:</em> <em><strong>Ethernet</strong></em><br />
+<em><strong>Add</strong></em><br />
+<em>Binding info:</em> select interface 4<br />
+<em>Port type:</em> <em><strong>Ethernet</strong></em><br />
+<em><strong>Add</strong></em><br />
+<em><u>Port Map Setting</u></em><br />
+<em>Port type:</em> <em><strong>Ethernet</strong></em><br />
+<em>Local Port: <strong>1</strong></em><br />
+<em>Remote Port: <strong>2</strong></em><br />
+<em><strong>Two-way Channel</strong></em><br />
+<em><strong>Add</strong></em><br />
+Close the window.<br />
+Click on the connections (lightning icon), select <em><strong>Auto</strong></em> or <em><strong>Copper</strong></em><br />
+Connect the router to each of the clouds (as in <em>Packet Tracer</em> - click, choose Port, click on the destination, choose port)<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image23.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image23.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image23.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image24.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image24.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image24.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p><strong>Esc</strong> to leave the connection mode (pointer goes back to normal)<br />
+Right-click on the router, <em><strong>Start</strong></em> (boots the router up)<br />
+Right-click on the router, <em><strong>CLI</strong></em> (opens the serial console)<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image25.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image25.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image25.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Make a note of the MACs of the router interfaces that were connected to the clouds.</p>
+<pre><code>&lt;Huawei&gt; display int g0/0/0
+</code></pre><p><pre style="font-style: italic; font-size: 0.79rem">
+
+[…]
+IP Sending Frames' Format is PKTFMT_ETHNT_2, Hardware address is
+**00e0-fc29-614c**
+[…]
+
+</pre><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image26.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image26.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image26.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<h3 id="huawei-initial-setup">Huawei initial setup</h3>
+<p>Open the AR2220&rsquo;s <em><strong>CLI</strong></em><br />
+<pre style="font-style: italic; font-size: 0.79rem">
+
+May 16 2021 07:43:40-08:00 Huawei %%01IFPDT/4/IF_STATE(l)[0]:Interface GigabitEthernet0/0/0 has turned into UP state.
+May 16 2021 07:43:40-08:00 Huawei %%01IFPDT/4/IF_STATE(l)[1]:Interface GigabitEthernet0/0/1 has turned into UP state.
+
+</pre><br />
+Display the base config:</p>
+<pre><code>&lt;Huawei&gt; display current
+</code></pre><pre style="font-style: italic; font-size: 0.79rem">
+
+[V200R003C00]
+#
+ snmp-agent local-engineid 800007DB03000000000000
+ snmp-agent 
+#
+ clock timezone China-Standard-Time minus 08:00:00
+#
+portal local-server load portalpage.zip
+#
+ drop illegal-mac alarm
+#
+ set cpu-usage threshold 80 restore 75
+#
+aaa 
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default 
+ domain default_admin 
+ local-user admin password cipher %$%$K8m.Nt84DZ}e#<0`8bmE3Uw}%$%$
+ local-user admin service-type http
+#
+firewall zone Local
+ priority 15
+#
+interface GigabitEthernet0/0/0
+#
+interface GigabitEthernet0/0/1
+#
+interface GigabitEthernet0/0/2
+#
+interface NULL0
+#
+user-interface con 0
+ authentication-mode password
+user-interface vty 0 4
+user-interface vty 16 20
+#
+wlan ac
+#
+return
+
+</pre>
+<p>Set the clock to not be on the Beijing timezone:</p>
+<pre><code>&lt;Huawei&gt; clock timezone GMT add 0
+&lt;Huawei&gt; clock daylight-saving-time GMT repeating 01:00 last Sun Mar 01:00 last sun Oct 01:00
+&lt;Huawei&gt; display clock
+</code></pre><pre style="font-style: italic; font-size: 0.79rem">
+
+2021-05-16 01:21:21 DST
+Sunday
+Time Zone(GMT) : UTC+00:00
+Daylight saving time :
+         Name        : GMT
+         Repeat mode : repeat
+         Start year  : 2000
+         End year    : 2099
+         Start time  : last Sunday March 01:00:00
+         End time    : last Sunday October 01:00:00
+         Saving time : 01:00:00
+
+</pre>
+<pre><code>&lt;Huawei&gt; system-view
+</code></pre><pre style="font-style: italic; font-size: 0.79rem">
+
+Enter system view, return user view with Ctrl+Z.
+
+</pre>
+<pre><code>[Huawei] display version
+</code></pre><pre style="font-style: italic; font-size: 0.79rem">
+
+Huawei Versatile Routing Platform Software
+VRP (R) software, Version 5.130 (AR2200 V200R003C00)
+Copyright (C) 2011-2012 HUAWEI TECH CO., LTD
+Huawei AR2220 Router uptime is 0 week, 0 day, 1 hour, 55 minutes
+BKP 0 version information: 
+1. PCB      Version  : AR01BAK2A VER.NC
+2. If Supporting PoE : No
+3. Board    Type     : AR2220
+4. MPU Slot Quantity : 1
+5. LPU Slot Quantity : 6
+
+MPU 0(Master) : uptime is 0 week, 0 day, 1 hour, 55 minutes
+MPU version information : 
+1. PCB      Version  : AR01SRU2A VER.A
+2. MAB      Version  : 0
+3. Board    Type     : AR2220
+4. BootROM  Version  : 0
+
+</pre>
+<pre><code>[Huawei] sysname RSFE
+[RSFE]
+</code></pre><h2 id="simulated-routers-redundancy-test">Simulated routers' redundancy test</h2>
+<p>Three pings were started on a client in the LAN (internal) network<br />
+If you&rsquo;re using a Linux system, use the <strong>-O</strong> option (uppercase &ldquo;o&rdquo;) to show all the ping timeout messages like on Windows</p>
+<ul>
+<li>One ping to 1.1.1.1</li>
+<li>One ping to Cisco&rsquo;s internal IP, (10.10.0.60, in this case)</li>
+<li>One ping to Huawei&rsquo;s internal address, (10.10.0.61, in this case)<br />
+In the normal situation, with Cisco as the designated router, we have access to the WAN<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image27.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image27.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image27.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</li>
+</ul>
+<p>Shutting down Cisco&rsquo;s internal interface, the ping to 10.10.0.60 stops, but we can still access the WAN.</p>
+<p>I do not know the source of the ICMP duplicate responses, but:</p>
+<ul>
+<li>with the Huawei as backup the pings to 10.10.0.61 return duplicates</li>
+<li>with Huawei as Master the pings to 10.10.0.61 return normally, but the pings to 1.1.1.1 return duplicates.<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/networking/2021-08-30_gns3-ensp/media/image28.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image28.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/networking/2021-08-30_gns3-ensp/media/image28.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</li>
+</ul>
+<h2 id="good-luck">Good luck!</h2>
+<p>I hope this hairy hack can help anyone who needs to set up a mixed system even if you are prevented from having access to physical hardware, or serves as an enabler for other, more advanced, topologies.</p>
+
+  </article>
+</div>
+      
+
+      
+  
+    <div id="utterances"></div>
+<noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    try {
+      
+      var owner = JSON.parse("\"TiagoJSilva\"");
+      
+      var repo = JSON.parse("\"hugo-site-utterances\"");
+      
+      var baseTheme = JSON.parse("\"light\"");
+      var localTheme = localStorage.getItem('theme');
+      var currentTheme = localTheme || baseTheme;
+      var utterTheme = currentTheme === "dark" ? 'photon-dark' : 'github-light'
+
+      var myScript = document.createElement('script');
+      myScript.setAttribute('src', 'https://utteranc.es/client.js');
+      myScript.setAttribute('repo', `${owner}/${repo}`);
+      myScript.setAttribute('issue-term', 'pathname');
+      myScript.setAttribute('theme', utterTheme);
+      myScript.setAttribute('crossorigin', 'anonymous');
+      myScript.setAttribute('async', '');
+
+      myScript.onload = function() {
+      }
+
+      document.getElementById('utterances').appendChild(myScript);
+    } catch (err) {
+      console.log(err);
+    }
+  });
+</script>
+
+  
+
+    </article>
+    
+    <section id="list-side" class="r" data-dir="ltr">
+      
+        <div class="toc">
+  <h6 class="toc__label">What&#39;s on this Page</h6>
+  <div class="toc__body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#simulation-vm">Simulation VM</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#virtual-interface-1">Virtual Interface 1</a></li>
+            <li><a href="#virtual-interface-2">Virtual Interface 2</a></li>
+            <li><a href="#virtual-interface-3">Virtual Interface 3</a></li>
+            <li><a href="#virtual-interface-4">Virtual Interface 4</a></li>
+          </ul>
+        </li>
+        <li><a href="#guests-network-configuration">Guest&rsquo;s network configuration</a>
+          <ul>
+            <li><a href="#virtual-interface-1s-real-interface">Virtual Interface 1&rsquo;s &ldquo;real&rdquo; interface</a></li>
+            <li><a href="#virtual-interface-2s-real-interface">Virtual Interface 2&rsquo;s &ldquo;real&rdquo; interface</a></li>
+            <li><a href="#virtual-interface-3s-real-interface">Virtual Interface 3&rsquo;s &ldquo;real&rdquo; interface</a></li>
+            <li><a href="#virtual-interface-4s-real-interface">Virtual Interface 4&rsquo;s &ldquo;real&rdquo; interface</a></li>
+          </ul>
+        </li>
+        <li><a href="#software-to-install">Software to install</a></li>
+        <li><a href="#finish-the-simulation-vms-configuration">Finish the simulation VM&rsquo;s configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#gns3-setup-for-cisco-7200-router-simulation">GNS3 setup for Cisco 7200 Router Simulation</a>
+      <ul>
+        <li><a href="#create-a-template--for-the-cisco-7200">Create a template  for the Cisco 7200</a></li>
+        <li><a href="#create-a-new-topology-for-the-cisco-router">Create a new topology for the Cisco router</a></li>
+      </ul>
+    </li>
+    <li><a href="#simulated-huawei-router">Simulated Huawei router</a>
+      <ul>
+        <li><a href="#ensp-setup-for-simulated-huawei-ar2220-router">eNSP setup for simulated Huawei AR2220 router</a>
+          <ul>
+            <li><a href="#create-a-new-topology-for-the-huawei-router">Create a new topology for the Huawei router</a></li>
+          </ul>
+        </li>
+        <li><a href="#huawei-initial-setup">Huawei initial setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#simulated-routers-redundancy-test">Simulated routers' redundancy test</a></li>
+    <li><a href="#good-luck">Good luck!</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+      
+    </section>
+
+  </div>
+</div>
+
+<script>
+  'use strict';
+  
+  function wrap(el, wrapper) {
+    el.parentNode.insertBefore(wrapper, el);
+    wrapper.appendChild(el);
+  }
+
+  (function () {
+    var singleContentsElem = document.querySelector('.single__contents');
+    singleContentsElem ? 
+    singleContentsElem.querySelectorAll('pre > code').forEach(function(elem) {
+      var dataLang = elem.getAttribute('data-lang');
+      var dataLangWrapper = document.createElement('div');
+      var code = null;
+      var codeTitle = null;
+
+      if (dataLang && dataLang.includes(':')) {
+        code = dataLang.split(':')[0];
+        codeTitle = dataLang.split(':')[1];
+
+        dataLangWrapper.className = 'language-' + code;
+        dataLangWrapper.setAttribute('data-lang', codeTitle);
+
+        elem.className = 'language-' + code;
+        elem.setAttribute('data-lang', codeTitle);
+        elem.setAttribute('id', codeTitle);
+      }
+
+      if (!dataLang || codeTitle) {
+        wrap(elem.parentNode, dataLangWrapper);
+      }
+
+    }) : null;
+  })();
+  
+
+
+  
+  
+  var dollarCodeElem = document.querySelectorAll('div.language-\\$');
+  var gtCodeElem = document.querySelectorAll('div.language-\\>');
+  
+  dollarCodeElem ?
+  dollarCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = '$<br/>';
+    }) : null;
+  }) : null;
+
+  gtCodeElem ?
+  gtCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = '><br/>';
+    }) : null;
+  }) : null;
+
+  var hashCodeElem = document.querySelectorAll('div.language-\\#');
+  hashCodeElem ?
+  hashCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = '#<br/>';
+    }) : null;
+  }) : null;
+
+  var psCodeElem = document.querySelectorAll('div.language-\\ps');
+  psCodeElem ?
+  psCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = 'PS><br/>';
+    }) : null;
+  }) : null;
+
+    var psadmCodeElem = document.querySelectorAll('div.language-\\psa');
+  psadmCodeElem ?
+  psadmCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = 'PS#<br/>';
+    }) : null;
+  }) : null;
+
+
+  
+
+
+(function() {
+  'use strict';
+
+  if(!document.queryCommandSupported('copy')) {
+    return;
+  }
+
+  function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function() {
+      el.textContent = "Copy";
+    }, 1000);
+  }
+
+  function selectText(node) {
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    return selection;
+  }
+
+  function addCopyButton(containerEl) {
+    var copyBtn = document.createElement("button");
+    copyBtn.className = "highlight-copy-btn";
+    copyBtn.textContent = "Copy";
+
+    var codeEl = containerEl.firstElementChild;
+    copyBtn.addEventListener('click', function() {
+      try {
+        var selection = selectText(codeEl);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+
+        flashCopyMessage(copyBtn, 'Copied!')
+      } catch(e) {
+        console && console.log(e);
+        flashCopyMessage(copyBtn, 'Failed :\'(')
+      }
+    });
+
+   
+   
+    
+   
+    
+    
+  }
+
+  
+  var highlightBlocks = document.getElementsByClassName('highlight');
+  
+  
+  
+  
+  
+  for (var i = 0; i < highlightBlocks.length; i++) {
+  addCopyButton(highlightBlocks[i]);
+}
+})();
+
+</script>
+
+
+
+
+
+<script defer src="/js/helper/getParents.min.js"></script>
+
+<script defer src="/js/helper/closest.min.js"></script>
+
+<script defer src="/js/helper/prev.min.js"></script>
+
+<script defer src="/js/helper/prop.min.js"></script>
+
+<script defer src="/js/helper/fadeinout.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    'use strict';
+    
+    
+    var tables = document.querySelectorAll('.single__contents > table');
+    for (let i = 0; i < tables.length; i++) {
+      var table = tables[i];
+      var wrapper = document.createElement('div');
+      wrapper.className = 'table-wrapper';
+      table.parentElement.replaceChild(wrapper, table);
+      wrapper.appendChild(table);
+    }
+    
+
+
+    
+    
+    
+    var lib = JSON.parse("null");
+
+    if (lib && lib.includes('mermaid')) {
+      var themeVariant = localStorage.getItem('theme') || 'light';
+
+      if (themeVariant === "dark") {
+        mermaid.initialize({ theme: 'dark' });
+      } else {
+        mermaid.initialize({ theme: 'default' });
+      }
+      
+      var mermaids = [];
+      [].push.apply(mermaids, document.getElementsByClassName('language-mermaid'));
+      mermaids.forEach(function(elem) {
+        var elemParentNode = elem.parentNode;
+
+        if (elemParentNode !== document.body) {
+          elemParentNode.parentNode.insertBefore(elem, elemParentNode);
+          elemParentNode.parentNode.removeChild(elemParentNode);
+        }
+
+        var newElemWrapper = document.createElement('div');
+        newElemWrapper.classList.add('mermaid');
+        newElemWrapper.innerHTML = elem.innerHTML;
+        elem.replaceWith(newElemWrapper);
+      });
+    }
+    
+    
+
+    
+    if (lib && lib.includes('katex')) {
+      var mathElements = document.getElementsByClassName('math');
+      var options = {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false }
+        ],
+      };
+
+      renderMathInElement(document.querySelector('.single__contents'), options);
+    }
+    
+
+
+    
+    if (lib && lib.includes('flowchartjs')) {
+      
+      var options = JSON.parse("{\"arrow-end\":\"block\",\"element-color\":\"black\",\"fill\":\"white\",\"flowstate\":{\"approved\":{\"fill\":\"#58C4A3\",\"font-size\":12,\"no-text\":\"n/a\",\"yes-text\":\"APPROVED\"},\"current\":{\"fill\":\"yellow\",\"font-color\":\"red\",\"font-weight\":\"bold\"},\"future\":{\"fill\":\"#FFFF99\"},\"invalid\":{\"fill\":\"#444444\"},\"past\":{\"fill\":\"#CCCCCC\",\"font-size\":12},\"rejected\":{\"fill\":\"#C45879\",\"font-size\":12,\"no-text\":\"REJECTED\",\"yes-text\":\"n/a\"},\"request\":{\"fill\":\"blue\"}},\"font-color\":\"black\",\"font-size\":14,\"line-color\":\"black\",\"line-length\":50,\"line-width\":3,\"no-text\":\"no\",\"scale\":1,\"symbols\":{\"end\":{\"class\":\"end-element\"},\"start\":{\"element-color\":\"green\",\"fill\":\"yellow\",\"font-color\":\"red\"}},\"text-margin\":10,\"x\":0,\"y\":0,\"yes-text\":\"yes\"}");
+      var jsonContent = null;
+
+      var flowchartPrefix = "language-flowchart";
+      var index = 0;
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + flowchartPrefix + "]"), function(x){
+          x.style.display = 'none'
+          x.parentNode.style.backgroundColor = "transparent"
+          jsonContent = x.innerText;
+
+          var node0 = document.createElement('div');
+          node0.id = 'flowchart' + index;
+          x.parentNode.insertBefore(node0, x);
+
+          var diagram = flowchart.parse(jsonContent);
+          diagram.drawSVG("flowchart"+index, options);
+
+          index +=1;
+      });      
+    }
+    
+
+
+    
+    if (lib && lib.includes('chart')) {
+      var borderColor = "#666";
+      var bgColor = "#ddd";
+      var borderWidth = 2;
+
+      Chart.defaults.global.elements.rectangle.borderWidth = borderWidth;
+      Chart.defaults.global.elements.rectangle.borderColor = borderColor;
+      Chart.defaults.global.elements.rectangle.backgroundColor = bgColor;
+
+      Chart.defaults.global.elements.line.borderWidth = borderWidth;
+      Chart.defaults.global.elements.line.borderColor = borderColor;
+      Chart.defaults.global.elements.line.backgroundColor = bgColor;
+
+      Chart.defaults.global.elements.point.borderWidth = borderWidth;
+      Chart.defaults.global.elements.point.borderColor = borderColor;
+      Chart.defaults.global.elements.point.backgroundColor = bgColor;
+
+      var chartPrefix = "language-chart";
+      var index = 0;
+      var jsonContent = null;
+
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + chartPrefix + "]"), function (x) {
+        x.style.display = 'none'
+        x.parentNode.style.backgroundColor = "transparent"
+        jsonContent = x.innerText;
+        var node0 = document.createElement('canvas');
+        var source = null;
+        node0.height = 200;
+        node0.style.height = 200;
+        node0.id = 'myChart' + index;
+        source = JSON.parse(jsonContent);
+        x.parentNode.insertBefore(node0, x);
+        var ctx = document.getElementById('myChart' + index).getContext('2d');
+        var myChart = new Chart(ctx, source);
+        index += 1;
+      });            
+    }
+    
+
+
+    
+    if (lib && lib.includes('viz')) {
+      var vizPrefix = "language-viz-";
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + vizPrefix + "]"), function (x) {
+        x.style.display = 'none'
+        x.parentNode.style.backgroundColor = "transparent"
+        var engine;
+        x.getAttribute("class").split(" ").forEach(function (cls) {
+          if (cls.startsWith(vizPrefix)) {
+            engine = cls.substr(vizPrefix.length);
+          }
+        });
+        var viz = new Viz();
+        viz.renderSVGElement(x.innerText, { engine: engine })
+          .then(function (element) {
+            element.style.width = "100%";
+            x.parentNode.insertBefore(element, x);
+          })
+      });
+    }
+    
+    
+  });
+</script>
+
+<script>
+  var listSide = document.getElementById('list-side');
+  var listMain = document.getElementById('list-main');
+  var singleMenu = document.getElementById('single-menu');
+  var switchElem = document.querySelector('.switch');
+  var wideViewAsDefault = JSON.parse("null");
+  
+  enquire.register("screen and (max-width:1280px)", {
+    match: function () {
+      if (wideViewAsDefault) {
+        singleMenu.className = 'l';  
+        listMain.className = 'mr';
+        listSide.className = 'hide';
+      } else {
+        singleMenu.className = 'l';
+        listMain.className = 'm';
+        listSide.className = 'r';
+      }
+    },
+    unmatch: function () {
+      if (wideViewAsDefault) {
+        singleMenu.className = 'l';
+        listMain.className = 'mr';
+        listSide.className = 'hide';
+      } else {
+        listSide.className = 'r';
+        listMain.className = 'm';
+        singleMenu.className = 'l';
+      }
+    },
+  }).register("screen and (max-width:960px)", {
+    match: function () {
+      singleMenu.className = 'l';
+      listMain.className = 'mr';
+      listSide.className = 'hide';
+      switchElem.className = 'hide';
+    },
+    unmatch: function () {
+      if (wideViewAsDefault) {
+        singleMenu.className = 'l';
+        listMain.className = 'mr';
+        listSide.className = 'hide';
+      } else {
+        singleMenu.className = 'l';
+        listMain.className = 'm';
+        listSide.className = 'r';
+      }
+      switchElem.className = 'switch';
+    },
+  }).register("screen and (max-width:600px)", {
+    match: function () {
+      listSide.className = 'hide';
+      listMain.className = 'lmr';
+      singleMenu.className = 'hide';
+      switchElem.className = 'hide';
+    },
+    unmatch: function () {
+      listSide.className = 'hide';
+      listMain.className = 'mr';
+      singleMenu.className = 'l';
+      switchElem.className = 'hide';
+    },
+  });
+</script>
+
+        
+<div class="bot">
+  <footer class="footer">
+    <div class="divider">
+      <div class="lmr">
+        
+          <p class="caption">
+            ©2021, All Rights Reserved
+          </p>
+          
+              <p class="caption">Powered by <a href="https://gohugo.io/" rel="noreferrer">Hugo</a> and the <a href="https://github.com/zzossig/hugo-theme-zdoc" rel="noreferrer">zDoc theme</a></p>
+          
+        
+      </div>
+    </div>
+  </footer>
+</div>
+
+    </div>
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" 
+        crossorigin="anonymous">
+    </script>
+    <script src="/js/lightbox.js"></script>
+    <link rel="stylesheet" href="/css/lightbox.css">
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BSD on Layer9</title>
+    <link>https://tiagojsilva.github.io/en/unixlike/empty/bsd/</link>
+    <description>Recent content in BSD on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 28 Feb 2020 10:08:56 +0900</lastBuildDate>
+    
+        <atom:link href="https://tiagojsilva.github.io/en/unixlike/empty/bsd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>FreeBSD</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/empty/bsd/freebsd/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/empty/bsd/freebsd/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>OpenBSD</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/empty/bsd/openbsd/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/empty/bsd/openbsd/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Darwin: macOS, iOS</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/empty/bsd/darwin/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/empty/bsd/darwin/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>DragonFly BSD</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/empty/bsd/dragonflybsd/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/empty/bsd/dragonflybsd/</guid>
+        <description>DragonFly BSD One of FreeBSD&amp;rsquo;s original developers decides to go solo due to creative differences.
+Goes crazy making the fastest multiprocessor kernel of any BSD, painfully hacking at Amdahl&amp;rsquo;s Law. 
+He also thinks ZFS is for children, so he&amp;rsquo;s built a replacement called HAMMER, now going on version 2</description>
+      </item>
+      
+    
+  </channel>
+</rss>

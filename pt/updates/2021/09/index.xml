@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2021/09 on Layer9</title>
+    <link>https://tiagojsilva.github.io/pt/updates/2021/09/</link>
+    <description>Recent content in 2021/09 on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    
+        <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/09/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>PKI OpenSSL (pt 1)</title>
+        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</link>
+        <pubDate>Mon, 13 Sep 2021 01:13:41 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</guid>
+        <description>PKI baseada em OpenSSL (parte 1) Fontes:
+https://openssl-ca.readthedocs.io/en/latest/index.html
+https://www.golinuxcloud.com/tutorial-pki-certificates-authority-ocsp/
+https://social.technet.microsoft.com/wiki/contents/articles/2900.offline-root-certification-authority-ca.aspx
+https://pki-tutorial.readthedocs.io/en/latest/index.html
+Root CA airgapped É suposto o sistema que contém a RootCA ser airgapped, ter acesso controlado, e ser ligado apenas para emissão de novas CAs e revogação de CAs comprometidas. Neste exemplo, podemos colocar tudo no mesmo servidor mas deve-se tentar separar o mais possível a estrutura da RootCA das outras CAs.
+O primeiro passo é criar uma Root Certification Authority (RootCA), que só vai criar outras CAs.</description>
+      </item>
+      
+      <item>
+        <title>Comentários nos artigos</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-09-15_site-comments/</link>
+        <pubDate>Wed, 15 Sep 2021 14:19:12 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-09-15_site-comments/</guid>
+        <description>De início não estava a pensar em permitir comentários, mas como o ser humano é um animal social, fui ver se podia configurar um sistema sem ter de inventar muito.
+De início considerei o Disq.us, que vem do origem com o Hugo, mas tem muitas desvantagens.
+O Zdoc tem pré-configurado o Utteranc.es, que tem as vantagens de exigir um registo GitHub (gente que se porta bem, espero eu) e de ficar num repo.</description>
+      </item>
+      
+      <item>
+        <title>Secção Histórico</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-09-04_updates-page/</link>
+        <pubDate>Wed, 08 Sep 2021 11:34:41 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-09-04_updates-page/</guid>
+        <description>O Zdoc tem uma secção &amp;ldquo;Updates&amp;rdquo; (que eu traduzi para &amp;ldquo;Histórico&amp;rdquo;), mas os artigos dentro dela eram criados à mão. Como sou preguiçoso (a pessoa mais preguiçosa do mundo) e não gosto de fazer coisas à mão quando podem ser automatizadas, tentei arranjar maneira de produzir um site index com menos esforço.
+No Wordpress e outras plataformas dinâmicas é facílimo, mas num site estático como o Hugo, as soluções envolviam plugins, NPM, Node.</description>
+      </item>
+      
+      <item>
+        <title>Achievement unlocked: Lightbox</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-09-02_lightbox/</link>
+        <pubDate>Thu, 02 Sep 2021 23:24:10 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-09-02_lightbox/</guid>
+        <description>Uma coisa que me está a irritar no Zdoc é o espaço que se perde com as barras laterais, deixando pouco espaço ao centro para os artigos e tornando as imagens pequenas (sobretudo quando são screenshots widescreen).
+Não percebo o suficiente de HTML para tentar alargar a coluna central (aparte a seta pré-definida acima que alarga a coluna do artigo mas esconde o TOC), mas posso tentar que as imagens sejam mostradas em maior tamanho quando se clica nelas.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

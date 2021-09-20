@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PKI on Layer9</title>
+    <link>https://tiagojsilva.github.io/pt/sec/pki/</link>
+    <description>Recent content in PKI on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sat, 11 Jan 2020 14:09:21 +0900</lastBuildDate>
+    
+        <atom:link href="https://tiagojsilva.github.io/pt/sec/pki/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>PKI OpenSSL (pt 1)</title>
+        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</link>
+        <pubDate>Mon, 13 Sep 2021 01:13:41 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</guid>
+        <description>PKI baseada em OpenSSL (parte 1) Fontes:
+https://openssl-ca.readthedocs.io/en/latest/index.html
+https://www.golinuxcloud.com/tutorial-pki-certificates-authority-ocsp/
+https://social.technet.microsoft.com/wiki/contents/articles/2900.offline-root-certification-authority-ca.aspx
+https://pki-tutorial.readthedocs.io/en/latest/index.html
+Root CA airgapped É suposto o sistema que contém a RootCA ser airgapped, ter acesso controlado, e ser ligado apenas para emissão de novas CAs e revogação de CAs comprometidas. Neste exemplo, podemos colocar tudo no mesmo servidor mas deve-se tentar separar o mais possível a estrutura da RootCA das outras CAs.
+O primeiro passo é criar uma Root Certification Authority (RootCA), que só vai criar outras CAs.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simulação on Layer9</title>
+    <link>https://tiagojsilva.github.io/pt/networking/simul/</link>
+    <description>Recent content in Simulação on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 28 Feb 2020 10:08:56 +0900</lastBuildDate>
+    
+        <atom:link href="https://tiagojsilva.github.io/pt/networking/simul/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Simulação de router Cisco e Huawei </title>
+        <link>https://tiagojsilva.github.io/pt/networking/simul/gns3-ensp/</link>
+        <pubDate>Mon, 30 Aug 2021 03:10:41 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/networking/simul/gns3-ensp/</guid>
+        <description>Uma vez precisei de tentar simular uma rede heterogénea, com um router Cisco e um Huawei.
+Não foi fácil, porque o IOS não está disponível publicamente e o simulador da Huawei, o eNSP, está descontinuado e só funciona em VirtualBox 5.
+Para fazer esta simulação, é necessário um CPU que suporte VM nesting (Second-Level Address Translation - SLAT)
+VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPUs e 4 interfaces de rede.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

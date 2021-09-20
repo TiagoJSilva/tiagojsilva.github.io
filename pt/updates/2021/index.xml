@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2021 on Layer9</title>
+    <link>https://tiagojsilva.github.io/pt/updates/2021/</link>
+    <description>Recent content in 2021 on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 15 Sep 2021 14:19:12 +0100</lastBuildDate>
+    
+        <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>PKI OpenSSL (pt 1)</title>
+        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</link>
+        <pubDate>Mon, 13 Sep 2021 01:13:41 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</guid>
+        <description>PKI baseada em OpenSSL (parte 1) Fontes:
+https://openssl-ca.readthedocs.io/en/latest/index.html
+https://www.golinuxcloud.com/tutorial-pki-certificates-authority-ocsp/
+https://social.technet.microsoft.com/wiki/contents/articles/2900.offline-root-certification-authority-ca.aspx
+https://pki-tutorial.readthedocs.io/en/latest/index.html
+Root CA airgapped É suposto o sistema que contém a RootCA ser airgapped, ter acesso controlado, e ser ligado apenas para emissão de novas CAs e revogação de CAs comprometidas. Neste exemplo, podemos colocar tudo no mesmo servidor mas deve-se tentar separar o mais possível a estrutura da RootCA das outras CAs.
+O primeiro passo é criar uma Root Certification Authority (RootCA), que só vai criar outras CAs.</description>
+      </item>
+      
+      <item>
+        <title>Simulação de router Cisco e Huawei </title>
+        <link>https://tiagojsilva.github.io/pt/networking/simul/gns3-ensp/</link>
+        <pubDate>Mon, 30 Aug 2021 03:10:41 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/networking/simul/gns3-ensp/</guid>
+        <description>Uma vez precisei de tentar simular uma rede heterogénea, com um router Cisco e um Huawei.
+Não foi fácil, porque o IOS não está disponível publicamente e o simulador da Huawei, o eNSP, está descontinuado e só funciona em VirtualBox 5.
+Para fazer esta simulação, é necessário um CPU que suporte VM nesting (Second-Level Address Translation - SLAT)
+VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPUs e 4 interfaces de rede.</description>
+      </item>
+      
+      <item>
+        <title>Comentários nos artigos</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-09-15_site-comments/</link>
+        <pubDate>Wed, 15 Sep 2021 14:19:12 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-09-15_site-comments/</guid>
+        <description>De início não estava a pensar em permitir comentários, mas como o ser humano é um animal social, fui ver se podia configurar um sistema sem ter de inventar muito.
+De início considerei o Disq.us, que vem do origem com o Hugo, mas tem muitas desvantagens.
+O Zdoc tem pré-configurado o Utteranc.es, que tem as vantagens de exigir um registo GitHub (gente que se porta bem, espero eu) e de ficar num repo.</description>
+      </item>
+      
+      <item>
+        <title>Secção Histórico</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-09-04_updates-page/</link>
+        <pubDate>Wed, 08 Sep 2021 11:34:41 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-09-04_updates-page/</guid>
+        <description>O Zdoc tem uma secção &amp;ldquo;Updates&amp;rdquo; (que eu traduzi para &amp;ldquo;Histórico&amp;rdquo;), mas os artigos dentro dela eram criados à mão. Como sou preguiçoso (a pessoa mais preguiçosa do mundo) e não gosto de fazer coisas à mão quando podem ser automatizadas, tentei arranjar maneira de produzir um site index com menos esforço.
+No Wordpress e outras plataformas dinâmicas é facílimo, mas num site estático como o Hugo, as soluções envolviam plugins, NPM, Node.</description>
+      </item>
+      
+      <item>
+        <title>Achievement unlocked: Lightbox</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-09-02_lightbox/</link>
+        <pubDate>Thu, 02 Sep 2021 23:24:10 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-09-02_lightbox/</guid>
+        <description>Uma coisa que me está a irritar no Zdoc é o espaço que se perde com as barras laterais, deixando pouco espaço ao centro para os artigos e tornando as imagens pequenas (sobretudo quando são screenshots widescreen).
+Não percebo o suficiente de HTML para tentar alargar a coluna central (aparte a seta pré-definida acima que alarga a coluna do artigo mas esconde o TOC), mas posso tentar que as imagens sejam mostradas em maior tamanho quando se clica nelas.</description>
+      </item>
+      
+      <item>
+        <title>Actividade Agosto 2021</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-08-28_site-update/</link>
+        <pubDate>Sat, 28 Aug 2021 19:08:10 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-08-28_site-update/</guid>
+        <description>Pois, tenho mexido aqui nalgumas coisas nos bastidores:
+Alterações no tema Eu queria usar um tema Hugo para documentação (documentos estruturados), se possível com um blog associado para conteúdo menos estruturado.
+Queria que tivesse (sem ordem de importância):
+ Tema claro / escuro Multilíngua (i18n) Várias secções independentes Capacidade de incluir nas caixas de código tanto números de linha como prompts fora do texto, para que fossem ignorados ao copiar o conteúdo da caixa Ter caixas de saída de comandos com formatação distinta  Só encontrei este tema, o Zdoc, que tinha uma grande parte das coisas que queria (o Docz parece estar a evoluir como uma alternativa), mas ainda lhe falta muita coisa:</description>
+      </item>
+      
+      <item>
+        <title>Dotfiles</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/dotfiles/</link>
+        <pubDate>Sun, 15 Aug 2021 14:25:08 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/dotfiles/</guid>
+        <description>Dotfiles para Linux Tenho acumulando configurações que me facilitam a vida ou que me resolvem pequenos problemas irritantes.
+Publicar esses ficheiros aqui permite-me descarregá-los e instalá-los em qualquer nova conta que eu crie num sistema Linux.
+O URL para descarregar será https://tiagojsilva.github.io/unix/dotfiles/ficheiro
+Existe um arquivo TAR com todos os ficheiros; para os instalar a todos na sua pasta pessoal (~), usar o comando
+1  wget -O- https://tiagojsilva.github.io/unix/dotfiles/dotfiles.tar | tar -xvf- -C ~   .</description>
+      </item>
+      
+      <item>
+        <title>Hello World</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-08-09_hello-world/</link>
+        <pubDate>Mon, 09 Aug 2021 22:16:15 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-08-09_hello-world/</guid>
+        <description>Sentem-se, e estejam à vontade.
+Tenho tido a sorte de fazer dos meus gostos profissão; em novo, tive de escolher um deles (Som para Cinema), mas as voltas da vida levaram-me a abraçar um outro gosto, as TI, Mesmo que no final de contas tenha voltado à casa de partida, não dei o meu tempo como perdido; tive óptimos professores e colegas e aprendi imensas coisas que sempre quis saber</description>
+      </item>
+      
+    
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Languages on Layer9</title>
+    <link>https://tiagojsilva.github.io/en/dev/_empty/lang/</link>
+    <description>Recent content in Languages on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 28 Feb 2020 10:08:56 +0900</lastBuildDate>
+    
+        <atom:link href="https://tiagojsilva.github.io/en/dev/_empty/lang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Python</title>
+        <link>https://tiagojsilva.github.io/en/dev/_empty/lang/python/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/dev/_empty/lang/python/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Rust</title>
+        <link>https://tiagojsilva.github.io/en/dev/_empty/lang/rust/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/dev/_empty/lang/rust/</guid>
+        <description></description>
+      </item>
+      
+    
+  </channel>
+</rss>

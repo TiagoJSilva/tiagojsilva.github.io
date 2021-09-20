@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BSD on Layer9</title>
+    <link>https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/</link>
+    <description>Recent content in BSD on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 28 Feb 2020 10:08:56 +0900</lastBuildDate>
+    
+        <atom:link href="https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Darwin: macOS, iOS</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/darwin/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/darwin/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>DragonFly BSD</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/dragonflybsd/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/dragonflybsd/</guid>
+        <description>DragonFly BSD Um dos programadores originais do FreeBSD decide por uma carreira a solo devido a diferenças criativas.
+Fecha-se num quarto criando o kernel mais rápido de qualquer BSD em multiprocessamento, raspando a Lei de Amdahl até fazer sangue. 
+Também acha que o ZFS é para meninos, pro isso fez uma alternativa chamada HAMMER, agora a caminho da versão 2</description>
+      </item>
+      
+      <item>
+        <title>FreeBSD</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/freebsd/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/freebsd/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>OpenBSD</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/openbsd/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/openbsd/</guid>
+        <description></description>
+      </item>
+      
+    
+  </channel>
+</rss>

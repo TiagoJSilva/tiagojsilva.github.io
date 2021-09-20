@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>*nix on Layer9</title>
+    <link>https://tiagojsilva.github.io/en/unixlike/</link>
+    <description>Recent content in *nix on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sat, 11 Jan 2020 14:09:21 +0900</lastBuildDate>
+    
+        <atom:link href="https://tiagojsilva.github.io/en/unixlike/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Dotfiles</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/dotfiles/</link>
+        <pubDate>Sun, 15 Aug 2021 14:25:08 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/dotfiles/</guid>
+        <description>Linux Dotfiles I&amp;rsquo;ve been gathering settings that make my life easier by solving little nagging problems and papercuts.
+Publishing those files here allows me to download them wherever I create a new user account.
+The URL for downloading will be https://tiagojsilva.github.io/unix/dotfiles/file
+There&amp;rsquo;s a TAR archive of all the files, which you can install right in your home folder (~) with:
+1  wget -O- https://tiagojsilva.github.io/unix/dotfiles/dotfiles.tar | tar -xvf- -C ~   .</description>
+      </item>
+      
+    
+  </channel>
+</rss>
