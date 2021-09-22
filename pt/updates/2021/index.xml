@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 15 Sep 2021 14:19:12 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 22 Sep 2021 00:54:14 +0100</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/index.xml" rel="self" type="application/rss+xml" />
     
@@ -39,6 +39,19 @@ O primeiro passo é criar uma Root Certification Authority (RootCA), que só vai
 Não foi fácil, porque o IOS não está disponível publicamente e o simulador da Huawei, o eNSP, está descontinuado e só funciona em VirtualBox 5.
 Para fazer esta simulação, é necessário um CPU que suporte VM nesting (Second-Level Address Translation - SLAT)
 VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPUs e 4 interfaces de rede.</description>
+      </item>
+      
+      <item>
+        <title>Workflow dos artigos</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-09-22_workflow/</link>
+        <pubDate>Wed, 22 Sep 2021 00:54:14 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-09-22_workflow/</guid>
+        <description>O workflow que uso para produzir os artigos é uma jiga-joga que inventei p&amp;rsquo;raqui. Para variar&amp;hellip;
+Começo por escrever em Microsoft Word, porque estou habituado assim e tenho algum conteúdo em Word que quero converter para o site.
+Depois converto o DOCX para MarkDown com o Pandoc
+pandoc -f docx -t gfm --wrap=none --extract-media images\&amp;lt;secção&amp;gt;\&amp;lt;artigo&amp;gt; -o artigo.md .\artigo.docxAs vantagens de usar o Pandoc são muitas:
+ Converte a formatação Negrito, Itálico e Negrito-Itálico nos equivalentes MarkDown Converte links nos equivalentes MarkDown sem &amp;ldquo;escapar&amp;rdquo; os caracteres dos links que o MarkDown não permite.</description>
       </item>
       
       <item>

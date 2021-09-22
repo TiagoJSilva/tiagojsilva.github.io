@@ -41,6 +41,18 @@ Simulation VM Create a Windows 7-based VM, with 4GB of RAM, 2 vCPUS and 4 networ
       </item>
       
       <item>
+        <title>Article Workflow</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-09-22_workflow/</link>
+        <pubDate>Wed, 22 Sep 2021 00:54:14 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-09-22_workflow/</guid>
+        <description>The workflow I use to make these articles is a jury-rigged hairball of a hack (did you expect anything else?)
+I start by writing in Microsoft Word, because I&amp;rsquo;m used to it and I have some content in Word format that I want to bring to the site.
+Then I convert the DOCX to MarkDown with Pandoc
+pandoc -f docx -t gfm --wrap=none --extract-media images\&amp;lt;section&amp;gt;\&amp;lt;article&amp;gt; -o article.md .\article.docxThe advantages of using Pandoc are many:</description>
+      </item>
+      
+      <item>
         <title>Article comments</title>
         <link>https://tiagojsilva.github.io/en/blog/2021-09-15_site-comments/</link>
         <pubDate>Wed, 15 Sep 2021 14:19:12 +0100</pubDate>

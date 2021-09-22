@@ -394,7 +394,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2021/</loc>
-    <lastmod>2021-09-20T01:13:41+01:00</lastmod>
+    <lastmod>2021-09-22T00:54:14+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -404,6 +404,36 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/updates/2021/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/blog/2021-09-22_workflow/</loc>
+    <lastmod>2021-09-22T00:54:14+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/2021-09-22_workflow/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/2021-09-22_workflow/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/blog/</loc>
+    <lastmod>2021-09-22T00:54:14+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/"
                 />
   </url>
   
@@ -419,21 +449,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/blog/2021-09-15_site-comments/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://tiagojsilva.github.io/en/blog/</loc>
-    <lastmod>2021-09-15T14:19:12+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://tiagojsilva.github.io/pt/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiagojsilva.github.io/en/blog/"
                 />
   </url>
   
