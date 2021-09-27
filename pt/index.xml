@@ -42,6 +42,15 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
       </item>
       
       <item>
+        <title>PKI OpenSSL (pt 2)</title>
+        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</link>
+        <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</guid>
+        <description>OpenSSL PKI (parte 2) - IntermediateCA Criar uma IntermediateCA Mais uma vez, a(s) IntermediateCA(s) devem estar alojadas num sistema separado (server) daquele que aloja a RootCA, e o sistema da RootCA (root) deve estar airgapped e desligado da corrente. No sistema online não me parece má ideia manter as CAs secundárias debaixo de /root/ca, o que permite colocar o certificado da RootCA no mesmo caminho (/root/ca/certs/ca.cert.pem). No entanto, esta é a única informação da RootCA que é necessário trazer para o host da(s) CA(s) secundária(s); é debatível se vale a pena trazer o CRL da RootCA em formato PEM e colocá-lo em /root/ca/crl/ca.</description>
+      </item>
+      
+      <item>
         <title>Workflow dos artigos</title>
         <link>https://tiagojsilva.github.io/pt/blog/2021-09-22_workflow/</link>
         <pubDate>Wed, 22 Sep 2021 00:54:14 +0100</pubDate>
