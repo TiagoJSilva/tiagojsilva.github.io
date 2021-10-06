@@ -1778,7 +1778,7 @@ cp ca.crl.pem /root/ca/crl/
 mkdir /root/ca/csr
 </code></pre></td></tr></table>
 </div>
-</div><p>We create the complete folder tree that is needed to support the IntermediateCA&rsquo;s operations:</p>
+</div><p>Create the complete folder tree that is needed to support the IntermediateCA&rsquo;s operations:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -1797,7 +1797,7 @@ echo 1000 &gt; $inter/serial
 echo 1000 &gt; $inter/crlnumber
 </code></pre></td></tr></table>
 </div>
-</div><p>We create the configuration file for the InterCA:</p>
+</div><p>Create the configuration file for the InterCA:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -1972,7 +1972,7 @@ To avoid having to create separate configuration files for each certificate that
 copy_extensions = copy
 </code></pre><p>Note that since this IntermediateCA is more dynamic than the RootCA, its CRL&rsquo;s validity should not be greater than 30 days; I&rsquo;d advise you to set up a periodic task that refreshes the CRL every 29 days.</p>
 <pre><code>default_crl_days  = 30
-</code></pre><p>We generate a complex password for the InterCA:</p>
+</code></pre><p>Generate a complex password for the InterCA:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2010,7 +2010,7 @@ e is 65537 (0x010001)
 <pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt"># chmod 400 $inter-ca/private/inter-ca.key.pem
 </code></pre></td></tr></table>
 </div>
-</div><p>We create the <em><strong>Certificate Signing Request</strong></em> that will be signed by the RootCA (notice that it is placed on the <code>csr</code> folder of the RootCA):</p>
+</div><p>Create the <em><strong>Certificate Signing Request</strong></em> that will be signed by the RootCA (notice that it is placed on the <code>csr</code> folder of the RootCA):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2044,7 +2044,7 @@ Email Address [bofh@tjs.lan]
 
 </pre>
 <h2 id="sign-the-csr-with-the-rootca">Sign the CSR with the RootCA</h2>
-<p>We return to the offline system of the RootCA and add some folder for the IntermediateCA.<br />
+<p>Go back to the offline system of the RootCA and add some folder for the IntermediateCA.<br />
 As it will only support the creation of the InterCA(s) and not its operation, it is much simpler:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2058,7 +2058,7 @@ mkdir $inter/certs
 chmod 740 $inter/certs
 </code></pre></td></tr></table>
 </div>
-</div><p>We bring in from the online system the IntermediateCA&rsquo;s CSR, which we place on the same path where it was (the RootCA&rsquo;s <code>csr</code> folder):</p>
+</div><p>Bring in from the online system the IntermediateCA&rsquo;s CSR, which we place on the same path where it was (the RootCA&rsquo;s <code>csr</code> folder):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2070,7 +2070,7 @@ chmod 740 $inter/certs
 </div><p>To make sure that the CDL and/or AIA information of the RootCA is passed to the IntermediateCA, we add this directive to the <code>[ CA_default ]</code> section on <code>/root/ca/openssl.cnf</code></p>
 <pre><code># copy extensions missing from the CSR to the final certificate
 copy_extensions = copy
-</code></pre><p>Now we sign the CSR; notice that we specify the extension from <code>/root/ca/openssl.cnf</code> to be used is <code>[ v3_intermediate_ca ]</code>!</p>
+</code></pre><p>Sign the CSR; notice that we specify the extension from <code>/root/ca/openssl.cnf</code> to be used is <code>[ v3_intermediate_ca ]</code>!</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2141,7 +2141,7 @@ We check the signing:</p>
 /root/ca/inter-ca/certs/inter-ca.cert.pem: OK
 
 </pre><br />
-We create a certificate for the <strong>Chain of Authority</strong> with a <em><strong>Chain</strong></em> certificate (also called <em><strong>Bundle</strong></em>), by concatenating the certificates in ascending order - the latter will be the RootCA or the nearest to it.</p>
+Create a certificate for the <strong>Chain of Authority</strong> with a <em><strong>Chain</strong></em> certificate (also called <em><strong>Bundle</strong></em>), by concatenating the certificates in ascending order - the latter will be the RootCA or the nearest to it.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2440,7 +2440,7 @@ OCSP Response Data:
 
 </pre>
 <h3 id="set-the-ocsp-responder-up-as-a-permanent-service">Set the OCSP Responder up as a permanent service</h3>
-<p>If your distri uses <em><strong>systemd</strong></em>, create a <em><strong>Service Unit</strong></em> (other <em>inits</em> have their own ways)</p>
+<p>If your distribution uses <em><strong>systemd</strong></em>, create a <em><strong>Service Unit</strong></em> (other <em>inits</em> have their own ways)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2473,7 +2473,7 @@ WantedBy = multi-user.target
 <pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt"># systemctl daemon-reload
 </code></pre></td></tr></table>
 </div>
-</div><p>Testar o serviço:</p>
+</div><p>Test the service:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
