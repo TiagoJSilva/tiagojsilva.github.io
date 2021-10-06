@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 22 Sep 2021 00:54:14 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 03 Oct 2021 18:19:10 +0100</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/en/updates/2021/index.xml" rel="self" type="application/rss+xml" />
     
@@ -38,6 +38,15 @@ An airgapped Root CA The system that contains the RootCA is supposed to be airga
 It wasn&amp;rsquo;t easy because IOS is not publicly available and the Huawei simulator, eNSP, is discontinued and only works on VirtualBox 5.
 To make this simulation, a CPU that supports VM nesting (Second-Level Address Translation - SLAT) is required.
 Simulation VM Create a Windows 7-based VM, with 4GB of RAM, 2 vCPUS and 4 network interfaces.</description>
+      </item>
+      
+      <item>
+        <title>PKI OpenSSL (pt 2)</title>
+        <link>https://tiagojsilva.github.io/en/sec/pki/opensslpki_2/</link>
+        <pubDate>Sun, 03 Oct 2021 18:19:10 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/sec/pki/opensslpki_2/</guid>
+        <description>OpenSSL PKI (parte 2) - IntermediateCA Creating an IntermediateCA Once again, the intermediateCA(s) must be hosted in a separate system (server) from that which hosts the RootCA, and the RootCA&amp;rsquo;s system (root) should be airgapped and offline. In the online system I don&amp;rsquo;t think it&amp;rsquo;s a bad idea to keep the secondary CAs under /root/ca, which allows the placing the RootCA&amp;rsquo;s certificate on the same path (/root/ca/certs/ca.cert.pem). However, this is the only information from the RootCA that needs to be brought to the online world where the secondary CAs reside; it is even debatable if it is worth bringing the RootCA&amp;rsquo;s CRL in PEM format and putting it in /root/ca/crl/ca.</description>
       </item>
       
       <item>

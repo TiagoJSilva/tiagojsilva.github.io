@@ -163,8 +163,18 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/_empty/meme/</loc>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/meme/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/meme/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/meme/"
+                />
   </url>
   
   <url>
@@ -183,17 +193,17 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/pt/networking/_empty/protocols/</loc>
+    <loc>https://tiagojsilva.github.io/pt/networking/protocols/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://tiagojsilva.github.io/en/networking/_empty/protocols/"
+                href="https://tiagojsilva.github.io/en/networking/protocols/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://tiagojsilva.github.io/pt/networking/_empty/protocols/"
+                href="https://tiagojsilva.github.io/pt/networking/protocols/"
                 />
   </url>
   
@@ -335,11 +345,31 @@
   <url>
     <loc>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/sec/pki/opensslpki_2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/"
+                />
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/_empty/meme/arch_manjaro/</loc>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/"
+                />
   </url>
   
   <url>
@@ -363,8 +393,18 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/_empty/meme/gentoo/</loc>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/meme/gentoo/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/meme/gentoo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/meme/gentoo/"
+                />
   </url>
   
   <url>

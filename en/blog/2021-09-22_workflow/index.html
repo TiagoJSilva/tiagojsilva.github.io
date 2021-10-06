@@ -1781,16 +1781,16 @@ Then I convert the DOCX to MarkDown with <a href="https://pandoc.org/" target="_
 <p>The .MD is opened in <a href="https://notepad-plus-plus.org" target="_blank">Notepad++</a> to:</p>
 <ul>
 <li>Remove the blank lines that are inserted between each line</li>
-<li>Search and Replace (<em>shortcodes</em>, paths / and not , and others)</li>
+<li>Search and Replace (<em>shortcodes</em>, paths with / and not \, and others)</li>
 </ul>
 <p>I create the article in Hugo:</p>
 <pre><code>hugo new content\pt\&lt;section&gt;\&lt;article&gt;.md
-</code></pre><p>I edit the FrontMatter and copy the text from Notepad++ to the new .MD<br />
+</code></pre><p>Then I edit the FrontMatter and copy the text from Notepad++ to the new .MD<br />
 The images are copied to <code>&lt;site&gt;/static/images/&lt;section&gt;/&lt;article&gt;/</code><br />
 The local Hugo is started:</p>
 <pre><code>hugo server --buildFuture
-</code></pre><p>I make the necessary adjustments in Vscode, where I have a <em>workspace</em> for the <em>site</em>.<br />
-The English translation is helped by a VSCode extension, <a href="https://github.com/funkyremi/vscode-google-translate.git" target="_blank">funkyremi.VScode Google Translate</a>, where I put in the preferences that I want to always translate from Portuguese to English. <br />
+</code></pre><p>I make the necessary adjustments in VScode, where I have a <em>workspace</em> for the site.<br />
+The English translation is assisted by a VSCode extension, <a href="https://github.com/funkyremi/vscode-google-translate.git" target="_blank">funkyremi.VScode Google Translate</a>, where I put in the preferences that I want to always translate from Portuguese to English. <br />
 I copy the file <code>&lt;article&gt;.MD</code> to the same place under <code>&lt;site&gt;/content/en/</code>, open it side-by-side with the Portuguese version (preferably on a second monitor, because it&rsquo;s easy to confuse the two mid-translation), select the text I want to translate while avoiding technical terms, <code>Alt-Shift-T</code> and that&rsquo;s it; it&rsquo;s not perfect and lots of touching up is necessary, but it saves <em><strong>a lot</strong></em> of work.</p>
 
   </article>

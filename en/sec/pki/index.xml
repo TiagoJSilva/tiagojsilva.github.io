@@ -28,6 +28,15 @@ https://pki-tutorial.readthedocs.io/en/latest/index.html
 An airgapped Root CA The system that contains the RootCA is supposed to be airgapped, to be under controlled access, and to be used only for the emission of new CAs and revocation of compromised CAs. In this example, we can put everything on the same server, but one should try to separate the RootCA from the other CAs as much as possible.</description>
       </item>
       
+      <item>
+        <title>PKI OpenSSL (pt 2)</title>
+        <link>https://tiagojsilva.github.io/en/sec/pki/opensslpki_2/</link>
+        <pubDate>Sun, 03 Oct 2021 18:19:10 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/sec/pki/opensslpki_2/</guid>
+        <description>OpenSSL PKI (parte 2) - IntermediateCA Creating an IntermediateCA Once again, the intermediateCA(s) must be hosted in a separate system (server) from that which hosts the RootCA, and the RootCA&amp;rsquo;s system (root) should be airgapped and offline. In the online system I don&amp;rsquo;t think it&amp;rsquo;s a bad idea to keep the secondary CAs under /root/ca, which allows the placing the RootCA&amp;rsquo;s certificate on the same path (/root/ca/certs/ca.cert.pem). However, this is the only information from the RootCA that needs to be brought to the online world where the secondary CAs reside; it is even debatable if it is worth bringing the RootCA&amp;rsquo;s CRL in PEM format and putting it in /root/ca/crl/ca.</description>
+      </item>
+      
     
   </channel>
 </rss>
