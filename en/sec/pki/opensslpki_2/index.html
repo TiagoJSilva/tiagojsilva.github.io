@@ -1758,7 +1758,7 @@
   
 
   <article class="single__contents" data-dir="ltr">
-    <h1 id="openssl-pki-parte-2---intermediateca">OpenSSL PKI (parte 2) - IntermediateCA</h1>
+    <h1 id="openssl-pki-part-2---intermediateca">OpenSSL PKI (part 2) - IntermediateCA</h1>
 <h2 id="creating-an-intermediateca">Creating an IntermediateCA</h2>
 <p>Once again, the intermediateCA(s) must be hosted in a separate system (<em><strong>server</strong></em>) from that which hosts the RootCA, and the RootCA&rsquo;s system (<em><strong>root</strong></em>) should be airgapped and offline. <br />
 In the online system I don&rsquo;t think it&rsquo;s a bad idea to keep the secondary CAs under <code>/root/ca</code>, which allows the placing the RootCA&rsquo;s certificate on the same path (<code>/root/ca/certs/ca.cert.pem</code>). However, this is the only  information from the RootCA that needs to be brought to the online world where the secondary CAs reside; it is even debatable if it is worth bringing the RootCA&rsquo;s CRL in PEM format and putting it in <code>/root/ca/crl/ca.crl.pem</code>.</p>
