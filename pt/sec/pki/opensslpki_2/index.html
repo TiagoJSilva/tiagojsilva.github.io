@@ -2234,7 +2234,7 @@ DNS.1 = ocsp.tjs.lan
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">openssl req -noout -text -in /root/ca/inter-ca/csr/ocsp.tjs.lan.csr.pem | \
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">openssl req -noout -text -in /root/ca/inter-ca/csr/ocsp.tjs.lan.csr.pem | \
     grep -A 1 &#34;Subject Alternative Name&#34;
 </code></pre></td></tr></table>
 </div>
@@ -2305,7 +2305,7 @@ Confirmar que o certificado tem a extensão OCSP:</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">openssl x509 -noout -text -in /root/ca/inter-ca/certs/ocsp.tjs.lan.cert.pem | \
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">openssl x509 -noout -text -in /root/ca/inter-ca/certs/ocsp.tjs.lan.cert.pem | \
     grep -A1 X509v3
 </code></pre></td></tr></table>
 </div>
@@ -2350,7 +2350,7 @@ Confirmar que o certificado tem a extensão OCSP:</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">openssl ocsp -index /root/ca/inter-ca/index.txt -port 7888 -text \
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">openssl ocsp -index /root/ca/inter-ca/index.txt -port 7888 -text \
     -CA /root/ca/inter-ca/certs/inter-ca_chain.cert.pem \
     -rkey /root/ca/inter-ca/private/ocsp.tjs.lan.key.pem \
     -rsigner /root/ca/inter-ca/certs/ocsp.tjs.lan.cert.pem \
@@ -2369,7 +2369,7 @@ Abrir a porta na <em>firewall</em> se esta estiver activa</p>
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">ufw allow 7888
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">ufw allow 7888
 </code></pre></td></tr></table>
 </div>
 </div><p>Fazer uma pergunta ao Responder (usando o certificado emitido para o OCSP, ou outro):</p>
@@ -2402,7 +2402,7 @@ Verificamos o que aconteceu na comunicação com o OCSP:</p>
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">head -30 /root/ca/inter-ca/ocsp-log.txt
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">head -30 /root/ca/inter-ca/ocsp-log.txt
 </code></pre></td></tr></table>
 </div>
 </div><pre style="font-style: italic; font-size: 0.79rem">
