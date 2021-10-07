@@ -1990,7 +1990,7 @@ chmod 400 $inter/private/inter-ca.key.pass
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt"># openssl genrsa -aes256 -passout file:$inter/private/inter-ca.key.pass \
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">openssl genrsa -aes256 -passout file:$inter/private/inter-ca.key.pass \
     -out $inter/private/inter-ca.key.pem 8192
 </code></pre></td></tr></table>
 </div>
@@ -2019,7 +2019,7 @@ e is 65537 (0x010001)
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt"># openssl req -config $inter/openssl.cnf -new -sha512 \
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">openssl req -config $inter/openssl.cnf -new -sha512 \
 	-passin file:$inter/private/inter-ca.key.pass \
     -key $inter/private/inter-ca.key.pem \
     -out /root/ca/csr/inter-ca.csr.pem
@@ -2176,7 +2176,7 @@ chmod 444 $inter/certs/inter-ca_chain.cert.pem
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">openssl genrsa -out /root/ca/inter-ca/private/ocsp.tjs.lan.key.pem 4096
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">openssl genrsa -out /root/ca/inter-ca/private/ocsp.tjs.lan.key.pem 4096
 </code></pre></td></tr></table>
 </div>
 </div><p><pre style="font-style: italic; font-size: 0.79rem">
@@ -2193,7 +2193,7 @@ Precisamos de inserir no CSR Informação <strong>SAN</strong> (<em><strong>Subj
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">cat &gt; /root/ca/inter-ca/san/ocsp.tjs.lan-san.cnf
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">cat &gt; /root/ca/inter-ca/san/ocsp.tjs.lan-san.cnf
 </code></pre></td></tr></table>
 </div>
 </div><pre><code>[req]
@@ -2222,7 +2222,7 @@ DNS.1 = ocsp.tjs.lan
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">openssl req -config /root/ca/inter-ca/san/ocsp.tjs.lan-san.cnf -new -sha512 \
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">openssl req -config /root/ca/inter-ca/san/ocsp.tjs.lan-san.cnf -new -sha512 \
       -key /root/ca/inter-ca/private/ocsp.tjs.lan.key.pem \
       -out /root/ca/inter-ca/csr/ocsp.tjs.lan.csr.pem
 </code></pre></td></tr></table>
@@ -2234,8 +2234,8 @@ DNS.1 = ocsp.tjs.lan
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt"># openssl req -noout -text -in /root/ca/inter-ca/csr/ocsp.tjs.lan.csr.pem | \
-grep -A 1 &#34;Subject Alternative Name&#34;
+<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">openssl req -noout -text -in /root/ca/inter-ca/csr/ocsp.tjs.lan.csr.pem | \
+    grep -A 1 &#34;Subject Alternative Name&#34;
 </code></pre></td></tr></table>
 </div>
 </div><p><pre style="font-style: italic; font-size: 0.79rem">
@@ -2254,7 +2254,7 @@ Assinar o CSR com <em><code>-extensions ocsp</code></em>:</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">openssl ca -config /root/ca/inter-ca/openssl.cnf \
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">openssl ca -config /root/ca/inter-ca/openssl.cnf \
     -extensions ocsp -days 823 -notext -md sha512 \
     -passin file:/root/ca/inter-ca/private/inter-ca.key.pass \
     -in /root/ca/inter-ca/csr/ocsp.tjs.lan.csr.pem \
@@ -2306,7 +2306,7 @@ Confirmar que o certificado tem a extensão OCSP:</p>
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">openssl x509 -noout -text -in /root/ca/inter-ca/certs/ocsp.tjs.lan.cert.pem | \
-grep -A1 X509v3
+    grep -A1 X509v3
 </code></pre></td></tr></table>
 </div>
 </div><pre style="font-style: italic; font-size: 0.79rem">
@@ -2330,7 +2330,7 @@ grep -A1 X509v3
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">chmod 400 $inter/certs/ocsp.tjs.lan.cert.pem 
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">chmod 400 $inter/certs/ocsp.tjs.lan.cert.pem 
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="criar-um-ocsp-responder-no-openssl-não-usar-em-produção">Criar um <em>OCSP Responder</em> no OpenSSL (não usar em produção)</h3>
@@ -2381,7 +2381,7 @@ Abrir a porta na <em>firewall</em> se esta estiver activa</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">openssl ocsp -CAfile /root/ca/inter-ca/certs/ca-chain.cert.pem \
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">openssl ocsp -CAfile /root/ca/inter-ca/certs/ca-chain.cert.pem \
       -url http://127.0.0.1:7888 -resp_text \
       -issuer /root/ca/inter-ca/certs/inter-ca.cert.pem \
       -cert /root/ca/inter-ca/certs/ocsp.tjs.lan.cert.pem
@@ -2402,7 +2402,7 @@ Verificamos o que aconteceu na comunicação com o OCSP:</p>
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt"># head -30 /root/ca/inter-ca/ocsp-log.txt
+<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">head -30 /root/ca/inter-ca/ocsp-log.txt
 </code></pre></td></tr></table>
 </div>
 </div><pre style="font-style: italic; font-size: 0.79rem">
@@ -2446,7 +2446,7 @@ OCSP Response Data:
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:.server.txt" data-lang="#:.server.txt">cat &gt; /etc/systemd/system/ocsp-responder_inter-ca.service
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">cat &gt; /etc/systemd/system/ocsp-responder_inter-ca.service
 </code></pre></td></tr></table>
 </div>
 </div><pre><code>[Unit]
@@ -2470,7 +2470,7 @@ WantedBy = multi-user.target
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt"># systemctl daemon-reload
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">systemctl daemon-reload
 </code></pre></td></tr></table>
 </div>
 </div><p>Testar o serviço:</p>
@@ -2480,8 +2480,8 @@ WantedBy = multi-user.target
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt"># systemctl start ocsp-responder_inter-ca
-# systemctl status ocsp-responder_inter-ca
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">systemctl start ocsp-responder_inter-ca
+systemctl status ocsp-responder_inter-ca
 </code></pre></td></tr></table>
 </div>
 </div><pre style="font-style: italic; font-size: 0.79rem">
@@ -2515,7 +2515,7 @@ Aug 23 00:21:27 debian openssl[2585]: ocsp: waiting for OCSP client connections.
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt"># systemctl enable ocsp-responder_inter-ca
+<pre class="chroma"><code class="language-#:server.txt" data-lang="#:server.txt">systemctl enable ocsp-responder_inter-ca
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="outras-cas">Outras CAs</h2>
