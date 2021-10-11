@@ -439,7 +439,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2021/</loc>
-    <lastmod>2021-10-03T18:19:10+01:00</lastmod>
+    <lastmod>2021-10-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -449,6 +449,36 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/updates/2021/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/blog/</loc>
+    <lastmod>2021-10-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/blog/2021-10-07_getchorvyoshear/</loc>
+    <lastmod>2021-10-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/2021-10-07_getchorvyoshear/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/2021-10-07_getchorvyoshear/"
                 />
   </url>
   
@@ -464,21 +494,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/blog/2021-09-22_workflow/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://tiagojsilva.github.io/en/blog/</loc>
-    <lastmod>2021-09-22T00:54:14+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://tiagojsilva.github.io/pt/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiagojsilva.github.io/en/blog/"
                 />
   </url>
   
@@ -722,6 +737,16 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2021/10/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/updates/2021/10/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/updates/2021/10/"
+                />
   </url>
   
 </urlset>

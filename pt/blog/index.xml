@@ -7,12 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 22 Sep 2021 00:54:14 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/pt/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Olh&#39;ó VyOS fresquinhoo!!!</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-07_getchorvyoshear/</link>
+        <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-07_getchorvyoshear/</guid>
+        <description>Como muitos outros projectos de software livre e aberto, também o VyOS decidiu que ia continuar a ser livre, mas deixaria de ser grátis. Para convencer os utilizadores empresariais a abrirem os cordões à bolsa, decidiram que os binários compilados e distribuídos para instalação sob a forma de uma imagem ISO apenas estariam disponíveis ao público em versões instáveis, correspondentes, grosso modo, a um nightly build. A última versão estável pré-compilada é a 1.</description>
+      </item>
       
       <item>
         <title>Workflow dos artigos</title>

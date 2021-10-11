@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 27 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Oct 2021 21:06:37 +0100</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/index.xml" rel="self" type="application/rss+xml" />
     
@@ -48,6 +48,26 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
         
         <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</guid>
         <description>OpenSSL PKI (parte 2) - IntermediateCA Criar uma IntermediateCA Mais uma vez, a(s) IntermediateCA(s) devem estar alojadas num sistema separado (server) daquele que aloja a RootCA, e o sistema da RootCA (root) deve estar airgapped e desligado da corrente. No sistema online não me parece má ideia manter as CAs secundárias debaixo de /root/ca, o que permite colocar o certificado da RootCA no mesmo caminho (/root/ca/certs/ca.cert.pem). No entanto, esta é a única informação da RootCA que é necessário trazer para o host da(s) CA(s) secundária(s); é debatível se vale a pena trazer o CRL da RootCA em formato PEM e colocá-lo em /root/ca/crl/ca.</description>
+      </item>
+      
+      <item>
+        <title>PKI OpenSSL (pt 3)</title>
+        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/</link>
+        <pubDate>Mon, 11 Oct 2021 21:06:37 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/</guid>
+        <description>Certificados de servidor e de cliente Agora que temos a nossa IntermediateCA configurada correctamente, podemos começar a utilizá-la para emitir certificados.
+Notas prévias:
+ Deve-se usar metade dos bits usados na CA O CN do servidor deve ser o FQDN Um certificado servidor precisa de ter o mesmo FQDN repetido na informação SAN O CN dos clientes pode ser qualquer coisa, não é importante. Devem ser assinados com a IntermediateCA Normalmente têm a duração de um ano (365) e o máximo, desde Julho de 2019, é 824 dias (+1) Comando OpenSSL para certificado servidor: -extensions server_cert Comando OpenSSL para certificado cliente: -extensions usr_cert Só é possível copiar a informação SAN do CSR para o certificado se for colocada a opção copy_extensions = copy ou = all na secção [ca_default] do intermediate/openssl.</description>
+      </item>
+      
+      <item>
+        <title>Olh&#39;ó VyOS fresquinhoo!!!</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-07_getchorvyoshear/</link>
+        <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-07_getchorvyoshear/</guid>
+        <description>Como muitos outros projectos de software livre e aberto, também o VyOS decidiu que ia continuar a ser livre, mas deixaria de ser grátis. Para convencer os utilizadores empresariais a abrirem os cordões à bolsa, decidiram que os binários compilados e distribuídos para instalação sob a forma de uma imagem ISO apenas estariam disponíveis ao público em versões instáveis, correspondentes, grosso modo, a um nightly build. A última versão estável pré-compilada é a 1.</description>
       </item>
       
       <item>

@@ -444,7 +444,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/pt/updates/2021/</loc>
-    <lastmod>2021-09-27T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-11T21:06:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -458,8 +458,13 @@
   </url>
   
   <url>
+    <loc>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/</loc>
+    <lastmod>2021-10-11T21:06:37+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tiagojsilva.github.io/pt/blog/</loc>
-    <lastmod>2021-09-22T00:54:14+01:00</lastmod>
+    <lastmod>2021-10-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -469,6 +474,21 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://tiagojsilva.github.io/pt/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/pt/blog/2021-10-07_getchorvyoshear/</loc>
+    <lastmod>2021-10-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/2021-10-07_getchorvyoshear/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/2021-10-07_getchorvyoshear/"
                 />
   </url>
   
@@ -722,6 +742,20 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://tiagojsilva.github.io/pt/updates/2021/09/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/pt/updates/2021/10/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/updates/2021/10/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/updates/2021/10/"
                 />
   </url>
   

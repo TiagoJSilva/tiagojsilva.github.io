@@ -7,12 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 22 Sep 2021 00:54:14 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Getch&#39;or VyOS heaaar!!!</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-10-07_getchorvyoshear/</link>
+        <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-10-07_getchorvyoshear/</guid>
+        <description>Like many other Free and Open Source Software projects, Vyos decided that it was going to continue to be free as in freedom but would stop being for free. To convince enterprise users to pay up and contribute to the project with monies, they decided that binaries compiled and distributed for installation as an ISO image would only be available to the public in unstable versions, meaning, nightly builds. The last pre-compiled stable version available is 1.</description>
+      </item>
       
       <item>
         <title>Article Workflow</title>
