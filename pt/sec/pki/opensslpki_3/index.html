@@ -2699,7 +2699,7 @@ read R BLOCK
   </div>
 </div>
 <h3 id="revogação-com-oscp-responder">Revogação com <em>OSCP Responder</em></h3>
-<p>O Stapling costuma ter uma validade de 7 dias, em que o <em>server</em> guarda a resposta e já não contacta de novo o OCSP para obter a confirmação da validade do certificado, enviando directamente a resposta anterior ao cliente.<br />
+<p>O <em>Stapling</em> costuma ter uma validade de 7 dias, em que o <em>server</em> guarda a resposta e já não contacta de novo o OCSP para obter a confirmação da validade do certificado, enviando directamente a resposta anterior ao cliente.<br />
 Isto significa que se revogarmos o certificado agora, só daqui a 7 dias é que o cliente recusará o certificado do <em>webserver</em>.<br />
 A não ser, claro, que o <em>webserver</em> seja reiniciado para perder a memória da resposta OCSP&hellip; <br />
 Vamos revogar o certificado do <em>webserver</em>:</p>
@@ -2884,7 +2884,7 @@ openssl crl -inform PEM -in /root/ca/crl/ca.crl.pem \
 	-outform DER -out /root/ca/crl/root-ca.crl
 </code></pre></td></tr></table>
 </div>
-</div><p>Podemos ver que o CRL alterado tem uam entrada nova:</p>
+</div><p>Podemos ver que o CRL alterado tem uma entrada nova:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2947,8 +2947,8 @@ systemctl restart lighttpd.service
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="testar-a-revogação-da-intermediateca">Testar a revogação da IntermediateCA</h3>
-<h4 id="em-browsers-modernos-falha">Em browsers modernos (falha)</h4>
-<p>Mas o <em>site</em> continua a ser reconhecido como seguro, porque aparentemente os <em>browsers</em> não se dão ao trabalho de verificar a cadeia inteira de certificados (nem mesmo por OCSP), confiando apenas na lista interna de RootCAs e em CRLs internos distribuídos com as actualizações.<br />
+<h4 id="em-browsers-modernos-falha">Em <em>browsers</em> modernos (falha)</h4>
+<p>O <em>site</em> continua a ser reconhecido como seguro no Firefox, porque aparentemente os <em>browsers</em> não se dão ao trabalho de verificar a cadeia inteira de certificados (nem mesmo por OCSP), confiando apenas na lista interna de RootCAs e em CRLs internos distribuídos com as actualizações.<br />
 A única excepção é o velhinho Internet Explorer, paz à sua alma, que vamos testar já a seguir.<br />
 <a href="https://news.netcraft.com/archives/2013/05/13/how-certificate-revocation-doesnt-work-in-practice.html">https://news.netcraft.com/archives/2013/05/13/how-certificate-revocation-doesnt-work-in-practice.html</a><br />
 E não consigo encontrar um comando <code>openssl verify</code> que me consiga indicar que a cadeia do certificado <code>www.tjs.lan.cert_chain.pem</code> está quebrada pela revogação da IntermediateCA<br />
@@ -3341,7 +3341,7 @@ E o resultado é <strong>sim</strong>, <u>o Internet Explorer consulta e respeit
         <li><a href="#trazer-o-crl-actualizado-do-offline-para-online">Trazer o CRL actualizado do <em>offline</em> para <em>online</em></a></li>
         <li><a href="#testar-a-revogação-da-intermediateca">Testar a revogação da IntermediateCA</a>
           <ul>
-            <li><a href="#em-browsers-modernos-falha">Em browsers modernos (falha)</a></li>
+            <li><a href="#em-browsers-modernos-falha">Em <em>browsers</em> modernos (falha)</a></li>
             <li><a href="#em-internet-explorer">Em Internet Explorer</a></li>
           </ul>
         </li>
