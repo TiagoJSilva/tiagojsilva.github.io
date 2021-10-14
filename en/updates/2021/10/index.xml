@@ -23,6 +23,26 @@
       </item>
       
       <item>
+        <title>Manifesto</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-10-08_wat-do/</link>
+        <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-10-08_wat-do/</guid>
+        <description>Nutritional facts Don&amp;rsquo;t expect this site to have the usual content; I&amp;rsquo;ll hardly write the n-th article about installing Postfix or Arch Linux, configure a NextCloud instance or a VPN: not interesting, already done, adds no value. I&amp;rsquo;ll only do these kinds of thing if I stumble on HOWTOs so bad that&amp;rsquo;ll make me wonder if I&amp;rsquo;d do it a lot better.
+Right now I&amp;rsquo;m interested in exploring the MUSL world, Some very specific Linux distros, and the S6 init; I shouldn&amp;rsquo;t be shocked by the current state of the documentation and development of these systems, compared to the 50,000 articles on how to install Ubuntu (ballpark figures), but I am.</description>
+      </item>
+      
+      <item>
+        <title>Musl</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/musl/</link>
+        <pubDate>Tue, 12 Oct 2021 23:09:50 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/musl/</guid>
+        <description>The musl C library is an alternative to the equivalent GNU library (glibc) and is used by some (but few) distributions, which are generally simpler, bespoke, light in resources and with much, much less polish than GNU/Linux distributions .
+Which begs the question, of course, of what to call these distributions: musl/Linux? Although many of those use busybox as the base of the userland, others use GNU coreutils, so there&amp;rsquo;s some GNU in there as well.</description>
+      </item>
+      
+      <item>
         <title>Getch&#39;or VyOS heaaar!!!</title>
         <link>https://tiagojsilva.github.io/en/blog/2021-10-07_getchorvyoshear/</link>
         <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>

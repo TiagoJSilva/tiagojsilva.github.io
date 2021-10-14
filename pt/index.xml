@@ -51,6 +51,16 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
       </item>
       
       <item>
+        <title>Manifesto</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-08_wat-do/</link>
+        <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-08_wat-do/</guid>
+        <description>Informação nutricional Não esperem conteúdo vulgar neste site; raramente farei o equivalente ao enésimo artigo sobre como instalar o Postfix ou o Arch Linux, configurar uma NextCloud ou uma VPN: não me interessa, já está feito, não acrescento valor. Só o farei se der de caras com vários HOWTOs que me deixem insatisfeito ao ponto de acreditar que até eu serei capaz de fazer melhor.
+Neste momento estou interessado em explorar o mundo MUSL, as distribuições Linux de uso mais específico, e o init S6; não deveria estar chocado com o estado actual da documentação e desenvolvimento desses sistemas, comparado com os 50 mil artigos sobre como instalar o Ubuntu (contas por baixo), mas estou.</description>
+      </item>
+      
+      <item>
         <title>PKI OpenSSL (pt 3)</title>
         <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/</link>
         <pubDate>Mon, 11 Oct 2021 21:06:37 +0100</pubDate>

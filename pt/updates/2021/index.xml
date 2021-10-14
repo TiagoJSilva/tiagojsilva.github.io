@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 11 Oct 2021 21:06:37 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 14 Oct 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/index.xml" rel="self" type="application/rss+xml" />
     
@@ -48,6 +48,26 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
         
         <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</guid>
         <description>OpenSSL PKI (parte 2) - IntermediateCA Criar uma IntermediateCA Mais uma vez, a(s) IntermediateCA(s) devem estar alojadas num sistema separado (server) daquele que aloja a RootCA, e o sistema da RootCA (root) deve estar airgapped e desligado da corrente. No sistema online não me parece má ideia manter as CAs secundárias debaixo de /root/ca, o que permite colocar o certificado da RootCA no mesmo caminho (/root/ca/certs/ca.cert.pem). No entanto, esta é a única informação da RootCA que é necessário trazer para o host da(s) CA(s) secundária(s); é debatível se vale a pena trazer o CRL da RootCA em formato PEM e colocá-lo em /root/ca/crl/ca.</description>
+      </item>
+      
+      <item>
+        <title>Manifesto</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-08_wat-do/</link>
+        <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-08_wat-do/</guid>
+        <description>Informação nutricional Não esperem conteúdo vulgar neste site; raramente farei o equivalente ao enésimo artigo sobre como instalar o Postfix ou o Arch Linux, configurar uma NextCloud ou uma VPN: não me interessa, já está feito, não acrescento valor. Só o farei se der de caras com vários HOWTOs que me deixem insatisfeito ao ponto de acreditar que até eu serei capaz de fazer melhor.
+Neste momento estou interessado em explorar o mundo MUSL, as distribuições Linux de uso mais específico, e o init S6; não deveria estar chocado com o estado actual da documentação e desenvolvimento desses sistemas, comparado com os 50 mil artigos sobre como instalar o Ubuntu (contas por baixo), mas estou.</description>
+      </item>
+      
+      <item>
+        <title>Musl</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/musl/</link>
+        <pubDate>Tue, 12 Oct 2021 23:09:50 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/musl/</guid>
+        <description>A biblioteca C musl é uma alternativa à biblioteca equivalente GNU C (glibc) e tem algumas (mas poucas) distribuições, geralmente mais simples, artesanais, leves (em termos de recursos) e com muito, muito menos polimento que as distribuições GNU/Linux.
+O que coloca a questão, claro, do que chamar a estas distribuições: musl/Linux? Apesar de muitas usarem o busybox como base do userland, outras usam GNU coreutils, por isso também têm partes GNU.</description>
       </item>
       
       <item>

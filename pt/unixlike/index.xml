@@ -24,6 +24,16 @@
       </item>
       
       <item>
+        <title>Musl</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/musl/</link>
+        <pubDate>Tue, 12 Oct 2021 23:09:50 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/musl/</guid>
+        <description>A biblioteca C musl é uma alternativa à biblioteca equivalente GNU C (glibc) e tem algumas (mas poucas) distribuições, geralmente mais simples, artesanais, leves (em termos de recursos) e com muito, muito menos polimento que as distribuições GNU/Linux.
+O que coloca a questão, claro, do que chamar a estas distribuições: musl/Linux? Apesar de muitas usarem o busybox como base do userland, outras usam GNU coreutils, por isso também têm partes GNU.</description>
+      </item>
+      
+      <item>
         <title>Dotfiles</title>
         <link>https://tiagojsilva.github.io/pt/unixlike/dotfiles/</link>
         <pubDate>Sun, 15 Aug 2021 14:25:08 +0100</pubDate>
