@@ -23,6 +23,17 @@
       </item>
       
       <item>
+        <title>PKI OpenSSL (pt 3)</title>
+        <link>https://tiagojsilva.github.io/en/sec/pki/opensslpki_3/</link>
+        <pubDate>Tue, 19 Oct 2021 21:06:37 +0100</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/sec/pki/opensslpki_3/</guid>
+        <description>Client and Server Certificates Now that we have our IntermediateCA properly configured, we can start using it to issue certificates.
+Notes:
+ You should use no less than half the bits used on the CA for keys The server&amp;rsquo;s CN should be its FQDN A server certificate needs to have the same FQDN repeated on the SAN information The client certificate&amp;rsquo;s CN can be anything, it&amp;rsquo;s not important. Certificates must be signed by the IntermediateCA Certificates usually last a year (365 days) and the maximum, since July 2019, is 824 days (+1) OpenSSL command for server certificate: -extensions server_cert OpenSSL command for client certificate: -extensions usr_cert Only if copy_extensions = copy or = all is on the [ca_default] section of intermediate/openssl.</description>
+      </item>
+      
+      <item>
         <title>Manifesto</title>
         <link>https://tiagojsilva.github.io/en/blog/2021-10-08_wat-do/</link>
         <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>

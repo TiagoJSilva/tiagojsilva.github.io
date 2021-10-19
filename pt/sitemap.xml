@@ -505,6 +505,16 @@
   <url>
     <loc>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/</loc>
     <lastmod>2021-10-11T21:06:37+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/sec/pki/opensslpki_3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/"
+                />
   </url>
   
   <url>
