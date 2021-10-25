@@ -51,6 +51,16 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
       </item>
       
       <item>
+        <title>Adelie Linux - Instalação LiveCD</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/musl/2021-09-13_adelie_livecd/</link>
+        <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/musl/2021-09-13_adelie_livecd/</guid>
+        <description>LiveCD 1.0-RC2, edição MATE O desenvolvimento da distro Adélie ficou muito tempo parado porque se dedicou a um programa de instalação simultaneamente gráfico e scriptável, chamado Horizon, que desviou muitos recursos do sistema-base. Muita coisa se passava nos bastidores mas exteriormente não havia novas releases.
+No entanto, uma reorganização recente incutiu-lhes vento nas velas e o site está muito mais bonito, profissional e organizado, as mailing-lists fazem mais sentido, e o progresso parece estar a acelerar.</description>
+      </item>
+      
+      <item>
         <title>Manifesto</title>
         <link>https://tiagojsilva.github.io/pt/blog/2021-10-08_wat-do/</link>
         <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
