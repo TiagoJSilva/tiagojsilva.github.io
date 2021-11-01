@@ -15,13 +15,13 @@
     
       
       <item>
-        <title>Adelie Linux - Instalação LiveCD</title>
+        <title>Adelie Linux - LiveCD Installation</title>
         <link>https://tiagojsilva.github.io/en/unixlike/musl/2021-09-13_adelie_livecd/</link>
-        <pubDate>Mon, 25 Oct 2021 23:07:43 +0100</pubDate>
+        <pubDate>Sat, 30 Oct 2021 23:07:43 +0100</pubDate>
         
         <guid>https://tiagojsilva.github.io/en/unixlike/musl/2021-09-13_adelie_livecd/</guid>
-        <description>LiveCD 1.0-RC2, MATE edition The development of the Adélie distro seemed to have stopped for a long time because the team dedicated themselves to the development of a graphical and scriptable setup program, called Horizon, and that took many resources off the development of the base system. There was much going on behind the scenes but from the outside all we could see was no new releases.
-However, a recent reorganization put winds in their sails and the site has been much improved, looking sharp, professional and organized, the mailing-lists make more sense, and progress seems to be accelerating.</description>
+        <description>LiveCD 1.0-RC2, MATE edition Development of the Adélie distro seemed to have stopped for a long time because the team dedicated themselves to the development of a graphical and scriptable setup program, called Horizon, and that took many resources off the development of the base system. There was much going on behind the scenes but from the outside all we could see was no new releases.
+However, a recent reorganization put wind in their sails and the site has been much improved, looking sharp, professional and organized, the mailing-lists make more sense, and progress seems to be accelerating.</description>
       </item>
       
     
