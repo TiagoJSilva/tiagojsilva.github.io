@@ -7,12 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 14 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/pt/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Actualização VyOS</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/</link>
+        <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/</guid>
+        <description>Como disse num artigo anterior, estava a tentar actualizar-me quanto ao projecto VyOS, que parece ser uma forma económica de testar conceitos de rede, sem ter de pagar Cisco Modeling Labs (a única forma legal de usar sistemas virtuais da Cisco) ou similares.
+E bati de frente no problema do teclado português: não há teclado português. Sim, uma ligação SSH assume o layout do cliente - mas é preciso configurar a rede antes.</description>
+      </item>
       
       <item>
         <title>Manifesto</title>

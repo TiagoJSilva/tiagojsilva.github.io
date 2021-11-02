@@ -439,7 +439,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2021/</loc>
-    <lastmod>2021-10-30T23:07:43+01:00</lastmod>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -449,6 +449,36 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/updates/2021/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/blog/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/blog/2021-10-31_vyos2/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/2021-10-31_vyos2/"
                 />
   </url>
   
@@ -479,21 +509,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/sec/pki/opensslpki_3/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://tiagojsilva.github.io/en/blog/</loc>
-    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://tiagojsilva.github.io/pt/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiagojsilva.github.io/en/blog/"
                 />
   </url>
   

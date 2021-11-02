@@ -51,6 +51,16 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
       </item>
       
       <item>
+        <title>Actualização VyOS</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/</link>
+        <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/</guid>
+        <description>Como disse num artigo anterior, estava a tentar actualizar-me quanto ao projecto VyOS, que parece ser uma forma económica de testar conceitos de rede, sem ter de pagar Cisco Modeling Labs (a única forma legal de usar sistemas virtuais da Cisco) ou similares.
+E bati de frente no problema do teclado português: não há teclado português. Sim, uma ligação SSH assume o layout do cliente - mas é preciso configurar a rede antes.</description>
+      </item>
+      
+      <item>
         <title>Adelie Linux - Instalação LiveCD</title>
         <link>https://tiagojsilva.github.io/pt/unixlike/musl/2021-09-13_adelie_livecd/</link>
         <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>

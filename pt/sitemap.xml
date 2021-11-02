@@ -444,7 +444,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/pt/updates/2021/</loc>
-    <lastmod>2021-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -454,6 +454,36 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://tiagojsilva.github.io/pt/updates/2021/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/2021-10-31_vyos2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/pt/blog/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/"
                 />
   </url>
   
@@ -469,21 +499,6 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://tiagojsilva.github.io/pt/unixlike/musl/2021-09-13_adelie_livecd/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://tiagojsilva.github.io/pt/blog/</loc>
-    <lastmod>2021-10-14T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiagojsilva.github.io/en/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://tiagojsilva.github.io/pt/blog/"
                 />
   </url>
   

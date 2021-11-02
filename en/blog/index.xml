@@ -7,12 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Update about VyOS</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-10-31_vyos2/</link>
+        <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-10-31_vyos2/</guid>
+        <description>As I said in a previous article, I was trying to check on VyOS, which seems to be a cheap way for testing network concepts without having to pay for Cisco Modeling Labs (the only legal way of using Cisco virtual systems) or something similar.
+And I hit smack-dab into the issue of the Portuguese keyboard layout: there isn&amp;rsquo;t one. Yes, an SSH connection assumes the client&amp;rsquo;s layout - but you need to setup the network beforehand.</description>
+      </item>
       
       <item>
         <title>Manifesto</title>
