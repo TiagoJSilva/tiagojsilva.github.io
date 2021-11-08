@@ -51,6 +51,27 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
       </item>
       
       <item>
+        <title>Botão copy, take 1</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/</link>
+        <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/</guid>
+        <description>Na primeira vez em que tentei configurar um botão Copy para as caixas de código, deixei uma nota no GitHub do tema Zdoc.
+Há dias um outro utilizador do Zdoc publicou a solução que funcionou para ele, e com esse estímulo, tentei de novo.
+Infelizmente, já devo ter manipulado de mais o DOM da minha versão do tema (manter-me compatível com o upstream, infelizmente, não vai dar para já) para poder utilizar directamente o código dele, mas tentei mexer mais um pouco no código que tinha tentado utilizar anteriormente, que era baseado nesta solução proposta por Tom Spencer</description>
+      </item>
+      
+      <item>
+        <title>TinyCore Linux - Passos iniciais</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
+        <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
+        <description>Para este sistema, que eventualmente vai ser um servidor chamado verynice, criei uma VM com 256MB de RAM e 640MB de disco.
+O TinyCore1 é uma instalação Linux muito especial, devotada a sistemas com muito poucos recursos. Vou usar a versão CorePlus, a mais &amp;ldquo;luxuosa&amp;rdquo;, com ambiente gráfico e possibilidade de instalação em disco, mas há versões Core muito mais frugais que correm alegremente de uma pen USB carregando-se para uma RAMdrive no arranque.</description>
+      </item>
+      
+      <item>
         <title>Actualização VyOS</title>
         <link>https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/</link>
         <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>

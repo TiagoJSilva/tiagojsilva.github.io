@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2021/11 on Layer9</title>
+    <link>https://tiagojsilva.github.io/en/updates/2021/11/</link>
+    <description>Recent content in 2021/11 on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    
+        <atom:link href="https://tiagojsilva.github.io/en/updates/2021/11/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Copy button, take 1</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-11-08_copy-button-1/</link>
+        <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-11-08_copy-button-1/</guid>
+        <description>The first time I tried to set up a Copy button for code boxes, I left an issue on Zdoc&amp;rsquo;s GitHub.
+Some days ago, another Zdoc user published the solution that worked for him, and stimulated by that, I tried again.
+Unfortunately, I must have manipulated my theme&amp;rsquo;s DOM code too much (tracking upstream is going to be impossible until I nuke it and pave it on the next Zdoc release) to be able to use his code, but I tried fiddling a little more with the code I had tried to use previously, which was based on this proposal by Tom Spencer.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

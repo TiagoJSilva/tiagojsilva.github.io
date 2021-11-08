@@ -50,6 +50,17 @@ Simulation VM Create a Windows 7-based VM, with 4GB of RAM, 2 vCPUS and 4 networ
       </item>
       
       <item>
+        <title>Copy button, take 1</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-11-08_copy-button-1/</link>
+        <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-11-08_copy-button-1/</guid>
+        <description>The first time I tried to set up a Copy button for code boxes, I left an issue on Zdoc&amp;rsquo;s GitHub.
+Some days ago, another Zdoc user published the solution that worked for him, and stimulated by that, I tried again.
+Unfortunately, I must have manipulated my theme&amp;rsquo;s DOM code too much (tracking upstream is going to be impossible until I nuke it and pave it on the next Zdoc release) to be able to use his code, but I tried fiddling a little more with the code I had tried to use previously, which was based on this proposal by Tom Spencer.</description>
+      </item>
+      
+      <item>
         <title>Update about VyOS</title>
         <link>https://tiagojsilva.github.io/en/blog/2021-10-31_vyos2/</link>
         <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>

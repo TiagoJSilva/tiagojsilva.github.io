@@ -1,0 +1,3267 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TinyCore Linux - Passos iniciais – Layer9</title>
+    
+
+
+  
+  <script defer src="/js/fuse.min.c4bee9a8d44273d6154fe86006923d4131eb2e8069d8897687137c6f37f553e3.js"></script>
+
+
+
+<script src="/js/enquire.min.aa37bdcb743826eecdae5c5d177fc7d6552340f1b4378ffaa9c82b2c6111400b.js"></script>
+
+<script defer src="/js/lazysizes.min.5e11d056075a05065b9c0bfec44084a113fc2976c2952ec804dedb61c7662db9.js"></script>
+
+<script defer src="/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js"></script>
+
+<script defer src="/js/helper/fadeinout.min.9fb19682560d5fa5596fffec85da605067c4acc86aad05add4d8fff9d362a446.js"></script>
+
+<script>
+  "use strict";
+
+  window.onload = function() {
+    
+    var languagedir = JSON.parse("\"ltr\"");
+    
+    var baseurl = JSON.parse("\"https://tiagojsilva.github.io\"");
+    
+    var permalink = JSON.parse("\"https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/\"");
+
+    
+    var toggleSidebarElem = document.getElementById("toggle-sidebar");
+    var toggleMenuElem = document.getElementById("toggle-menu");
+    var tocBodyElem = document.querySelector('.toc__body');
+    var tocLabelElem = document.querySelector('.toc__label');
+    var listMainElem = document.getElementById('list-main');
+    var listSideElem = document.getElementById('list-side');
+    var singleMenuElem = document.getElementById('single-menu');
+    var sliderIcons = document.querySelectorAll('.slider__icon');
+
+    toggleSidebarElem ?
+      toggleSidebarElem.addEventListener('change', function (e) {
+        if (e.target.checked) {
+          if (tocBodyElem) {
+            fadeIn(tocBodyElem, 200);
+          }
+          if (tocLabelElem) {
+            fadeIn(tocLabelElem, 200);
+          }
+          if (listMainElem && listSideElem) {
+            listMainElem.className = 'm';
+            listSideElem.className = 'r';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+
+        } else {
+          if (tocBodyElem) {
+            fadeOut(tocBodyElem, 200);
+          }
+          if (tocLabelElem) {
+            fadeOut(tocLabelElem, 200);
+          }
+          if (listMainElem && listSideElem) {
+            listMainElem.className = 'mr';
+            listSideElem.className = 'hide';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+        }
+      }) : null;
+
+    toggleMenuElem ?
+      toggleMenuElem.addEventListener('change', function (e) {
+        if (e.target.checked) {
+          if (listMainElem && singleMenuElem) {
+            listMainElem.className = 'm';
+            singleMenuElem.className = 'l';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+
+        } else {
+          if (listMainElem && singleMenuElem) {
+            listMainElem.className = 'lm';
+            singleMenuElem.className = 'hide';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+        }
+      }) : null;
+    
+
+
+    
+    var navCollapseBtn = document.getElementById('navCollapseBtn');
+    navCollapseBtn ? navCollapseBtn.addEventListener('click', function(e) {
+      var navCollapse = document.querySelector('.navbar__collapse');
+      
+      if (navCollapse) {
+        var dataOpen = navCollapse.getAttribute('data-open');
+
+        if (dataOpen === 'true') {
+          navCollapse.setAttribute('data-open', 'false');
+          navCollapse.style.maxHeight = 0;
+        } else {
+          navCollapse.setAttribute('data-open', 'true');
+          navCollapse.style.maxHeight = navCollapse.scrollHeight + "px";
+        }
+      }
+    }) : null;
+    
+
+
+    
+    var expandBtn = document.querySelectorAll('.expand__button');
+
+    for (let i = 0; i < expandBtn.length; i++) {
+      expandBtn[i].addEventListener("click", function () {
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          this.querySelector('svg').classList.add('expand-icon__right');
+          this.querySelector('svg').classList.remove('expand-icon__down');
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          this.querySelector('svg').classList.remove('expand-icon__right');
+          this.querySelector('svg').classList.add('expand-icon__down');
+        }
+      });
+    }
+    
+
+
+
+    
+    document.querySelectorAll('.tab') ? 
+    document.querySelectorAll('.tab').forEach(function(elem, idx) {
+      var containerId = elem.getAttribute('id');
+      var containerElem = elem;
+      var tabLinks = elem.querySelectorAll('.tab__link');
+      var tabContents = elem.querySelectorAll('.tab__content');
+      var ids = [];
+
+      tabLinks && tabLinks.length > 0 ?
+      tabLinks.forEach(function(link, index, self) {
+        link.onclick = function(e) {
+          for (var i = 0; i < self.length; i++) {
+            if (index === parseInt(i, 10)) {
+              if (!self[i].classList.contains('active')) {
+                self[i].classList.add('active');
+                tabContents[i].style.display = 'block';
+              }
+            } else {
+              self[i].classList.remove('active');
+              tabContents[i].style.display = 'none';
+            }
+          }
+        }
+      }) : null;
+    }) : null;
+    
+
+
+    
+    document.querySelectorAll('.codetab') ? 
+    document.querySelectorAll('.codetab').forEach(function(elem, idx) {
+      var containerId = elem.getAttribute('id');
+      var containerElem = elem;
+      var codetabLinks = elem.querySelectorAll('.codetab__link');
+      var codetabContents = elem.querySelectorAll('.codetab__content');
+      var ids = [];
+
+      codetabLinks && codetabLinks.length > 0 ?
+      codetabLinks.forEach(function(link, index, self) {
+        link.onclick = function(e) {
+          for (var i = 0; i < self.length; i++) {
+            if (index === parseInt(i, 10)) {
+              if (!self[i].classList.contains('active')) {
+                self[i].classList.add('active');
+                codetabContents[i].style.display = 'block';
+              }
+            } else {
+              self[i].classList.remove('active');
+              codetabContents[i].style.display = 'none';
+            }
+          }
+        }
+      }) : null;
+    }) : null;
+    
+
+    
+    
+    
+    var enableDarkMode = JSON.parse("true");
+    var root = document.getElementById('root');
+    var toggleToLightBtn = document.getElementById('toggleToLight');
+    var toggleToDarkBtn = document.getElementById('toggleToDark');
+
+    if (!enableDarkMode) {
+      root.className = 'theme__light';
+      localStorage.setItem('theme', 'light');
+    }
+    
+    if (toggleToDarkBtn) {
+      toggleToDarkBtn.onclick = function (e) {
+        root.className = 'theme__dark';
+        localStorage.setItem('theme', 'dark');
+        toggleToLightBtn.className = 'navbar__icons--icon';
+        toggleToDarkBtn.className = 'hide';
+      }
+    }
+
+    if (toggleToLightBtn) {
+      toggleToLightBtn.onclick = function (e) {
+        root.className = 'theme__light';
+        localStorage.setItem('theme', 'light');
+        toggleToLightBtn.className = 'hide';
+        toggleToDarkBtn.className = 'navbar__icons--icon';
+      }
+    }
+
+    
+    document.querySelectorAll('.menu__list').forEach(function(elem) {
+      if (elem.classList.contains('active')) {
+        elem.style.maxHeight = elem.scrollHeight + "px"; 
+      }
+    });
+    
+    document.querySelectorAll('.menu__title--collapse').forEach(function(elem) {
+      elem.addEventListener('click', function (e) {
+        var content = this.nextElementSibling;
+        var menuTitleIcon = this.querySelector('.menu__title--icon');
+        if (!content) {
+          return null;
+        }
+
+        var parent = elem.parentNode;
+        while (parent.classList.contains('menu__list') && parent.classList.contains('active')) {
+          parent.style.maxHeight = 100 * parent.children.length + "px";
+          parent = parent.parentNode;
+        }
+
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          content.classList.remove('active');
+          menuTitleIcon.classList.add('right');
+          
+          if (languagedir === 'rtl') {
+            menuTitleIcon.classList.remove('downrtl');
+          } else {
+            menuTitleIcon.classList.remove('down');
+          }
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.classList.add('active');
+          menuTitleIcon.classList.remove('right');
+          
+          if (languagedir === 'rtl') {
+            menuTitleIcon.classList.add('downrtl');
+          } else {
+            menuTitleIcon.classList.add('down');
+          }
+        }
+      });
+    });
+    
+
+
+    
+    var mobileLogo = document.getElementById('mobileLogo');
+    var modal = document.getElementById("myModal");
+    var drawer = document.getElementById('myDrawer');
+    var drawerCloseBtn = document.querySelector('.drawer__close');
+
+    var openDrawer = function() {
+      modal.style.opacity = 1;
+
+      if (languagedir === 'rtl') {
+        modal.style.right = 0;
+        drawer.style.right = 0;
+      } else {
+        modal.style.left = 0;
+        drawer.style.left = 0;
+      }
+    }
+
+    var closeDrawer = function() {
+      modal.style.opacity = 0;
+
+      if (languagedir === 'rtl') {
+        drawer.style.right = '-100%';
+      } else {
+        drawer.style.left = '-100%';
+      }
+
+      
+      setTimeout(function () {
+        if (languagedir === 'rtl') {
+          modal.style.right = '-100%';
+        } else {
+          modal.style.left = '-100%';
+        }
+      }, 250);
+    }
+
+    mobileLogo.onclick = function () {
+      openDrawer();
+      localStorage.setItem('isDrawerOpen', 'true');
+    }
+
+    modal.onclick = function () {
+      closeDrawer();
+      localStorage.setItem('isDrawerOpen', 'false');
+    }
+
+    drawerCloseBtn.onclick = function () {
+      closeDrawer();
+      localStorage.setItem('isDrawerOpen', 'false');
+    }
+  
+
+
+  
+    var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var tocElem = document.querySelector('.toc');
+    var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
+    var singleContentsElem = document.querySelector('.single__contents');
+    var dataBGImgs = document.querySelectorAll('div[data-bgimg]');
+
+    
+    var tocLevels = JSON.parse("[\"h2\",\"h3\",\"h4\"]");
+
+    if (tocLevels) {
+      tocLevels = tocLevels.toString();
+    } else {
+      tocLevels = "h1, h2, h3, h4, h5, h6";
+    }
+
+    
+    var isLandingBgImg = JSON.parse("null");
+    
+    var isHome = JSON.parse("false");
+
+    function setNavbarBG(scrollTop) {
+      if (isHome && isLandingBgImg && Object.keys(isLandingBgImg).length) {
+        if (isLandingBgImg.height <= scrollTop) {
+          dataBGImgs.forEach(function(elem) {
+            elem.setAttribute('data-bgimg', 'false');
+          });
+        } else {
+          dataBGImgs.forEach(function (elem) {
+            elem.setAttribute('data-bgimg', 'true');
+          });
+        }
+      }
+    }
+    setNavbarBG(lastScrollTop);
+
+    window.onscroll = function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop) { 
+        singleContentsElem ? 
+        singleContentsElem.querySelectorAll(tocLevels.toString()).forEach(function(elem) {
+          if (document.documentElement.scrollTop >= elem.offsetTop) {
+            if (tableOfContentsElem) {
+              var id = elem.getAttribute('id');
+              tocElem.querySelectorAll('a').forEach(function (elem) {
+                elem.classList.remove('active');
+              });
+              tocElem.querySelector('a[href="#' + id + '"]') ? 
+              tocElem.querySelector('a[href="#' + id + '"]').classList.add('active') : null;
+            }
+          }
+        }) : null;
+        setNavbarBG(st);
+      } else { 
+        singleContentsElem ? 
+        singleContentsElem.querySelectorAll(tocLevels.toString()).forEach(function(elem) {
+          if (document.documentElement.scrollTop >= elem.offsetTop) {
+            if (tableOfContentsElem) {
+              var id = elem.getAttribute('id');
+              tocElem.querySelectorAll('a').forEach(function (elem) {
+                elem.classList.remove('active');
+              });
+              tocElem.querySelector('a[href="#' + id + '"]') ? 
+              tocElem.querySelector('a[href="#' + id + '"]').classList.add('active') : null;
+            }
+          }
+        }) : null;
+        setNavbarBG(st);
+      }
+      lastScrollTop = st <= 0 ? 0 : st;
+    };
+    
+
+
+
+    
+    var mobileSearchInputElem = document.querySelector('#search-mobile');
+    var mobileSearchClassElem = document.querySelector('.mobile-search');
+    var mobileSearchBtnElem = document.querySelector('#mobileSearchBtn');
+    var mobileSearchCloseBtnElem = document.querySelector('#search-mobile-close');
+    var mobileSearchContainer = document.querySelector('#search-mobile-container');
+    var mobileSearchResultsElem = document.querySelector('#search-mobile-results');
+    var htmlElem = document.querySelector('html');
+
+    if (mobileSearchClassElem) {
+      mobileSearchClassElem.style.display = 'none';
+    }
+
+    mobileSearchBtnElem ? 
+    mobileSearchBtnElem.addEventListener('click', function () {
+      if (mobileSearchContainer) {
+        mobileSearchContainer.style.display = 'block';
+      }
+
+      if (mobileSearchInputElem) {
+        mobileSearchInputElem.focus();
+      }
+
+      if (htmlElem) {
+        htmlElem.style.overflowY = 'hidden';
+      }
+    }) : null;
+
+    mobileSearchCloseBtnElem ? 
+    mobileSearchCloseBtnElem.addEventListener('click', function() {
+      if (mobileSearchContainer) {
+        mobileSearchContainer.style.display = 'none';
+      }
+
+      if (mobileSearchInputElem) {
+        mobileSearchInputElem.value = '';
+      }
+      
+      if (mobileSearchResultsElem) {
+        while (mobileSearchResultsElem.firstChild) {
+          mobileSearchResultsElem.removeChild(mobileSearchResultsElem.firstChild);
+        }
+      }
+
+      if (htmlElem) {
+        htmlElem.style.overflowY = 'visible';
+      }
+    }) : null;
+
+    mobileSearchInputElem ? 
+    mobileSearchInputElem.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (mobileSearchContainer) {
+          mobileSearchContainer.style.display = 'none';
+        }
+        
+        if (mobileSearchInputElem) {
+          mobileSearchInputElem.value = '';
+        }
+
+        if (mobileSearchResultsElem) {
+          while (mobileSearchResultsElem.firstChild) {
+            mobileSearchResultsElem.removeChild(mobileSearchResultsElem.firstChild);
+          }
+        }
+        if (htmlElem) {
+          htmlElem.style.overflowY = 'visible';
+        }
+      }
+    }) : null;
+  
+
+
+  
+    var localTheme = localStorage.getItem('theme');
+    var rootEleme = document.getElementById('root');
+    var selectThemeElem = document.querySelectorAll('.select-theme');
+    var selectThemeItemElem = document.querySelectorAll('.select-theme__item');
+    
+    if (localTheme) {
+      selectThemeItemElem ? 
+      selectThemeItemElem.forEach(function (elem) {
+        if (elem.text.trim() === localTheme) {
+          elem.classList.add('is-active');
+        } else {
+          elem.classList.remove('is-active');
+        }
+      }) : null;
+    }
+
+    selectThemeItemElem ? 
+    selectThemeItemElem.forEach(function (v, i) {
+      v.addEventListener('click', function (e) {
+        var selectedThemeVariant = e.target.text.trim();
+        localStorage.setItem('theme', selectedThemeVariant);
+
+        rootEleme.removeAttribute('class');
+        rootEleme.classList.add(`theme__${selectedThemeVariant}`);
+        selectThemeElem.forEach(function(rootElem) {
+          rootElem.querySelectorAll('a').forEach(function (elem) {
+            if (elem.classList) {
+              if (elem.text.trim() === selectedThemeVariant) {
+                if (!elem.classList.contains('is-active')) {
+                  elem.classList.add('is-active');
+                }
+              } else {
+                if (elem.classList.contains('is-active')) {
+                  elem.classList.remove('is-active');
+                }
+              }
+            }
+          });
+        });
+
+        if (window.mermaid) {
+          if (selectedThemeVariant === "dark" || selectedThemeVariant === "hacker") {
+            mermaid.initialize({ theme: 'dark' });
+            location.reload();
+          } else {
+            mermaid.initialize({ theme: 'default' });
+            location.reload();
+          }
+        }
+
+        var utterances = document.querySelector('iframe');
+        if (utterances) {
+          utterances.contentWindow.postMessage({
+            type: 'set-theme',
+            theme: selectedThemeVariant === "dark" || selectedThemeVariant === "hacker" ? 'photon-dark' : selectedThemeVariant === 'kimbie' ? 'github-dark-orange' : 'github-light',
+          }, 'https://utteranc.es');
+        }
+      });
+    }) : null;
+  
+
+
+  
+    
+    var langprefix = JSON.parse("\"/pt\"");
+    var searchResults = null;
+    var searchMenu = null;
+    var searchText = null;
+    
+    
+    var enableSearchHighlight = JSON.parse("true");
+    
+    var enableSearch = JSON.parse("true");
+
+    var fuse = null;
+
+    if (enableSearch) {
+      (function initFuse() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', baseurl + langprefix + "/index.json");
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            fuse = new Fuse(JSON.parse(xhr.response.toString('utf-8')), {
+              keys: ['title', 'description', 'content'],
+              includeMatches: enableSearchHighlight,
+              should: true,
+              threshold: 0.4,
+              location: 0,
+              distance: 100,
+              maxPatternLength: 32,
+              minMatchCharLength: 1,
+            });
+          }
+          else {
+            console.error(`[${xhr.status}]Error:`, xhr.statusText);
+          }
+        };
+        xhr.send();
+      })();
+    }
+    
+    function makeLi(ulElem, obj) {
+      var li = document.createElement('li');
+      li.className = 'search-result__item';
+      
+      var a = document.createElement('a');
+      a.innerHTML = obj.title;
+      a.setAttribute('class', 'search-result__item--title');
+      a.setAttribute('href', obj.permalink);
+
+      var descDiv = document.createElement('div');
+      descDiv.setAttribute('class', 'search-result__item--desc');
+      if (obj.description) {
+        descDiv.innerHTML = obj.description;
+      } else if (obj.content) {
+        descDiv.innerHTML = obj.content.substring(0, 80);
+      }
+      
+      li.appendChild(a);
+      li.appendChild(descDiv);
+      ulElem.appendChild(li);
+    }
+
+    function makeHighlightLi(ulElem, obj) {
+      var li = document.createElement('li');
+      li.className = 'search-result__item';
+      var descDiv = null;
+
+      var a = document.createElement('a');
+      a.innerHTML = obj.item.title;
+      a.setAttribute('class', 'search-result__item--title');
+      a.setAttribute('href', obj.item.uri);
+
+      if (obj.matches && obj.matches.length) {
+        for (var i = 0; i < obj.matches.length; i++) {
+          if ('title' === obj.matches[i].key) {
+            a = document.createElement('a');
+            a.innerHTML = generateHighlightedText(obj.matches[i].value, obj.matches[i].indices);
+            a.setAttribute('class', 'search-result__item--title');
+            a.setAttribute('href', obj.item.uri);
+          }
+          
+          if ('description' === obj.matches[i].key) {
+            descDiv = document.createElement('div');
+            descDiv.setAttribute('class', 'search-result__item--desc');
+            descDiv.innerHTML = generateHighlightedText(obj.item.description, obj.matches[i].indices);
+          } else if ('content' === obj.matches[i].key) {
+            if (!descDiv) {
+              descDiv = document.createElement('div');
+              descDiv.setAttribute('class', 'search-result__item--desc');
+              descDiv.innerHTML = generateHighlightedText(obj.item.content.substring(0, 80), obj.matches[i].indices);
+            }
+          } else {
+            if (obj.item.description) {
+              descDiv = document.createElement('div');
+              descDiv.setAttribute('class', 'search-result__item--desc');
+              descDiv.innerHTML = obj.item.description;
+            } else {
+              descDiv = document.createElement('div');
+              descDiv.setAttribute('class', 'search-result__item--desc');
+              descDiv.innerHTML = obj.item.content.substring(0, 80);
+            }
+          }
+        }
+
+        li.appendChild(a);
+        if (descDiv) {
+          li.appendChild(descDiv);
+        }
+        if (li) {
+          ulElem.appendChild(li);
+        }
+      }
+    }
+
+    function renderSearchResults(searchText, results) {
+      searchResults = document.getElementById('search-results');
+      searchMenu = document.getElementById('search-menu');
+      searchResults.setAttribute('class', 'dd is-active');
+      
+      var ul = document.createElement('ul');
+      ul.setAttribute('class', 'dd-content search-content');
+
+      if (results.length) {
+        results.forEach(function (result) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.setAttribute('href', result.uri);
+          a.setAttribute('class', 'dd-item');
+          a.appendChild(li);
+
+          var titleDiv = document.createElement('div');
+          titleDiv.innerHTML = result.title;
+          titleDiv.setAttribute('class', 'search-result__item--title');
+
+          var descDiv = document.createElement('div');
+          descDiv.setAttribute('class', 'search-result__item--desc');
+          if (result.description) {
+            descDiv.innerHTML = result.description;
+          } else if (result.content) {
+            descDiv.innerHTML = result.content.substring(0, 80);
+          }
+
+          li.appendChild(titleDiv);
+          li.appendChild(descDiv);
+          ul.appendChild(a);
+        });
+      } else {
+        var li = document.createElement('li');
+        li.setAttribute('class', 'dd-item');
+        li.innerText = 'No results found';
+        ul.appendChild(li);
+      }
+
+      while (searchMenu.hasChildNodes()) {
+        searchMenu.removeChild(
+          searchMenu.lastChild
+        );
+      }
+      
+      searchMenu.appendChild(ul);
+    }
+
+    function renderSearchHighlightResults(searchText, results) {
+      searchResults = document.getElementById('search-results');
+      searchMenu = document.getElementById('search-menu');
+      searchResults.setAttribute('class', 'dd is-active');
+
+      var ul = document.createElement('ul');
+      ul.setAttribute('class', 'dd-content search-content');
+
+      if (results.length) {
+        results.forEach(function (result) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          var descDiv = null;
+
+          a.setAttribute('href', result.item.uri);
+          a.setAttribute('class', 'dd-item');
+          a.appendChild(li);
+
+          var titleDiv = document.createElement('div');
+          titleDiv.innerHTML = result.item.title;
+          titleDiv.setAttribute('class', 'search-result__item--title');
+          
+          if (result.matches && result.matches.length) {
+            for (var i = 0; i < result.matches.length; i++) {
+              if ('title' === result.matches[i].key) {
+                titleDiv.innerHTML = generateHighlightedText(result.matches[i].value, result.matches[i].indices);
+              }
+
+              if ('description' === result.matches[i].key) {
+                descDiv = document.createElement('div');
+                descDiv.setAttribute('class', 'search-result__item--desc');
+                descDiv.innerHTML = generateHighlightedText(result.item.description, result.matches[i].indices);
+              } else if ('content' === result.matches[i].key) {
+                if (!descDiv) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'search-result__item--desc');
+                  descDiv.innerHTML = generateHighlightedText(result.item.content.substring(0, 80), result.matches[i].indices);
+                }
+              } else {
+                if (result.item.description) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'search-result__item--desc');
+                  descDiv.innerHTML = result.item.description;
+                } else {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'search-result__item--desc');
+                  descDiv.innerHTML = result.item.content.substring(0, 80);
+                }
+              }
+            }
+            
+            li.appendChild(titleDiv);
+            if (descDiv) {
+              li.appendChild(descDiv);
+            }
+            ul.appendChild(a);
+          }
+        });
+      } else {
+        var li = document.createElement('li');
+        li.setAttribute('class', 'dd-item');
+        li.innerText = 'No results found';
+        ul.appendChild(li);
+      }
+
+      while (searchMenu.hasChildNodes()) {
+        searchMenu.removeChild(
+          searchMenu.lastChild
+        );
+      }
+      searchMenu.appendChild(ul);
+    }
+
+    function renderSearchResultsMobile(searchText, results) {
+      searchResults = document.getElementById('search-mobile-results');
+
+      var content = document.createElement('div');
+      content.setAttribute('class', 'mobile-search__content');
+
+      if (results.length > 0) {
+        results.forEach(function (result) {
+          var item = document.createElement('a');
+          item.setAttribute('href', result.uri);
+          item.innerHTML = '<div class="mobile-search__item"><div class="mobile-search__item--title">📄 ' + result.title + '</div><div class="mobile-search__item--desc">' + (result.description ? result.description : result.content) + '</div></div>';
+          content.appendChild(item);
+        });
+      } else {
+        var item = document.createElement('span');
+        content.appendChild(item);
+      }
+
+      let wrap = document.getElementById('search-mobile-results');
+      while (wrap.firstChild) {
+        wrap.removeChild(wrap.firstChild)
+      }
+      searchResults.appendChild(content);      
+    }
+
+    function renderSearchHighlightResultsMobile(searchText, results) {
+      searchResults = document.getElementById('search-mobile-results');
+
+      var ul = document.createElement('div');
+      ul.setAttribute('class', 'mobile-search__content');
+
+      if (results.length) {
+        results.forEach(function (result) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          var descDiv = null;
+
+          a.setAttribute('href', result.item.uri);
+          a.appendChild(li);
+          li.setAttribute('class', 'mobile-search__item');
+
+          var titleDiv = document.createElement('div');
+          titleDiv.innerHTML = result.item.title;
+          titleDiv.setAttribute('class', 'mobile-search__item--title');
+          
+          if (result.matches && result.matches.length) {
+            for (var i = 0; i < result.matches.length; i++) {
+              if ('title' === result.matches[i].key) {
+                titleDiv.innerHTML = generateHighlightedText(result.matches[i].value, result.matches[i].indices);
+              }
+
+              if ('description' === result.matches[i].key) {
+                descDiv = document.createElement('div');
+                descDiv.setAttribute('class', 'mobile-search__item--desc');
+                descDiv.innerHTML = generateHighlightedText(result.item.description, result.matches[i].indices);
+              } else if ('content' === result.matches[i].key) {
+                if (!descDiv) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'mobile-search__item--desc');
+                  descDiv.innerHTML = generateHighlightedText(result.item.content.substring(0, 150), result.matches[i].indices);
+                }
+              } else {
+                if (result.item.description) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'mobile-search__item--desc');
+                  descDiv.innerHTML = result.item.description;
+                } else {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'mobile-search__item--desc');
+                  descDiv.innerHTML = result.item.content.substring(0, 150);
+                }
+              }
+            }
+            
+            li.appendChild(titleDiv);
+            if (descDiv) {
+              li.appendChild(descDiv);
+            }
+            ul.appendChild(a);
+          }
+        });
+      } else {
+        var item = document.createElement('span');
+        ul.appendChild(item);
+      }
+
+      let wrap = document.getElementById('search-mobile-results');
+      while (wrap.firstChild) {
+        wrap.removeChild(wrap.firstChild)
+      }
+      searchResults.appendChild(ul);
+    }
+
+    function generateHighlightedText(text, regions) {
+      if (!regions) {
+        return text;
+      }
+
+      var content = '', nextUnhighlightedRegionStartingIndex = 0;
+
+      regions.forEach(function(region) {
+        if (region[0] === region[1]) {
+          return null;
+        }
+        
+        content += '' +
+          text.substring(nextUnhighlightedRegionStartingIndex, region[0]) +
+          '<span class="search__highlight">' +
+            text.substring(region[0], region[1] + 1) +
+          '</span>' +
+        '';
+        nextUnhighlightedRegionStartingIndex = region[1] + 1;
+      });
+
+      content += text.substring(nextUnhighlightedRegionStartingIndex);
+
+      return content;
+    };
+
+    var searchElem = document.getElementById('search');
+    var searchMobile = document.getElementById('search-mobile');
+    var searchResultsContainer = document.getElementById('search-results');
+
+    searchElem ? 
+    searchElem.addEventListener('input', function(e) {
+      if (!e.target.value | window.innerWidth < 770) {
+        searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dd') : null;
+        return null;
+      }
+
+      searchText = e.target.value;
+      var results = fuse.search(e.target.value);
+
+      if (enableSearchHighlight) {
+        renderSearchHighlightResults(searchText, results);
+      } else {
+        renderSearchResults(searchText, results);
+      }
+
+      var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
+      dropdownItems ? dropdownItems.forEach(function (item) {
+        item.addEventListener('mousedown', function (e) {
+          e.target.click();
+        });
+      }) : null;
+    }) : null;
+
+    searchElem ? 
+    searchElem.addEventListener('blur', function() {
+      if (window.innerWidth < 770) {
+        return null;
+      }
+      searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dd') : null;
+    }) : null;
+
+    searchElem ? 
+    searchElem.addEventListener('click', function(e) {
+      if (window.innerWidth < 770) {
+        return null;
+      }
+      if (!e.target.value) {
+        searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dd') : null;
+        return null;
+      }
+
+      searchText = e.target.value;
+      var results = fuse.search(e.target.value);
+
+      if (enableSearchHighlight) {
+        renderSearchHighlightResults(searchText, results);
+      } else {
+        renderSearchResults(searchText, results);
+      }
+
+      var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
+      dropdownItems ? dropdownItems.forEach(function (item) {
+        item.addEventListener('mousedown', function (e) {
+          e.target.click();
+        });
+      }) : null;
+    }) : null;
+
+    var searchMenuElem = document.getElementById("search-menu");
+    var activeItem = document.querySelector('#search-menu .dd-item.is-active');
+    var activeIndex = null;
+    var items = null;
+    var searchContainerMaxHeight = 350;
+
+    searchElem ? 
+    searchElem.addEventListener('keydown', function(e) {
+      if (window.innerWidth < 770) {
+        return null;
+      }
+
+      var items = document.querySelectorAll('#search-menu .dd-item');
+      
+      if (e.key === 'ArrowDown') {
+        if (activeIndex === null) {
+          activeIndex = 0;
+          items[activeIndex].classList.remove('is-active');
+        } else {
+          items[activeIndex].classList.remove('is-active');
+          activeIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+        }
+        items[activeIndex].classList.add('is-active');
+
+        let overflowedPixel = items[activeIndex].offsetTop + items[activeIndex].clientHeight - searchContainerMaxHeight;
+        if (overflowedPixel > 0) {
+          document.querySelector(".search-content").scrollTop += items[activeIndex].getBoundingClientRect().height;
+        } else if (activeIndex === 0) {
+          document.querySelector(".search-content").scrollTop = 0;
+        }
+      } else if (e.key === 'ArrowUp') {
+        if (activeIndex === null) {
+          activeIndex = items.length - 1;
+          items[activeIndex].classList.remove('is-active');
+        } else {
+          items[activeIndex].classList.remove('is-active');
+          activeIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+        }
+        items[activeIndex].classList.add('is-active');
+        
+        let overflowedPixel = items[activeIndex].offsetTop + items[activeIndex].clientHeight - searchContainerMaxHeight;
+        if (overflowedPixel < 0) {
+          document.querySelector(".search-content").scrollTop -= items[activeIndex].getBoundingClientRect().height;
+        } else {
+          document.querySelector(".search-content").scrollTop = overflowedPixel + items[activeIndex].getBoundingClientRect().height;
+        }
+      } else if (e.key === 'Enter') {
+        var currentItemLink = items[activeIndex].getAttribute('href');
+        if (currentItemLink) {
+          location.href = currentItemLink;
+        }
+      } else if (e.key === 'Escape') {
+        e.target.value = null;
+        if (searchResults) {
+          searchResults.classList.remove('is-active');
+        }
+      }
+    }) : null;
+
+    searchMobile ? 
+    searchMobile.addEventListener('input', function(e) {
+      if (!e.target.value) {
+        let wrap = document.getElementById('search-mobile-results');
+        while (wrap.firstChild) {
+          wrap.removeChild(wrap.firstChild);
+        }
+        return null;
+      }
+
+      searchText = e.target.value;
+      var results = fuse.search(e.target.value);
+      
+      if (enableSearchHighlight) {
+        renderSearchHighlightResultsMobile(searchText, results);
+      } else {
+        renderSearchResultsMobile(searchText, results);
+      }
+
+      var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
+      dropdownItems ? dropdownItems.forEach(function (item) {
+        item.addEventListener('mousedown', function (e) {
+          e.target.click();
+        });
+      }) : null;
+    }) : null;
+  
+
+  
+  window.addEventListener("load", addCopyButton);
+    function addCopyButton(clipboard) {
+        document.querySelectorAll('pre > code').forEach(function(codeBlock) {
+            if (codeBlock.className === '') {
+                return
+            }
+            var table = codeBlock.parentNode.parentNode.parentNode.parentNode.parentNode
+            var row = table.insertRow(0);
+            var cell = row.insertCell();
+            cell.className = "lntd"
+            var cell = row.insertCell();
+            cell.innerHTML = "<BR>"
+            var button = document.createElement('button');
+            button.className = 'copy-code-button';
+            button.type = 'button';
+            button.innerText = 'Copy';
+            button.addEventListener('click', function() {
+                if (navigator.clipboard != undefined) {
+                        navigator.clipboard.writeText(codeBlock.innerText).then(function () {
+                            console.log('Async: Copying to clipboard was successful!');
+                        }, function (err) {
+                            console.error('Async: Could not copy text: ', err);
+                        });
+                    }
+                    else if(window.clipboardData) { 
+                        window.clipboardData.setData("Text", codeBlock.innerText);
+                    }
+            });
+            cell.appendChild(button)
+        });
+    }
+
+  }
+</script>
+
+<link rel="stylesheet" href="/css/lightbox.css">
+
+    
+
+
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+    <meta name="description" content="Pequeno mas duro de roer" />
+<meta name="keywords" content="">
+<meta name="created" content="2021-11-08T00:00:00&#43;0000">
+<meta name="modified" content="2021-11-08T00:00:00&#43;0000">
+
+
+<meta property="og:site_name" content="Layer9">
+<meta property="og:title" content="TinyCore Linux - Passos iniciais">
+<meta property="og:url" content="https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/">
+<meta property="og:type" content="article">
+
+<meta name="generator" content="Hugo 0.83.1" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/">
+<link rel="manifest" href="/manifest.json">
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "headline": "TinyCore Linux - Passos iniciais",
+    "datePublished": "2021-11-08T00:00:00Z",
+    "dateModified": "2021-11-08T00:00:00Z",
+    "url" : "https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/",
+    "description": "Pequeno mas duro de roer",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://tiagojsilva.github.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Layer9",
+      "url": "https://tiagojsilva.github.io"
+    }
+  }
+</script>
+
+    
+
+</head>
+
+
+<body id="root" class="theme__light">
+    <script>
+        var rootElem = document.getElementById('root');
+        var themeOptions = JSON.parse("[\"light\",\"dark\"]");
+        var localTheme = localStorage.getItem('theme');
+
+        if (localTheme) {
+            if (themeOptions && themeOptions.length > 0) {
+                themeOptions.includes(localTheme) ? 
+                rootElem.className = `theme__${localTheme}` :
+                rootElem.className = `theme__${themeOptions[0]}`;
+            }
+        }
+    </script>
+    
+    <div id="container">
+        <div id="myDrawer" class="drawer" style="">
+  <div class="drawer__header">
+    <a href="/" class="drawer__header--text">
+      Layer9
+    </a>
+    <div class="grow"></div>
+    <div class="drawer__close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/></svg>
+    </div>
+  </div>
+
+  <div class="drawer__body">
+    <div class="menu">
+  <h6 class="menu__label">
+    
+      TinyCore Linux - Passos iniciais
+    
+  </h6>
+  <ul>
+    
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse active" data-depth="0" data-permalink="https://tiagojsilva.github.io/pt/unixlike/meme/">
+    <span class="menu__title--collapse-text">
+      Meme distros
+    </span>
+    <span class="menu__title--icon down">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list active" data-data=/meme/ data-link=https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/>
+    
+      
+        
+        
+        <li>
+          <a href="https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/" class="menu__title active" data-depth="0">TinyCore Linux - Passos iniciais</a>
+        </li>
+      
+    
+  </ul>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://tiagojsilva.github.io/pt/unixlike/musl/"
+      class="menu__title ">Musl</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://tiagojsilva.github.io/pt/unixlike/dotfiles/"
+      class="menu__title ">Dotfiles</a>
+  </li>
+  
+
+    
+  </ul>
+</div>
+
+
+
+<script>
+  var menuTitle = document.querySelectorAll('.menu__title');
+  var modal = document.getElementById("myModal");
+  var drawer = document.getElementById('myDrawer');
+
+  var closeDrawer = function () {
+    setTimeout(function () {
+      modal.style.opacity = 0;
+      drawer.style.left = '-100%';
+      modal.style.left = '-100%';
+    }, 250);
+  }
+
+  menuTitle ? 
+  menuTitle.forEach(function(elem) {
+    elem.onclick = function() {
+      closeDrawer();
+      localStorage.setItem('isDrawerOpen', 'false');
+    }
+  }) : null;
+</script>
+  </div>
+</div>
+<div id="myModal" class="modal" style=""></div>
+
+<script>
+  var isDrawerOpen = localStorage.getItem('isDrawerOpen');
+  var modal = document.getElementById("myModal");
+  var drawer = document.getElementById('myDrawer');
+  
+  
+  var languagedir = JSON.parse("\"ltr\"");
+
+  var openDrawer = function () {
+    modal.style.opacity = 1;
+    
+    if (languagedir === "rtl") {
+      modal.style.right = 0;
+      drawer.style.right = 0;
+    } else {
+      modal.style.left = 0;
+      drawer.style.left = 0;
+    }
+  }
+
+  if (isDrawerOpen && isDrawerOpen === 'true') {
+    openDrawer();
+  }
+</script>
+        
+<nav class="nav">
+  <div class="navbar__wrapper" data-bgimg="false">
+    <div class="divider">
+      <div class="navbar lmr">
+        <div id="siteLogo" class="navbar__logo--wrapper">
+  
+    <a href="/pt/" title="" rel="home" class="navbar__logo--link">
+      <img src="/logo.png" alt="Home" class="navbar__logo">
+    </a>
+  
+  
+    <a href="/pt/" title="" rel="home" class="navbar__logo--text-link">
+      <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
+    </a>
+  
+</div>
+        
+        <div class="navbar__menu--wrapper">
+          <div id="tabletLogo" class="hide">
+  
+  <a href="/pt/" rel="home" class="navbar__logo--link">
+    <img src="/logo.png" alt="Home" class="navbar__logo">
+  </a>
+  
+</div>
+          <div id="mobileLogo" class="hide">
+  <a href="#" class="navbar__logo--link">
+    <div class="navbar__icons--icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"/></svg>
+    </div>
+  </a>
+</div>
+          <span id="navMenuMobile" class="hide">
+  <button id="navCollapseBtn" class="navbar__dropdown--title" aria-label="Section Menu" data-dir="ltr">
+    
+      unixlike
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
+  </button>
+  <div class="navbar__collapse" data-open="false">
+  <ul>
+    
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/pt/blog" class="">Blog</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/pt/networking" class="">Redes</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/pt/microsoft" class="">Microsoft</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item active">
+    <a href="/pt/unixlike" class="active">*nix</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/pt/dev" class="">Dev</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/pt/sec" class="">Segurança</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/pt/updates" class="">Histórico</a>
+  </li>
+
+  </ul>
+</div>
+</span>
+          <ul id="navMenu" class="navbar__menu">
+            
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/pt/blog" data-bgimg="false">Blog</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/pt/networking" data-bgimg="false">Redes</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/pt/microsoft" data-bgimg="false">Microsoft</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item active">
+    <a href="/pt/unixlike" data-bgimg="false">*nix</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/pt/dev" data-bgimg="false">Dev</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/pt/sec" data-bgimg="false">Segurança</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/pt/updates" data-bgimg="false">Histórico</a>
+  </li>
+
+          </ul>
+        </div>
+        <div class="grow"></div>
+        <div id="siteSearch">
+          
+
+<div class="search" data-bgimg="false">
+  <span class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+  </span>
+  <input id="search" aria-label="Site Search" class="input" type="text" autocomplete="off" placeholder="Search">
+  <div id="search-results" class="dropdown">
+    <div id="search-menu" class="dropdown-menu">
+    </div>
+  </div>
+</div>
+
+
+        </div>
+        <div id="mobileSearch" class="hide">
+          
+<div id="mobileSearchBtn" class="mobile-search__btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+</div>
+
+<div id="search-mobile-container" class="mobile-search hide">
+  <div class="mobile-search__top">
+    <input id="search-mobile" type="text" aria-label="Mobile Search" placeholder="Search..." class="mobile-search__top--input"/>
+    <div id="search-mobile-close" class="mobile-search__top--icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path opacity=".87" fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"/></svg>
+    </div>
+  </div>
+  <div id="search-mobile-results" class="mobile-search__body">
+    
+  </div>
+</div>
+
+        </div>
+        <div class="navbar__icons">
+  
+<div class="dropdown">
+  <button class="lang__dropdown navbar__icons--icon" aria-label="Select Site Language">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M12.65 15.67c.14-.36.05-.77-.23-1.05l-2.09-2.06.03-.03c1.74-1.94 2.98-4.17 3.71-6.53h1.94c.54 0 .99-.45.99-.99v-.02c0-.54-.45-.99-.99-.99H10V3c0-.55-.45-1-1-1s-1 .45-1 1v1H1.99c-.54 0-.99.45-.99.99 0 .55.45.99.99.99h10.18C11.5 7.92 10.44 9.75 9 11.35c-.81-.89-1.49-1.86-2.06-2.88-.16-.29-.45-.47-.78-.47-.69 0-1.13.75-.79 1.35.63 1.13 1.4 2.21 2.3 3.21L3.3 16.87c-.4.39-.4 1.03 0 1.42.39.39 1.02.39 1.42 0L9 14l2.02 2.02c.51.51 1.38.32 1.63-.35zM17.5 10c-.6 0-1.14.37-1.35.94l-3.67 9.8c-.24.61.22 1.26.87 1.26.39 0 .74-.24.88-.61l.89-2.39h4.75l.9 2.39c.14.36.49.61.88.61.65 0 1.11-.65.88-1.26l-3.67-9.8c-.22-.57-.76-.94-1.36-.94zm-1.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+  </button>
+  <div class="dropdown-content lang__dropdown--content">
+    
+    
+    
+      
+      
+        
+      
+        
+        
+          
+            
+              <a href="https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/" data-lang="pt" class="lang__dropdown--item active">Português</a>
+            
+          
+        
+      
+    
+  </div>
+</div>
+
+  
+<button id="toggleToDark" class="navbar__icons--icon" aria-label="Toggle to dark mode">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><path fill="currentColor" d="M20 15.31L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+</button>
+<button id="toggleToLight" class="navbar__icons--icon" aria-label="Toggle to light mode">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path fill="currentColor" d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+</button>
+<script>
+  var theme = localStorage.getItem('theme');
+  var toggleToLightBtn = document.getElementById('toggleToLight');
+  var toggleToDarkBtn = document.getElementById('toggleToDark');
+
+  if (theme && theme === 'dark') {
+    toggleToLightBtn.className = 'navbar__icons--icon';
+    toggleToDarkBtn.className = 'hide';
+  } else {
+    toggleToLightBtn.className = 'hide';
+    toggleToDarkBtn.className = 'navbar__icons--icon';
+  }
+</script>
+
+  <div class="navbar__icons--icon">
+    <a href="https://github.com/TiagoJSilva" title="Github repository" aria-label="Github repository" target="_blank" rel="noreferrer">
+    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22"><path d="M10.9,2.1c-4.6,0.5-8.3,4.2-8.8,8.7c-0.5,4.7,2.2,8.9,6.3,10.5C8.7,21.4,9,21.2,9,20.8v-1.6c0,0-0.4,0.1-0.9,0.1 c-1.4,0-2-1.2-2.1-1.9c-0.1-0.4-0.3-0.7-0.6-1C5.1,16.3,5,16.3,5,16.2C5,16,5.3,16,5.4,16c0.6,0,1.1,0.7,1.3,1c0.5,0.8,1.1,1,1.4,1 c0.4,0,0.7-0.1,0.9-0.2c0.1-0.7,0.4-1.4,1-1.8c-2.3-0.5-4-1.8-4-4c0-1.1,0.5-2.2,1.2-3C7.1,8.8,7,8.3,7,7.6c0-0.4,0-0.9,0.2-1.3 C7.2,6.1,7.4,6,7.5,6c0,0,0.1,0,0.1,0C8.1,6.1,9.1,6.4,10,7.3C10.6,7.1,11.3,7,12,7s1.4,0.1,2,0.3c0.9-0.9,2-1.2,2.5-1.3 c0,0,0.1,0,0.1,0c0.2,0,0.3,0.1,0.4,0.3C17,6.7,17,7.2,17,7.6c0,0.8-0.1,1.2-0.2,1.4c0.7,0.8,1.2,1.8,1.2,3c0,2.2-1.7,3.5-4,4 c0.6,0.5,1,1.4,1,2.3v2.6c0,0.3,0.3,0.6,0.7,0.5c3.7-1.5,6.3-5.1,6.3-9.3C22,6.1,16.9,1.4,10.9,2.1z"/></svg>
+    </a>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  var siteLogo = document.getElementById('siteLogo');
+  var tabletLogo = document.getElementById('tabletLogo');
+  var mobileLogo = document.getElementById('mobileLogo');
+  var navMenu = document.getElementById('navMenu');
+  var navMenuMobile = document.getElementById('navMenuMobile');
+  var siteSearch = document.getElementById('siteSearch');
+  var mobileSearch = document.getElementById('mobileSearch');
+  
+  enquire.register("screen and (max-width:1280px)", {
+    match: function () {
+      siteLogo.className = 'navbar__logo--wrapper';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = '';
+      mobileSearch.className = 'hide';
+    },
+    unmatch: function () {
+      siteLogo.className = 'navbar__logo--wrapper';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = '';
+      mobileSearch.className = 'hide';
+    },
+  }).register("screen and (max-width:960px)", {
+    match: function () {
+      siteLogo.className = 'hide';
+      tabletLogo.className = '';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = 'hide';
+      mobileSearch.className = 'navbar__icons--icon';
+    },
+    unmatch: function () {
+      siteLogo.className = 'navbar__logo--wrapper';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = '';
+      mobileSearch.className = 'hide';
+    },
+  }).register("screen and (max-width:600px)", {
+    match: function () {
+      siteLogo.className = 'hide';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = '';
+      navMenu.className = 'hide';
+      navMenuMobile.className = '';
+      siteSearch.className = 'hide';
+      mobileSearch.className = 'navbar__icons--icon';
+    },
+    unmatch: function () {
+      siteLogo.className = 'hide';
+      tabletLogo.className = '';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = 'hide';
+      mobileSearch.className = 'navbar__icons--icon';
+    },
+  });
+</script>
+
+        
+  <div class="top">
+  <div class="header__wrapper bgcolor__header">
+    <div class="divider">
+      <div class="lmr">
+        <h2 class="title">TinyCore Linux - Passos iniciais</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__wrapper bgcolor__breadcrumb">
+    <div class="divider">
+      <div class="lmr flexbox">
+        
+          <nav class="breadcrumb" aria-label="breadcrumbs" data-is-blog="false">
+  
+  <ol>
+    
+  
+  
+  
+  
+  
+  
+  
+  <li >
+    
+      <a href="https://tiagojsilva.github.io/pt/" class="capitalize">Layer9</a>
+    
+  </li>
+  
+  
+  <li >
+    
+      <a href="https://tiagojsilva.github.io/pt/unixlike/" class="capitalize">*nix</a>
+    
+  </li>
+  
+  
+  <li >
+    
+      <a href="https://tiagojsilva.github.io/pt/unixlike/meme/" class="capitalize">Meme distros</a>
+    
+  </li>
+  
+  
+  <li  class="is-active" >
+    
+      <span>TinyCore Linux - Passos iniciais</span>
+    
+  </li>
+  
+  </ol>
+  
+</nav>
+        
+        <div class="grow"></div>
+        
+  <label class="switch switch__rel">
+    
+      <input id="toggle-sidebar" aria-label="Toggle Sidebar Visibility" type="checkbox" checked />
+      <span class="slider">
+        <span class="slider__icon ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </span>
+        <span class="slider__icon hide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
+        </span>
+      </span>
+    
+    
+  </label>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+  
+
+<div class="mid">
+  <div class="divider">
+    
+    <nav id="single-menu" class="l" data-dir="ltr">
+      
+        <div class="menu">
+  <h6 class="menu__label">
+    
+      TinyCore Linux - Passos iniciais
+    
+  </h6>
+  <ul>
+    
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse active" data-depth="0" data-permalink="https://tiagojsilva.github.io/pt/unixlike/meme/">
+    <span class="menu__title--collapse-text">
+      Meme distros
+    </span>
+    <span class="menu__title--icon down">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list active" data-data=/meme/ data-link=https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/>
+    
+      
+        
+        
+        <li>
+          <a href="https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/" class="menu__title active" data-depth="0">TinyCore Linux - Passos iniciais</a>
+        </li>
+      
+    
+  </ul>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://tiagojsilva.github.io/pt/unixlike/musl/"
+      class="menu__title ">Musl</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://tiagojsilva.github.io/pt/unixlike/dotfiles/"
+      class="menu__title ">Dotfiles</a>
+  </li>
+  
+
+    
+  </ul>
+</div>
+
+
+      
+    </nav>
+
+    <article id="list-main" class="m" data-dir="ltr">
+      <div class="single" data-display="block">
+  
+
+  <article class="single__contents" data-dir="ltr">
+    <p>Para este sistema, que eventualmente vai ser um servidor chamado <strong>verynice</strong>, criei uma VM com 256MB de RAM e 640MB de disco.<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image1.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image1.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image1.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>O TinyCore<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> é uma instalação Linux muito especial, devotada a sistemas com muito poucos recursos. Vou usar a versão CorePlus, a mais &ldquo;luxuosa&rdquo;, com ambiente gráfico e possibilidade de instalação em disco, mas há versões Core muito mais frugais que correm alegremente de uma pen USB carregando-se para uma RAMdrive no arranque.<br />
+O seu modo de funcionamento é muito particular, porque o <em>core</em> do sistema é completamente separado das aplicações e configurações, e estas só são aplicadas no arranque seguinte se forem <em>explicitamente guardadas</em>.<br />
+<u>Muito poucas concessões</u> são feitas à conveniência e <em>user-friendliness</em>, todos os comandos da <em>shell</em> por defeito (<em>busybox</em>)<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>  são extremamente simplificados em relação a uma distribuição Linux normal e os utilitários de gestão são os do Unix/Linux de há dez anos.</p>
+<h2 id="instalação">Instalação</h2>
+<p>Descarrega-se do site da distribuição TinyCore (<a href="http://tinycorelinux.net/">http://tinycorelinux.net/</a>) o instalador da versão <em><strong>CorePlus</strong></em> (na página <em>Downloads</em>, <a href="http://tinycorelinux.net/11.x/x86/release/CorePlus-current.iso">http://tinycorelinux.net/11.x/x86/release/CorePlus-current.iso</a>)<br />
+Coloca-se o ISO na drive óptica virtual da VM e inicia-se a VM.<br />
+Escolhe-se a opção por defeito: <em><strong>FLWM topside</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image2.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image2.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image2.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Na doca ao fundo do ecrã, abre-se a aplicação <em><strong>tc-install</strong></em><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image3.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image3.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image3.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Escolhem-se as opções: <em><strong>Frugal, Whole disk</strong></em>, e depois desta última, o disco <em><strong>sda</strong></em>. Confirmar que <em><strong>Install boot loader</strong></em> está <u>activado</u>. Clicar em <em><strong>&gt;</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image4.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image4.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image4.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p><em>Formatting Options: <strong>ext4 &gt;</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image5.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image5.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image5.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p><em>Boot options</em> a colocar no instalador (consultar a lista apresentada no ecrã, ou o capítulo 10 do livro oficial do Tiny Core Linux, <a href="http://www.tinycorelinux.net/book.html" target="_blank">Into the Core</a>):</p>
+<pre><code>tce=sda1 home=sda1 opt=sda1 nodhcp showapps safebackup cron syslog host=verynice kmap=qwerty/pt-latin1.kmap
+</code></pre><p>(Mude o <em>hostname</em> para algo mais adequado para si, obviamente)<br />
+<div class="notices warning" data-title="Atenção">
+  <p>O teclado está em <em>layout</em> US, por isso:</p>
+<ul>
+<li>o caracter <code>=</code> está na tecla <code>«</code></li>
+<li>e o caracter <code>/</code> está na tecla <code>–</code></li>
+</ul>
+
+</div></p>
+<p>Clicar em <strong>&gt;</strong></p>
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image6.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image6.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image6.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+
+<h3 id="tipo-de-instalação">Tipo de instalação</h3>
+<p>Eu escolhi <em><strong>Core and X/GUI Desktop</strong></em> mas seguindo este guia, talvez não seja necessário o GUI e se possa escolher <em>Core Only</em><br />
+A única extensão que se vai instalar é <em><strong>Non-US keyboard layout support</strong></em><br />
+Clicar em <strong>&gt;</strong></p>
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image7.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image7.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image7.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+
+<p>Na realidade, depois de ter o CoreLinux instalado e a rede configurada, esta extensão pode-se instalar com bastante facilidade a partir do gestor de extensões, por isso também não é obrigatório utilizar o instalador CorePlus para ter teclados internacionais, um instalador mais leve seria suficiente. Mas esta é a opção mais geral.<br />
+O mesmo pode não ser verdade para o suporte a placas Wi-Fi, que também se escolhe neste painel mas que eu não testei.<br />
+Revêm-se as configurações e clica-se em <em><strong>Proceed</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image8.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image8.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image8.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Clicar no ícone <em><strong>Exit</strong></em> da doca, opção <em><strong>Shutdown</strong></em>, <em><strong>OK</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image9.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image9.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image9.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Quando a instalação terminar, retirar o ISO da <em>drive</em> óptica e reiniciar a VM.</p>
+<h2 id="configurações-iniciais">Configurações iniciais</h2>
+<h3 id="mudar-as-opções-de-arranque">Mudar as opções de arranque</h3>
+<p>Se for preciso mudar as <em>boot options</em>: editar <code>/mnt/sda1/tce/boot/extlinux/extlinux.conf</code> e mudar o conteúdo da linha <code>APPEND</code></p>
+<h3 id="teclado-português">Teclado português</h3>
+<p>Abrir o Terminal e testar uma tecla específica do teclado PT-pt; se o resultado não for o esperado (o <em>boot option</em> <code>kmap</code> não estiver a activar o <em>layout</em> PT-pt), usar o comando</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh"><span class="nb">echo</span> <span class="s1">&#39;loadkmap &lt; /usr/share/kmap/qwerty/pt-latin1.kmap&#39;</span> &gt;&gt; /opt/bootsync.sh
+</code></pre></td></tr></table>
+</div>
+</div><div class="notices info" data-title="Nota">
+  <ul>
+<li>o caracter <code>-</code> está na tecla <code>'</code></li>
+<li>o caracter <code>/</code> está na tecla <code>–</code></li>
+<li>o caracter <code>'</code> está na tecla <code>º</code></li>
+</ul>
+
+</div>
+<p>Seguido de (já explicarei estes comandos):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">filetool.sh -b
+sudo reboot
+</code></pre></td></tr></table>
+</div>
+</div>
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image10.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image10.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image10.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+
+<h3 id="configurar-permanência">Configurar permanência</h3>
+<p>Sem este passo, o TinyCore Linux não vai guardar automaticamente as alterações que fizermos à configuração, porque depois de cada reinício, todas as configurações são perdidas excepto aquelas que dissermos que queremos guardar (o que tem vantagens e desvantagens).<br />
+O processo abaixo configura a gravação automática das configurações em caso de <em>shutdown</em> do sistema, através do script que o sistema corre automaticamente durante o <em>shutdown</em>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">vi /opt/shutdown.sh
+</code></pre></td></tr></table>
+</div>
+</div><p>Por baixo da linha <code>#put user shutdown commands here</code>, acrescentar:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-/opt/shutdown.sh" data-lang="/opt/shutdown.sh">filetool.sh -b
+</code></pre></td></tr></table>
+</div>
+</div><p>Guardar e sair. O comando para forçar a gravação desta alteração é, claro,</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">filetool.sh -b
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="mudar-a-palavra-passe-do-utilizador-por-defeito-tc">Mudar a palavra passe do utilizador por defeito (tc)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">passwd
+</code></pre></td></tr></table>
+</div>
+</div><p>Colocar uma palavra-passe que lhe apeteça.</p>
+<h4 id="adicionar-um-ficheiro-de-configuração-à-permanência">Adicionar um ficheiro de configuração à Permanência</h4>
+<p>Para guardar um ficheiro de configuraçºao, como o ficheiro das palavras-passe, depois de um reinício (<u>dar-lhe <em>permanência</em></u>), o caminho do ficheiro a guardar, <em><strong>menos o <code>/</code> inicial</strong></em>, é colocado no ficheiro <code>/opt/.filetool.lst</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">sudo <span class="nb">echo</span> <span class="s1">&#39;etc/shadow&#39;</span> &gt;&gt; /opt/.filetool.lst
+filetool.sh -b
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="rede">Rede</h3>
+<p>Para configurar uma interface de rede numa versão do CoreLinux com o ambiente gráfico, usar o comando <code>sudo network</code> numa janela de terminal (estes valores servem apenas de exemplo):<br />
+<em>Interface:</em> <strong>eth0</strong><br />
+<em>DHCP Broadcast:</em> <em><strong>no</strong></em><br />
+<em>IP Address:</em> <strong>10.123.130.6</strong><br />
+<em>Net mask:</em> <strong>255.255.255.248</strong><br />
+<em>Broadcast:</em> <strong>10.123.130.7</strong><br />
+<em>Gateway:</em> <strong>10.123.130.1</strong><br />
+<em>NameServers:</em> <strong>1.1.1.1, 8.8.8.8</strong><br />
+<em>Save Configuration:</em> <em><strong>yes</strong></em><br />
+<em><strong>Apply</strong></em><br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image11.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image11.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image11.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Testar com <code>ping 1.1.1.1</code><br />
+Confirmar a configuração com <code>cat /opt/eth0.sh</code><br />
+Deve ser:<br />
+<pre style="font-style: italic; font-size: 0.79rem">
+
+#!/bin/sh
+pkill udhcpc
+ifconfig eth0 10.123.130.6 netmask 255.255.255.248 broadcast 10.123.130.7 up
+route add default gw 10.123.130.1
+echo nameserver 1.1.1.1 > /etc/resolv.conf
+echo nameserver 8.8.8.8 >> /etc/resolv.conf
+
+</pre></p>
+<p>Para configurar a rede sem se ter acesso ao modo gráfico, basta copiar a informação acima para <code>/opt/eth0.sh</code><br />
+Confirmar que o <code>/opt/eth0.sh</code> está configurado para ser adicionado à permanência com o comando</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">cat /opt/.filetool.lst <span class="p">|</span> grep eth0
+</code></pre></td></tr></table>
+</div>
+</div><pre style="font-style: italic; font-size: 0.79rem">
+
+opt/eth0.sh
+
+</pre>
+<p>Se não estiver,</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh"><span class="nb">echo</span> <span class="s2">&#34;opt/eth0.sh&#34;</span> &gt;&gt; /opt/.filetool.lst <span class="o">&amp;&amp;</span> filetool.sh -b
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="aliases">Aliases</h3>
+<p>Os <em>aliases</em> do utilizador por defeito (<em><strong>tc</strong></em>) estão em <code>~/.ashrc</code>. Acrescentei estes <em>aliases</em> que julgo úteis:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh"><span class="c1">#filtrar o syslog</span>
+<span class="nb">echo</span> <span class="s2">&#34;alias log=&#39;grep /var/log/messages -e&#39;&#34;</span> &gt;&gt; ~/.ashrc
+<span class="c1">#usar sudo com aliases	</span>
+<span class="nb">echo</span> <span class="s2">&#34;alias sudo=&#39;sudo &#39;&#34;</span> &gt;&gt; ~/.ashrc			
+</code></pre></td></tr></table>
+</div>
+</div><p>E seria bom ter esses <em>aliases</em> (e os outros, como <code>ll='ls -l'</code> e especialmente <code>rm='rm -i'</code>) se estivermos numa <em>rootshell</em>; copiar os ficheiros necessários para a pasta <code>/root</code> e dizer ao CoreLinux que queremos guardar o conteúdo da pasta <code>/root</code> entre arranques:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">sudo cp /home/tc/.ashrc /root/.ashrc <span class="o">&amp;&amp;</span> sudo chown root:root /root/.ashrc
+<span class="nb">echo</span> <span class="s2">&#34;root&#34;</span> &gt;&gt; /opt/.filetool.lst <span class="o">&amp;&amp;</span> filetool.sh -b
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="configurar-time-zone">Configurar Time Zone</h3>
+<p><a href="http://forum.tinycorelinux.net/index.php?topic=5017.msg27012#msg27012" target="_blank">Fonte</a><br />
+Confirmar que estamos na pasta <em>home</em> do utilizador:  <code>cd ~</code><br />
+Assegurar que temos ligação ao exterior (por exemplo, <code>ping 1.1.1.1</code>)<br />
+O comando <code>tce-fetch.sh</code> descarrega uma extensão sem a instalar. Neste caso queremos a extensão <code>tzdata.tcz</code> (<em>Time Zone data.TCextension Zipped</em>)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">tce-fetch.sh tzdata.tcz
+</code></pre></td></tr></table>
+</div>
+</div><p>O CoreLinux pode montar as extensões directamente para leitura (é, de resto, como ele &ldquo;instala&rdquo; uma extensão). Criar uma pasta e montar:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">mkdir tztemp
+sudo mount tzdata.tcz tztemp -t squashfs -o loop,ro
+</code></pre></td></tr></table>
+</div>
+</div><p>Copiar a informação de <em>timezone</em> de Lisboa para o local por defeito, <code>/etc/localtime</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">sudo cp -a tztemp/usr/local/share/zoneinfo/Europe/Lisbon /etc/localtime
+</code></pre></td></tr></table>
+</div>
+</div><p>Dar permanência à configuração:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">sudo <span class="nb">echo</span> <span class="s2">&#34;etc/localtime&#34;</span> &gt;&gt; /opt/.filetool.lst
+filetool.sh -b
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="acesso-remoto-por-openssh">Acesso remoto por OpenSSH</h2>
+<p><a href="https://iotbytes.wordpress.com/configure-ssh-server-on-microcore-tiny-linux/" target="_blank">Fonte</a><br />
+Assegurar que temos ligação ao exterior (por exemplo, <code>ping 1.1.1.1</code>)<br />
+O comando <code>tce-load -wi</code> instala directamente uma extensão de modo permanente:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">tce-load -wi openssh.tcz
+</code></pre></td></tr></table>
+</div>
+</div><p>Criamos a configuração do serviço OpenSSH copiando a configuração por defeito fornecida com a extensão:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh"><span class="nb">cd</span> /usr/local/etc/ssh
+sudo cp -a sshd_config.orig sshd_config
+</code></pre></td></tr></table>
+</div>
+</div><p>Arrancamos o serviço com o <em>script</em> fornecido pela extensão:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">sudo /usr/local/etc/init.d/openssh start
+</code></pre></td></tr></table>
+</div>
+</div><p>Verificar o serviço com</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">netstat -anp <span class="p">|</span> grep <span class="m">22</span>
+</code></pre></td></tr></table>
+</div>
+</div><pre style="font-style: italic; font-size: 0.79rem">
+
+Tcp	0	0  0.0.0.0:22		0.0.0.0:*		LISTEN
+1470/sshd
+
+</pre>
+<h3 id="primeira-ligação">Primeira ligação</h3>
+<p>Com o <code>sshd_config</code> que vem por defeito com a extensão é obrigatório ter uma palavra-passe configurada para o utilizador inicial <em>tc</em>, por isso se a palavra-passe não estiver configurada é necessário fazê-lo agora (é possível configurar <em>host-based auth</em> ou chaves assimétricas, mas só depois de editar o <code>sshd_config</code>)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">passwd
+<span class="c1">#Colocar a palavra-passe do costume duas vezes</span>
+sudo <span class="nb">echo</span> <span class="s2">&#34;etc/shadow&#34;</span> &gt;&gt; /opt/.filetool.lst <span class="o">&amp;&amp;</span> filetool.sh -b
+</code></pre></td></tr></table>
+</div>
+</div><p>Testar, logando por SSH com um cliente (como o PuTTY em Windows):<br />
+
+
+
+
+
+<figure
+  
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/unixlike/2021-09-29_tinycorelinux-install/media/image12.png"
+      
+      
+        href="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image12.png"
+      
+    
+    >
+  <img
+      
+        src="https://tiagojsilva.github.io/images/unixlike/2021-09-29_tinycorelinux-install/media/image12.png"
+      
+        
+        
+         />
+    </a>
+  
+  
+</figure>
+
+</p>
+<p>Garantir que as configurações do SSH são guardadas:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">sudo <span class="nb">echo</span> <span class="s2">&#34;usr/local/etc/ssh&#34;</span> &gt;&gt; /opt/.filetool.lst <span class="o">&amp;&amp;</span> filetool.sh -b
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="colocar-o-serviço-a-arrancar-com-o-sistema">Colocar o serviço a arrancar com o sistema</h3>
+<p>Ai, que me deu aqui um baque de nostalgia&hellip; Era assim que se fazia antes do SystemD:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">sudo <span class="nb">echo</span> <span class="s1">&#39;usr/local/etc/init.d/openssh start &amp;&#39;</span> &gt;&gt; /opt/bootlocal.sh <span class="o">&amp;&amp;</span> filetool.sh -b
+</code></pre></td></tr></table>
+</div>
+</div><p>(Aaahhhh&hellip; nem por isso. O SystemD é um <em><strong>enorme</strong></em> avanço sobre tricotar <em>shell scripts</em> e gerir dependências à unha, mas seria mais pesado que o resto do CoreLinux inteiro&hellip;)</p>
+<h2 id="instalar-um-editor-de-texto-vim">Instalar um editor de texto (<em>vim</em>)</h2>
+<p>Chamar o gestor de aplicações em modo texto:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">tce-ab
+</code></pre></td></tr></table>
+</div>
+</div><pre style="font-style: italic; font-size: 0.79rem">
+
+S)earch
+Enter starting chars of desired extension, e.g. abi:
+
+</pre>
+<p>Escrever <code>vim</code>, tecla <code>Enter</code><br />
+<pre style="font-style: italic; font-size: 0.79rem">
+
+tce - Tiny Core Extension browser
+         1. gvim-base.tcz
+         2. gvim-doc.tcz
+         3. gvim.tcz
+         4. gvim-tutor.tcz
+         5. vim-locale.tcz
+         6. vim.tcz
+Enter selection ( 1 - 6 ) or (q)uit:
+<b>6</b>
+
+</pre></p>
+<p>É mostrada a informação <code>About</code> da extensão; <code>q</code> para sair e mostrar o menu:<br />
+<pre style="font-style: italic; font-size: 0.79rem">
+
+A)bout I)nstall O)nDemand D)epends T)ree F)iles siZ)e L)ist S)earch P)rovides K)eywords or Q)uit:
+<b>i</b>
+vim.tcz.dep OK
+Downloading: gvim-base.tcz
+Connecting to repo.tinycorelinux.net (89.22.99.37:80)
+saving to 'gvim-base.tcz'
+gvim-base.tcz        100% |************************************************************************************| 8036k  0:00:00 ETA
+'gvim-base.tcz' saved
+gvim-base.tcz: OK
+Downloading: ncursesw.tcz
+Connecting to repo.tinycorelinux.net (89.22.99.37:80)
+saving to 'ncursesw.tcz'
+ncursesw.tcz         100% |************************************************************************************|  212k  0:00:00 ETA
+'ncursesw.tcz' saved
+ncursesw.tcz: OK
+Downloading: vim.tcz
+Connecting to repo.tinycorelinux.net (89.22.99.37:80)
+saving to 'vim.tcz'
+vim.tcz              100% |************************************************************************************| 1432k  0:00:00 ETA
+'vim.tcz' saved
+vim.tcz: OK
+ vim.tcz
+A)bout I)nstall O)nDemand D)epends T)ree F)iles siZ)e L)ist S)earch P)rovides K)eywords or Q)uit:
+
+</pre></p>
+<p><code>Q</code> para sair ou <code>S</code>, <code>P</code>, ou <code>K</code>, para encontrar mais extensões a instalar. Por exemplo, <code>coreutils.tcz</code> instala os comandos GNU/POSIX mais vulgares em versões mais completas que as integradas no <em>busybox</em>, e <code>bash.tcz</code> instala essa <em>shell</em> em vez do <em>busybox</em> (mas como o TinyCore não nos segura nas mãozinhas, é necessário ir ao <code>/etc/passwd</code> mudar a <em>login shell</em> do utilizador, configurar o <code>/etc/passwd</code> para ser guardado no <em>backup</em>, e fazer o <em>backup</em>)</p>
+<h3 id="configurar-o-vim">Configurar o <em>vim</em></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh"><span class="nb">cd</span> ~
+vim .vimrc
+</code></pre></td></tr></table>
+</div>
+</div><p>Configurar no ficheiro as opções desejadas (uma vez que está na pasta <code>/home/tc/</code>, será guardado automaticamente pelas <em>boot options</em> que demos, nomeadamente <code>home=sda1</code>).<br />
+Uma sugestão para um <code>.vimrc</code> está na página <a href="/https://tiagojsilva.github.io/pt/unixlike/dotfiles/">Dotfiles</a>.<br />
+Depois de o ter configurado a nosso gosto, seria bom manter a configuração mesmo quando estamos a editar um ficheiro como o utilizador <em>root</em>. Para conseguir isso, copia-se o <code>.vimrc</code> para a pasta pessoal do <em>root</em>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">sudo cp /home/tc/.vimrc /root
+sudo chown root:root /root/.vimrc
+</code></pre></td></tr></table>
+</div>
+</div><p>(ver a secção <em>Aliases</em> para o comando que adiciona a pasta <code>/root</code> à Permanência, se já não estiver)</p>
+<h2 id="cliente-ntp">Cliente NTP</h2>
+<p>Se o relógio de sistema não estiver correcto a comunicação entre um serviço local e os servidores na WAN pode ser recusada por estes últimos. E numa VM VirtualBox sem <em>GuestAdditions</em>, o relógio vai estar quase sempre errado.<br />
+Apesar de existir um pacote <em>chrony</em> para o TinyCore, usei apenas um <u>cliente</u> NTP<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> muito básico, porque estava interessado em aligeirar o mais possível o sistema .</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh">tce-load -wi ntpclient.tcz
+</code></pre></td></tr></table>
+</div>
+</div><pre style="font-style: italic; font-size: 0.79rem">
+
+Downloading: ntpclient.tcz
+Connecting to repo.tinycorelinux.net (89.22.99.37:80)
+saving to 'ntpclient.tcz'
+ntpclient.tcz        100% |********************************| 12288  0:00:00 ETA
+'ntpclient.tcz' saved
+ntpclient.tcz: OK
+
+</pre>
+<h3 id="configurar-o-cliente">Configurar o cliente</h3>
+<p>Colocar no <code>/opt/bootlocal.sh</code> três instruções com diferentes propósitos:</p>
+<h4 id="1-actualizar-o-relógio-durante-o-arranque6">1) Actualizar o relógio durante o arranque<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></h4>
+<p>Caso não tenhamos DNS disponível nesta fase do arranque, precisamos de usar directamente IPs e não nomes, por isso não podemos usar uma <em>pool</em>. Neste caso, vamos pedir a hora aos servidores da Hora Legal de Portugal<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh"><span class="nb">echo</span> <span class="s2">&#34;ntpclient -c 1 -s -t -h 194.117.47.42 || ntpclient -c 1 -s -t -h 194.117.47.44&#34;</span> &gt;&gt; /opt/bootlocal.sh
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2-sincronizar-o-rtc">2) Sincronizar o RTC</h4>
+<p>Mas o TinyCore, até lhe dizerem o contrário, ignora esta hora e vai sempre buscar a hora do relógio de <em>hardware</em>, que sem Guest Additions não sabe perguntar ao <em>host</em> e arranca na mesma hora em que a VM foi desligada. Depois de recebermos a hora de sistema a partir de um servidor NTP, temos de actualizar o relógio de <em>hardware</em> com o comando <code>hwclock -w</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh"><span class="nb">echo</span> <span class="s2">&#34;hwclock -w&#34;</span> &gt;&gt; /opt/bootlocal.sh
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3-corrigir-o-desvio-de-tempo">3) Corrigir o desvio de tempo</h4>
+<p>Depois é não deixar que o relógio se vá desviando durante a operação do sistema, criando um processo que verifica periodicamente o tempo correcto:<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-$:.sh" data-lang="$:.sh"><span class="nb">echo</span> <span class="s2">&#34;/usr/local/bin/ntpclient -c 0 -l -t -i 300 -h 3.pt.pool.ntp.org &amp;&#34;</span> &gt;&gt; /opt/bootlocal.sh
+</code></pre></td></tr></table>
+</div>
+</div><div class="notices warning" data-title="Atenção">
+  Um detalhe importante é que em caso de <em>reboot</em>, o relógio avança uma hora, mas correndo os dois primeiros comandos manualmente no final do arranque o tempo fica imediatamente corrigido. Não sei se é <em>bug</em> ou problema da minha configuração, tentei todas as combinações de UTC e <em>localtime</em> no Virtualbox e no TinyCore e não resolveu.<br />
+Começando de desligado, funciona bem.
+</div>
+<h2 id="conclusão">Conclusão</h2>
+<p>O TinyCoreLinux é muito pequeno, mas isso tem os seus custos.<br />
+Tudo tem de ser configurado, tudo tem de ser definido como persistente.<br />
+Comporta-se mais como um <em>container</em> do que como uma instalação vulgar.<br />
+Nisso, tem boa companhia, porque o AlpineLinux tem exactamente a mesma atitude, e também é muito popular como base para <em>containers</em> (é o <em>default</em> do Docker) e sistemas <em>embedded</em>.<br />
+No entanto, parece-me que o TinyCore já começa a dar demasiado trabalho para aquilo que poupa em recursos. Já não estamos assim tão desesperados, geralmente.<br />
+Para um sistema realmente minimalista, existe uma versão ainda mais reduzida, o MicroCoreLinux (ou simplesmente <em><strong>Core</strong></em>), sem ambiente gráfico e com apenas 8MB.<br />
+Para algo que me permitiria ser produtivo rapidamente, tenho esperança no AlpineLinux, que vou tentar testar em breve.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="http://distro.ibiblio.org/tinycorelinux/">http://distro.ibiblio.org/tinycorelinux/</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://busybox.net/">https://busybox.net/</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="http://tinycorelinux.net/install.html">http://tinycorelinux.net/install.html</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p><code>-c</code> = count &lt;vezes&gt;; <code>-s</code> = set; <code>-t</code> = trust; <code>-h</code> = host &lt;endereço_servidor_NTP&gt;&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p><a href="http://oal.ul.pt/hora-legal/como-acertar/">http://oal.ul.pt/hora-legal/como-acertar/</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p><code>-c 0</code> = sem limite de tentativas; <code>-l</code> = lock; <code>-i</code> = intervalo <segundos>; este comando usa nomes e presume-se que existe resolução DNS&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+  </article>
+</div>
+      
+
+      
+  
+    <div id="utterances"></div>
+<noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    try {
+      
+      var owner = JSON.parse("\"TiagoJSilva\"");
+      
+      var repo = JSON.parse("\"hugo-site-utterances\"");
+      
+      var baseTheme = JSON.parse("\"light\"");
+      var localTheme = localStorage.getItem('theme');
+      var currentTheme = localTheme || baseTheme;
+      var utterTheme = currentTheme === "dark" ? 'photon-dark' : 'github-light'
+
+      var myScript = document.createElement('script');
+      myScript.setAttribute('src', 'https://utteranc.es/client.js');
+      myScript.setAttribute('repo', `${owner}/${repo}`);
+      myScript.setAttribute('issue-term', 'pathname');
+      myScript.setAttribute('theme', utterTheme);
+      myScript.setAttribute('crossorigin', 'anonymous');
+      myScript.setAttribute('async', '');
+
+      myScript.onload = function() {
+      }
+
+      document.getElementById('utterances').appendChild(myScript);
+    } catch (err) {
+      console.log(err);
+    }
+  });
+</script>
+
+  
+
+    </article>
+    
+    <section id="list-side" class="r" data-dir="ltr">
+      
+        <div class="toc">
+  <h6 class="toc__label">Neste artigo</h6>
+  <div class="toc__body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#instalação">Instalação</a>
+      <ul>
+        <li><a href="#tipo-de-instalação">Tipo de instalação</a></li>
+      </ul>
+    </li>
+    <li><a href="#configurações-iniciais">Configurações iniciais</a>
+      <ul>
+        <li><a href="#mudar-as-opções-de-arranque">Mudar as opções de arranque</a></li>
+        <li><a href="#teclado-português">Teclado português</a></li>
+        <li><a href="#configurar-permanência">Configurar permanência</a></li>
+        <li><a href="#mudar-a-palavra-passe-do-utilizador-por-defeito-tc">Mudar a palavra passe do utilizador por defeito (tc)</a>
+          <ul>
+            <li><a href="#adicionar-um-ficheiro-de-configuração-à-permanência">Adicionar um ficheiro de configuração à Permanência</a></li>
+          </ul>
+        </li>
+        <li><a href="#rede">Rede</a></li>
+        <li><a href="#aliases">Aliases</a></li>
+        <li><a href="#configurar-time-zone">Configurar Time Zone</a></li>
+      </ul>
+    </li>
+    <li><a href="#acesso-remoto-por-openssh">Acesso remoto por OpenSSH</a>
+      <ul>
+        <li><a href="#primeira-ligação">Primeira ligação</a></li>
+        <li><a href="#colocar-o-serviço-a-arrancar-com-o-sistema">Colocar o serviço a arrancar com o sistema</a></li>
+      </ul>
+    </li>
+    <li><a href="#instalar-um-editor-de-texto-vim">Instalar um editor de texto (<em>vim</em>)</a>
+      <ul>
+        <li><a href="#configurar-o-vim">Configurar o <em>vim</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#cliente-ntp">Cliente NTP</a>
+      <ul>
+        <li><a href="#configurar-o-cliente">Configurar o cliente</a>
+          <ul>
+            <li><a href="#1-actualizar-o-relógio-durante-o-arranque6">1) Actualizar o relógio durante o arranque</a></li>
+            <li><a href="#2-sincronizar-o-rtc">2) Sincronizar o RTC</a></li>
+            <li><a href="#3-corrigir-o-desvio-de-tempo">3) Corrigir o desvio de tempo</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#conclusão">Conclusão</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+      
+    </section>
+
+  </div>
+</div>
+
+<script>
+  'use strict';
+  
+  function wrap(el, wrapper) {
+    el.parentNode.insertBefore(wrapper, el);
+    wrapper.appendChild(el);
+  }
+
+  (function () {
+    var singleContentsElem = document.querySelector('.single__contents');
+    singleContentsElem ? 
+    singleContentsElem.querySelectorAll('pre > code').forEach(function(elem) {
+      var dataLang = elem.getAttribute('data-lang');
+      var dataLangWrapper = document.createElement('div');
+      var code = null;
+      var codeTitle = null;
+
+      if (dataLang && dataLang.includes(':')) {
+        code = dataLang.split(':')[0];
+        codeTitle = dataLang.split(':')[1];
+
+        dataLangWrapper.className = 'language-' + code;
+        dataLangWrapper.setAttribute('data-lang', codeTitle);
+
+        elem.className = 'language-' + code;
+        elem.setAttribute('data-lang', codeTitle);
+        elem.setAttribute('id', codeTitle);
+      }
+
+      if (!dataLang || codeTitle) {
+        wrap(elem.parentNode, dataLangWrapper);
+      }
+
+    }) : null;
+  })();
+  
+
+
+  
+  
+  var dollarCodeElem = document.querySelectorAll('div.language-\\$');
+  var gtCodeElem = document.querySelectorAll('div.language-\\>');
+  
+  dollarCodeElem ?
+  dollarCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = '$<br/>';
+    }) : null;
+  }) : null;
+
+  gtCodeElem ?
+  gtCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = '><br/>';
+    }) : null;
+  }) : null;
+
+  var hashCodeElem = document.querySelectorAll('div.language-\\#');
+  hashCodeElem ?
+  hashCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = '#<br/>';
+    }) : null;
+  }) : null;
+
+  var psCodeElem = document.querySelectorAll('div.language-\\ps');
+  psCodeElem ?
+  psCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = 'PS><br/>';
+    }) : null;
+  }) : null;
+
+    var psadmCodeElem = document.querySelectorAll('div.language-\\psa');
+  psadmCodeElem ?
+  psadmCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = 'PS#<br/>';
+    }) : null;
+  }) : null;
+
+
+  
+
+
+(function() {
+  'use strict';
+
+  if(!document.queryCommandSupported('copy')) {
+    return;
+  }
+
+  function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function() {
+      el.textContent = "COPY";
+    }, 1000);
+  }
+
+  function selectText(node) {
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    return selection;
+  }
+
+  function addCopyButton(containerEl) {
+    var copyBtn = document.createElement("button");
+    copyBtn.className = "highlight-copy-btn";
+    copyBtn.textContent = "COPY";
+
+    var codeEl = containerEl.firstElementChild;
+    copyBtn.addEventListener('click', function() {
+      try {
+        var selection = selectText(codeEl);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+
+        flashCopyMessage(copyBtn, 'Copied!')
+      } catch(e) {
+        console && console.log(e);
+        flashCopyMessage(copyBtn, 'Failed :\'(')
+      }
+    });
+   
+   
+    containerEl.appendChild(copyBtn);
+          
+  }
+
+  
+var highlightBlocks = document.getElementsByClassName('highlight');
+  
+  
+  
+  
+  
+  for (var i = 0; i < highlightBlocks.length; i++) {
+  addCopyButton(highlightBlocks[i]);
+  }
+})();
+
+</script>
+
+
+
+
+
+<script defer src="/js/helper/getParents.min.js"></script>
+
+<script defer src="/js/helper/closest.min.js"></script>
+
+<script defer src="/js/helper/prev.min.js"></script>
+
+<script defer src="/js/helper/prop.min.js"></script>
+
+<script defer src="/js/helper/fadeinout.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    'use strict';
+    
+    
+    var tables = document.querySelectorAll('.single__contents > table');
+    for (let i = 0; i < tables.length; i++) {
+      var table = tables[i];
+      var wrapper = document.createElement('div');
+      wrapper.className = 'table-wrapper';
+      table.parentElement.replaceChild(wrapper, table);
+      wrapper.appendChild(table);
+    }
+    
+
+
+    
+    
+    
+    var lib = JSON.parse("null");
+
+    if (lib && lib.includes('mermaid')) {
+      var themeVariant = localStorage.getItem('theme') || 'light';
+
+      if (themeVariant === "dark") {
+        mermaid.initialize({ theme: 'dark' });
+      } else {
+        mermaid.initialize({ theme: 'default' });
+      }
+      
+      var mermaids = [];
+      [].push.apply(mermaids, document.getElementsByClassName('language-mermaid'));
+      mermaids.forEach(function(elem) {
+        var elemParentNode = elem.parentNode;
+
+        if (elemParentNode !== document.body) {
+          elemParentNode.parentNode.insertBefore(elem, elemParentNode);
+          elemParentNode.parentNode.removeChild(elemParentNode);
+        }
+
+        var newElemWrapper = document.createElement('div');
+        newElemWrapper.classList.add('mermaid');
+        newElemWrapper.innerHTML = elem.innerHTML;
+        elem.replaceWith(newElemWrapper);
+      });
+    }
+    
+    
+
+    
+    if (lib && lib.includes('katex')) {
+      var mathElements = document.getElementsByClassName('math');
+      var options = {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false }
+        ],
+      };
+
+      renderMathInElement(document.querySelector('.single__contents'), options);
+    }
+    
+
+
+    
+    if (lib && lib.includes('flowchartjs')) {
+      
+      var options = JSON.parse("{\"arrow-end\":\"block\",\"element-color\":\"black\",\"fill\":\"white\",\"flowstate\":{\"approved\":{\"fill\":\"#58C4A3\",\"font-size\":12,\"no-text\":\"n/a\",\"yes-text\":\"APPROVED\"},\"current\":{\"fill\":\"yellow\",\"font-color\":\"red\",\"font-weight\":\"bold\"},\"future\":{\"fill\":\"#FFFF99\"},\"invalid\":{\"fill\":\"#444444\"},\"past\":{\"fill\":\"#CCCCCC\",\"font-size\":12},\"rejected\":{\"fill\":\"#C45879\",\"font-size\":12,\"no-text\":\"REJECTED\",\"yes-text\":\"n/a\"},\"request\":{\"fill\":\"blue\"}},\"font-color\":\"black\",\"font-size\":14,\"line-color\":\"black\",\"line-length\":50,\"line-width\":3,\"no-text\":\"no\",\"scale\":1,\"symbols\":{\"end\":{\"class\":\"end-element\"},\"start\":{\"element-color\":\"green\",\"fill\":\"yellow\",\"font-color\":\"red\"}},\"text-margin\":10,\"x\":0,\"y\":0,\"yes-text\":\"yes\"}");
+      var jsonContent = null;
+
+      var flowchartPrefix = "language-flowchart";
+      var index = 0;
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + flowchartPrefix + "]"), function(x){
+          x.style.display = 'none'
+          x.parentNode.style.backgroundColor = "transparent"
+          jsonContent = x.innerText;
+
+          var node0 = document.createElement('div');
+          node0.id = 'flowchart' + index;
+          x.parentNode.insertBefore(node0, x);
+
+          var diagram = flowchart.parse(jsonContent);
+          diagram.drawSVG("flowchart"+index, options);
+
+          index +=1;
+      });      
+    }
+    
+
+
+    
+    if (lib && lib.includes('chart')) {
+      var borderColor = "#666";
+      var bgColor = "#ddd";
+      var borderWidth = 2;
+
+      Chart.defaults.global.elements.rectangle.borderWidth = borderWidth;
+      Chart.defaults.global.elements.rectangle.borderColor = borderColor;
+      Chart.defaults.global.elements.rectangle.backgroundColor = bgColor;
+
+      Chart.defaults.global.elements.line.borderWidth = borderWidth;
+      Chart.defaults.global.elements.line.borderColor = borderColor;
+      Chart.defaults.global.elements.line.backgroundColor = bgColor;
+
+      Chart.defaults.global.elements.point.borderWidth = borderWidth;
+      Chart.defaults.global.elements.point.borderColor = borderColor;
+      Chart.defaults.global.elements.point.backgroundColor = bgColor;
+
+      var chartPrefix = "language-chart";
+      var index = 0;
+      var jsonContent = null;
+
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + chartPrefix + "]"), function (x) {
+        x.style.display = 'none'
+        x.parentNode.style.backgroundColor = "transparent"
+        jsonContent = x.innerText;
+        var node0 = document.createElement('canvas');
+        var source = null;
+        node0.height = 200;
+        node0.style.height = 200;
+        node0.id = 'myChart' + index;
+        source = JSON.parse(jsonContent);
+        x.parentNode.insertBefore(node0, x);
+        var ctx = document.getElementById('myChart' + index).getContext('2d');
+        var myChart = new Chart(ctx, source);
+        index += 1;
+      });            
+    }
+    
+
+
+    
+    if (lib && lib.includes('viz')) {
+      var vizPrefix = "language-viz-";
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + vizPrefix + "]"), function (x) {
+        x.style.display = 'none'
+        x.parentNode.style.backgroundColor = "transparent"
+        var engine;
+        x.getAttribute("class").split(" ").forEach(function (cls) {
+          if (cls.startsWith(vizPrefix)) {
+            engine = cls.substr(vizPrefix.length);
+          }
+        });
+        var viz = new Viz();
+        viz.renderSVGElement(x.innerText, { engine: engine })
+          .then(function (element) {
+            element.style.width = "100%";
+            x.parentNode.insertBefore(element, x);
+          })
+      });
+    }
+    
+    
+  });
+</script>
+
+<script>
+  var listSide = document.getElementById('list-side');
+  var listMain = document.getElementById('list-main');
+  var singleMenu = document.getElementById('single-menu');
+  var switchElem = document.querySelector('.switch');
+  var wideViewAsDefault = JSON.parse("null");
+  
+  enquire.register("screen and (max-width:1280px)", {
+    match: function () {
+      if (wideViewAsDefault) {
+        singleMenu.className = 'l';  
+        listMain.className = 'mr';
+        listSide.className = 'hide';
+      } else {
+        singleMenu.className = 'l';
+        listMain.className = 'm';
+        listSide.className = 'r';
+      }
+    },
+    unmatch: function () {
+      if (wideViewAsDefault) {
+        singleMenu.className = 'l';
+        listMain.className = 'mr';
+        listSide.className = 'hide';
+      } else {
+        listSide.className = 'r';
+        listMain.className = 'm';
+        singleMenu.className = 'l';
+      }
+    },
+  }).register("screen and (max-width:960px)", {
+    match: function () {
+      singleMenu.className = 'l';
+      listMain.className = 'mr';
+      listSide.className = 'hide';
+      switchElem.className = 'hide';
+    },
+    unmatch: function () {
+      if (wideViewAsDefault) {
+        singleMenu.className = 'l';
+        listMain.className = 'mr';
+        listSide.className = 'hide';
+      } else {
+        singleMenu.className = 'l';
+        listMain.className = 'm';
+        listSide.className = 'r';
+      }
+      switchElem.className = 'switch';
+    },
+  }).register("screen and (max-width:600px)", {
+    match: function () {
+      listSide.className = 'hide';
+      listMain.className = 'lmr';
+      singleMenu.className = 'hide';
+      switchElem.className = 'hide';
+    },
+    unmatch: function () {
+      listSide.className = 'hide';
+      listMain.className = 'mr';
+      singleMenu.className = 'l';
+      switchElem.className = 'hide';
+    },
+  });
+</script>
+
+        
+<div class="bot">
+  <footer class="footer">
+    <div class="divider">
+      <div class="lmr">
+        
+          <p class="caption">
+            ©2021, All Rights Reserved
+          </p>
+          
+              <p class="caption">Powered by <a href="https://gohugo.io/" rel="noreferrer">Hugo</a> and the <a href="https://github.com/zzossig/hugo-theme-zdoc" rel="noreferrer">zDoc theme</a></p>
+          
+        
+      </div>
+    </div>
+  </footer>
+</div>
+
+    </div>
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" 
+        crossorigin="anonymous">
+    </script>
+    <script src="/js/lightbox.js"></script>
+    <link rel="stylesheet" href="/css/lightbox.css">
+
+</body>
+
+</html>

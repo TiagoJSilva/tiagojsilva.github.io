@@ -1064,6 +1064,40 @@
       }) : null;
     }) : null;
   
+
+  
+  window.addEventListener("load", addCopyButton);
+    function addCopyButton(clipboard) {
+        document.querySelectorAll('pre > code').forEach(function(codeBlock) {
+            if (codeBlock.className === '') {
+                return
+            }
+            var table = codeBlock.parentNode.parentNode.parentNode.parentNode.parentNode
+            var row = table.insertRow(0);
+            var cell = row.insertCell();
+            cell.className = "lntd"
+            var cell = row.insertCell();
+            cell.innerHTML = "<BR>"
+            var button = document.createElement('button');
+            button.className = 'copy-code-button';
+            button.type = 'button';
+            button.innerText = 'Copy';
+            button.addEventListener('click', function() {
+                if (navigator.clipboard != undefined) {
+                        navigator.clipboard.writeText(codeBlock.innerText).then(function () {
+                            console.log('Async: Copying to clipboard was successful!');
+                        }, function (err) {
+                            console.error('Async: Could not copy text: ', err);
+                        });
+                    }
+                    else if(window.clipboardData) { 
+                        window.clipboardData.setData("Text", codeBlock.innerText);
+                    }
+            });
+            cell.appendChild(button)
+        });
+    }
+
   }
 </script>
 
@@ -1811,7 +1845,7 @@
   function flashCopyMessage(el, msg) {
     el.textContent = msg;
     setTimeout(function() {
-      el.textContent = "Copy";
+      el.textContent = "COPY";
     }, 1000);
   }
 
@@ -1827,7 +1861,7 @@
   function addCopyButton(containerEl) {
     var copyBtn = document.createElement("button");
     copyBtn.className = "highlight-copy-btn";
-    copyBtn.textContent = "Copy";
+    copyBtn.textContent = "COPY";
 
     var codeEl = containerEl.firstElementChild;
     copyBtn.addEventListener('click', function() {
@@ -1842,17 +1876,14 @@
         flashCopyMessage(copyBtn, 'Failed :\'(')
       }
     });
-
    
    
-    
-   
-    
-    
+    containerEl.appendChild(copyBtn);
+          
   }
 
   
-  var highlightBlocks = document.getElementsByClassName('highlight');
+var highlightBlocks = document.getElementsByClassName('highlight');
   
   
   
@@ -1860,7 +1891,7 @@
   
   for (var i = 0; i < highlightBlocks.length; i++) {
   addCopyButton(highlightBlocks[i]);
-}
+  }
 })();
 
 </script>

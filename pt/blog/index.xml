@@ -7,12 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/pt/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Botão copy, take 1</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/</link>
+        <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/</guid>
+        <description>Na primeira vez em que tentei configurar um botão Copy para as caixas de código, deixei uma nota no GitHub do tema Zdoc.
+Há dias um outro utilizador do Zdoc publicou a solução que funcionou para ele, e com esse estímulo, tentei de novo.
+Infelizmente, já devo ter manipulado de mais o DOM da minha versão do tema (manter-me compatível com o upstream, infelizmente, não vai dar para já) para poder utilizar directamente o código dele, mas tentei mexer mais um pouco no código que tinha tentado utilizar anteriormente, que era baseado nesta solução proposta por Tom Spencer</description>
+      </item>
       
       <item>
         <title>Actualização VyOS</title>

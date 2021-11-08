@@ -419,7 +419,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2021/</loc>
-    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -434,7 +434,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/blog/</loc>
-    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -444,6 +444,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/blog/2021-11-08_copy-button-1/</loc>
+    <lastmod>2021-11-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/2021-11-08_copy-button-1/"
                 />
   </url>
   
@@ -801,6 +816,20 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/updates/2021/10/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/updates/2021/11/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/updates/2021/11/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/updates/2021/11/"
                 />
   </url>
   

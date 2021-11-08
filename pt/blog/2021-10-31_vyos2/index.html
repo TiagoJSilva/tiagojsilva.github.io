@@ -1064,6 +1064,40 @@
       }) : null;
     }) : null;
   
+
+  
+  window.addEventListener("load", addCopyButton);
+    function addCopyButton(clipboard) {
+        document.querySelectorAll('pre > code').forEach(function(codeBlock) {
+            if (codeBlock.className === '') {
+                return
+            }
+            var table = codeBlock.parentNode.parentNode.parentNode.parentNode.parentNode
+            var row = table.insertRow(0);
+            var cell = row.insertCell();
+            cell.className = "lntd"
+            var cell = row.insertCell();
+            cell.innerHTML = "<BR>"
+            var button = document.createElement('button');
+            button.className = 'copy-code-button';
+            button.type = 'button';
+            button.innerText = 'Copy';
+            button.addEventListener('click', function() {
+                if (navigator.clipboard != undefined) {
+                        navigator.clipboard.writeText(codeBlock.innerText).then(function () {
+                            console.log('Async: Copying to clipboard was successful!');
+                        }, function (err) {
+                            console.error('Async: Could not copy text: ', err);
+                        });
+                    }
+                    else if(window.clipboardData) { 
+                        window.clipboardData.setData("Text", codeBlock.innerText);
+                    }
+            });
+            cell.appendChild(button)
+        });
+    }
+
   }
 </script>
 
@@ -1159,6 +1193,29 @@
   </h6>
   <ul>
     
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/"
+      class="menu__title ">Botão copy, take 1</a>
+  </li>
+  
+
     
       
   
@@ -1878,6 +1935,13 @@ Abri <a href="https://forum.vyos.io/t/1-3-1-4-set-console-keymap-not-working/790
 <nav class="pagination-single">
   
     
+      <a href="https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/" title="Botão copy, take 1" class="pagination-single__left">
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
+        </div>
+        <div class="pagination-single__right-title">Botão copy, take 1</div>
+      </a>
+    
     <div class="grow"></div>
     
       <a href="https://tiagojsilva.github.io/pt/blog/2021-10-08_wat-do/" title="Manifesto" class="pagination-single__right">
@@ -2049,7 +2113,7 @@ Abri <a href="https://forum.vyos.io/t/1-3-1-4-set-console-keymap-not-working/790
   function flashCopyMessage(el, msg) {
     el.textContent = msg;
     setTimeout(function() {
-      el.textContent = "Copy";
+      el.textContent = "COPY";
     }, 1000);
   }
 
@@ -2065,7 +2129,7 @@ Abri <a href="https://forum.vyos.io/t/1-3-1-4-set-console-keymap-not-working/790
   function addCopyButton(containerEl) {
     var copyBtn = document.createElement("button");
     copyBtn.className = "highlight-copy-btn";
-    copyBtn.textContent = "Copy";
+    copyBtn.textContent = "COPY";
 
     var codeEl = containerEl.firstElementChild;
     copyBtn.addEventListener('click', function() {
@@ -2080,17 +2144,14 @@ Abri <a href="https://forum.vyos.io/t/1-3-1-4-set-console-keymap-not-working/790
         flashCopyMessage(copyBtn, 'Failed :\'(')
       }
     });
-
    
    
-    
-   
-    
-    
+    containerEl.appendChild(copyBtn);
+          
   }
 
   
-  var highlightBlocks = document.getElementsByClassName('highlight');
+var highlightBlocks = document.getElementsByClassName('highlight');
   
   
   
@@ -2098,7 +2159,7 @@ Abri <a href="https://forum.vyos.io/t/1-3-1-4-set-console-keymap-not-working/790
   
   for (var i = 0; i < highlightBlocks.length; i++) {
   addCopyButton(highlightBlocks[i]);
-}
+  }
 })();
 
 </script>
