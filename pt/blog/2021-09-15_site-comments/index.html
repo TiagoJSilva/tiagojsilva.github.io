@@ -1211,6 +1211,29 @@
   
   
   <li class="">
+    <a href="https://tiagojsilva.github.io/pt/blog/2021-11-15_monkeys/"
+      class="menu__title ">Mil Macacos</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
     <a href="https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/"
       class="menu__title ">Botão copy, take 1</a>
   </li>
@@ -2125,7 +2148,7 @@ Infelizmente, como se baseia em <em><strong>GitHub Issues</strong></em> e não e
   }) : null;
 
 
-  
+
 
 
 (function() {
@@ -2167,23 +2190,42 @@ Infelizmente, como se baseia em <em><strong>GitHub Issues</strong></em> e não e
       } catch(e) {
         console && console.log(e);
         flashCopyMessage(copyBtn, 'Failed :\'(')
-      }
-    });
-   
-   
-    containerEl.appendChild(copyBtn);
-          
+        }
+      });
+      containerEl.appendChild(copyBtn);
   }
+   
+  function addCopyCodeButton(containerEl) {
+    var copyBtn = document.createElement("button");
+    copyBtn.className = "code-copy-btn";
+    copyBtn.textContent = "COPY";
 
+    var codeEl = containerEl.firstElementChild;
+    copyBtn.addEventListener('click', function() {
+      try {
+        var selection = selectText(codeEl);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+
+        flashCopyMessage(copyBtn, 'Copied!')
+      } catch(e) {
+        console && console.log(e);
+        flashCopyMessage(copyBtn, 'Failed :\'(')
+        }
+       });
+
+      containerEl.appendChild(copyBtn);
+    }
   
-var highlightBlocks = document.getElementsByClassName('highlight');
-  
-  
-  
-  
-  
-  for (var i = 0; i < highlightBlocks.length; i++) {
-  addCopyButton(highlightBlocks[i]);
+  var codeBlocks = document.querySelectorAll('pre > code');
+  for (var i = 0; i < codeBlocks.length; i++) {
+     var highlightBlocks = codeBlocks[i].firstElementChild;
+    if (highlightBlocks != null) {
+        i++;
+        addCopyButton(codeBlocks[i].parentNode.parentNode);
+    } else { 
+      addCopyCodeButton(codeBlocks[i].parentNode.parentNode);
+    }
   }
 })();
 
@@ -2368,8 +2410,10 @@ var highlightBlocks = document.getElementsByClassName('highlight');
       });
     }
     
-    
-  });
+  
+});
+
+
 </script>
 
 

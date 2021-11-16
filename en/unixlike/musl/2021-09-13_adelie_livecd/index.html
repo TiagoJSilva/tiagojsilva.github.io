@@ -1220,6 +1220,14 @@
   </li>
   <ul class="menu__list " data-data=/meme/ data-link=https://tiagojsilva.github.io/en/unixlike/musl/2021-09-13_adelie_livecd/>
     
+      
+        
+        
+        <li>
+          <a href="https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/" class="menu__title " data-depth="0">TinyCore Linux - Initial steps</a>
+        </li>
+      
+    
   </ul>
   
 
@@ -1789,6 +1797,14 @@
     </span>
   </li>
   <ul class="menu__list " data-data=/meme/ data-link=https://tiagojsilva.github.io/en/unixlike/musl/2021-09-13_adelie_livecd/>
+    
+      
+        
+        
+        <li>
+          <a href="https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/" class="menu__title " data-depth="0">TinyCore Linux - Initial steps</a>
+        </li>
+      
     
   </ul>
   
@@ -2762,7 +2778,7 @@ In my opinion, they haven&rsquo;t even reached Beta, but nobody cares nowadays, 
   }) : null;
 
 
-  
+
 
 
 (function() {
@@ -2804,23 +2820,42 @@ In my opinion, they haven&rsquo;t even reached Beta, but nobody cares nowadays, 
       } catch(e) {
         console && console.log(e);
         flashCopyMessage(copyBtn, 'Failed :\'(')
-      }
-    });
-   
-   
-    containerEl.appendChild(copyBtn);
-          
+        }
+      });
+      containerEl.appendChild(copyBtn);
   }
+   
+  function addCopyCodeButton(containerEl) {
+    var copyBtn = document.createElement("button");
+    copyBtn.className = "code-copy-btn";
+    copyBtn.textContent = "COPY";
 
+    var codeEl = containerEl.firstElementChild;
+    copyBtn.addEventListener('click', function() {
+      try {
+        var selection = selectText(codeEl);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+
+        flashCopyMessage(copyBtn, 'Copied!')
+      } catch(e) {
+        console && console.log(e);
+        flashCopyMessage(copyBtn, 'Failed :\'(')
+        }
+       });
+
+      containerEl.appendChild(copyBtn);
+    }
   
-var highlightBlocks = document.getElementsByClassName('highlight');
-  
-  
-  
-  
-  
-  for (var i = 0; i < highlightBlocks.length; i++) {
-  addCopyButton(highlightBlocks[i]);
+  var codeBlocks = document.querySelectorAll('pre > code');
+  for (var i = 0; i < codeBlocks.length; i++) {
+     var highlightBlocks = codeBlocks[i].firstElementChild;
+    if (highlightBlocks != null) {
+        i++;
+        addCopyButton(codeBlocks[i].parentNode.parentNode);
+    } else { 
+      addCopyCodeButton(codeBlocks[i].parentNode.parentNode);
+    }
   }
 })();
 
@@ -3005,8 +3040,10 @@ var highlightBlocks = document.getElementsByClassName('highlight');
       });
     }
     
-    
-  });
+  
+});
+
+
 </script>
 
 <script>

@@ -1211,6 +1211,29 @@
   
   
   <li class="">
+    <a href="https://tiagojsilva.github.io/en/blog/2021-11-15_monkeys/"
+      class="menu__title ">One Thousand Monkeys</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
     <a href="https://tiagojsilva.github.io/en/blog/2021-11-08_copy-button-1/"
       class="menu__title ">Copy button, take 1</a>
   </li>
@@ -2155,7 +2178,7 @@ That&rsquo;s progress!</p>
   }) : null;
 
 
-  
+
 
 
 (function() {
@@ -2197,23 +2220,42 @@ That&rsquo;s progress!</p>
       } catch(e) {
         console && console.log(e);
         flashCopyMessage(copyBtn, 'Failed :\'(')
-      }
-    });
-   
-   
-    containerEl.appendChild(copyBtn);
-          
+        }
+      });
+      containerEl.appendChild(copyBtn);
   }
+   
+  function addCopyCodeButton(containerEl) {
+    var copyBtn = document.createElement("button");
+    copyBtn.className = "code-copy-btn";
+    copyBtn.textContent = "COPY";
 
+    var codeEl = containerEl.firstElementChild;
+    copyBtn.addEventListener('click', function() {
+      try {
+        var selection = selectText(codeEl);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+
+        flashCopyMessage(copyBtn, 'Copied!')
+      } catch(e) {
+        console && console.log(e);
+        flashCopyMessage(copyBtn, 'Failed :\'(')
+        }
+       });
+
+      containerEl.appendChild(copyBtn);
+    }
   
-var highlightBlocks = document.getElementsByClassName('highlight');
-  
-  
-  
-  
-  
-  for (var i = 0; i < highlightBlocks.length; i++) {
-  addCopyButton(highlightBlocks[i]);
+  var codeBlocks = document.querySelectorAll('pre > code');
+  for (var i = 0; i < codeBlocks.length; i++) {
+     var highlightBlocks = codeBlocks[i].firstElementChild;
+    if (highlightBlocks != null) {
+        i++;
+        addCopyButton(codeBlocks[i].parentNode.parentNode);
+    } else { 
+      addCopyCodeButton(codeBlocks[i].parentNode.parentNode);
+    }
   }
 })();
 
@@ -2398,8 +2440,10 @@ var highlightBlocks = document.getElementsByClassName('highlight');
       });
     }
     
-    
-  });
+  
+});
+
+
 </script>
 
 

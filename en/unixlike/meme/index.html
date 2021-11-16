@@ -1219,6 +1219,14 @@
   </li>
   <ul class="menu__list active" data-data=/meme/ data-link=https://tiagojsilva.github.io/en/unixlike/meme/>
     
+      
+        
+        
+        <li>
+          <a href="https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/" class="menu__title " data-depth="0">TinyCore Linux - Initial steps</a>
+        </li>
+      
+    
   </ul>
   
 
@@ -1780,6 +1788,14 @@
   </li>
   <ul class="menu__list active" data-data=/meme/ data-link=https://tiagojsilva.github.io/en/unixlike/meme/>
     
+      
+        
+        
+        <li>
+          <a href="https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/" class="menu__title " data-depth="0">TinyCore Linux - Initial steps</a>
+        </li>
+      
+    
   </ul>
   
 
@@ -1871,6 +1887,20 @@
 
   </article>
 </div>
+      
+        
+<div class="list-section">
+  
+    <div class="list-section__item">
+      <a href="https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/" class="list-section__item--link">
+        TinyCore Linux - Initial steps
+      </a>
+      <div class="list-section__item--desc">
+        Pocket Jawbreaker
+      </div>
+    </div>
+  
+  </div>
       
       
 
@@ -1974,7 +2004,7 @@
   }) : null;
 
 
-  
+
 
 
 (function() {
@@ -2016,23 +2046,42 @@
       } catch(e) {
         console && console.log(e);
         flashCopyMessage(copyBtn, 'Failed :\'(')
-      }
-    });
-   
-   
-    containerEl.appendChild(copyBtn);
-          
+        }
+      });
+      containerEl.appendChild(copyBtn);
   }
+   
+  function addCopyCodeButton(containerEl) {
+    var copyBtn = document.createElement("button");
+    copyBtn.className = "code-copy-btn";
+    copyBtn.textContent = "COPY";
 
+    var codeEl = containerEl.firstElementChild;
+    copyBtn.addEventListener('click', function() {
+      try {
+        var selection = selectText(codeEl);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+
+        flashCopyMessage(copyBtn, 'Copied!')
+      } catch(e) {
+        console && console.log(e);
+        flashCopyMessage(copyBtn, 'Failed :\'(')
+        }
+       });
+
+      containerEl.appendChild(copyBtn);
+    }
   
-var highlightBlocks = document.getElementsByClassName('highlight');
-  
-  
-  
-  
-  
-  for (var i = 0; i < highlightBlocks.length; i++) {
-  addCopyButton(highlightBlocks[i]);
+  var codeBlocks = document.querySelectorAll('pre > code');
+  for (var i = 0; i < codeBlocks.length; i++) {
+     var highlightBlocks = codeBlocks[i].firstElementChild;
+    if (highlightBlocks != null) {
+        i++;
+        addCopyButton(codeBlocks[i].parentNode.parentNode);
+    } else { 
+      addCopyCodeButton(codeBlocks[i].parentNode.parentNode);
+    }
   }
 })();
 
@@ -2217,8 +2266,10 @@ var highlightBlocks = document.getElementsByClassName('highlight');
       });
     }
     
-    
-  });
+  
+});
+
+
 </script>
 
 <script>

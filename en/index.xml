@@ -50,6 +50,28 @@ Simulation VM Create a Windows 7-based VM, with 4GB of RAM, 2 vCPUS and 4 networ
       </item>
       
       <item>
+        <title>One Thousand Monkeys</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-11-15_monkeys/</link>
+        <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-11-15_monkeys/</guid>
+        <description>I dun it!
+The button to copy the contents of the code boxes now appears both in those that have syntax (highlight, chroma) as in those that don&amp;rsquo;t have:
+1  cowsay &amp;#34;monkeys, I tell you!&amp;#34;   # output______________________&amp;lt; monkeys, I tell you! &amp;gt;----------------------\ ^__^\ (oo)\_______(__)\ )\/\||----w ||| ||How have I dun it? Dunno&amp;hellip;
+Hence the title: one thousand monkeys banging on one thousand typewriter mechanics could write &amp;ldquo;The C Programming Language&amp;rdquo; if they had until the heat death of the Universe to do it.</description>
+      </item>
+      
+      <item>
+        <title>TinyCore Linux - Initial steps</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
+        <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
+        <description>For this system, which will eventually be a server called verynice, I made a VM with 256MB of RAM and 640MB of disk.
+[TinyCore]1 is a very special Linux installation, destined for systems with very few resources. I&amp;rsquo;ll use the Deluxe version, CorePlus, with leather seats, GUI and possibility of disk installation, but there are leaner flavors of CoreLinux that will cheerfully boot from a 128MB flashdrive and load themselves to a RAMdrive at startup.</description>
+      </item>
+      
+      <item>
         <title>Copy button, take 1</title>
         <link>https://tiagojsilva.github.io/en/blog/2021-11-08_copy-button-1/</link>
         <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>

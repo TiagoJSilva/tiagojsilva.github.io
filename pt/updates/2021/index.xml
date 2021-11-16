@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 08 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/index.xml" rel="self" type="application/rss+xml" />
     
@@ -48,6 +48,18 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
         
         <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</guid>
         <description>OpenSSL PKI (parte 2) - IntermediateCA Criar uma IntermediateCA Mais uma vez, a(s) IntermediateCA(s) devem estar alojadas num sistema separado (server) daquele que aloja a RootCA, e o sistema da RootCA (root) deve estar airgapped e desligado da corrente. No sistema online não me parece má ideia manter as CAs secundárias debaixo de /root/ca, o que permite colocar o certificado da RootCA no mesmo caminho (/root/ca/certs/ca.cert.pem). No entanto, esta é a única informação da RootCA que é necessário trazer para o host da(s) CA(s) secundária(s); é debatível se vale a pena trazer o CRL da RootCA em formato PEM e colocá-lo em /root/ca/crl/ca.</description>
+      </item>
+      
+      <item>
+        <title>Mil Macacos</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-11-15_monkeys/</link>
+        <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-11-15_monkeys/</guid>
+        <description>Consegui!
+O botão para copiar o conteúdo das caixas de código aparece tanto nas que têm sintaxe (highlight, chroma) como nas que não têm sintaxe:
+1  cowsay &amp;#34;monkeys, I tell you!&amp;#34;   # output______________________&amp;lt; monkeys, I tell you! &amp;gt;----------------------\ ^__^\ (oo)\_______(__)\ )\/\||----w ||| ||Como é que consegui? Não sei&amp;hellip;
+Daí o título: mil macacos martelando mil máquinas de escrever poderiam escrever &amp;ldquo;The C Programming Language&amp;rdquo; se tivessem até ao fim do Universo para o fazer.</description>
       </item>
       
       <item>

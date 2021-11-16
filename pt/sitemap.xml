@@ -424,7 +424,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/pt/updates/2021/</loc>
-    <lastmod>2021-11-08T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -439,7 +439,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/pt/blog/</loc>
-    <lastmod>2021-11-08T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -449,6 +449,21 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://tiagojsilva.github.io/pt/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/pt/blog/2021-11-15_monkeys/</loc>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/2021-11-15_monkeys/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/2021-11-15_monkeys/"
                 />
   </url>
   
@@ -470,6 +485,16 @@
   <url>
     <loc>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</loc>
     <lastmod>2021-11-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/"
+                />
   </url>
   
   <url>

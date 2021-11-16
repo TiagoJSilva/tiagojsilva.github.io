@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 08 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/en/updates/2021/index.xml" rel="self" type="application/rss+xml" />
     
@@ -47,6 +47,28 @@ Simulation VM Create a Windows 7-based VM, with 4GB of RAM, 2 vCPUS and 4 networ
         
         <guid>https://tiagojsilva.github.io/en/sec/pki/opensslpki_2/</guid>
         <description>OpenSSL PKI (part 2) - IntermediateCA Creating an IntermediateCA Once again, the intermediateCA(s) must be hosted in a separate system (server) from that which hosts the RootCA, and the RootCA&amp;rsquo;s system (root) should be airgapped and offline. In the online system I don&amp;rsquo;t think it&amp;rsquo;s a bad idea to keep the secondary CAs under /root/ca, which allows the placing the RootCA&amp;rsquo;s certificate on the same path (/root/ca/certs/ca.cert.pem). However, this is the only information from the RootCA that needs to be brought to the online world where the secondary CAs reside; it is even debatable if it is worth bringing the RootCA&amp;rsquo;s CRL in PEM format and putting it in /root/ca/crl/ca.</description>
+      </item>
+      
+      <item>
+        <title>One Thousand Monkeys</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-11-15_monkeys/</link>
+        <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-11-15_monkeys/</guid>
+        <description>I dun it!
+The button to copy the contents of the code boxes now appears both in those that have syntax (highlight, chroma) as in those that don&amp;rsquo;t have:
+1  cowsay &amp;#34;monkeys, I tell you!&amp;#34;   # output______________________&amp;lt; monkeys, I tell you! &amp;gt;----------------------\ ^__^\ (oo)\_______(__)\ )\/\||----w ||| ||How have I dun it? Dunno&amp;hellip;
+Hence the title: one thousand monkeys banging on one thousand typewriter mechanics could write &amp;ldquo;The C Programming Language&amp;rdquo; if they had until the heat death of the Universe to do it.</description>
+      </item>
+      
+      <item>
+        <title>TinyCore Linux - Initial steps</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
+        <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
+        <description>For this system, which will eventually be a server called verynice, I made a VM with 256MB of RAM and 640MB of disk.
+[TinyCore]1 is a very special Linux installation, destined for systems with very few resources. I&amp;rsquo;ll use the Deluxe version, CorePlus, with leather seats, GUI and possibility of disk installation, but there are leaner flavors of CoreLinux that will cheerfully boot from a 128MB flashdrive and load themselves to a RAMdrive at startup.</description>
       </item>
       
       <item>
