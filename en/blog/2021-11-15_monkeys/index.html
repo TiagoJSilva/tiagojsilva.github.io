@@ -1714,20 +1714,6 @@
       
       
         
-      
-        
-        
-          
-            
-              <a href="https://tiagojsilva.github.io/pt/blog/2021-11-15_monkeys/" data-lang="pt" class="lang__dropdown--item">Português</a>
-            
-          
-        
-      
-    
-      
-      
-        
         
           
             
@@ -2200,79 +2186,157 @@ And I find myself in a place I don&rsquo;t appreciate at all, &ldquo;it works an
 </code></pre></td></tr></table>
 </div>
 </div><p>And the CSS:</p>
-<pre><code>.code-copy-btn {
-  position: relative;
-  bottom: 1.1rem;
-  left: 0.5rem;
-  border: 0;
-  border-radius: 4px;
-  padding: 1px;
-  font-size: 0.6em;
-  line-height: 1.0;
-  opacity: 0.6;
-  min-width: 65px;
-  text-align: center;
-  letter-spacing: 2px;
-  @include themify($codeblock) {
-  color: themed('content-pre-color');
-  background: themed('content-pre-background-color');
-  border: 1.25px solid themed('border-line-color');
-  }
-  border-top-left-radius: 0;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 4px;
-  white-space: nowrap;
-  padding: 4px 4px 5px 4px;
-  margin: 0 0 0 1px;
-  cursor: pointer;
-  opacity: 0.6;
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-assets/sass/pages/_single.scss" data-lang="assets/sass/pages/_single.scss"><span class="nc">.code-copy-btn</span> <span class="p">{</span>
+  <span class="nt">position</span><span class="nd">:</span> <span class="nt">relative</span><span class="p">;</span>
+  <span class="nt">bottom</span><span class="nd">:</span> <span class="nt">1</span><span class="nc">.1rem</span><span class="p">;</span>
+  <span class="nt">left</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.5rem</span><span class="p">;</span>
+  <span class="nt">border</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
+  <span class="nt">border-radius</span><span class="nd">:</span> <span class="nt">4px</span><span class="p">;</span>
+  <span class="nt">padding</span><span class="nd">:</span> <span class="nt">1px</span><span class="p">;</span>
+  <span class="nt">font-size</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.6em</span><span class="p">;</span>
+  <span class="nt">line-height</span><span class="nd">:</span> <span class="nt">1</span><span class="nc">.0</span><span class="p">;</span>
+  <span class="nt">opacity</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.6</span><span class="p">;</span>
+  <span class="nt">min-width</span><span class="nd">:</span> <span class="nt">65px</span><span class="p">;</span>
+  <span class="nt">text-align</span><span class="nd">:</span> <span class="nt">center</span><span class="p">;</span>
+  <span class="nt">letter-spacing</span><span class="nd">:</span> <span class="nt">2px</span><span class="p">;</span>
+  <span class="k">@include</span><span class="nd"> themify</span><span class="p">(</span><span class="nv">$codeblock</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nt">color</span><span class="nd">:</span> <span class="nt">themed</span><span class="o">(</span><span class="s1">&#39;content-pre-color&#39;</span><span class="o">)</span><span class="p">;</span>
+  <span class="nt">background</span><span class="nd">:</span> <span class="nt">themed</span><span class="o">(</span><span class="s1">&#39;content-pre-background-color&#39;</span><span class="o">)</span><span class="p">;</span>
+  <span class="nt">border</span><span class="nd">:</span> <span class="nt">1</span><span class="nc">.25px</span> <span class="nt">solid</span> <span class="nt">themed</span><span class="o">(</span><span class="s1">&#39;border-line-color&#39;</span><span class="o">)</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">border-top-left-radius</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
+  <span class="nt">border-top-right-radius</span><span class="nd">:</span> <span class="nt">4px</span><span class="p">;</span>
+  <span class="nt">border-bottom-right-radius</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
+  <span class="nt">border-bottom-left-radius</span><span class="nd">:</span> <span class="nt">4px</span><span class="p">;</span>
+  <span class="nt">white-space</span><span class="nd">:</span> <span class="nt">nowrap</span><span class="p">;</span>
+  <span class="nt">padding</span><span class="nd">:</span> <span class="nt">4px</span> <span class="nt">4px</span> <span class="nt">5px</span> <span class="nt">4px</span><span class="p">;</span>
+  <span class="nt">margin</span><span class="nd">:</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">1px</span><span class="p">;</span>
+  <span class="nt">cursor</span><span class="nd">:</span> <span class="nt">pointer</span><span class="p">;</span>
+  <span class="nt">opacity</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.6</span><span class="p">;</span>
+<span class="p">}</span>
 
-.code-copy-btn:hover {
-  @include themify($themes) {
-    color: themed('link');
-    background-color: themed('body-background-color');
-  }
-}
+<span class="nc">.code-copy-btn</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> themify</span><span class="p">(</span><span class="nv">$themes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nt">color</span><span class="nd">:</span> <span class="nt">themed</span><span class="o">(</span><span class="s1">&#39;link&#39;</span><span class="o">)</span><span class="p">;</span>
+    <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">themed</span><span class="o">(</span><span class="s1">&#39;body-background-color&#39;</span><span class="o">)</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-.highlight-copy-btn {
-  position: relative;
-  bottom: 0rem;
-  left: -1.8rem;
-  border: 0;
-  border-radius: 4px;
-  padding: 1px;
-  font-size: 0.6em;
-  line-height: 1.0;
-  opacity: 0.6;
-  min-width: 65px;
-  text-align: center;
-  letter-spacing: 2px;
-  @include themify($codeblock) {
-  color: themed('content-pre-color');
-  background: themed('content-pre-background-color');
-  border: 1.25px solid themed('border-line-color');
-  }
-  border-top-left-radius: 0;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 4px;
-  white-space: nowrap;
-  padding: 4px 4px 5px 4px;
-  margin: 0 0 0 1px;
-  cursor: pointer;
-  opacity: 0.6;
+<span class="nc">.highlight-copy-btn</span> <span class="p">{</span>
+  <span class="nt">position</span><span class="nd">:</span> <span class="nt">relative</span><span class="p">;</span>
+  <span class="nt">bottom</span><span class="nd">:</span> <span class="nt">0rem</span><span class="p">;</span>
+  <span class="nt">left</span><span class="nd">:</span> <span class="nt">-1</span><span class="nc">.8rem</span><span class="p">;</span>
+  <span class="nt">border</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
+  <span class="nt">border-radius</span><span class="nd">:</span> <span class="nt">4px</span><span class="p">;</span>
+  <span class="nt">padding</span><span class="nd">:</span> <span class="nt">1px</span><span class="p">;</span>
+  <span class="nt">font-size</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.6em</span><span class="p">;</span>
+  <span class="nt">line-height</span><span class="nd">:</span> <span class="nt">1</span><span class="nc">.0</span><span class="p">;</span>
+  <span class="nt">opacity</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.6</span><span class="p">;</span>
+  <span class="nt">min-width</span><span class="nd">:</span> <span class="nt">65px</span><span class="p">;</span>
+  <span class="nt">text-align</span><span class="nd">:</span> <span class="nt">center</span><span class="p">;</span>
+  <span class="nt">letter-spacing</span><span class="nd">:</span> <span class="nt">2px</span><span class="p">;</span>
+  <span class="k">@include</span><span class="nd"> themify</span><span class="p">(</span><span class="nv">$codeblock</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nt">color</span><span class="nd">:</span> <span class="nt">themed</span><span class="o">(</span><span class="s1">&#39;content-pre-color&#39;</span><span class="o">)</span><span class="p">;</span>
+  <span class="nt">background</span><span class="nd">:</span> <span class="nt">themed</span><span class="o">(</span><span class="s1">&#39;content-pre-background-color&#39;</span><span class="o">)</span><span class="p">;</span>
+  <span class="nt">border</span><span class="nd">:</span> <span class="nt">1</span><span class="nc">.25px</span> <span class="nt">solid</span> <span class="nt">themed</span><span class="o">(</span><span class="s1">&#39;border-line-color&#39;</span><span class="o">)</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">border-top-left-radius</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
+  <span class="nt">border-top-right-radius</span><span class="nd">:</span> <span class="nt">4px</span><span class="p">;</span>
+  <span class="nt">border-bottom-right-radius</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
+  <span class="nt">border-bottom-left-radius</span><span class="nd">:</span> <span class="nt">4px</span><span class="p">;</span>
+  <span class="nt">white-space</span><span class="nd">:</span> <span class="nt">nowrap</span><span class="p">;</span>
+  <span class="nt">padding</span><span class="nd">:</span> <span class="nt">4px</span> <span class="nt">4px</span> <span class="nt">5px</span> <span class="nt">4px</span><span class="p">;</span>
+  <span class="nt">margin</span><span class="nd">:</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">1px</span><span class="p">;</span>
+  <span class="nt">cursor</span><span class="nd">:</span> <span class="nt">pointer</span><span class="p">;</span>
+  <span class="nt">opacity</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.6</span><span class="p">;</span>
 
-}
+<span class="p">}</span>
 
-.highlight-copy-btn:hover {
-  @include themify($themes) {
-    color: themed('link');
-    background-color: themed('body-background-color');
-    }
-}
-</code></pre><h3 id="in-the-end">In the end</h3>
+<span class="nc">.highlight-copy-btn</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> themify</span><span class="p">(</span><span class="nv">$themes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nt">color</span><span class="nd">:</span> <span class="nt">themed</span><span class="o">(</span><span class="s1">&#39;link&#39;</span><span class="o">)</span><span class="p">;</span>
+    <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">themed</span><span class="o">(</span><span class="s1">&#39;body-background-color&#39;</span><span class="o">)</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="in-the-end">In the end</h3>
 <p>Do I feel happy? No.<br />
 But that&rsquo;s all there is at the moment.<br />
 What I actually needed was to find some way of inserting the column with the line numbers on all codeblocks, so I could go back to the previous code, which was much cleaner.</p>
@@ -2507,7 +2571,7 @@ Even Mermaid won&rsquo;t do it. Not that it works.</p>
       });
       containerEl.appendChild(copyBtn);
   }
-   
+ 
   function addCopyCodeButton(containerEl) {
     var copyBtn = document.createElement("button");
     copyBtn.className = "code-copy-btn";
@@ -2540,6 +2604,8 @@ Even Mermaid won&rsquo;t do it. Not that it works.</p>
       addCopyCodeButton(codeBlocks[i].parentNode.parentNode);
     }
   }
+  
+
 })();
 
 </script>

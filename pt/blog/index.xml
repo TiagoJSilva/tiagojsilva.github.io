@@ -7,23 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/pt/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     
-      
-      <item>
-        <title>Mil Macacos</title>
-        <link>https://tiagojsilva.github.io/pt/blog/2021-11-15_monkeys/</link>
-        <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
-        
-        <guid>https://tiagojsilva.github.io/pt/blog/2021-11-15_monkeys/</guid>
-        <description>Consegui! O botão para copiar o conteúdo das caixas de código aparece tanto nas que têm sintaxe (highlight, chroma) como nas que não têm sintaxe:
-1  cowsay &amp;#34;monkeys, I tell you!&amp;#34;   # output______________________&amp;lt; monkeys, I tell you! &amp;gt;----------------------\ ^__^\ (oo)\_______(__)\ )\/\||----w ||| ||Como é que consegui? Não sei&amp;hellip;
-Daí o título: mil macacos martelando mil máquinas de escrever poderiam escrever &amp;ldquo;The C Programming Language&amp;rdquo; se tivessem até ao fim do Universo para o fazer.</description>
-      </item>
       
       <item>
         <title>Botão copy, take 1</title>
