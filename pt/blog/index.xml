@@ -7,12 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 08 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/pt/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Ninguém atende</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-11-17_computersaysno/</link>
+        <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-11-17_computersaysno/</guid>
+        <description>Eu só queria descarregar a demonstração do ESXi&amp;hellip;
+Bom, a não ser que amanhã isto se resolva parece que vou começar a aprender hipervisores Tipo 1 com o XCP-ng&amp;hellip;
+Primeiras impressões e isso.</description>
+      </item>
       
       <item>
         <title>Botão copy, take 1</title>

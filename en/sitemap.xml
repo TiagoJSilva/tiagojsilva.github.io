@@ -419,7 +419,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2021/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -434,7 +434,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/blog/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -444,6 +444,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/blog/2021-11-17_computersaysno/</loc>
+    <lastmod>2021-11-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/2021-11-17_computersaysno/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/2021-11-17_computersaysno/"
                 />
   </url>
   

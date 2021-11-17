@@ -14,6 +14,17 @@
     
       
       <item>
+        <title>Computer Says No</title>
+        <link>https://tiagojsilva.github.io/en/blog/2021-11-17_computersaysno/</link>
+        <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/blog/2021-11-17_computersaysno/</guid>
+        <description>I was just trying to downlood the ESXi evaluation&amp;hellip;
+Unless this goes away tomorrow, it looks like my Type1 hypervisor journey will start with XCP-ng&amp;hellip;
+You only get one chance to make a good impression.</description>
+      </item>
+      
+      <item>
         <title>One Thousand Monkeys</title>
         <link>https://tiagojsilva.github.io/en/blog/2021-11-15_monkeys/</link>
         <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
@@ -22,7 +33,7 @@
         <description>I dun it!
 The button to copy the contents of the code boxes now appears both in those that have syntax (highlight, chroma) as in those that don&amp;rsquo;t have:
 1  cowsay &amp;#34;monkeys, I tell you!&amp;#34;   # output______________________&amp;lt; monkeys, I tell you! &amp;gt;----------------------\ ^__^\ (oo)\_______(__)\ )\/\||----w ||| ||How have I dun it? Dunno&amp;hellip;
-Hence the title: one thousand monkeys banging on one thousand typewriter mechanics could write &amp;ldquo;The C Programming Language&amp;rdquo; if they had until the heat death of the Universe to do it.</description>
+Hence the title: one thousand monkeys banging on one thousand typewriters could write &amp;ldquo;The C Programming Language&amp;rdquo; if they had until the heat death of the Universe to do it.</description>
       </item>
       
       <item>

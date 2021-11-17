@@ -1210,6 +1210,29 @@
   
   
   
+  <li class="">
+    <a href="https://tiagojsilva.github.io/en/blog/2021-11-17_computersaysno/"
+      class="menu__title ">Computer Says No</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
   <li class="active">
     <a href="https://tiagojsilva.github.io/en/blog/2021-11-15_monkeys/"
       class="menu__title active">One Thousand Monkeys</a>
@@ -1922,10 +1945,10 @@ The button to copy the contents of the code boxes now appears both in those that
                 ||----w |
                 ||     ||
 </code></pre><p>How have I dun it? <em><strong>Dunno&hellip;</strong></em><br />
-Hence the title: one thousand monkeys banging on one thousand typewriter mechanics could write &ldquo;The C Programming Language&rdquo; if they had until the heat death of the Universe to do it.<br />
+Hence the title: one thousand monkeys banging on one thousand typewriters could write &ldquo;The C Programming Language&rdquo; if they had until the heat death of the Universe to do it.<br />
 I am partly kidding; but that&rsquo;s how it felt.</p>
 <h3 id="the-reasoning">The reasoning</h3>
-<p>Eventually I cottoned that on Zdoc codeblocks can have two different structures, depending on if syntax highlighting has been activated; one big difference is the insertion of the column with the line number or the prompt prior to the text itself; or rather, I had noticed it already, but eventually I surrendered to the evidence that I would have to create two different selectors, which could separate one case from the other so I could handle them differently.<br />
+<p>Eventually I cottoned on that in Zdoc codeblocks can have two different structures, depending on if syntax highlighting has been activated; one big difference in that case is the insertion of a column with the line number or the prompt prior to the text itself; or rather, I had noticed it already, but eventually I surrendered to the evidence that I would have to create two different selectors, which could separate one case from the other so I could handle them differently.<br />
 But for a long time I could only select the codes with <code>highlight</code>, or when I could place buttons on the two types of blocks, the <code>highlight</code> blocks ended up with two buttons, one of them inoperative (because of the two column structure, I imagine).</p>
 <p>The <code>highlight</code> codeblock is structured like this:</p>
 <div class="highlight"><div class="chroma">
@@ -1974,7 +1997,7 @@ But for a long time I could only select the codes with <code>highlight</code>, o
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="the-selector">The selector</h4>
-<p>Eventually I tried this, and it worked:</p>
+<p>Eventually I tried this method, and it worked:</p>
 <ul>
 <li>Grab everything under <em><strong>&lt;pre&gt;&lt;code&gt;</strong></em></li>
 <li>Does it have more sections inside?
@@ -2016,8 +2039,8 @@ Not very useful&hellip;
 </code></pre></td></tr></table>
 </div>
 </div><p>After I became able to select the two blocks in two differently coded branches, I treated them differently in the most heavy-handed way possible, which was to duplicate the function and make adjustments in each of the copies.<br />
-Then I had a devil of a time to avoid getting duplicated buttons, and everything I achieved was through painstaking trial-and-error with combinations of  <code>.firstElementChild</code> e <code>.parentNode</code>.<br />
-And I find myself in a place I don&rsquo;t appreciate at all, &ldquo;it works and I don&rsquo;t know why&rdquo;&quot;; and since I don&rsquo;t kow how it works, I can&rsquo;t help but notice that the buttons are in different places and misaligned, but I can&rsquo;t solve it&hellip;</p>
+Then I had a devil of a time to avoid getting duplicated buttons, and everything I achieved was through painstaking trial-and-error with all combinations of  <code>.firstElementChild</code> e <code>.parentNode</code>.<br />
+And I find myself in a place I don&rsquo;t appreciate at all, &ldquo;it works and I don&rsquo;t know how&rdquo;&quot;; and since I don&rsquo;t kow how it works, I can&rsquo;t help but notice that the buttons are in different places and misaligned, but I can&rsquo;t solve it&hellip;</p>
 <h4 id="result">Result</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2351,6 +2374,13 @@ Even Mermaid won&rsquo;t do it. Not that it works.</p>
 <div class="grow"></div>
 <nav class="pagination-single">
   
+    
+      <a href="https://tiagojsilva.github.io/en/blog/2021-11-17_computersaysno/" title="Computer Says No" class="pagination-single__left">
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
+        </div>
+        <div class="pagination-single__right-title">Computer Says No</div>
+      </a>
     
     <div class="grow"></div>
     
