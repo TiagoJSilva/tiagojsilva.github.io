@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/index.xml" rel="self" type="application/rss+xml" />
     
@@ -48,6 +48,18 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
         
         <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</guid>
         <description>OpenSSL PKI (parte 2) - IntermediateCA Criar uma IntermediateCA Mais uma vez, a(s) IntermediateCA(s) devem estar alojadas num sistema separado (server) daquele que aloja a RootCA, e o sistema da RootCA (root) deve estar airgapped e desligado da corrente. No sistema online não me parece má ideia manter as CAs secundárias debaixo de /root/ca, o que permite colocar o certificado da RootCA no mesmo caminho (/root/ca/certs/ca.cert.pem). No entanto, esta é a única informação da RootCA que é necessário trazer para o host da(s) CA(s) secundária(s); é debatível se vale a pena trazer o CRL da RootCA em formato PEM e colocá-lo em /root/ca/crl/ca.</description>
+      </item>
+      
+      <item>
+        <title>BIND9: configuração de raiz</title>
+        <link>https://tiagojsilva.github.io/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
+        <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</guid>
+        <description>Instalação do BIND9 O sistema onde este serviço BIND9 foi instalado é o mesmo que é descrito na página Instalação TinyCoreLinux.
+Existe um pacote BIND9 para o TinyCore, mas tal como noutras ocasiões, a instalação é muito faça-você-mesmo1. Não temos isqueiros, nem sequer fósforos, é mesmo esfregar os pauzinhos um no outro até sair fumo.
+Instalamos a extensão usando o browser tce-ab ou o directamente o instalador tce-load
+1  tce-load -wi bind   bind.</description>
       </item>
       
       <item>

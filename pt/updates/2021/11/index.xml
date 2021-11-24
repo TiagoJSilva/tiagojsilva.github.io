@@ -14,6 +14,18 @@
     
       
       <item>
+        <title>BIND9: configuração de raiz</title>
+        <link>https://tiagojsilva.github.io/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
+        <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</guid>
+        <description>Instalação do BIND9 O sistema onde este serviço BIND9 foi instalado é o mesmo que é descrito na página Instalação TinyCoreLinux.
+Existe um pacote BIND9 para o TinyCore, mas tal como noutras ocasiões, a instalação é muito faça-você-mesmo1. Não temos isqueiros, nem sequer fósforos, é mesmo esfregar os pauzinhos um no outro até sair fumo.
+Instalamos a extensão usando o browser tce-ab ou o directamente o instalador tce-load
+1  tce-load -wi bind   bind.</description>
+      </item>
+      
+      <item>
         <title>Ninguém atende</title>
         <link>https://tiagojsilva.github.io/pt/blog/2021-11-17_computersaysno/</link>
         <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
