@@ -14,6 +14,17 @@
     
     
       
+      <item>
+        <title>BIND9: from the start</title>
+        <link>https://tiagojsilva.github.io/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
+        <pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</guid>
+        <description>BIND9 Installation The system where this BIND9 service was installed is the same described in the article TinyCoreLinux Installation.
+There is a BIND9 package for TinyCore, but jusk like almost everything else, the installation is very do-it-yourself1. We&amp;rsquo;re not provided with a firelighter, and not even matches; we really have to scratch a couple of sticks next to some kindling to get some fire.
+The BIND9 extension can be installed from the browser tce-ab or directly by the installer tce-load</description>
+      </item>
+      
     
   </channel>
 </rss>

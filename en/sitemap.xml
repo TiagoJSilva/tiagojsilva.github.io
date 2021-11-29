@@ -419,7 +419,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2021/</loc>
-    <lastmod>2021-11-17T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-29T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -429,6 +429,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/updates/2021/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</loc>
+    <lastmod>2021-11-29T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/"
                 />
   </url>
   
