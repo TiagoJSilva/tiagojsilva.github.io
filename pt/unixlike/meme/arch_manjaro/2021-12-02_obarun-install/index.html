@@ -1944,8 +1944,11 @@
 
   <article class="single__contents" data-dir="ltr">
     <h2 id="obarun-e-s6">Obarun e S6</h2>
-<p>O S6 <a href="https://skarnet.org/software/s6/" target="_blank">Skarnet.org&rsquo;s Small &amp; Secure Supervision Software Suite</a> inclui um <em>init</em>, um dos vários projectos que se rebelaram contra o SystemD afirmando que havia maneiras melhores e/ou mais simples de fazer a mesma coisa. (Simples para quem?)<br />
-Apesar de a implementação oficial do S6 ter começado por ser no Alpine Linux, por alguma razão o autor agora colabora com o Adélie Linux, <a href="/https://tiagojsilva.github.io/pt/unixlike/musl/2021-09-13_adelie_livecd/">que já explorei antes</a>.<br />
+<p>O <a href="https://skarnet.org/software/s6/" target="_blank">S6 - Skarnet.org&rsquo;s Small &amp; Secure Supervision Software Suite</a> inclui um <em>init</em>, um dos vários projectos que se rebelaram contra o SystemD afirmando que havia maneiras melhores e/ou mais simples de fazer a mesma coisa. <br />
+<div class="notices error" data-title="Simples?">
+  Para quem?
+</div></p>
+<p>Apesar de a implementação oficial do S6 ter começado por ser no Alpine Linux, por alguma razão o autor agora colabora com o Adélie Linux, <a href="/unixlike/musl/2021-09-13_adelie_livecd/">que já explorei antes</a>.<br />
 No entanto, a expressão mais madura do <code>S6-init</code> encontra-se no <a href="https://web.obarun.org" target="_blank">Obarun</a>, uma distribuição baseada em Arch e, tanto quanto sei, sem a colaboração do autor do S6, apesar de serem todos franceses. Isto porque o S6 ainda não definiu uma maneira de organizar as dependências entre os serviços (e sendo zelota do &ldquo;Caminho do UNIX&rdquo;, talvez nunca o venha a fazer), o que significa que alguém tem de fazê-lo; a contribuição do Obarun é um conjunto de <em>scripts</em> chamado <a href="https://web.obarun.org/software/" target="_blank">66</a><br />
 Por isso, para experimentar o S6 tive de instalar o Obarun; sendo baseado em Arch, temi o pior, mas comparado com o Adélie até foi relativamente simples.<br />
 

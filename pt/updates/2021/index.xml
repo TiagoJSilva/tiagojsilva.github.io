@@ -47,8 +47,18 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</guid>
-        <description>Obarun e S6 O S6 Skarnet.org&amp;rsquo;s Small &amp;amp; Secure Supervision Software Suite inclui um init, um dos vários projectos que se rebelaram contra o SystemD afirmando que havia maneiras melhores e/ou mais simples de fazer a mesma coisa. (Simples para quem?)
+        <description>Obarun e S6 O S6 - Skarnet.org&amp;rsquo;s Small &amp;amp; Secure Supervision Software Suite inclui um init, um dos vários projectos que se rebelaram contra o SystemD afirmando que havia maneiras melhores e/ou mais simples de fazer a mesma coisa. Para quem?
 Apesar de a implementação oficial do S6 ter começado por ser no Alpine Linux, por alguma razão o autor agora colabora com o Adélie Linux, que já explorei antes.</description>
+      </item>
+      
+      <item>
+        <title>TinyCore Linux - Passos iniciais</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
+        <description>Para este sistema, que eventualmente vai ser um servidor chamado verynice, criei uma VM com 256MB de RAM e 640MB de disco.
+O TinyCore1 é uma instalação Linux muito especial, devotada a sistemas com muito poucos recursos. Vou usar a versão CorePlus, a mais &amp;ldquo;luxuosa&amp;rdquo;, com ambiente gráfico e possibilidade de instalação em disco, mas há versões Core muito mais frugais que correm alegremente de uma pen USB carregando-se para uma RAMdrive no arranque.</description>
       </item>
       
       <item>
@@ -231,16 +241,6 @@ Existe um arquivo TAR com todos os ficheiros; para os instalar a todos na sua pa
         <guid>https://tiagojsilva.github.io/pt/blog/2021-08-09_hello-world/</guid>
         <description>Sentem-se, e estejam à vontade.
 Tenho tido a sorte de fazer dos meus gostos profissão; em novo, tive de escolher um deles (Som para Cinema), mas as voltas da vida levaram-me a abraçar um outro gosto, as TI, Mesmo que no final de contas tenha voltado à casa de partida, não dei o meu tempo como perdido; tive óptimos professores e colegas e aprendi imensas coisas que sempre quis saber</description>
-      </item>
-      
-      <item>
-        <title>TinyCore Linux - Passos iniciais</title>
-        <link>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
-        <description>Para este sistema, que eventualmente vai ser um servidor chamado verynice, criei uma VM com 256MB de RAM e 640MB de disco.
-O TinyCore1 é uma instalação Linux muito especial, devotada a sistemas com muito poucos recursos. Vou usar a versão CorePlus, a mais &amp;ldquo;luxuosa&amp;rdquo;, com ambiente gráfico e possibilidade de instalação em disco, mas há versões Core muito mais frugais que correm alegremente de uma pen USB carregando-se para uma RAMdrive no arranque.</description>
       </item>
       
     
