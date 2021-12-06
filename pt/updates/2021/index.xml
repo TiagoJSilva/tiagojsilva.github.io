@@ -42,6 +42,16 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
       </item>
       
       <item>
+        <title>S6-init no Obarun</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</guid>
+        <description>Obarun e S6 O S6 Skarnet.org&amp;rsquo;s Small &amp;amp; Secure Supervision Software Suite inclui um init, um dos vários projectos que se rebelaram contra o SystemD afirmando que havia maneiras melhores e/ou mais simples de fazer a mesma coisa. (Simples para quem?)
+Apesar de a implementação oficial do S6 ter começado por ser no Alpine Linux, por alguma razão o autor agora colabora com o Adélie Linux, que já explorei antes.</description>
+      </item>
+      
+      <item>
         <title>PKI OpenSSL (pt 2)</title>
         <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</link>
         <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
@@ -221,16 +231,6 @@ Existe um arquivo TAR com todos os ficheiros; para os instalar a todos na sua pa
         <guid>https://tiagojsilva.github.io/pt/blog/2021-08-09_hello-world/</guid>
         <description>Sentem-se, e estejam à vontade.
 Tenho tido a sorte de fazer dos meus gostos profissão; em novo, tive de escolher um deles (Som para Cinema), mas as voltas da vida levaram-me a abraçar um outro gosto, as TI, Mesmo que no final de contas tenha voltado à casa de partida, não dei o meu tempo como perdido; tive óptimos professores e colegas e aprendi imensas coisas que sempre quis saber</description>
-      </item>
-      
-      <item>
-        <title>S6-init no Obarun</title>
-        <link>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</guid>
-        <description>Obarun e S6 O S6 Skarnet.org&amp;rsquo;s Small &amp;amp; Secure Supervision Software Suite inclui um init, um dos vários projectos que se rebelaram contra o SystemD afirmando que havia maneiras melhores e/ou mais simples de fazer a mesma coisa. (Simples para quem?)
-Apesar de a implementação oficial do S6 ter começado por ser no Alpine Linux, por alguma razão o autor agora colabora com o Adélie Linux, que já explorei antes.</description>
       </item>
       
       <item>

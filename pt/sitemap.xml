@@ -33,6 +33,11 @@
   </url>
   
   <url>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/</loc>
+    <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tiagojsilva.github.io/pt/networking/_empty/automation/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
     <xhtml:link
@@ -343,6 +348,10 @@
   </url>
   
   <url>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</loc>
+  </url>
+  
+  <url>
     <loc>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -355,11 +364,6 @@
                 hreflang="pt"
                 href="https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/</loc>
-    <lastmod>2020-02-28T10:08:56+09:00</lastmod>
   </url>
   
   <url>
@@ -870,10 +874,6 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/pt/updates/2021/12/</loc>
-  </url>
-  
-  <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</loc>
   </url>
   
   <url>
