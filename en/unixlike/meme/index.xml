@@ -24,6 +24,15 @@
 [TinyCore]1 is a very special Linux installation, destined for systems with very few resources. I&amp;rsquo;ll use the Deluxe version, CorePlus, with leather seats, GUI and possibility of disk installation, but there are leaner flavors of CoreLinux that will cheerfully boot from a 128MB flashdrive and load themselves to a RAMdrive at startup.</description>
       </item>
       
+      <item>
+        <title>Arch &#43; Manjaro</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/</guid>
+        <description></description>
+      </item>
+      
     
   </channel>
 </rss>

@@ -35,6 +35,16 @@
   <url>
     <loc>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/"
+                />
   </url>
   
   <url>
@@ -349,6 +359,16 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/"
+                />
   </url>
   
   <url>
@@ -888,6 +908,16 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/pt/updates/2021/12/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/updates/2021/12/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/updates/2021/12/"
+                />
   </url>
   
 </urlset>

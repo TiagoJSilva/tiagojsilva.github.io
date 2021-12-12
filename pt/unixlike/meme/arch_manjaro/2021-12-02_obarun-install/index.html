@@ -1596,6 +1596,20 @@
         
       
     
+      
+      
+        
+        
+          
+            
+              <a href="https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/" data-lang="en" class="lang__dropdown--item">English</a>
+            
+          
+        
+      
+        
+      
+    
   </div>
 </div>
 
@@ -2019,11 +2033,11 @@ Por isso, para experimentar o S6 tive de instalar o Obarun; sendo baseado em Arc
 
 <br />
 Refiz a instalação no <em>locale</em> <em><strong>en_GB-UTF8</strong></em> e funcionou.</li>
-<li>Em modo minimal, o NAT do VirtualBox acrescenta os valores da opção <em>nameserver</em> do DHCP ao <code>/etc/resolv.conf</code>, mas em NATnetwork <strong>não</strong>, é necessário editar o <code>/etc/resolv.conf</code> à mão. Bug do VirtualBox? A &ldquo;NAT Network&rdquo; ainda tem muitos <em>bugs</em>, talvez um deles seja que as opções DHCP não são transmitidas&hellip;)</li>
+<li>Em modo minimal, o NAT do VirtualBox fornece o valore da opção <em>nameserver</em> (opção DHCP 5) que é escrita em <code>/etc/resolv.conf</code>, mas em NATnetwork <strong>não</strong>, é necessário editar o <code>/etc/resolv.conf</code> à mão. Bug do VirtualBox? A &ldquo;NAT Network&rdquo; ainda tem muitos <em>bugs</em>, e talvez um deles seja que as opções DHCP não são transmitidas, mas não cheguei a usar um <em>packet sniffer</em> para verificar&hellip;</li>
 </ul>
 <h2 id="s666-v63">S6/66 (v.6.3+)</h2>
-<p>O 66, como disee, é uma camada de gestão sobre o sistema S6, que se baseia na criação de um conjunto de árvores, que são criadas pelo utilizador e que são um meio-termo entre a ordem numérica/alfabética do SysV-init e o grafo dinamicamente actualizado do SystemD.</p>
-<h3 id="instalar-sshd">Instalar SSHD</h3>
+<p>O 66, como disse, é uma camada de gestão sobre o sistema S6, que se baseia na criação de um conjunto de árvores, que são criadas pelo utilizador e que são um meio-termo entre a ordem numérica/alfabética do SysV-init e o grafo dinamicamente actualizado do SystemD.</p>
+<h3 id="exemplo-instalar-sshd">Exemplo: instalar SSHD</h3>
 <p>O serviço <code>sshd</code> instala-se com</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2191,7 +2205,7 @@ Contents     : /
 66-tree: info: Ordered successfully tree: net starts after tree: root
 
 </pre>
-<p>Adiciona-se o serviço <code>sshd</code> a essa <em>tree</em>:</p>
+<p>Depois de criar a nova <em>tree</em>,  adiciona-se o serviço <code>sshd</code> a essa <em>tree</em>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2367,7 +2381,7 @@ Se estiver interessado em contribuir para este projecto, eles precisam de si.</p
     </li>
     <li><a href="#s666-v63">S6/66 (v.6.3+)</a>
       <ul>
-        <li><a href="#instalar-sshd">Instalar SSHD</a></li>
+        <li><a href="#exemplo-instalar-sshd">Exemplo: instalar SSHD</a></li>
         <li><a href="#66-fase-1-service-script">66 fase 1: <em>service script</em></a></li>
         <li><a href="#66-fase-2-configurar-as-dependências">66 fase 2: configurar as dependências</a></li>
       </ul>
