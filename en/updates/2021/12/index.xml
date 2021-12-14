@@ -19,7 +19,7 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</guid>
-        <description>Obarun and S6 The suite S6 - Skarnet.org&amp;rsquo;s Small &amp;amp; Secure Supervision Software Suite includes an init, one of several projects that rebelled against SystemD by trying to prove there were better and/or simpler ways to do the same thing. To whom?
+        <description>Obarun and S6 The suite S6 - Skarnet.org&amp;rsquo;s Small &amp;amp; Secure Supervision Software Suite includes an init, one of several projects that rebelled against SystemD by trying to prove there were better and/or simpler ways to do the same thing. For whom?
 Despite the official implementation of S6 began to be on Alpine Linux, for some reason the author now collaborates with Adélie Linux, which I&amp;rsquo;ve already tried.
 However, the most mature implementation of S6-init seems to be on Obarun, an Arch-based distro and, as far as I know, without any input from the author of S6, despite all of them being French.</description>
       </item>
