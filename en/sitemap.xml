@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</loc>
+    <lastmod>2021-12-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/"
+                />
+  </url>
+  
+  <url>
     <loc>https://tiagojsilva.github.io/en/sec/pki/opensslpki_1/</loc>
     <lastmod>2021-09-20T01:13:41+01:00</lastmod>
     <xhtml:link
@@ -388,20 +403,6 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/"
-                />
-  </url>
-  
-  <url>
     <loc>https://tiagojsilva.github.io/en/sec/pki/opensslpki_2/</loc>
     <lastmod>2021-10-03T18:19:10+01:00</lastmod>
     <xhtml:link
@@ -428,7 +429,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2021/</loc>
-    <lastmod>2021-11-29T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"

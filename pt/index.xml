@@ -15,6 +15,26 @@
     
       
       <item>
+        <title>S6-init no Obarun</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</link>
+        <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</guid>
+        <description>Obarun e S6 O S6 - Skarnet.org&amp;rsquo;s Small &amp;amp; Secure Supervision Software Suite inclui um init, um dos vários projectos que se rebelaram contra o SystemD afirmando que havia maneiras melhores e/ou mais simples de fazer a mesma coisa. Para quem?
+Apesar de a implementação oficial do S6 ter começado por ser no Alpine Linux, por alguma razão o autor agora colabora com o Adélie Linux, que já explorei antes.</description>
+      </item>
+      
+      <item>
+        <title>TinyCore Linux - Passos iniciais</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
+        <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
+        <description>Para este sistema, que eventualmente vai ser um servidor chamado verynice, criei uma VM com 256MB de RAM e 640MB de disco.
+O TinyCore1 é uma instalação Linux muito especial, devotada a sistemas com muito poucos recursos. Vou usar a versão CorePlus, a mais &amp;ldquo;luxuosa&amp;rdquo;, com ambiente gráfico e possibilidade de instalação em disco, mas há versões Core muito mais frugais que correm alegremente de uma pen USB carregando-se para uma RAMdrive no arranque.</description>
+      </item>
+      
+      <item>
         <title>PKI OpenSSL (pt 1)</title>
         <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</link>
         <pubDate>Mon, 13 Sep 2021 01:13:41 +0100</pubDate>
@@ -42,32 +62,22 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
       </item>
       
       <item>
-        <title>S6-init no Obarun</title>
-        <link>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</guid>
-        <description>Obarun e S6 O S6 - Skarnet.org&amp;rsquo;s Small &amp;amp; Secure Supervision Software Suite inclui um init, um dos vários projectos que se rebelaram contra o SystemD afirmando que havia maneiras melhores e/ou mais simples de fazer a mesma coisa. Para quem?
-Apesar de a implementação oficial do S6 ter começado por ser no Alpine Linux, por alguma razão o autor agora colabora com o Adélie Linux, que já explorei antes.</description>
-      </item>
-      
-      <item>
-        <title>TinyCore Linux - Passos iniciais</title>
-        <link>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
-        <description>Para este sistema, que eventualmente vai ser um servidor chamado verynice, criei uma VM com 256MB de RAM e 640MB de disco.
-O TinyCore1 é uma instalação Linux muito especial, devotada a sistemas com muito poucos recursos. Vou usar a versão CorePlus, a mais &amp;ldquo;luxuosa&amp;rdquo;, com ambiente gráfico e possibilidade de instalação em disco, mas há versões Core muito mais frugais que correm alegremente de uma pen USB carregando-se para uma RAMdrive no arranque.</description>
-      </item>
-      
-      <item>
         <title>PKI OpenSSL (pt 2)</title>
         <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</link>
         <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
         
         <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</guid>
         <description>OpenSSL PKI (parte 2) - IntermediateCA Criar uma IntermediateCA Mais uma vez, a(s) IntermediateCA(s) devem estar alojadas num sistema separado (server) daquele que aloja a RootCA, e o sistema da RootCA (root) deve estar airgapped e desligado da corrente. No sistema online não me parece má ideia manter as CAs secundárias debaixo de /root/ca, o que permite colocar o certificado da RootCA no mesmo caminho (/root/ca/certs/ca.cert.pem). No entanto, esta é a única informação da RootCA que é necessário trazer para o host da(s) CA(s) secundária(s); é debatível se vale a pena trazer o CRL da RootCA em formato PEM e colocá-lo em /root/ca/crl/ca.</description>
+      </item>
+      
+      <item>
+        <title>Plano de Fuga</title>
+        <link>https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</link>
+        <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</guid>
+        <description>Como chegámos aqui A distribuição CentOS sempre foi um animal estranho: como é que podia ser que a principal distribuição Linux de utilização exclusivamente paga (Red Hat Enterprise Linux, ou RHEL) tivesse um clone de utilização totalmente gratuita?
+Por isso, e por razões que indicarei abaixo, não me surpreendeu completamente que as condições de acesso à distribuição CentOS tenham mudado, se bem que o método, o tempo e a forma como tudo foi comunicado vão ser um caso de estudo de como-não-fazer&amp;hellip;</description>
       </item>
       
       <item>

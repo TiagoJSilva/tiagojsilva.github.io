@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</loc>
+    <lastmod>2021-12-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</loc>
+    <lastmod>2021-11-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/"
+                />
+  </url>
+  
+  <url>
     <loc>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</loc>
     <lastmod>2021-09-13T01:13:41+01:00</lastmod>
     <xhtml:link
@@ -173,7 +203,7 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/_empty/rpm/</loc>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/rpm/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
   </url>
   
@@ -358,34 +388,6 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiagojsilva.github.io/en/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/"
-                />
-  </url>
-  
-  <url>
     <loc>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -431,12 +433,12 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/_empty/rpm/redhat/</loc>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/_empty/rpm/suse/</loc>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/rpm/_empty/suse/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
   </url>
   
@@ -446,23 +448,33 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/_empty/rpm/redhat/fedora/</loc>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/_empty/fedora/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/_empty/rpm/redhat/rhel_centos/</loc>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/_empty/rhel_centos/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/pt/unixlike/_empty/rpm/redhat/rocky_almalinux/</loc>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/rocky_almalinux/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/pt/updates/2022/</loc>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</loc>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://tiagojsilva.github.io/pt/updates/2021/</loc>
-    <lastmod>2021-11-22T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -918,6 +930,10 @@
                 hreflang="pt"
                 href="https://tiagojsilva.github.io/pt/updates/2021/12/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/pt/updates/2022/01/</loc>
   </url>
   
 </urlset>
