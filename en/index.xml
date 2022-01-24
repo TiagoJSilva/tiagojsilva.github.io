@@ -61,6 +61,16 @@ Simulation VM Create a Windows 7-based VM, with 4GB of RAM, 2 vCPUS and 4 networ
       </item>
       
       <item>
+        <title>Escape From CentOS</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</link>
+        <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</guid>
+        <description>How we got here The Centos distribution has always been a strange beast: how could it be that the main exclusively paid Linux distribution (Red Hat Enterprise Linux, or RHEL) had a totally free clone?
+Therefore, and for reasons I will elaborate below, it did not surprise me that the conditions of use for CentOS have changed, although the method, the time and the way everything was communicated will be a case-study on how-not-to-do&amp;hellip;</description>
+      </item>
+      
+      <item>
         <title>BIND9: from the start</title>
         <link>https://tiagojsilva.github.io/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
         <pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate>

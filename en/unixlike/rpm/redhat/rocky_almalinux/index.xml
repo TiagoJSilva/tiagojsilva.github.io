@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rocky &#43; AlmaLinux on Layer9</title>
+    <link>https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/</link>
+    <description>Recent content in Rocky &#43; AlmaLinux on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 28 Feb 2020 10:08:56 +0900</lastBuildDate>
+    
+        <atom:link href="https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Escape From CentOS</title>
+        <link>https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</link>
+        <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</guid>
+        <description>How we got here The Centos distribution has always been a strange beast: how could it be that the main exclusively paid Linux distribution (Red Hat Enterprise Linux, or RHEL) had a totally free clone?
+Therefore, and for reasons I will elaborate below, it did not surprise me that the conditions of use for CentOS have changed, although the method, the time and the way everything was communicated will be a case-study on how-not-to-do&amp;hellip;</description>
+      </item>
+      
+    
+  </channel>
+</rss>

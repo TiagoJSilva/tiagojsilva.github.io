@@ -1687,6 +1687,20 @@
       
       
         
+        
+          
+            
+              <a href="https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/" data-lang="en" class="lang__dropdown--item">English</a>
+            
+          
+        
+      
+        
+      
+    
+      
+      
+        
       
         
         
@@ -2191,7 +2205,7 @@
 <h2 id="como-chegámos-aqui">Como chegámos aqui</h2>
 <p>A distribuição CentOS sempre foi um animal estranho: como é que podia ser que a principal distribuição Linux de utilização exclusivamente paga (<em><strong>Red Hat Enterprise Linux</strong></em>, ou <em><strong>RHEL</strong></em>) tivesse um clone de utilização totalmente gratuita?<br />
 Por isso, e por razões que indicarei abaixo, não me surpreendeu completamente que <a href="https://blog.centos.org/2020/12/future-is-centos-stream/" target="_blank">as condições de acesso à distribuição CentOS tenham mudado</a>, se bem que o método, o tempo e a forma como tudo foi comunicado vão ser um caso de estudo de como-não-fazer&hellip;<br />
-Fiquei curioso com as duas alternativas que se perfilaram, o <a href="https://rockylinux.org/about" target="_blank">Rocky Linux</a> e o <a href="https://almalinux.org" target="_blank">AlmaLinux</a>, e decidi testar a migração de um sistema CentOS 8 para ambos. uma vez que tudo isto resultou no <a href="https://www.centos.org/centos-linux-eol/" target="_blank"><em>End-Of-Life</em> do CentOS8 em Dezembro de 2021</a> em vez de 2029 como muita gente tinha planeado.</p>
+Fiquei curioso com as duas alternativas que se perfilaram, o <a href="https://rockylinux.org/about" target="_blank">Rocky Linux</a> e o <a href="https://almalinux.org" target="_blank">AlmaLinux</a>, e decidi testar a migração de um sistema CentOS 8 para ambos, uma vez que tudo isto resultou no <a href="https://www.centos.org/centos-linux-eol/" target="_blank"><em>End-Of-Life</em> do CentOS8 em Dezembro de 2021</a> em vez de 2029 como muita gente tinha planeado.</p>
 <h3 id="fragmentação">Fragmentação?</h3>
 <p>Como sempre no mundo FOSS, nunca há apenas uma única resposta a um problema - é uma força, e uma fraqueza. Neste caso creio que ambos os projectos têm o seu público-alvo, que talvez lhes permita manterem-se os dois activos e vigorosos:</p>
 <table>
@@ -2215,7 +2229,10 @@ Fiquei curioso com as duas alternativas que se perfilaram, o <a href="https://ro
 </tr>
 </tbody>
 </table>
-<p>Veremos se ambos sobreviverão…</p>
+<p>Veremos se ambos sobreviverão…<br />
+<div class="notices info" data-title="Últimas notícias">
+  Mais um concorrente pediu uma cadeira e sentou-se à mesa; dias depois da publicação original, a SuSE, que já tinha uma distribuição baseada em RPM (SuSE Linux Enterprise, ou SLE) e um <em>kernel</em> mais-ou-menos compatível com o RedHat em termos de <em>kernel modules</em>, anunciou o <a href="https://www.suse.com/products/suse-liberty-linux/">Liberty Linux</a>, que oferece uma alternativa com suporte de nível empresarial e capaz de ser gerida pelas mesmas ferramentas que se usam para gerir uma infraestrutura baseada em SuSE bem, mas o RHEL também ja podia fazer isso&hellip;). De acordo com o <a href="https://www.theregister.com/2022/01/20/suse_liberty_linux/">The Register</a>, é de ressalvar que o <em>kernel</em> do Liberty Linux é o mesmo do SuSE Linux Enterprise (5.3.x), que é muito mais recente que o existente no RHEL 8 (4.18) - por isso o Liberty Linux parece ser uma proposta para convencer certos tipos de clientes mistos a abandonarem de vez a RedHat caso os seus sistemas sejam compatíveis com o SLE.
+</div></p>
 <h2 id="o-teste">O teste</h2>
 <p>Para este teste, baseei-me num conjunto de VMs que simulava uma rede de serviços tipicamente Windows (AD-DC, SMB, impressão, <em>Group Policies</em>) com base num servidor CentOS8 e Samba (compilado da fonte).<br />
 
@@ -2292,7 +2309,7 @@ USERDNSDOMAIN=DASILVAT.LOCAL
 USERDOMAIN=DASILVAT
 
 </pre>
-<p>Loguei-me com o PuTTY que usei durante o trabalho, a partir do computador RSAT<br />
+<p>Loguei-me em TJGGS com o PuTTY, a partir do computador RSAT<br />
 Fora da caixa, o sistema está tal e qual o deixei em Junho de 2020, quando terminei o trabalho para o CINEL.<br />
 <pre style="font-style: italic; font-size: 0.79rem">
 
@@ -2389,7 +2406,7 @@ systemctl restart samba-ad-dc
 </code></pre></td></tr></table>
 </div>
 </div><p><code>systemctl status samba-ad-dc</code> já deu o serviço como activo e sem erros. E quando tentei de novo logar um utilizador no computador CLIENTE, funcionou, e os GPOs estavam activos.<br />
-Resolver o mesmo problema no cliente RSAT foi um pouco mais complicado; primeiro tive de tirar o cliente do domínio pela GUI (<em>Computer Preferences</em>), e depois já foi possível abrir uma PowerShell de Administrador e usar os comandos</p>
+Resolver o mesmo problema no cliente RSAT foi um pouco mais complicado; primeiro tive de tirar o cliente do domínio pela GUI (<em>Computer Preferences</em> como Administrator local), e depois já foi possível abrir uma PowerShell de Administrador e usar os comandos</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2406,7 +2423,7 @@ Resolver o mesmo problema no cliente RSAT foi um pouco mais complicado; primeiro
 chdir_current_service: vfs_ChDir(/mnt/dumdum/recursos) failed: Permission denied. Current token: uid=3000041, gid=3000026, 7 groups: 3000041 3000026 3000035 3000036 3000037 3000006 3000011
 
 </pre></p>
-<p>Que, claro, corresponde ao computador que acabei de reintroduzir no domínio:</p>
+<p>Este <em>token</em>, claro, corresponde ao computador que acabei de reintroduzir no domínio:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2421,7 +2438,7 @@ DASILVAT\WIN7-RSAT$ 1
 
 </pre>
 <p>A solução foi adicionar o grupo <code>Domain Computers</code> à <em>share</em> (bastaram permissões de leitura)<br />
-Agora que temos o sistema mais ou menos estabilizado, podemos testar a transição de TJGGS para RockyLinux e para AlmaLinux</p>
+Agora que temos o sistema mais ou menos estabilizado, podemos testar a migração de TJGGS de CentOS 8 para Rocky Linux e para AlmaLinux</p>
 <h2 id="rocky-linux">Rocky Linux</h2>
 <p>A página que documenta o processo de migração é <a href="https://docs.rockylinux.org/guides/migrate2rocky/">https://docs.rockylinux.org/guides/migrate2rocky/</a> , e é aconselhado estarmos logados na conta <code>root</code>.<br />
 Para evitar o método <code>curl &lt;url&gt; -o &lt;script&gt;.sh</code>, que pode ser inseguro se houver um ataque <em>Man-In-The-Middle</em>, começamos por instalar o <code>git</code>:</p>
@@ -2442,7 +2459,7 @@ Nothing to do.
 Complete!
 
 </pre>
-<p>Descarregamos os <em>scripts</em> do repositório:</p>
+<p>Descarregamos os <em>scripts</em> do repositório e corremos o script de migração:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2626,7 +2643,7 @@ A log of this installation can be found at /var/log/migrate2rocky.log
 </figure>
 
 </p>
-<p>O novo utilizador também se logou e as mesmas configurações foram aplicadas, excepto a impressora partilhada que é uma configuração muito sensível em Samba; no entanto, o fundo de ecrã correcto carregou, por isso não foi impedido pelo problema de permissões em <code>/mnt/dumdum/recursos</code><br />
+<p>O novo utilizador também se logou e as mesmas configurações foram aplicadas, excepto a impressora partilhada que é uma configuração muito sensível em Samba; no entanto, o fundo de ecrã correcto carregou (especificado por GPO a partir de uma pasta partilhada), por isso não foi impedido por qualquer problema de permissões nas <em>shares</em> do domínio.<br />
 
 
 
@@ -2856,7 +2873,7 @@ Este novo utilizador também se logou no domínio a partir do computador Cliente
 
 </p>
 <h2 id="conclusão">Conclusão</h2>
-<p>Como prometido, tanto o RockyLinux como o AlmaLinux foram capazes de fazer a migração lateral de um servidor CentOS8 com alguns serviços (<em>samba-ad-dc, chrony, RAIDs mdm, SSHd</em>) sem grandes problemas.<br />
+<p>Como prometido, tanto o Rocky Linux como o AlmaLinux foram capazes de fazer a migração lateral de um servidor CentOS8 com alguns serviços (<em>samba-ad-dc, chrony, RAIDs mdm, SSHd</em>) sem grandes problemas.<br />
 Os problemas iniciais de permissões de certeza que foram causados por mim durante a configuração inicial do servidor, porque me lembro que tinha problemas com as permissões da <em>sysvol</em> que impediam alguns GPOs de funcionar correctamente; basicamente o problema arrastou-se até agora.</p>
 <h2 id="editorial">Editorial</h2>
 <p>O mundo do <em>Free and Open Source</em> sempre viveu um problema causado por &ldquo;Liberdade&rdquo; e &ldquo;Gratuitidade&rdquo; se escreverem exactamente da mesma maneira em Inglês: <em><strong>Free</strong></em>. E se a Liberdade é um valor relativo para muita gente, a Gratuitidade é um atractivo muito maior e que se pode medir directamente, por isso o mundo FOSS, pelo menos nos primeiros anos, pouco fez para frisar que, das duas possibilidades, a <strong>Liberdade</strong> é que é o objectivo principal do FOSS.<br />
@@ -2875,14 +2892,17 @@ Deste modo, as companhias por trás de muitos projectos FOSS vendem serviços e 
 </li>
 <li><em><strong>Acesso a versões estáveis</strong></em>: em sentido contrário ao anterior, apenas são disponibilizadas em binário a compilação diária (<em>nightly</em>) do estado actual do processo de desenvolvimento, sem qualquer tipo de testes de funcionalidade (mas pelo menos a compilação terminou com sucesso); neste caso, para se obter uma versão estável é mais seguro ir buscar o código-fonte da <em>nightly</em> da versão principal (<em>major version</em>) <strong>anterior</strong>, que estará mais bem testada e cujas actualizações deverão corresponder a resoluções de erros - mesmo assim, sem nenhuma garantia de que não tenham sido introduzidos novos erros.
 <ul>
-<li>VyOS<br />
-A RedHat decidiu-se por uma variante desta última opção: em vez de apenas disponibilizar as <em>nightlies</em> do CentOS, teve noção que isso seria um passo maior que as pernas e decidiu que o CentOS passaria a estar acessível em binário no estado de desenvolvimento da <em>minor version</em> actual</li>
+<li>VyOS</li>
 </ul>
 </li>
-<li>Em vez de a versão 8.4 do CentOS ser lançada <em><strong>depois</strong></em> do RHEL 8.4 ser lançado, o RHEL estará na versão 8.4 e o CentOS estará na versão <em><strong>seguinte</strong></em> 8.5, e apenas quando o CentOS Stream 8.5 for julgado estável é que será convertido em RHEL 8.5 e o CentOS passará imediatamente a testar as correcções previstas para versão 8.6.</li>
-<li>Ou mais ainda, quem quiser testar as funcionalidades da versão 9 do RHEL, já pode tentar instalar o CentOS Stream 9…<br />
-Deste modo, os utilizadores do CentOS contribuirão com testes (e relatórios de erros, ou assim espera a RedHat), <strong><em>pagando</em> <em>qualquer coisa</em></strong> pelo uso do código desenvolvido pela RedHat.</li>
 </ul>
+<p>A RedHat decidiu-se por uma variante desta última opção: em vez de apenas disponibilizar as <em>nightlies</em> do CentOS, teve noção que isso seria um passo maior que as pernas (além de já terem o Fedora Rawhide para isso) e decidiu que o CentOS passaria a estar acessível em binário no estado de desenvolvimento da <em>minor version</em> actual</p>
+<ul>
+<li>Em vez de a versão 8.4 do CentOS ser lançada <em><strong>depois</strong></em> do RHEL 8.4 ser lançado, o RHEL estará na versão 8.4 e o CentOS estará na versão <em><strong>seguinte</strong></em> 8.5, e apenas quando o CentOS Stream 8.5 for julgado estável é que será convertido em RHEL 8.5 e o CentOS passará imediatamente a testar as correcções previstas para versão 8.6.</li>
+<li>Ou mais ainda, quem quiser testar as funcionalidades da versão 9 do RHEL, já pode tentar instalar o CentOS Stream 9&hellip;</li>
+<li></li>
+</ul>
+<p>Deste modo, os utilizadores do CentOS contribuirão com testes (e relatórios de erros, ou assim espera a RedHat), <strong><em>pagando</em> <em>qualquer coisa</em></strong> pelo uso do código desenvolvido pela RedHat.</p>
 
   </article>
 </div>

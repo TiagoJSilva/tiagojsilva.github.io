@@ -78,13 +78,33 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/bsd/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/_empty/bsd/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/_empty/bsd/"
+                />
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/deb/debian/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/_empty/deb/debian/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/_empty/deb/debian/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/_empty/deb/debian/"
+                />
   </url>
   
   <url>
@@ -103,13 +123,33 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/rpm/redhat/fedora/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/rpm/redhat/_empty/fedora/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/_empty/fedora/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/rpm/redhat/_empty/fedora/"
+                />
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/bsd/freebsd/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/_empty/bsd/freebsd/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/freebsd/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/_empty/bsd/freebsd/"
+                />
   </url>
   
   <url>
@@ -148,13 +188,33 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/greybeards/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/_empty/greybeards/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/_empty/greybeards/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/_empty/greybeards/"
+                />
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/illumos/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/_empty/illumos/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/_empty/illumos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/_empty/illumos/"
+                />
   </url>
   
   <url>
@@ -173,13 +233,33 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/deb/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/_empty/deb/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/_empty/deb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/_empty/deb/"
+                />
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/rpm/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/rpm/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/rpm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/rpm/"
+                />
   </url>
   
   <url>
@@ -213,8 +293,18 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/bsd/openbsd/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/_empty/bsd/openbsd/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/openbsd/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/_empty/bsd/openbsd/"
+                />
   </url>
   
   <url>
@@ -263,13 +353,33 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/rpm/redhat/rhel_centos/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/rpm/redhat/_empty/rhel_centos/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/_empty/rhel_centos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/rpm/redhat/_empty/rhel_centos/"
+                />
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/rpm/redhat/rocky_almalinux/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/rocky_almalinux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/"
+                />
   </url>
   
   <url>
@@ -303,28 +413,38 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/rpm/suse/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/rpm/_empty/suse/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/rpm/_empty/suse/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/rpm/_empty/suse/"
+                />
   </url>
   
   <url>
     <loc>https://tiagojsilva.github.io/en/microsoft/_empty/tools/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/unixlike/_empty/deb/ubuntu/</loc>
+    <lastmod>2020-02-28T10:08:56+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://tiagojsilva.github.io/pt/microsoft/_empty/tools/"
+                href="https://tiagojsilva.github.io/pt/unixlike/_empty/deb/ubuntu/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://tiagojsilva.github.io/en/microsoft/_empty/tools/"
+                href="https://tiagojsilva.github.io/en/unixlike/_empty/deb/ubuntu/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/deb/ubuntu/</loc>
-    <lastmod>2020-02-28T10:08:56+09:00</lastmod>
   </url>
   
   <url>
@@ -418,13 +538,63 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/bsd/darwin/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/_empty/bsd/darwin/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/darwin/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/_empty/bsd/darwin/"
+                />
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/unixlike/empty/bsd/dragonflybsd/</loc>
+    <loc>https://tiagojsilva.github.io/en/unixlike/_empty/bsd/dragonflybsd/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/_empty/bsd/dragonflybsd/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/_empty/bsd/dragonflybsd/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/updates/2022/</loc>
+    <lastmod>2022-01-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/updates/2022/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/updates/2022/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</loc>
+    <lastmod>2022-01-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/"
+                />
   </url>
   
   <url>
@@ -919,6 +1089,20 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/updates/2021/12/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/updates/2022/01/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/updates/2022/01/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/updates/2022/01/"
                 />
   </url>
   
