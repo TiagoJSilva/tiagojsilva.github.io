@@ -428,8 +428,18 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/microsoft/_empty/tools/</loc>
+    <loc>https://tiagojsilva.github.io/en/microsoft/tools/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/microsoft/tools/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/microsoft/tools/"
+                />
   </url>
   
   <url>
@@ -569,7 +579,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2022/</loc>
-    <lastmod>2022-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -579,6 +589,36 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/updates/2022/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/blog/</loc>
+    <lastmod>2022-01-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/blog/2022-01-27_multiple-search-and-replace/</loc>
+    <lastmod>2022-01-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/blog/2022-01-27_multiple-search-and-replace/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/blog/2022-01-27_multiple-search-and-replace/"
                 />
   </url>
   
@@ -624,21 +664,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://tiagojsilva.github.io/en/blog/</loc>
-    <lastmod>2021-11-17T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://tiagojsilva.github.io/pt/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiagojsilva.github.io/en/blog/"
                 />
   </url>
   

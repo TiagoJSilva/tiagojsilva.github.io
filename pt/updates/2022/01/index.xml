@@ -14,6 +14,16 @@
     
       
       <item>
+        <title>Busca e Substituição em massa com Notepad&#43;&#43;</title>
+        <link>https://tiagojsilva.github.io/pt/blog/2022-01-27_multiple-search-and-replace/</link>
+        <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/blog/2022-01-27_multiple-search-and-replace/</guid>
+        <description>No meu workflow de criação de artigos vejo-me confrontado com o facto de precisar de converter tags em shortcodes Hugo, e de retirar os escapes a todos os caracteres que o Pandoc acha que tem de proteger.
+Fazer isso operação a operação é o tipo de trabalho que me faz correr para algum tipo de automatização - e por isso é que eu digo que sou o maior preguiçoso do mundo.</description>
+      </item>
+      
+      <item>
         <title>Plano de Fuga</title>
         <link>https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</link>
         <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
