@@ -7,12 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://tiagojsilva.github.io/pt/updates/2022/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Editores na CLI Microsoft</title>
+        <link>https://tiagojsilva.github.io/pt/microsoft/tools/2022-01-15_cli-editors/</link>
+        <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/microsoft/tools/2022-01-15_cli-editors/</guid>
+        <description>Procura-se, Vivo ou Morto: editor CLI Este artigo baseia-se fortemente na página Wanted: Console Text Editor for Windows, que é muito completa e que recomendo fortemente que leiam (de caminho, ponham uma estrela no perfil GitHub do autor, Antoni Sawicki); no entanto, descobri tantas coisas que decidi que talvez possa dar a minha achega.
+O artigo original começa com as minhas razões para investigar este assunto:
+ Since 2012 or so Microsoft is pushing concept of running Windows Server headless without GUI and administering everything through PowerShell.</description>
+      </item>
       
       <item>
         <title>Busca e Substituição em massa com Notepad&#43;&#43;</title>
