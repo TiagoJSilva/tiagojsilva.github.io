@@ -61,6 +61,16 @@ Simulation VM Create a Windows 7-based VM, with 4GB of RAM, 2 vCPUS and 4 networ
       </item>
       
       <item>
+        <title>Microsoft CLI Editors</title>
+        <link>https://tiagojsilva.github.io/en/microsoft/tools/2022-01-15_cli-editors/</link>
+        <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/microsoft/tools/2022-01-15_cli-editors/</guid>
+        <description>Wanted, Dead or Alive: CLI Editor This article was inspired by the page Wanted: Console Text Editor for Windows, which is very thorough and I strongly recommend that you read it (while you&amp;rsquo;re at it, put a star in the Github profile of the author, Antoni Sawicki); however, I discovered so many things in the meantime that I decided maybe I can give my two cents about this.
+The original article begins with what are also my reasons to investigate this issue:</description>
+      </item>
+      
+      <item>
         <title>Massive Search and Replace with Notepad&#43;&#43;</title>
         <link>https://tiagojsilva.github.io/en/blog/2022-01-27_multiple-search-and-replace/</link>
         <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>

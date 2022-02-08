@@ -579,7 +579,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2022/</loc>
-    <lastmod>2022-01-27T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -589,6 +589,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/updates/2022/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/microsoft/tools/2022-01-15_cli-editors/</loc>
+    <lastmod>2022-02-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/microsoft/tools/2022-01-15_cli-editors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/microsoft/tools/2022-01-15_cli-editors/"
                 />
   </url>
   
@@ -1129,6 +1144,10 @@
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/updates/2022/01/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/updates/2022/02/</loc>
   </url>
   
 </urlset>
