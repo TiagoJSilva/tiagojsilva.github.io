@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PKI on Layer9</title>
-    <link>https://tiagojsilva.github.io/pt/sec/pki/</link>
+    <link>/pt/sec/pki/</link>
     <description>Recent content in PKI on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sat, 11 Jan 2020 14:09:21 +0900</lastBuildDate>
     
-        <atom:link href="https://tiagojsilva.github.io/pt/sec/pki/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/pt/sec/pki/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>PKI OpenSSL (pt 1)</title>
-        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</link>
+        <link>/pt/sec/pki/opensslpki_1/</link>
         <pubDate>Mon, 13 Sep 2021 01:13:41 +0100</pubDate>
         
-        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</guid>
+        <guid>/pt/sec/pki/opensslpki_1/</guid>
         <description>PKI baseada em OpenSSL (parte 1) Fontes:
 https://openssl-ca.readthedocs.io/en/latest/index.html
 https://www.golinuxcloud.com/tutorial-pki-certificates-authority-ocsp/
@@ -31,19 +31,19 @@ O primeiro passo é criar uma Root Certification Authority (RootCA), que só vai
       
       <item>
         <title>PKI OpenSSL (pt 2)</title>
-        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</link>
+        <link>/pt/sec/pki/opensslpki_2/</link>
         <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</guid>
+        <guid>/pt/sec/pki/opensslpki_2/</guid>
         <description>OpenSSL PKI (parte 2) - IntermediateCA Criar uma IntermediateCA Mais uma vez, a(s) IntermediateCA(s) devem estar alojadas num sistema separado (server) daquele que aloja a RootCA, e o sistema da RootCA (root) deve estar airgapped e desligado da corrente. No sistema online não me parece má ideia manter as CAs secundárias debaixo de /root/ca, o que permite colocar o certificado da RootCA no mesmo caminho (/root/ca/certs/ca.cert.pem). No entanto, esta é a única informação da RootCA que é necessário trazer para o host da(s) CA(s) secundária(s); é debatível se vale a pena trazer o CRL da RootCA em formato PEM e colocá-lo em /root/ca/crl/ca.</description>
       </item>
       
       <item>
         <title>PKI OpenSSL (pt 3)</title>
-        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/</link>
+        <link>/pt/sec/pki/opensslpki_3/</link>
         <pubDate>Mon, 11 Oct 2021 21:06:37 +0100</pubDate>
         
-        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/</guid>
+        <guid>/pt/sec/pki/opensslpki_3/</guid>
         <description>Certificados de servidor e de cliente Agora que temos a nossa IntermediateCA configurada correctamente, podemos começar a utilizá-la para emitir certificados.
 Notas prévias:
  Deve-se usar metade dos bits usados na CA O CN do servidor deve ser o FQDN Um certificado servidor precisa de ter o mesmo FQDN repetido na informação SAN O CN dos clientes pode ser qualquer coisa, não é importante. Devem ser assinados com a IntermediateCA Normalmente têm a duração de um ano (365) e o máximo, desde Julho de 2019, é 824 dias (+1) Comando OpenSSL para certificado servidor: -extensions server_cert Comando OpenSSL para certificado cliente: -extensions usr_cert Só é possível copiar a informação SAN do CSR para o certificado se for colocada a opção copy_extensions = copy ou = all na secção [ca_default] do intermediate/openssl.</description>

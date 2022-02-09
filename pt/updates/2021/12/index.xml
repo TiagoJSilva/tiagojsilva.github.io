@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2021/12 on Layer9</title>
-    <link>https://tiagojsilva.github.io/pt/updates/2021/12/</link>
+    <link>/pt/updates/2021/12/</link>
     <description>Recent content in 2021/12 on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/12/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/pt/updates/2021/12/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>S6-init no Obarun</title>
-        <link>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</link>
+        <link>/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</link>
         <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</guid>
+        <guid>/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</guid>
         <description>Obarun e S6 O S6 - Skarnet.org&amp;rsquo;s Small &amp;amp; Secure Supervision Software Suite inclui um init, um dos vários projectos que se rebelaram contra o SystemD afirmando que havia maneiras melhores e/ou mais simples de fazer a mesma coisa. Para quem?
 Apesar de a implementação oficial do S6 ter começado por ser no Alpine Linux, por alguma razão o autor agora colabora com o Adélie Linux, que já explorei antes.</description>
       </item>
