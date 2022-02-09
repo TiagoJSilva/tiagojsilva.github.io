@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/en/blog/2021-09-22_workflow/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Producing content ain't easy, so any help is welcome...",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1554,12 +1554,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--link">
+    <a href="/en" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/en" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1568,7 +1568,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/en/" rel="home" class="navbar__logo--link">
+  <a href="/en" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -1964,7 +1964,7 @@
   <article class="single__contents" data-dir="ltr">
     <p>The <em>workflow</em> I use to make these articles is a jury-rigged hairball of a hack (did you expect anything else?)<br />
 I start by writing in Microsoft Word, because I&rsquo;m used to it and I have some content in Word format that I want to bring to the site.<br />
-Then I convert the DOCX to MarkDown with <a href="/https:/pandoc.org/" target="_blank">Pandoc</a></p>
+Then I convert the DOCX to MarkDown with <a href="https://pandoc.org/" target="_blank">Pandoc</a></p>
 <pre><code>pandoc -f docx -t gfm --wrap=none --extract-media images\&lt;section&gt;\&lt;article&gt; -o article.md .\article.docx
 </code></pre><p>The advantages of using Pandoc are many:</p>
 <ul>
@@ -1973,7 +1973,7 @@ Then I convert the DOCX to MarkDown with <a href="/https:/pandoc.org/" target="_
 <li>Keeps the document outline levels (<em>Heading 1, Heading 2</em>) as MarkDown heading levels, which builds the article&rsquo;s Table Of Contents</li>
 <li>Extracts the images to a folder and inlines the link for the correct path; it also includes the <code>alt text</code> field&rsquo;s content I set in Word, but I tend not to use it.</li>
 </ul>
-<p>The .MD is opened in <a href="/https:/notepad-plus-plus.org" target="_blank">Notepad++</a> to:</p>
+<p>The .MD is opened in <a href="https://notepad-plus-plus.org" target="_blank">Notepad++</a> to:</p>
 <ul>
 <li>Remove the blank lines that are inserted between each line</li>
 <li>Search and Replace (<em>shortcodes</em>, paths with / and not \, and others)</li>
@@ -1985,7 +1985,7 @@ The images are copied to <code>&lt;site&gt;/static/images/&lt;section&gt;/&lt;ar
 The local Hugo is started:</p>
 <pre><code>hugo server --buildFuture
 </code></pre><p>I make the necessary adjustments in VScode, where I have a <em>workspace</em> for the site.<br />
-The English translation is assisted by a VSCode extension, <a href="/https:/github.com/funkyremi/vscode-google-translate.git" target="_blank">funkyremi.VScode Google Translate</a>, where I put in the preferences that I want to always translate from Portuguese to English. <br />
+The English translation is assisted by a VSCode extension, <a href="https://github.com/funkyremi/vscode-google-translate.git" target="_blank">funkyremi.VScode Google Translate</a>, where I put in the preferences that I want to always translate from Portuguese to English. <br />
 I copy the file <code>&lt;article&gt;.MD</code> to the same place under <code>&lt;site&gt;/content/en/</code>, open it side-by-side with the Portuguese version (preferably on a second monitor, because it&rsquo;s easy to confuse the two mid-translation), select the text I want to translate while avoiding technical terms, <code>Alt-Shift-T</code> and that&rsquo;s it; it&rsquo;s not perfect and lots of touching up is necessary, but it saves <em><strong>a lot</strong></em> of work.</p>
 
   </article>

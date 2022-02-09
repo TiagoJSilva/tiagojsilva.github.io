@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/en/blog/2021-10-31_vyos2/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "What's taking so long",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1554,12 +1554,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--link">
+    <a href="/en" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/en" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1568,7 +1568,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/en/" rel="home" class="navbar__logo--link">
+  <a href="/en" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -1979,7 +1979,7 @@ I tried testing backwards and forwards to try to discover the regression point a
 </li>
 </ul>
 <p>Hmmm, I wonder where the main contributors of the project are from?<br />
-By the way, I also found out that the best way to build Vyos is through the Docker image; I tried to reverse-engineer the dockerfile as recommended by the <a href="/https:/docs.vyos.io/en/latest/contributing/build-vyos.html" target="_blank">documentation page</a>, but despite <code>./configure</code> telling me that the dependencies were all met, the build process was stopped right at the beginning:<br />
+By the way, I also found out that the best way to build Vyos is through the Docker image; I tried to reverse-engineer the dockerfile as recommended by the <a href="https://docs.vyos.io/en/latest/contributing/build-vyos.html" target="_blank">documentation page</a>, but despite <code>./configure</code> telling me that the dependencies were all met, the build process was stopped right at the beginning:<br />
 <pre style="font-style: italic; font-size: 0.79rem">
 
 E: The method driver /usr/lib/apt/methods/https could not be found.
@@ -1995,7 +1995,7 @@ make: *** [Makefile:32: iso] Error 1
 <p>Building with the Docker image has been easy, so access to the 1.3 official builds shouldn&rsquo;t be harder than taking the time to build them.</p>
 <p>As for the keymap problem, my baseless speculation leads me to suspect something in the scripts that build the chroot which is then placed on the ISO. Did they forget  <code>debconf console-setup</code>? Some package? The <code>/bin/setupcon</code> file is missing and without it <code>keyboard-setup.service</code> won&rsquo;t work.<br />
 One of the first things I noticed is that from version 1.3 onwards the characters of the console are the native ones, and not the typical font used by Debian-based distributions; could this be related?<br />
-I opened <a href="/https:/forum.vyos.io/t/1-3-1-4-set-console-keymap-not-working/7907" target="_blank">a thread on the forum</a>, and I&rsquo;ll wait some more time before officially opening a bug in Phabricator. How long should I wait? Two weeks?</p>
+I opened <a href="https://forum.vyos.io/t/1-3-1-4-set-console-keymap-not-working/7907" target="_blank">a thread on the forum</a>, and I&rsquo;ll wait some more time before officially opening a bug in Phabricator. How long should I wait? Two weeks?</p>
 
   </article>
 </div>

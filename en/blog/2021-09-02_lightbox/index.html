@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/en/blog/2021-09-02_lightbox/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Seeing if it sticks...",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1554,12 +1554,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--link">
+    <a href="/en" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/en" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1568,7 +1568,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/en/" rel="home" class="navbar__logo--link">
+  <a href="/en" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -1965,7 +1965,7 @@
     <p>One thing that I don&rsquo;t like about Zdoc is all the space taken by the sidebars, leaving little space on the center for the articles and leaving the images quite small (especially when they are widescreen screenshots).<br />
 I don&rsquo;t understand enough HTML to try to widen the central column (apart from the built-in arrow on top that widens the content column but hides the TOC), but I can try to make the images be shown larger when you click on them.<br />
 <div class="alert alert-info" role="alert" data-dir="ltr">BTW, why is there a <code>wideViewAsDefault = true</code> in <code>config/params.toml</code> but there&rsquo;s no separate setting for the Blog? The Blog doesn&rsquo;t have a sidebar, so that&rsquo;s where the Wide View expands to, leaving the TOC alone. Wide View on the Blog would be for free&hellip;</div><br />
-So I found <a href="/https:/julianstier.com/posts/2020/03/hugo-and-lightbox/" target="_blank">this link</a> and set up the <a href="/https:/github.com/lokesh/lightbox2/" target="_blank">Lightbox</a> library.<br />
+So I found <a href="https://julianstier.com/posts/2020/03/hugo-and-lightbox/" target="_blank">this link</a> and set up the <a href="https://github.com/lokesh/lightbox2/" target="_blank">Lightbox</a> library.<br />
 I downloaded the latest release and placed:</p>
 <ul>
 <li><code>lightbox.css</code> em <code>static/css/</code></li>
@@ -2007,7 +2007,7 @@ Added at the end of this file:</li>
 <span class="c">&lt;!-- /lightbox --&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>And created a <em><strong>lightbox</strong></em> shortcode, which accepts the same options as the <a href="/https:/gohugo.io/content-management/shortcodes/#figure" target="_blank">figure</a> shortcode it invokes:<br />
+</div><p>And created a <em><strong>lightbox</strong></em> shortcode, which accepts the same options as the <a href="https://gohugo.io/content-management/shortcodes/#figure" target="_blank">figure</a> shortcode it invokes:<br />
 <div class="expand">
   <button type="button" class="expand__button" aria-label="Expand Button">
     <span class="expand-icon expand-icon__right">

@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/pt/blog/2021-11-08_copy-button-1/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Recebi uma ajuda e tentei de novo",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1531,12 +1531,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1545,7 +1545,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/pt/" rel="home" class="navbar__logo--link">
+  <a href="/pt" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -1939,9 +1939,9 @@
   
 
   <article class="single__contents" data-dir="ltr">
-    <p>Na primeira vez em que tentei configurar um botão <code>Copy</code> para as caixas de código, deixei <a href="/https:/github.com/zzossig/hugo-theme-zdoc/issues/56" target="_blank">uma nota no GitHub do tema Zdoc</a>.<br />
+    <p>Na primeira vez em que tentei configurar um botão <code>Copy</code> para as caixas de código, deixei <a href="https://github.com/zzossig/hugo-theme-zdoc/issues/56" target="_blank">uma nota no GitHub do tema Zdoc</a>.<br />
 Há dias um outro utilizador do Zdoc publicou a solução que funcionou para ele, e com esse estímulo, tentei de novo.<br />
-Infelizmente, já devo ter manipulado de mais o DOM da minha versão do tema (manter-me compatível com o <em>upstream</em>, infelizmente, não vai dar para já) para poder utilizar directamente o código dele, mas tentei mexer mais um pouco no código que tinha tentado utilizar anteriormente, que era baseado <a href="/https:/www.tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/" target="_blank">nesta solução proposta por Tom Spencer</a><br />
+Infelizmente, já devo ter manipulado de mais o DOM da minha versão do tema (manter-me compatível com o <em>upstream</em>, infelizmente, não vai dar para já) para poder utilizar directamente o código dele, mas tentei mexer mais um pouco no código que tinha tentado utilizar anteriormente, que era baseado <a href="https://www.tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/" target="_blank">nesta solução proposta por Tom Spencer</a><br />
 Com as minhas alterações, ficou assim:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2134,7 +2134,7 @@ Com as minhas alterações, ficou assim:</p>
 </code></pre></td></tr></table>
 </div>
 </div><p>Funciona <em>mais ou menos</em>, mas só nos blocos de código para os quais foi detectada uma sintaxe (ou seja, em que o <code>div class</code> é <code>highlight</code> e o <code>chroma</code> foi activado). Para os outros, como os blocos de código nativos do MarkDown, não, e há ocasiões em que não posso ou não quero activar o <em>chroma</em>. Que fazer nesse caso?</p>
-<p>O código do <a href="/https:/github.com/prestonr83" target="_blank">Preston Rodriguez</a>, que agradeço, não funciona com as alterações que já fiz ao tema e que não consigo desfazer nem perceber onde estão a falhar (já disse que não pesco quase nada de JavaScript?)</p>
+<p>O código do <a href="https://github.com/prestonr83" target="_blank">Preston Rodriguez</a>, que agradeço, não funciona com as alterações que já fiz ao tema e que não consigo desfazer nem perceber onde estão a falhar (já disse que não pesco quase nada de JavaScript?)</p>
 <p>Tentei repetir, sem sucesso, o código do Tom Spencer em <code>layouts/partials/head/scripts.html</code>, mas usando como selector</p>
 <pre><code>var codeBlocks = document.querySelectorAll('pre &gt; code');
 codeBlocks.forEach(function(plainBlock) {

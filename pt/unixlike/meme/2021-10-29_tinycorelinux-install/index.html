@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/pt/unixlike/meme/2021-10-29_tinycorelinux-install/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Pequeno mas duro de roer",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1481,12 +1481,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1495,7 +1495,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/pt/" rel="home" class="navbar__logo--link">
+  <a href="/pt" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -2323,7 +2323,7 @@ Escolhe-se a opção por defeito: <em><strong>FLWM topside</strong></em><br />
 </figure>
 
 </p>
-<p><em>Boot options</em> a colocar no instalador (consultar a lista apresentada no ecrã, ou o capítulo 10 do livro oficial do Tiny Core Linux, <a href="/http:/www.tinycorelinux.net/book.html" target="_blank">Into the Core</a>):</p>
+<p><em>Boot options</em> a colocar no instalador (consultar a lista apresentada no ecrã, ou o capítulo 10 do livro oficial do Tiny Core Linux, <a href="http://www.tinycorelinux.net/book.html" target="_blank">Into the Core</a>):</p>
 <pre><code>tce=sda1 home=sda1 opt=sda1 nodhcp showapps safebackup cron syslog host=verynice kmap=qwerty/pt-latin1.kmap
 </code></pre><p>(Mude o <em>hostname</em> para algo mais adequado para si, obviamente)<br />
 <div class="notices warning" data-title="Atenção">
@@ -2695,7 +2695,7 @@ opt/eth0.sh
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="configurar-time-zone">Configurar Time Zone</h3>
-<p><a href="/http:/forum.tinycorelinux.net/index.php?topic=5017.msg27012#msg27012" target="_blank">Fonte</a><br />
+<p><a href="http://forum.tinycorelinux.net/index.php?topic=5017.msg27012#msg27012" target="_blank">Fonte</a><br />
 Confirmar que estamos na pasta <em>home</em> do utilizador:  <code>cd ~</code><br />
 Assegurar que temos ligação ao exterior (por exemplo, <code>ping 1.1.1.1</code>)<br />
 O comando <code>tce-fetch.sh</code> descarrega uma extensão sem a instalar. Neste caso queremos a extensão <code>tzdata.tcz</code> (<em>Time Zone data.TCextension Zipped</em>)</p>
@@ -2739,7 +2739,7 @@ filetool.sh -b
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="acesso-remoto-por-openssh">Acesso remoto por OpenSSH</h2>
-<p><a href="/https:/iotbytes.wordpress.com/configure-ssh-server-on-microcore-tiny-linux/" target="_blank">Fonte</a><br />
+<p><a href="https://iotbytes.wordpress.com/configure-ssh-server-on-microcore-tiny-linux/" target="_blank">Fonte</a><br />
 Assegurar que temos ligação ao exterior (por exemplo, <code>ping 1.1.1.1</code>)<br />
 O comando <code>tce-load -wi</code> instala directamente uma extensão de modo permanente:</p>
 <div class="highlight"><div class="chroma">

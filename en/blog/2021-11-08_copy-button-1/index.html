@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/en/blog/2021-11-08_copy-button-1/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "I got a helping hand and tried again",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1554,12 +1554,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--link">
+    <a href="/en" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/en" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1568,7 +1568,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/en/" rel="home" class="navbar__logo--link">
+  <a href="/en" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -1962,9 +1962,9 @@
   
 
   <article class="single__contents" data-dir="ltr">
-    <p>The first time I tried to set up a <code>Copy</code> button for code boxes, I left <a href="/https:/github.com/zzossig/hugo-theme-zdoc/issues/56" target="_blank">an issue on Zdoc&rsquo;s GitHub</a>.<br />
+    <p>The first time I tried to set up a <code>Copy</code> button for code boxes, I left <a href="https://github.com/zzossig/hugo-theme-zdoc/issues/56" target="_blank">an issue on Zdoc&rsquo;s GitHub</a>.<br />
 Some days ago, another Zdoc user published the solution that worked for him, and stimulated by that, I tried again.<br />
-Unfortunately, I must have manipulated my theme&rsquo;s DOM code too much (tracking upstream is going to be impossible until I nuke it and pave it on the next Zdoc release) to be able to use his code, but I tried fiddling a little more with the code I had tried to use previously, which was based on <a href="/https:/www.tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/" target="_blank">this proposal by Tom Spencer.</a><br />
+Unfortunately, I must have manipulated my theme&rsquo;s DOM code too much (tracking upstream is going to be impossible until I nuke it and pave it on the next Zdoc release) to be able to use his code, but I tried fiddling a little more with the code I had tried to use previously, which was based on <a href="https://www.tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/" target="_blank">this proposal by Tom Spencer.</a><br />
 With my changes, it ended up like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2157,7 +2157,7 @@ With my changes, it ended up like this:</p>
 </code></pre></td></tr></table>
 </div>
 </div><p>It <em>kinda</em> works, but only in code blocks for which a syntax was detected (meaning, <code>div class</code> is <code>highlight</code> and <code>chroma</code> has been activated). For any other code blocks (notably, the native MarkDown code blocks), it doesn&rsquo;t, and there are times when I can&rsquo;t or won&rsquo;t activate <em>chroma</em>. What then?</p>
-<p><a href="/https:/github.com/prestonr83" target="_blank">Preston Rodriguez&rsquo;s code</a>, which I&rsquo;m thankful for, doesn&rsquo;t work with the changes I&rsquo;ve already done to the theme and I can&rsquo;t undo them nor notice where they are messing up (did I say I&rsquo;m not really grokking JavaScript right now?)</p>
+<p><a href="https://github.com/prestonr83" target="_blank">Preston Rodriguez&rsquo;s code</a>, which I&rsquo;m thankful for, doesn&rsquo;t work with the changes I&rsquo;ve already done to the theme and I can&rsquo;t undo them nor notice where they are messing up (did I say I&rsquo;m not really grokking JavaScript right now?)</p>
 <p>I also tried to repeat, without success, Tom Spencer&rsquo;s code in <code>layouts/partials/head/scripts.html</code>, but using this as the DOM selector instead:</p>
 <pre><code>var codeBlocks = document.querySelectorAll('pre &gt; code');
 codeBlocks.forEach(function(plainBlock) {

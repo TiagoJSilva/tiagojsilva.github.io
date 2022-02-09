@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/pt/blog/2021-09-02_lightbox/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Eu só atiro barro à parede...",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1531,12 +1531,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1545,7 +1545,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/pt/" rel="home" class="navbar__logo--link">
+  <a href="/pt" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -1942,7 +1942,7 @@
     <p>Uma coisa que me está a irritar no Zdoc é o espaço que se perde com as barras laterais, deixando pouco espaço ao centro para os artigos e tornando as imagens pequenas (sobretudo quando são <em>screenshots widescreen</em>).<br />
 Não percebo o suficiente de HTML para tentar alargar a coluna central (aparte a seta pré-definida acima que alarga a coluna do artigo mas esconde o TOC), mas posso tentar que as imagens sejam mostradas em maior tamanho quando se clica nelas.<br />
 <div class="alert alert-info" role="alert" data-dir="ltr">Já agora, porque é que existe uma preferência <code>wideViewAsDefault = true</code> no <code>config/params.toml</code> mas não existe uma só para o Blog? O Blog não tem uma barra lateral à esquerda, por isso é para esse lado que a Wide View expande, deixando a TOC em paz no Blog. Wide View no Blog seria de graça&hellip;</div></p>
-<p>Portanto fui a <a href="/https:/julianstier.com/posts/2020/03/hugo-and-lightbox/" target="_blank">este link</a> e configurei a biblioteca <a href="/https:/github.com/lokesh/lightbox2/" target="_blank">Lightbox</a>.<br />
+<p>Portanto fui a <a href="https://julianstier.com/posts/2020/03/hugo-and-lightbox/" target="_blank">este link</a> e configurei a biblioteca <a href="https://github.com/lokesh/lightbox2/" target="_blank">Lightbox</a>.<br />
 Descarreguei a última <em>release</em> e coloquei:</p>
 <ul>
 <li><code>lightbox.css</code> em <code>static/css/</code></li>
@@ -1984,7 +1984,7 @@ Acrescentei no fim deste ficheiro:</li>
 <span class="c">&lt;!-- /lightbox --&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>Criei um <em>shortcode</em> <em><strong>lightbox</strong></em>, que aceita as mesmas opções do <em>shortcode</em> <a href="/https:/gohugo.io/content-management/shortcodes/#figure" target="_blank">figure</a> em que se baseia:<br />
+</div><p>Criei um <em>shortcode</em> <em><strong>lightbox</strong></em>, que aceita as mesmas opções do <em>shortcode</em> <a href="https://gohugo.io/content-management/shortcodes/#figure" target="_blank">figure</a> em que se baseia:<br />
 <div class="expand">
   <button type="button" class="expand__button" aria-label="Expand Button">
     <span class="expand-icon expand-icon__right">

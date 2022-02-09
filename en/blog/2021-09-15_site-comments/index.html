@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/en/blog/2021-09-15_site-comments/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Vox populi",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1554,12 +1554,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--link">
+    <a href="/en" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/en" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1568,7 +1568,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/en/" rel="home" class="navbar__logo--link">
+  <a href="/en" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -1963,10 +1963,10 @@
 
   <article class="single__contents" data-dir="ltr">
     <p>At first I did not intend to enable comments, but since humans are social animals, I went to see if I could set up a system without having to hack too much.<br />
-At first I considered Disq.us, which comes with Hugo, but <a href="/http:/donw.io/post/github-comments/" target="_blank">it has many issues</a>.<br />
-Zdoc has <a href="/https:/utteranc.es" target="_blank">Utteranc.es</a> pre-configured, and it has the advantages of being limited to GitHub users (all good people) and to be statically stored on a repo.</p>
+At first I considered Disq.us, which comes with Hugo, but <a href="http://donw.io/post/github-comments/" target="_blank">it has many issues</a>.<br />
+Zdoc has <a href="https://utteranc.es" target="_blank">Utteranc.es</a> pre-configured, and it has the advantages of being limited to GitHub users (all good people) and to be statically stored on a repo.</p>
 <h2 id="setup">Setup</h2>
-<p>I made a public repo just for the comments and installed the <a href="/https:/github.com/apps/utterances" target="_blank">Utteranc.es app</a> on it.<br />
+<p>I made a public repo just for the comments and installed the <a href="https://github.com/apps/utterances" target="_blank">Utteranc.es app</a> on it.<br />
 All I had to do then was go to <code>config/params.toml</code>, enable the commenting section and set the credentials:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

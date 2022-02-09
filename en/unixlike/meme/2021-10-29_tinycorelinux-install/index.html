@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/en/unixlike/meme/2021-10-29_tinycorelinux-install/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Pocket Jawbreaker",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1409,12 +1409,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--link">
+    <a href="/en" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/en" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1423,7 +1423,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/en/" rel="home" class="navbar__logo--link">
+  <a href="/en" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -2045,7 +2045,7 @@
 It works in a very particular way because the core system is completely separated from the applications and settings and these are only applied at the following boot if they are <u>explicitly stored</u>.<br />
 <u>Very few concessions</u> are made to convenience and user-friendliness, the default shell (<em>busybox</em>)<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> is extremely simplified in comparison to a normal Linux distribution and management utilities are just like UNIX/Linux ten years ago.</p>
 <h2 id="installation">Installation</h2>
-<p>Download from <a href="/http:/tinycorelinux.net/" target="_blank">TinyCore&rsquo;s main site</a> the <em><strong>CorePlus</strong></em> <a href="/http:/tinycorelinux.net/11.x/x86/release/CorePlus-current.iso" target="_blank">installer</a><br />
+<p>Download from <a href="http://tinycorelinux.net/" target="_blank">TinyCore&rsquo;s main site</a> the <em><strong>CorePlus</strong></em> <a href="http://tinycorelinux.net/11.x/x86/release/CorePlus-current.iso" target="_blank">installer</a><br />
 Place the ISO on the VM&rsquo;s virtual optical drive and start it.<br />
 Pick the default option, <em><strong>FLWM topside</strong></em><br />
 
@@ -2179,7 +2179,7 @@ Pick the default option, <em><strong>FLWM topside</strong></em><br />
 </figure>
 
 </p>
-<p><em>Boot options</em> to add to the installer (check the on-screen list, or Chapter 10 of the Official Tiny Core Linux book, <a href="/http:/www.tinycorelinux.net/book.html" target="_blank">Into the Core</a>):</p>
+<p><em>Boot options</em> to add to the installer (check the on-screen list, or Chapter 10 of the Official Tiny Core Linux book, <a href="http://www.tinycorelinux.net/book.html" target="_blank">Into the Core</a>):</p>
 <pre><code>tce=sda1 home=sda1 opt=sda1 nodhcp showapps safebackup cron syslog host=verynice kmap=qwerty/pt-latin1.kmap
 </code></pre><p>(Change the hostname and keymap to something more appropriate for you, obviously)<br />
 <div class="notices warning" data-title="Warning">
@@ -2530,7 +2530,7 @@ If it&rsquo;s not,</p>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="set-the-time-zone-information">Set the Time Zone information</h3>
-<p><a href="/http:/forum.tinycorelinux.net/index.php?topic=5017.msg27012#msg27012" target="_blank">Source</a><br />
+<p><a href="http://forum.tinycorelinux.net/index.php?topic=5017.msg27012#msg27012" target="_blank">Source</a><br />
 Confirm that we are in the user&rsquo;s folder:  <code>cd ~</code><br />
 Make sure that we can connect to the WAN (e.g, <code>ping 1.1.1.1</code>)<br />
 The <code>tce-fetch.sh</code> script downloads an extension without installing it. In this case we want the <code>tzdata.tcz</code> extension (<em>Time Zone data.TCextension Zipped</em>)</p>
@@ -2574,7 +2574,7 @@ filetool.sh -b
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="remote-access-with-openssh">Remote access with OpenSSH</h2>
-<p><a href="/https:/iotbytes.wordpress.com/configure-ssh-server-on-microcore-tiny-linux/" target="_blank">Source</a><br />
+<p><a href="https://iotbytes.wordpress.com/configure-ssh-server-on-microcore-tiny-linux/" target="_blank">Source</a><br />
 Make sure that we can connect to the WAN (e.g, <code>ping 1.1.1.1</code>)<br />
 The <code>tce-load -wi</code> permanently installs an extension:</p>
 <div class="highlight"><div class="chroma">

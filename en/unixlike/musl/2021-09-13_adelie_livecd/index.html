@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/en/unixlike/musl/2021-09-13_adelie_livecd/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Where I pull my hair trying to install Adélie",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1409,12 +1409,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--link">
+    <a href="/en" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/en/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/en" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1423,7 +1423,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/en/" rel="home" class="navbar__logo--link">
+  <a href="/en" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -2011,8 +2011,8 @@
     <h2 id="livecd-10-rc2-mate-edition">LiveCD 1.0-RC2, MATE edition</h2>
 <p>Development of the Adélie distro seemed to have stopped for a long time because the team dedicated themselves to the development of a graphical and scriptable setup program, called Horizon, and that took many resources off the development of the base system. There was much going on behind the scenes but from the outside all we could see was no new releases.<br />
 However, a recent reorganization put wind in their sails and the site has been much improved, looking sharp, professional and organized, the mailing-lists make more sense, and progress seems to be accelerating.<br />
-On the version I had tested a long time ago (1.0-beta4), Horizon was completely inoperative and I had to use the <a href="/https:/git.adelielinux.org/adelie/docs/-/wikis/Quick-Start-Guides/Installation#manual-installation" target="_blank">manual installation</a> method; even now that&rsquo;s an interesting path to take, because it&rsquo;s a good example of how to do bootstrap a Linux system from a binary repository, instead of source code as in Gentoo or LinuxFromScratch, which takes a lot longer.<br />
-To test the installation, I downloaded the <a href="/https:/www.adelielinux.org/download/" target="_blank">LiveCD</a> for x86_64 with the MATE flavor, but there are also KDE and LXQt options, in ARMv7, ARM64, PPC, PPC64 and x86 architectures.<br />
+On the version I had tested a long time ago (1.0-beta4), Horizon was completely inoperative and I had to use the <a href="https://git.adelielinux.org/adelie/docs/-/wikis/Quick-Start-Guides/Installation#manual-installation" target="_blank">manual installation</a> method; even now that&rsquo;s an interesting path to take, because it&rsquo;s a good example of how to do bootstrap a Linux system from a binary repository, instead of source code as in Gentoo or LinuxFromScratch, which takes a lot longer.<br />
+To test the installation, I downloaded the <a href="https://www.adelielinux.org/download/" target="_blank">LiveCD</a> for x86_64 with the MATE flavor, but there are also KDE and LXQt options, in ARMv7, ARM64, PPC, PPC64 and x86 architectures.<br />
 I set up an <em><strong>Other Linux (64-bit)</strong></em> VM on VirtualBox (6.1.22) with 1GB of RAM, and defaults for almost everything else.<br />
 <div class="notices info" data-title="Notice">
   GRUB on the LiveCD does not automatically pick an option to boot from, so it&rsquo;s always necessary some interaction, if only hitting <code>Enter</code>, to boot.
@@ -2751,8 +2751,8 @@ At this point, I believe that Adélie can be criticized for:</p>
 <li>The installer can&rsquo;t work from the GUI</li>
 <li>And all this might not be so serious, if Adélie was a regular GNU/Linux distro, but <em><strong>it isn&rsquo;t</strong></em>.</li>
 </ul>
-<p>All this marks Adélie as a distribution only for <em><strong>very advanced</strong></em> users, and, if possible, very experienced with <a href="/https:/wiki.alpinelinux.org/wiki/Tutorials_and_Howtos" target="_blank">Alpine Linux</a>, which uses the same package manager (APK) and where much of Adélie&rsquo;s userland seems to originate from.<br />
-I submitted some of this information as <em><strong>Issues</strong></em> on <a href="/https:/git.adelielinux.org/" target="_blank">Adélie&rsquo;s development site</a>, and if you find more problems I suggest you submit them too; developers are already perfectly adapted to the system but need to know these issues that only happen to the common user who checks the system for the first time.<br />
+<p>All this marks Adélie as a distribution only for <em><strong>very advanced</strong></em> users, and, if possible, very experienced with <a href="https://wiki.alpinelinux.org/wiki/Tutorials_and_Howtos" target="_blank">Alpine Linux</a>, which uses the same package manager (APK) and where much of Adélie&rsquo;s userland seems to originate from.<br />
+I submitted some of this information as <em><strong>Issues</strong></em> on <a href="https://git.adelielinux.org/" target="_blank">Adélie&rsquo;s development site</a>, and if you find more problems I suggest you submit them too; developers are already perfectly adapted to the system but need to know these issues that only happen to the common user who checks the system for the first time.<br />
 The Adélie project is small and so communication is easy and uncomplicated, so much so that I was able to contact the team, which explained to me that this RC2 version was produced at a very complicated moment in the life of the project for personal reasons of the main programmer (that I understand perfectly, but it is worrying that the distro is so dependent on one person) and that an RC3 version is guaranteed and RC4 is also very likely.<br />
 In my opinion, they haven&rsquo;t even reached Beta, but nobody cares nowadays, the reality is that version 1.0 will be the Public Beta with a version 1.5 planned for stabilization; which places Adélie Linux in very good company, because OSX had exactly the same pattern of development, even with two decades of prior existence as NextStep/OpenStep - only on OSX 10.2 Jaguar did it become stable enough to be a daily driver without bleeding to death from usability papercuts.</p>
 

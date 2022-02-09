@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/pt/blog/2022-01-27_multiple-search-and-replace/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Ctrl-H, Ctrl-H, Ctrl-H, Ctrl-H...",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1531,12 +1531,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1545,7 +1545,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/pt/" rel="home" class="navbar__logo--link">
+  <a href="/pt" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -1947,7 +1947,7 @@ Tentei arranjar algum tipo de plugin para Notepad++ ou VSCode que me ajudassem, 
 </div></p>
 <p>Acabei por perceber que não conseguia encontrar nada que não usasse expressões regulares. <em>trombone.wav</em></p>
 <h2 id="solução-com-notepad">Solução com Notepad++</h2>
-<p>Eventualmente, depois de partir muita pedra, percebi que podia fazer isso com a busca normal do Notepad++, porque este aceita <a href="/https:/www.boost.org/doc/libs/1_48_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html" target="_blank">expressões regulares PCRE</a>. E em PCRE, é possível construir uma única expressão feita de muitas cadeias de captura e substituição, com este formato:</p>
+<p>Eventualmente, depois de partir muita pedra, percebi que podia fazer isso com a busca normal do Notepad++, porque este aceita <a href="https://www.boost.org/doc/libs/1_48_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html" target="_blank">expressões regulares PCRE</a>. E em PCRE, é possível construir uma única expressão feita de muitas cadeias de captura e substituição, com este formato:</p>
 <table>
 <thead>
 <tr>

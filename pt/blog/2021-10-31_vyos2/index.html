@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/pt/blog/2021-10-31_vyos2/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Como andam as coisas",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1531,12 +1531,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1545,7 +1545,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/pt/" rel="home" class="navbar__logo--link">
+  <a href="/pt" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -1956,7 +1956,7 @@ Tentei testar para trás e para a frente para ver se descobria o ponto de regres
 </li>
 </ul>
 <p>Hmmm, pergunto-me de onde serão os principais contribuidores do projecto?<br />
-De caminho, também percebi que a melhor forma de compilar uma versão do VyOS é através da imagem Docker; tentei fazer <em>reverse-engineering</em> do <em>dockerfile</em> como recomendado pela própria <a href="/https:/docs.vyos.io/en/latest/contributing/build-vyos.html" target="_blank">página de documentação</a>, mas apesar de <code>./configure</code> me dizer que as dependências estavam todas correctas, a compilação era interrompida logo no início:<br />
+De caminho, também percebi que a melhor forma de compilar uma versão do VyOS é através da imagem Docker; tentei fazer <em>reverse-engineering</em> do <em>dockerfile</em> como recomendado pela própria <a href="https://docs.vyos.io/en/latest/contributing/build-vyos.html" target="_blank">página de documentação</a>, mas apesar de <code>./configure</code> me dizer que as dependências estavam todas correctas, a compilação era interrompida logo no início:<br />
 <pre style="font-style: italic; font-size: 0.79rem">
 
 E: The method driver /usr/lib/apt/methods/https could not be found.
@@ -1972,7 +1972,7 @@ make: *** [Makefile:32: iso] Error 1
 <p>Compilar com a imagem Docker tem sido simples, por isso o acesso aos <em>builds</em> oficiais da versão 1.3 não deverá ser complicado.</p>
 <p>Quanto ao problema do teclado, a minha especulação ingénua leva-me a suspeitar de alguma coisa nos <em>scripts</em> que criam a instalação <em>chroot</em> que depois é colocada no ISO. Esqueceram-se do <code>debconf console-setup</code>? De algum pacote? Falta o ficheiro <code>/bin/setupcon</code> e sem ele o <code>keyboard-setup.service</code> não pode funcionar.<br />
 Uma das primeiras coisas que reparei é que a partir da versão 1.3 os caracteres da consola são os nativos, e não a fonte típica das distribuições baseadas em Debian; estará relacionado?<br />
-Abri <a href="/https:/forum.vyos.io/t/1-3-1-4-set-console-keymap-not-working/7907" target="_blank">um thread no fórum (secção Bugs)</a>, e vou esperar algum tempo antes de abrir oficialmente um <em>bug</em> no Phabricator. Quanto tempo deverei dar? Duas semanas?</p>
+Abri <a href="https://forum.vyos.io/t/1-3-1-4-set-console-keymap-not-working/7907" target="_blank">um thread no fórum (secção Bugs)</a>, e vou esperar algum tempo antes de abrir oficialmente um <em>bug</em> no Phabricator. Quanto tempo deverei dar? Duas semanas?</p>
 
   </article>
 </div>

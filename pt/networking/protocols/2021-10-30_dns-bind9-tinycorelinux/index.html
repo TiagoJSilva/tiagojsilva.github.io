@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Onde configuro o BIND9 no TinyCore Linux, uma distribuição em que quase nada está pronto a usar",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1331,12 +1331,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1345,7 +1345,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/pt/" rel="home" class="navbar__logo--link">
+  <a href="/pt" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -1853,7 +1853,7 @@
 
   <article class="single__contents" data-dir="ltr">
     <h2 id="instalação-do-bind9">Instalação do BIND9</h2>
-<p>O sistema onde este serviço BIND9 foi instalado é o mesmo que é descrito na página <a href="/https:/tiagojsilva.github.io/unixlike/meme/2021-10-29_tinycorelinux-install/" target="_blank">Instalação TinyCoreLinux</a>.<br />
+<p>O sistema onde este serviço BIND9 foi instalado é o mesmo que é descrito na página <a href="https://tiagojsilva.github.io/unixlike/meme/2021-10-29_tinycorelinux-install/" target="_blank">Instalação TinyCoreLinux</a>.<br />
 Existe um pacote BIND9 para o TinyCore, mas tal como noutras ocasiões, a instalação é muito faça-você-mesmo<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Não temos isqueiros, nem sequer fósforos, é mesmo esfregar os pauzinhos um no outro até sair fumo.<br />
 Instalamos a extensão usando o <em>browser</em> <strong>tce-ab</strong> ou o directamente o instalador <strong>tce-load</strong></p>
 <div class="highlight"><div class="chroma">
@@ -2004,7 +2004,7 @@ Uma zona directa para o <em>localhost</em><sup id="fnref:2"><a href="#fn:2" clas
         type master;
         file &quot;localhost.zone&quot;;
 };
-</code></pre><p>E por razões de segurança, descritas no <a href="/https:/www.rfc-editor.org/rfc/rfc1912.txt" target="_blank">RFC1912</a>, também devem ser criadas duas zonas acessórias:</p>
+</code></pre><p>E por razões de segurança, descritas no <a href="https://www.rfc-editor.org/rfc/rfc1912.txt" target="_blank">RFC1912</a>, também devem ser criadas duas zonas acessórias:</p>
 <pre><code>zone &quot;0.in-addr.arpa&quot; in {
         type master;
         file &quot;0.in-addr.arpa.zone&quot;;
@@ -2743,8 +2743,8 @@ No entanto, um sistema Debian 10 (<em>Minimal Install</em>), que armazena o sist
 <p><strong>-D</strong> não definir password; <strong>-H</strong> não criar <em>home</em>; -<strong>s</strong> <em>shell</em> (falsa para não poder fazer <em>login</em>)&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7" role="doc-endnote">
-<p><a href="/https:/www.ibm.com/support/pages/how-setup-rndc-bind-9" target="_blank">https://www.ibm.com/support/pages/how-setup-rndc-bind-9</a><br />
-<a href="/https:/tecadmin.net/configure-rndc-for-bind9" target="_blank">https://tecadmin.net/configure-rndc-for-bind9</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://www.ibm.com/support/pages/how-setup-rndc-bind-9" target="_blank">https://www.ibm.com/support/pages/how-setup-rndc-bind-9</a><br />
+<a href="https://tecadmin.net/configure-rndc-for-bind9" target="_blank">https://tecadmin.net/configure-rndc-for-bind9</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>

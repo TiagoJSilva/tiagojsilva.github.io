@@ -28,7 +28,7 @@
     
     var languagedir = JSON.parse("\"ltr\"");
     
-    var baseurl = JSON.parse("\"\"");
+    var baseurl = JSON.parse("\"/\"");
     
     var permalink = JSON.parse("\"/pt/blog/2021-09-22_workflow/\"");
 
@@ -1142,12 +1142,12 @@
     "description": "Produzir conteúdo já não é fácil, mas reinventar a roda é que não...",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ""
+      "@id": "/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Layer9",
-      "url": ""
+      "url": "/"
     }
   }
 </script>
@@ -1531,12 +1531,12 @@
       <div class="navbar lmr">
         <div id="siteLogo" class="navbar__logo--wrapper">
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--link">
       <img src="/logo.png" alt="Home" class="navbar__logo">
     </a>
   
   
-    <a href="/pt/" title="" rel="home" class="navbar__logo--text-link">
+    <a href="/pt" title="" rel="home" class="navbar__logo--text-link">
       <h6 class="navbar__logo--text" data-bgimg="false">Layer9</h6>
     </a>
   
@@ -1545,7 +1545,7 @@
         <div class="navbar__menu--wrapper">
           <div id="tabletLogo" class="hide">
   
-  <a href="/pt/" rel="home" class="navbar__logo--link">
+  <a href="/pt" rel="home" class="navbar__logo--link">
     <img src="/logo.png" alt="Home" class="navbar__logo">
   </a>
   
@@ -1941,7 +1941,7 @@
   <article class="single__contents" data-dir="ltr">
     <p>O <em>workflow</em> que uso para produzir os artigos é uma jiga-joga que inventei p&rsquo;raqui. Para variar&hellip;<br />
 Começo por escrever em Microsoft Word, porque estou habituado assim e tenho algum conteúdo em Word que quero converter para o site.<br />
-Depois converto o DOCX para MarkDown com o <a href="/https:/pandoc.org/" target="_blank">Pandoc</a></p>
+Depois converto o DOCX para MarkDown com o <a href="https://pandoc.org/" target="_blank">Pandoc</a></p>
 <pre><code>pandoc -f docx -t gfm --wrap=none --extract-media images\&lt;secção&gt;\&lt;artigo&gt; -o artigo.md .\artigo.docx
 </code></pre><p>As vantagens de usar o Pandoc são muitas:</p>
 <ul>
@@ -1950,7 +1950,7 @@ Depois converto o DOCX para MarkDown com o <a href="/https:/pandoc.org/" target=
 <li>Reproduz a estrutura de estilos (<em>Título 1, Tìtulo 2</em>) nos <em>Headings</em> do MarkDown e no índice (TOC) do artigo</li>
 <li>Extrai as imagens para uma pasta e coloca o <em>link</em> para a imagem <em>inline</em>, e inclui a informação <code>alt text</code> que seja colocada nas propriedades da imagem dentro do Word, mas não uso.</li>
 </ul>
-<p>Abro o .MD no <a href="/https:/notepad-plus-plus.org" target="_blank">Notepad++</a> para:</p>
+<p>Abro o .MD no <a href="https://notepad-plus-plus.org" target="_blank">Notepad++</a> para:</p>
 <ul>
 <li>Retirar os parágrafos duplicados que ficam entre cada linha</li>
 <li>Busca e substituição (<em>shortcodes</em>, caminhos com / em vez de \, e outros)</li>
@@ -1962,7 +1962,7 @@ Copio as imagens para <code>&lt;site&gt;/static/images/&lt;secção&gt;/&lt;arti
 Ligo o <em>site</em> Hugo local:</p>
 <pre><code>hugo server --buildFuture
 </code></pre><p>E faço os ajustes necessários no VSCode, onde tenho um <em>workspace</em> para o <em>site</em>.<br />
-A tradução para Inglês é feita com uma extensão VSCode, <a href="/https:/github.com/funkyremi/vscode-google-translate.git" target="_blank">funkyremi.VScode Google Translate</a>, onde pus nas preferências que quero traduzir sempre de Português para Inglês. <br />
+A tradução para Inglês é feita com uma extensão VSCode, <a href="https://github.com/funkyremi/vscode-google-translate.git" target="_blank">funkyremi.VScode Google Translate</a>, onde pus nas preferências que quero traduzir sempre de Português para Inglês. <br />
 Copio o ficheiro <code>&lt;artigo&gt;.MD</code> para o local equivalente debaixo de <code>&lt;site&gt;/content/en/</code>, abro-o lado-a -lado com a versão em Português (de preferência no segundo monitor, porque é fácil fazer confusão entre os dois a meio da tradução), selecciono o texto que quero traduzir evitando termos técnicos, <code>Alt-Shift-T</code> e já está; não é perfeito e há muita afinação a fazer depois, mas poupa <em><strong>muito</strong></em> trabalho.</p>
 
   </article>
