@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2021/10 on Layer9</title>
-    <link>/en/updates/2021/10/</link>
+    <link>https://tiagojsilva.github.io/en/updates/2021/10/</link>
     <description>Recent content in 2021/10 on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="/en/updates/2021/10/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://tiagojsilva.github.io/en/updates/2021/10/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>PKI OpenSSL (pt 2)</title>
-        <link>/en/sec/pki/opensslpki_2/</link>
+        <link>https://tiagojsilva.github.io/en/sec/pki/opensslpki_2/</link>
         <pubDate>Sun, 03 Oct 2021 18:19:10 +0100</pubDate>
         
-        <guid>/en/sec/pki/opensslpki_2/</guid>
+        <guid>https://tiagojsilva.github.io/en/sec/pki/opensslpki_2/</guid>
         <description>OpenSSL PKI (part 2) - IntermediateCA Creating an IntermediateCA Once again, the intermediateCA(s) must be hosted in a separate system (server) from that which hosts the RootCA, and the RootCA&amp;rsquo;s system (root) should be airgapped and offline. In the online system I don&amp;rsquo;t think it&amp;rsquo;s a bad idea to keep the secondary CAs under /root/ca, which allows the placing the RootCA&amp;rsquo;s certificate on the same path (/root/ca/certs/ca.cert.pem). However, this is the only information from the RootCA that needs to be brought to the online world where the secondary CAs reside; it is even debatable if it is worth bringing the RootCA&amp;rsquo;s CRL in PEM format and putting it in /root/ca/crl/ca.</description>
       </item>
       
       <item>
         <title>Update about VyOS</title>
-        <link>/en/blog/2021-10-31_vyos2/</link>
+        <link>https://tiagojsilva.github.io/en/blog/2021-10-31_vyos2/</link>
         <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/en/blog/2021-10-31_vyos2/</guid>
+        <guid>https://tiagojsilva.github.io/en/blog/2021-10-31_vyos2/</guid>
         <description>As I said in a previous article, I was trying to check on VyOS, which seems to be a cheap way for testing network concepts without having to pay for Cisco Modeling Labs (the only legal way of using Cisco virtual systems) or something similar.
 And I hit smack-dab into the issue of the Portuguese keyboard layout: there isn&amp;rsquo;t one. Yes, an SSH connection assumes the client&amp;rsquo;s layout - but you need to setup the network beforehand.</description>
       </item>
       
       <item>
         <title>Adelie Linux - LiveCD Installation</title>
-        <link>/en/unixlike/musl/2021-09-13_adelie_livecd/</link>
+        <link>https://tiagojsilva.github.io/en/unixlike/musl/2021-09-13_adelie_livecd/</link>
         <pubDate>Sat, 30 Oct 2021 23:07:43 +0100</pubDate>
         
-        <guid>/en/unixlike/musl/2021-09-13_adelie_livecd/</guid>
+        <guid>https://tiagojsilva.github.io/en/unixlike/musl/2021-09-13_adelie_livecd/</guid>
         <description>LiveCD 1.0-RC2, MATE edition Development of the Adélie distro seemed to have stopped for a long time because the team dedicated themselves to the development of a graphical and scriptable setup program, called Horizon, and that took many resources off the development of the base system. There was much going on behind the scenes but from the outside all we could see was no new releases.
 However, a recent reorganization put wind in their sails and the site has been much improved, looking sharp, professional and organized, the mailing-lists make more sense, and progress seems to be accelerating.</description>
       </item>
       
       <item>
         <title>PKI OpenSSL (pt 3)</title>
-        <link>/en/sec/pki/opensslpki_3/</link>
+        <link>https://tiagojsilva.github.io/en/sec/pki/opensslpki_3/</link>
         <pubDate>Tue, 19 Oct 2021 21:06:37 +0100</pubDate>
         
-        <guid>/en/sec/pki/opensslpki_3/</guid>
+        <guid>https://tiagojsilva.github.io/en/sec/pki/opensslpki_3/</guid>
         <description>Client and Server Certificates Now that we have our IntermediateCA properly configured, we can start using it to issue certificates.
 Notes:
  You should use no less than half the bits used on the CA for keys The server&amp;rsquo;s CN should be its FQDN A server certificate needs to have the same FQDN repeated on the SAN information The client certificate&amp;rsquo;s CN can be anything, it&amp;rsquo;s not important. Certificates must be signed by the IntermediateCA Certificates usually last a year (365 days) and the maximum, since July 2019, is 824 days (+1) OpenSSL command for server certificate: -extensions server_cert OpenSSL command for client certificate: -extensions usr_cert Only if copy_extensions = copy or = all is on the [ca_default] section of intermediate/openssl.</description>
@@ -55,30 +55,30 @@ Notes:
       
       <item>
         <title>Manifesto</title>
-        <link>/en/blog/2021-10-08_wat-do/</link>
+        <link>https://tiagojsilva.github.io/en/blog/2021-10-08_wat-do/</link>
         <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/en/blog/2021-10-08_wat-do/</guid>
+        <guid>https://tiagojsilva.github.io/en/blog/2021-10-08_wat-do/</guid>
         <description>Nutritional facts Don&amp;rsquo;t expect this site to have the usual content; I&amp;rsquo;ll hardly write the n-th article about installing Postfix or Arch Linux, configure a NextCloud instance or a VPN: not interesting, already done, adds no value. I&amp;rsquo;ll only do these kinds of thing if I stumble on HOWTOs so bad that&amp;rsquo;ll make me wonder if I&amp;rsquo;d do it a lot better.
 Right now I&amp;rsquo;m interested in exploring the MUSL world, Some very specific Linux distros, and the S6 init; I shouldn&amp;rsquo;t be shocked by the current state of the documentation and development of these systems, compared to the 50,000 articles on how to install Ubuntu (ballpark figures), but I am.</description>
       </item>
       
       <item>
         <title>Musl</title>
-        <link>/en/unixlike/musl/</link>
+        <link>https://tiagojsilva.github.io/en/unixlike/musl/</link>
         <pubDate>Tue, 12 Oct 2021 23:09:50 +0100</pubDate>
         
-        <guid>/en/unixlike/musl/</guid>
+        <guid>https://tiagojsilva.github.io/en/unixlike/musl/</guid>
         <description>The musl C library is an alternative to the equivalent GNU library (glibc) and is used by some (but few) distributions, which are generally simpler, bespoke, light in resources and with much, much less polish than GNU/Linux distributions .
 Which begs the question, of course, of what to call these distributions: musl/Linux? Although many of those use busybox as the base of the userland, others use GNU coreutils, so there&amp;rsquo;s some GNU in there as well.</description>
       </item>
       
       <item>
         <title>Getch&#39;or VyOS heaaar!!!</title>
-        <link>/en/blog/2021-10-07_getchorvyoshear/</link>
+        <link>https://tiagojsilva.github.io/en/blog/2021-10-07_getchorvyoshear/</link>
         <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/en/blog/2021-10-07_getchorvyoshear/</guid>
+        <guid>https://tiagojsilva.github.io/en/blog/2021-10-07_getchorvyoshear/</guid>
         <description>Like many other Free and Open Source Software projects, Vyos decided that it was going to continue to be free as in freedom but would stop being for free. To convince enterprise users to pay up and contribute to the project with monies, they decided that binaries compiled and distributed for installation as an ISO image would only be available to the public in unstable versions, meaning, nightly builds. The last pre-compiled stable version available is 1.</description>
       </item>
       

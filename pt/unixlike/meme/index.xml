@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Meme distros on Layer9</title>
-    <link>/pt/unixlike/meme/</link>
+    <link>https://tiagojsilva.github.io/pt/unixlike/meme/</link>
     <description>Recent content in Meme distros on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Fri, 28 Feb 2020 10:08:56 +0900</lastBuildDate>
     
-        <atom:link href="/pt/unixlike/meme/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://tiagojsilva.github.io/pt/unixlike/meme/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>TinyCore Linux - Passos iniciais</title>
-        <link>/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
+        <link>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
         <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
+        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
         <description>Para este sistema, que eventualmente vai ser um servidor chamado verynice, criei uma VM com 256MB de RAM e 640MB de disco.
 O TinyCore1 é uma instalação Linux muito especial, devotada a sistemas com muito poucos recursos. Vou usar a versão CorePlus, a mais &amp;ldquo;luxuosa&amp;rdquo;, com ambiente gráfico e possibilidade de instalação em disco, mas há versões Core muito mais frugais que correm alegremente de uma pen USB carregando-se para uma RAMdrive no arranque.</description>
       </item>
       
       <item>
         <title>Arch &#43; Manjaro</title>
-        <link>/pt/unixlike/meme/arch_manjaro/</link>
+        <link>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/</link>
         <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
         
-        <guid>/pt/unixlike/meme/arch_manjaro/</guid>
+        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/</guid>
         <description></description>
       </item>
       

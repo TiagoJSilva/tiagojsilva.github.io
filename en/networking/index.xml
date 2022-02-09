@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Networks on Layer9</title>
-    <link>/en/networking/</link>
+    <link>https://tiagojsilva.github.io/en/networking/</link>
     <description>Recent content in Networks on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sat, 11 Jan 2020 14:09:21 +0900</lastBuildDate>
     
-        <atom:link href="/en/networking/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://tiagojsilva.github.io/en/networking/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>Protocols</title>
-        <link>/en/networking/protocols/</link>
+        <link>https://tiagojsilva.github.io/en/networking/protocols/</link>
         <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
         
-        <guid>/en/networking/protocols/</guid>
+        <guid>https://tiagojsilva.github.io/en/networking/protocols/</guid>
         <description></description>
       </item>
       
       <item>
         <title>Simulation</title>
-        <link>/en/networking/simul/</link>
+        <link>https://tiagojsilva.github.io/en/networking/simul/</link>
         <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
         
-        <guid>/en/networking/simul/</guid>
+        <guid>https://tiagojsilva.github.io/en/networking/simul/</guid>
         <description></description>
       </item>
       

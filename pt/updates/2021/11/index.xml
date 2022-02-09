@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2021/11 on Layer9</title>
-    <link>/pt/updates/2021/11/</link>
+    <link>https://tiagojsilva.github.io/pt/updates/2021/11/</link>
     <description>Recent content in 2021/11 on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="/pt/updates/2021/11/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/11/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>TinyCore Linux - Passos iniciais</title>
-        <link>/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
+        <link>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
         <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
+        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
         <description>Para este sistema, que eventualmente vai ser um servidor chamado verynice, criei uma VM com 256MB de RAM e 640MB de disco.
 O TinyCore1 é uma instalação Linux muito especial, devotada a sistemas com muito poucos recursos. Vou usar a versão CorePlus, a mais &amp;ldquo;luxuosa&amp;rdquo;, com ambiente gráfico e possibilidade de instalação em disco, mas há versões Core muito mais frugais que correm alegremente de uma pen USB carregando-se para uma RAMdrive no arranque.</description>
       </item>
       
       <item>
         <title>BIND9: configuração de raiz</title>
-        <link>/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
+        <link>https://tiagojsilva.github.io/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
         <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</guid>
+        <guid>https://tiagojsilva.github.io/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</guid>
         <description>Instalação do BIND9 O sistema onde este serviço BIND9 foi instalado é o mesmo que é descrito na página Instalação TinyCoreLinux.
 Existe um pacote BIND9 para o TinyCore, mas tal como noutras ocasiões, a instalação é muito faça-você-mesmo1. Não temos isqueiros, nem sequer fósforos, é mesmo esfregar os pauzinhos um no outro até sair fumo.
 Instalamos a extensão usando o browser tce-ab ou o directamente o instalador tce-load
@@ -37,10 +37,10 @@ Instalamos a extensão usando o browser tce-ab ou o directamente o instalador tc
       
       <item>
         <title>Ninguém atende</title>
-        <link>/pt/blog/2021-11-17_computersaysno/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-11-17_computersaysno/</link>
         <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/blog/2021-11-17_computersaysno/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-11-17_computersaysno/</guid>
         <description>Eu só queria descarregar a demonstração do ESXi&amp;hellip;
 Bom, a não ser que amanhã isto se resolva parece que vou começar a aprender hipervisores Tipo 1 com o XCP-ng&amp;hellip;
 Primeiras impressões e isso.</description>
@@ -48,10 +48,10 @@ Primeiras impressões e isso.</description>
       
       <item>
         <title>Botão copy, take 1</title>
-        <link>/pt/blog/2021-11-08_copy-button-1/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/</link>
         <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/blog/2021-11-08_copy-button-1/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/</guid>
         <description>Na primeira vez em que tentei configurar um botão Copy para as caixas de código, deixei uma nota no GitHub do tema Zdoc.
 Há dias um outro utilizador do Zdoc publicou a solução que funcionou para ele, e com esse estímulo, tentei de novo.
 Infelizmente, já devo ter manipulado de mais o DOM da minha versão do tema (manter-me compatível com o upstream, infelizmente, não vai dar para já) para poder utilizar directamente o código dele, mas tentei mexer mais um pouco no código que tinha tentado utilizar anteriormente, que era baseado nesta solução proposta por Tom Spencer</description>

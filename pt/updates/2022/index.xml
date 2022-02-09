@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2022 on Layer9</title>
-    <link>/pt/updates/2022/</link>
+    <link>https://tiagojsilva.github.io/pt/updates/2022/</link>
     <description>Recent content in 2022 on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/pt/updates/2022/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://tiagojsilva.github.io/pt/updates/2022/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>Editores na CLI Microsoft</title>
-        <link>/pt/microsoft/tools/2022-01-15_cli-editors/</link>
+        <link>https://tiagojsilva.github.io/pt/microsoft/tools/2022-01-15_cli-editors/</link>
         <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
         
-        <guid>/pt/microsoft/tools/2022-01-15_cli-editors/</guid>
+        <guid>https://tiagojsilva.github.io/pt/microsoft/tools/2022-01-15_cli-editors/</guid>
         <description>Procura-se, Vivo ou Morto: editor CLI Este artigo baseia-se fortemente na página Wanted: Console Text Editor for Windows, que é muito completa e que recomendo fortemente que leiam (de caminho, ponham uma estrela no perfil GitHub do autor, Antoni Sawicki); no entanto, descobri tantas coisas que decidi que talvez possa dar a minha achega.
 O artigo original começa com as minhas razões para investigar este assunto:
  Since 2012 or so Microsoft is pushing concept of running Windows Server headless without GUI and administering everything through PowerShell.</description>
@@ -27,20 +27,20 @@ O artigo original começa com as minhas razões para investigar este assunto:
       
       <item>
         <title>Busca e Substituição em massa com Notepad&#43;&#43;</title>
-        <link>/pt/blog/2022-01-27_multiple-search-and-replace/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2022-01-27_multiple-search-and-replace/</link>
         <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
         
-        <guid>/pt/blog/2022-01-27_multiple-search-and-replace/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2022-01-27_multiple-search-and-replace/</guid>
         <description>No meu workflow de criação de artigos vejo-me confrontado com o facto de precisar de converter tags em shortcodes Hugo, e de retirar os escapes a todos os caracteres que o Pandoc acha que tem de proteger.
 Fazer isso operação a operação é o tipo de trabalho que me faz correr para algum tipo de automatização - e por isso é que eu digo que sou o maior preguiçoso do mundo.</description>
       </item>
       
       <item>
         <title>Plano de Fuga</title>
-        <link>/pt/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</link>
+        <link>https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</link>
         <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
         
-        <guid>/pt/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</guid>
+        <guid>https://tiagojsilva.github.io/pt/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</guid>
         <description>Como chegámos aqui A distribuição CentOS sempre foi um animal estranho: como é que podia ser que a principal distribuição Linux de utilização exclusivamente paga (Red Hat Enterprise Linux, ou RHEL) tivesse um clone de utilização totalmente gratuita?
 Por isso, e por razões que indicarei abaixo, não me surpreendeu completamente que as condições de acesso à distribuição CentOS tenham mudado, se bem que o método, o tempo e a forma como tudo foi comunicado vão ser um caso de estudo de como-não-fazer&amp;hellip;</description>
       </item>

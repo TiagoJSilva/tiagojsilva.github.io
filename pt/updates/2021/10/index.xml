@@ -2,63 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2021/10 on Layer9</title>
-    <link>/pt/updates/2021/10/</link>
+    <link>https://tiagojsilva.github.io/pt/updates/2021/10/</link>
     <description>Recent content in 2021/10 on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="/pt/updates/2021/10/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/10/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>Actualização VyOS</title>
-        <link>/pt/blog/2021-10-31_vyos2/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/</link>
         <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/blog/2021-10-31_vyos2/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/</guid>
         <description>Como disse num artigo anterior, estava a tentar actualizar-me quanto ao projecto VyOS, que parece ser uma forma económica de testar conceitos de rede, sem ter de pagar Cisco Modeling Labs (a única forma legal de usar sistemas virtuais da Cisco) ou similares.
 E bati de frente no problema do teclado português: não há teclado português. Sim, uma ligação SSH assume o layout do cliente - mas é preciso configurar a rede antes.</description>
       </item>
       
       <item>
         <title>Adelie Linux - Instalação LiveCD</title>
-        <link>/pt/unixlike/musl/2021-09-13_adelie_livecd/</link>
+        <link>https://tiagojsilva.github.io/pt/unixlike/musl/2021-09-13_adelie_livecd/</link>
         <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/unixlike/musl/2021-09-13_adelie_livecd/</guid>
+        <guid>https://tiagojsilva.github.io/pt/unixlike/musl/2021-09-13_adelie_livecd/</guid>
         <description>LiveCD 1.0-RC2, edição MATE O desenvolvimento da distro Adélie ficou muito tempo parado porque se dedicou a um programa de instalação simultaneamente gráfico e scriptável, chamado Horizon, que desviou muitos recursos do sistema-base. Muita coisa se passava nos bastidores mas exteriormente não havia novas releases.
 No entanto, uma reorganização recente incutiu-lhes vento nas velas e o site está muito mais bonito, profissional e organizado, as mailing-lists fazem mais sentido, e o progresso parece estar a acelerar.</description>
       </item>
       
       <item>
         <title>Manifesto</title>
-        <link>/pt/blog/2021-10-08_wat-do/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-08_wat-do/</link>
         <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/blog/2021-10-08_wat-do/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-08_wat-do/</guid>
         <description>Informação nutricional Não esperem conteúdo vulgar neste site; raramente farei o equivalente ao enésimo artigo sobre como instalar o Postfix ou o Arch Linux, configurar uma NextCloud ou uma VPN: não me interessa, já está feito, não acrescento valor. Só o farei se der de caras com vários HOWTOs que me deixem insatisfeito ao ponto de acreditar que até eu serei capaz de fazer melhor.
 Neste momento estou interessado em explorar o mundo MUSL, as distribuições Linux de uso mais específico, e o init S6; não deveria estar chocado com o estado actual da documentação e desenvolvimento desses sistemas, comparado com os 50 mil artigos sobre como instalar o Ubuntu (contas por baixo), mas estou.</description>
       </item>
       
       <item>
         <title>Musl</title>
-        <link>/pt/unixlike/musl/</link>
+        <link>https://tiagojsilva.github.io/pt/unixlike/musl/</link>
         <pubDate>Tue, 12 Oct 2021 23:09:50 +0100</pubDate>
         
-        <guid>/pt/unixlike/musl/</guid>
+        <guid>https://tiagojsilva.github.io/pt/unixlike/musl/</guid>
         <description>A biblioteca C musl é uma alternativa à biblioteca equivalente GNU C (glibc) e tem algumas (mas poucas) distribuições, geralmente mais simples, artesanais, leves (em termos de recursos) e com muito, muito menos polimento que as distribuições GNU/Linux.
 O que coloca a questão, claro, do que chamar a estas distribuições: musl/Linux? Apesar de muitas usarem o busybox como base do userland, outras usam GNU coreutils, por isso também têm partes GNU.</description>
       </item>
       
       <item>
         <title>PKI OpenSSL (pt 3)</title>
-        <link>/pt/sec/pki/opensslpki_3/</link>
+        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/</link>
         <pubDate>Mon, 11 Oct 2021 21:06:37 +0100</pubDate>
         
-        <guid>/pt/sec/pki/opensslpki_3/</guid>
+        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/</guid>
         <description>Certificados de servidor e de cliente Agora que temos a nossa IntermediateCA configurada correctamente, podemos começar a utilizá-la para emitir certificados.
 Notas prévias:
  Deve-se usar metade dos bits usados na CA O CN do servidor deve ser o FQDN Um certificado servidor precisa de ter o mesmo FQDN repetido na informação SAN O CN dos clientes pode ser qualquer coisa, não é importante. Devem ser assinados com a IntermediateCA Normalmente têm a duração de um ano (365) e o máximo, desde Julho de 2019, é 824 dias (+1) Comando OpenSSL para certificado servidor: -extensions server_cert Comando OpenSSL para certificado cliente: -extensions usr_cert Só é possível copiar a informação SAN do CSR para o certificado se for colocada a opção copy_extensions = copy ou = all na secção [ca_default] do intermediate/openssl.</description>
@@ -66,10 +66,10 @@ Notas prévias:
       
       <item>
         <title>Olh&#39;ó VyOS fresquinhoo!!!</title>
-        <link>/pt/blog/2021-10-07_getchorvyoshear/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-07_getchorvyoshear/</link>
         <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/blog/2021-10-07_getchorvyoshear/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-07_getchorvyoshear/</guid>
         <description>Como muitos outros projectos de software livre e aberto, também o VyOS decidiu que ia continuar a ser livre, mas deixaria de ser grátis. Para convencer os utilizadores empresariais a abrirem os cordões à bolsa, decidiram que os binários compilados e distribuídos para instalação sob a forma de uma imagem ISO apenas estariam disponíveis ao público em versões instáveis, correspondentes, grosso modo, a um nightly build. A última versão estável pré-compilada é a 1.</description>
       </item>
       
