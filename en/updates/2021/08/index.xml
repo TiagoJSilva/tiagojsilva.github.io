@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2021/08 on Layer9</title>
-    <link>/en/updates/2021/08/</link>
+    <link>https://tiagojsilva.github.io/en/updates/2021/08/</link>
     <description>Recent content in 2021/08 on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="/en/updates/2021/08/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://tiagojsilva.github.io/en/updates/2021/08/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>August 2021 Update</title>
-        <link>/en/blog/2021-08-28_site-update/</link>
+        <link>https://tiagojsilva.github.io/en/blog/2021-08-28_site-update/</link>
         <pubDate>Sat, 28 Aug 2021 19:08:10 +0100</pubDate>
         
-        <guid>/en/blog/2021-08-28_site-update/</guid>
+        <guid>https://tiagojsilva.github.io/en/blog/2021-08-28_site-update/</guid>
         <description>I&amp;rsquo;ve been messing about some things behind the curtains:
 Theme changes I wanted to use a Hugo theme for documentation (structured documents), if possible with an associated blog for less structured content.
 My wishlist was (in no particular order):
@@ -27,10 +27,10 @@ My wishlist was (in no particular order):
       
       <item>
         <title>Dotfiles</title>
-        <link>/en/unixlike/dotfiles/</link>
+        <link>https://tiagojsilva.github.io/en/unixlike/dotfiles/</link>
         <pubDate>Sun, 15 Aug 2021 14:25:08 +0100</pubDate>
         
-        <guid>/en/unixlike/dotfiles/</guid>
+        <guid>https://tiagojsilva.github.io/en/unixlike/dotfiles/</guid>
         <description>Linux Dotfiles I&amp;rsquo;ve been gathering settings that make my life easier by solving little nagging problems and papercuts.
 Publishing those files here allows me to download them wherever I create a new user account.
 The URL for downloading will be https://tiagojsilva.github.io/unix/dotfiles/file
@@ -40,10 +40,10 @@ There&amp;rsquo;s a TAR archive of all the files, which you can install right in
       
       <item>
         <title>Hello World</title>
-        <link>/en/blog/2021-08-09_hello-world/</link>
+        <link>https://tiagojsilva.github.io/en/blog/2021-08-09_hello-world/</link>
         <pubDate>Mon, 09 Aug 2021 22:16:15 +0100</pubDate>
         
-        <guid>/en/blog/2021-08-09_hello-world/</guid>
+        <guid>https://tiagojsilva.github.io/en/blog/2021-08-09_hello-world/</guid>
         <description>Sit down and take a load off.
 I have been fortunate to make professions of my passions; as a young&amp;rsquo;un, I had to choose one of them (Sound for Picture), but the swings and roundabouts of life led me to embrace another one, which is IT. By the end of it I ended up back where I had started, but I don&amp;rsquo;t consider it wasted time; I had wonderful teachers and colleagues, and learned a lot of stuff that I had always wanted to know.</description>
       </item>

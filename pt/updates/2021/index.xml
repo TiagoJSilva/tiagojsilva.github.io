@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2021 on Layer9</title>
-    <link>/pt/updates/2021/</link>
+    <link>https://tiagojsilva.github.io/pt/updates/2021/</link>
     <description>Recent content in 2021 on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Thu, 02 Dec 2021 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/pt/updates/2021/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>S6-init no Obarun</title>
-        <link>/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</link>
+        <link>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</link>
         <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</guid>
+        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/arch_manjaro/2021-12-02_obarun-install/</guid>
         <description>Obarun e S6 O S6 - Skarnet.org&amp;rsquo;s Small &amp;amp; Secure Supervision Software Suite inclui um init, um dos vários projectos que se rebelaram contra o SystemD afirmando que havia maneiras melhores e/ou mais simples de fazer a mesma coisa. Para quem?
 Apesar de a implementação oficial do S6 ter começado por ser no Alpine Linux, por alguma razão o autor agora colabora com o Adélie Linux, que já explorei antes.</description>
       </item>
       
       <item>
         <title>TinyCore Linux - Passos iniciais</title>
-        <link>/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
+        <link>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
         <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
+        <guid>https://tiagojsilva.github.io/pt/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
         <description>Para este sistema, que eventualmente vai ser um servidor chamado verynice, criei uma VM com 256MB de RAM e 640MB de disco.
 O TinyCore1 é uma instalação Linux muito especial, devotada a sistemas com muito poucos recursos. Vou usar a versão CorePlus, a mais &amp;ldquo;luxuosa&amp;rdquo;, com ambiente gráfico e possibilidade de instalação em disco, mas há versões Core muito mais frugais que correm alegremente de uma pen USB carregando-se para uma RAMdrive no arranque.</description>
       </item>
       
       <item>
         <title>PKI OpenSSL (pt 1)</title>
-        <link>/pt/sec/pki/opensslpki_1/</link>
+        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</link>
         <pubDate>Mon, 13 Sep 2021 01:13:41 +0100</pubDate>
         
-        <guid>/pt/sec/pki/opensslpki_1/</guid>
+        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_1/</guid>
         <description>PKI baseada em OpenSSL (parte 1) Fontes:
 https://openssl-ca.readthedocs.io/en/latest/index.html
 https://www.golinuxcloud.com/tutorial-pki-certificates-authority-ocsp/
@@ -51,10 +51,10 @@ O primeiro passo é criar uma Root Certification Authority (RootCA), que só vai
       
       <item>
         <title>Simulação de router Cisco e Huawei </title>
-        <link>/pt/networking/simul/gns3-ensp/</link>
+        <link>https://tiagojsilva.github.io/pt/networking/simul/gns3-ensp/</link>
         <pubDate>Mon, 30 Aug 2021 03:10:41 +0100</pubDate>
         
-        <guid>/pt/networking/simul/gns3-ensp/</guid>
+        <guid>https://tiagojsilva.github.io/pt/networking/simul/gns3-ensp/</guid>
         <description>Uma vez precisei de tentar simular uma rede heterogénea, com um router Cisco e um Huawei.
 Não foi fácil, porque o IOS não está disponível publicamente e o simulador da Huawei, o eNSP, está descontinuado e só funciona em VirtualBox 5.
 Para fazer esta simulação, é necessário um CPU que suporte VM nesting (Second-Level Address Translation - SLAT)
@@ -63,19 +63,19 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
       
       <item>
         <title>PKI OpenSSL (pt 2)</title>
-        <link>/pt/sec/pki/opensslpki_2/</link>
+        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</link>
         <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/sec/pki/opensslpki_2/</guid>
+        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_2/</guid>
         <description>OpenSSL PKI (parte 2) - IntermediateCA Criar uma IntermediateCA Mais uma vez, a(s) IntermediateCA(s) devem estar alojadas num sistema separado (server) daquele que aloja a RootCA, e o sistema da RootCA (root) deve estar airgapped e desligado da corrente. No sistema online não me parece má ideia manter as CAs secundárias debaixo de /root/ca, o que permite colocar o certificado da RootCA no mesmo caminho (/root/ca/certs/ca.cert.pem). No entanto, esta é a única informação da RootCA que é necessário trazer para o host da(s) CA(s) secundária(s); é debatível se vale a pena trazer o CRL da RootCA em formato PEM e colocá-lo em /root/ca/crl/ca.</description>
       </item>
       
       <item>
         <title>BIND9: configuração de raiz</title>
-        <link>/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
+        <link>https://tiagojsilva.github.io/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
         <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</guid>
+        <guid>https://tiagojsilva.github.io/pt/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</guid>
         <description>Instalação do BIND9 O sistema onde este serviço BIND9 foi instalado é o mesmo que é descrito na página Instalação TinyCoreLinux.
 Existe um pacote BIND9 para o TinyCore, mas tal como noutras ocasiões, a instalação é muito faça-você-mesmo1. Não temos isqueiros, nem sequer fósforos, é mesmo esfregar os pauzinhos um no outro até sair fumo.
 Instalamos a extensão usando o browser tce-ab ou o directamente o instalador tce-load
@@ -84,10 +84,10 @@ Instalamos a extensão usando o browser tce-ab ou o directamente o instalador tc
       
       <item>
         <title>Ninguém atende</title>
-        <link>/pt/blog/2021-11-17_computersaysno/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-11-17_computersaysno/</link>
         <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/blog/2021-11-17_computersaysno/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-11-17_computersaysno/</guid>
         <description>Eu só queria descarregar a demonstração do ESXi&amp;hellip;
 Bom, a não ser que amanhã isto se resolva parece que vou começar a aprender hipervisores Tipo 1 com o XCP-ng&amp;hellip;
 Primeiras impressões e isso.</description>
@@ -95,10 +95,10 @@ Primeiras impressões e isso.</description>
       
       <item>
         <title>Botão copy, take 1</title>
-        <link>/pt/blog/2021-11-08_copy-button-1/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/</link>
         <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/blog/2021-11-08_copy-button-1/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-11-08_copy-button-1/</guid>
         <description>Na primeira vez em que tentei configurar um botão Copy para as caixas de código, deixei uma nota no GitHub do tema Zdoc.
 Há dias um outro utilizador do Zdoc publicou a solução que funcionou para ele, e com esse estímulo, tentei de novo.
 Infelizmente, já devo ter manipulado de mais o DOM da minha versão do tema (manter-me compatível com o upstream, infelizmente, não vai dar para já) para poder utilizar directamente o código dele, mas tentei mexer mais um pouco no código que tinha tentado utilizar anteriormente, que era baseado nesta solução proposta por Tom Spencer</description>
@@ -106,50 +106,50 @@ Infelizmente, já devo ter manipulado de mais o DOM da minha versão do tema (ma
       
       <item>
         <title>Actualização VyOS</title>
-        <link>/pt/blog/2021-10-31_vyos2/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/</link>
         <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/blog/2021-10-31_vyos2/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-31_vyos2/</guid>
         <description>Como disse num artigo anterior, estava a tentar actualizar-me quanto ao projecto VyOS, que parece ser uma forma económica de testar conceitos de rede, sem ter de pagar Cisco Modeling Labs (a única forma legal de usar sistemas virtuais da Cisco) ou similares.
 E bati de frente no problema do teclado português: não há teclado português. Sim, uma ligação SSH assume o layout do cliente - mas é preciso configurar a rede antes.</description>
       </item>
       
       <item>
         <title>Adelie Linux - Instalação LiveCD</title>
-        <link>/pt/unixlike/musl/2021-09-13_adelie_livecd/</link>
+        <link>https://tiagojsilva.github.io/pt/unixlike/musl/2021-09-13_adelie_livecd/</link>
         <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/unixlike/musl/2021-09-13_adelie_livecd/</guid>
+        <guid>https://tiagojsilva.github.io/pt/unixlike/musl/2021-09-13_adelie_livecd/</guid>
         <description>LiveCD 1.0-RC2, edição MATE O desenvolvimento da distro Adélie ficou muito tempo parado porque se dedicou a um programa de instalação simultaneamente gráfico e scriptável, chamado Horizon, que desviou muitos recursos do sistema-base. Muita coisa se passava nos bastidores mas exteriormente não havia novas releases.
 No entanto, uma reorganização recente incutiu-lhes vento nas velas e o site está muito mais bonito, profissional e organizado, as mailing-lists fazem mais sentido, e o progresso parece estar a acelerar.</description>
       </item>
       
       <item>
         <title>Manifesto</title>
-        <link>/pt/blog/2021-10-08_wat-do/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-08_wat-do/</link>
         <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/blog/2021-10-08_wat-do/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-08_wat-do/</guid>
         <description>Informação nutricional Não esperem conteúdo vulgar neste site; raramente farei o equivalente ao enésimo artigo sobre como instalar o Postfix ou o Arch Linux, configurar uma NextCloud ou uma VPN: não me interessa, já está feito, não acrescento valor. Só o farei se der de caras com vários HOWTOs que me deixem insatisfeito ao ponto de acreditar que até eu serei capaz de fazer melhor.
 Neste momento estou interessado em explorar o mundo MUSL, as distribuições Linux de uso mais específico, e o init S6; não deveria estar chocado com o estado actual da documentação e desenvolvimento desses sistemas, comparado com os 50 mil artigos sobre como instalar o Ubuntu (contas por baixo), mas estou.</description>
       </item>
       
       <item>
         <title>Musl</title>
-        <link>/pt/unixlike/musl/</link>
+        <link>https://tiagojsilva.github.io/pt/unixlike/musl/</link>
         <pubDate>Tue, 12 Oct 2021 23:09:50 +0100</pubDate>
         
-        <guid>/pt/unixlike/musl/</guid>
+        <guid>https://tiagojsilva.github.io/pt/unixlike/musl/</guid>
         <description>A biblioteca C musl é uma alternativa à biblioteca equivalente GNU C (glibc) e tem algumas (mas poucas) distribuições, geralmente mais simples, artesanais, leves (em termos de recursos) e com muito, muito menos polimento que as distribuições GNU/Linux.
 O que coloca a questão, claro, do que chamar a estas distribuições: musl/Linux? Apesar de muitas usarem o busybox como base do userland, outras usam GNU coreutils, por isso também têm partes GNU.</description>
       </item>
       
       <item>
         <title>PKI OpenSSL (pt 3)</title>
-        <link>/pt/sec/pki/opensslpki_3/</link>
+        <link>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/</link>
         <pubDate>Mon, 11 Oct 2021 21:06:37 +0100</pubDate>
         
-        <guid>/pt/sec/pki/opensslpki_3/</guid>
+        <guid>https://tiagojsilva.github.io/pt/sec/pki/opensslpki_3/</guid>
         <description>Certificados de servidor e de cliente Agora que temos a nossa IntermediateCA configurada correctamente, podemos começar a utilizá-la para emitir certificados.
 Notas prévias:
  Deve-se usar metade dos bits usados na CA O CN do servidor deve ser o FQDN Um certificado servidor precisa de ter o mesmo FQDN repetido na informação SAN O CN dos clientes pode ser qualquer coisa, não é importante. Devem ser assinados com a IntermediateCA Normalmente têm a duração de um ano (365) e o máximo, desde Julho de 2019, é 824 dias (+1) Comando OpenSSL para certificado servidor: -extensions server_cert Comando OpenSSL para certificado cliente: -extensions usr_cert Só é possível copiar a informação SAN do CSR para o certificado se for colocada a opção copy_extensions = copy ou = all na secção [ca_default] do intermediate/openssl.</description>
@@ -157,19 +157,19 @@ Notas prévias:
       
       <item>
         <title>Olh&#39;ó VyOS fresquinhoo!!!</title>
-        <link>/pt/blog/2021-10-07_getchorvyoshear/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-10-07_getchorvyoshear/</link>
         <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/pt/blog/2021-10-07_getchorvyoshear/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-10-07_getchorvyoshear/</guid>
         <description>Como muitos outros projectos de software livre e aberto, também o VyOS decidiu que ia continuar a ser livre, mas deixaria de ser grátis. Para convencer os utilizadores empresariais a abrirem os cordões à bolsa, decidiram que os binários compilados e distribuídos para instalação sob a forma de uma imagem ISO apenas estariam disponíveis ao público em versões instáveis, correspondentes, grosso modo, a um nightly build. A última versão estável pré-compilada é a 1.</description>
       </item>
       
       <item>
         <title>Workflow dos artigos</title>
-        <link>/pt/blog/2021-09-22_workflow/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-09-22_workflow/</link>
         <pubDate>Wed, 22 Sep 2021 00:54:14 +0100</pubDate>
         
-        <guid>/pt/blog/2021-09-22_workflow/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-09-22_workflow/</guid>
         <description>O workflow que uso para produzir os artigos é uma jiga-joga que inventei p&amp;rsquo;raqui. Para variar&amp;hellip;
 Começo por escrever em Microsoft Word, porque estou habituado assim e tenho algum conteúdo em Word que quero converter para o site.
 Depois converto o DOCX para MarkDown com o Pandoc
@@ -179,10 +179,10 @@ pandoc -f docx -t gfm --wrap=none --extract-media images\&amp;lt;secção&amp;gt
       
       <item>
         <title>Comentários nos artigos</title>
-        <link>/pt/blog/2021-09-15_site-comments/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-09-15_site-comments/</link>
         <pubDate>Wed, 15 Sep 2021 14:19:12 +0100</pubDate>
         
-        <guid>/pt/blog/2021-09-15_site-comments/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-09-15_site-comments/</guid>
         <description>De início não estava a pensar em permitir comentários, mas como o ser humano é um animal social, fui ver se podia configurar um sistema sem ter de inventar muito.
 De início considerei o Disq.us, que vem do origem com o Hugo, mas tem muitas desvantagens.
 O Zdoc tem pré-configurado o Utteranc.es, que tem as vantagens de exigir um registo GitHub (gente que se porta bem, espero eu) e de ficar num repo.</description>
@@ -190,30 +190,30 @@ O Zdoc tem pré-configurado o Utteranc.es, que tem as vantagens de exigir um reg
       
       <item>
         <title>Secção Histórico</title>
-        <link>/pt/blog/2021-09-04_updates-page/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-09-04_updates-page/</link>
         <pubDate>Wed, 08 Sep 2021 11:34:41 +0100</pubDate>
         
-        <guid>/pt/blog/2021-09-04_updates-page/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-09-04_updates-page/</guid>
         <description>O Zdoc tem uma secção &amp;ldquo;Updates&amp;rdquo; (que eu traduzi para &amp;ldquo;Histórico&amp;rdquo;), mas os artigos dentro dela eram criados à mão. Como sou preguiçoso (a pessoa mais preguiçosa do mundo) e não gosto de fazer coisas à mão quando podem ser automatizadas, tentei arranjar maneira de produzir um site index com menos esforço.
 No Wordpress e outras plataformas dinâmicas é facílimo, mas num site estático como o Hugo, as soluções envolviam plugins, NPM, Node.</description>
       </item>
       
       <item>
         <title>Achievement unlocked: Lightbox</title>
-        <link>/pt/blog/2021-09-02_lightbox/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-09-02_lightbox/</link>
         <pubDate>Thu, 02 Sep 2021 23:24:10 +0100</pubDate>
         
-        <guid>/pt/blog/2021-09-02_lightbox/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-09-02_lightbox/</guid>
         <description>Uma coisa que me está a irritar no Zdoc é o espaço que se perde com as barras laterais, deixando pouco espaço ao centro para os artigos e tornando as imagens pequenas (sobretudo quando são screenshots widescreen).
 Não percebo o suficiente de HTML para tentar alargar a coluna central (aparte a seta pré-definida acima que alarga a coluna do artigo mas esconde o TOC), mas posso tentar que as imagens sejam mostradas em maior tamanho quando se clica nelas.</description>
       </item>
       
       <item>
         <title>Actividade Agosto 2021</title>
-        <link>/pt/blog/2021-08-28_site-update/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-08-28_site-update/</link>
         <pubDate>Sat, 28 Aug 2021 19:08:10 +0100</pubDate>
         
-        <guid>/pt/blog/2021-08-28_site-update/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-08-28_site-update/</guid>
         <description>Pois, tenho mexido aqui nalgumas coisas nos bastidores:
 Alterações no tema Eu queria usar um tema Hugo para documentação (documentos estruturados), se possível com um blog associado para conteúdo menos estruturado.
 Queria que tivesse (sem ordem de importância):
@@ -222,10 +222,10 @@ Queria que tivesse (sem ordem de importância):
       
       <item>
         <title>Dotfiles</title>
-        <link>/pt/unixlike/dotfiles/</link>
+        <link>https://tiagojsilva.github.io/pt/unixlike/dotfiles/</link>
         <pubDate>Sun, 15 Aug 2021 14:25:08 +0100</pubDate>
         
-        <guid>/pt/unixlike/dotfiles/</guid>
+        <guid>https://tiagojsilva.github.io/pt/unixlike/dotfiles/</guid>
         <description>Dotfiles para Linux Tenho acumulando configurações que me facilitam a vida ou que me resolvem pequenos problemas irritantes.
 Publicar esses ficheiros aqui permite-me descarregá-los e instalá-los em qualquer nova conta que eu crie num sistema Linux.
 O URL para descarregar será https://tiagojsilva.github.io/unix/dotfiles/ficheiro
@@ -235,10 +235,10 @@ Existe um arquivo TAR com todos os ficheiros; para os instalar a todos na sua pa
       
       <item>
         <title>Hello World</title>
-        <link>/pt/blog/2021-08-09_hello-world/</link>
+        <link>https://tiagojsilva.github.io/pt/blog/2021-08-09_hello-world/</link>
         <pubDate>Mon, 09 Aug 2021 22:16:15 +0100</pubDate>
         
-        <guid>/pt/blog/2021-08-09_hello-world/</guid>
+        <guid>https://tiagojsilva.github.io/pt/blog/2021-08-09_hello-world/</guid>
         <description>Sentem-se, e estejam à vontade.
 Tenho tido a sorte de fazer dos meus gostos profissão; em novo, tive de escolher um deles (Som para Cinema), mas as voltas da vida levaram-me a abraçar um outro gosto, as TI, Mesmo que no final de contas tenha voltado à casa de partida, não dei o meu tempo como perdido; tive óptimos professores e colegas e aprendi imensas coisas que sempre quis saber</description>
       </item>

@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2021/11 on Layer9</title>
-    <link>/en/updates/2021/11/</link>
+    <link>https://tiagojsilva.github.io/en/updates/2021/11/</link>
     <description>Recent content in 2021/11 on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="/en/updates/2021/11/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://tiagojsilva.github.io/en/updates/2021/11/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>BIND9: from the start</title>
-        <link>/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
+        <link>https://tiagojsilva.github.io/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
         <pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</guid>
+        <guid>https://tiagojsilva.github.io/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</guid>
         <description>BIND9 Installation The system where this BIND9 service was installed is the same described in the article TinyCoreLinux Installation.
 There is a BIND9 package for TinyCore, but jusk like almost everything else, the installation is very do-it-yourself1. We&amp;rsquo;re not provided with a firelighter, and not even matches; we really have to scratch a couple of sticks next to some kindling to get some fire.
 The BIND9 extension can be installed from the browser tce-ab or directly by the installer tce-load</description>
@@ -26,10 +26,10 @@ The BIND9 extension can be installed from the browser tce-ab or directly by the 
       
       <item>
         <title>Computer Says No</title>
-        <link>/en/blog/2021-11-17_computersaysno/</link>
+        <link>https://tiagojsilva.github.io/en/blog/2021-11-17_computersaysno/</link>
         <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/en/blog/2021-11-17_computersaysno/</guid>
+        <guid>https://tiagojsilva.github.io/en/blog/2021-11-17_computersaysno/</guid>
         <description>I was just trying to downlood the ESXi evaluation&amp;hellip;
 Unless this goes away tomorrow, it looks like my Type1 hypervisor journey will start with XCP-ng&amp;hellip;
 You only get one chance to make a good impression.</description>
@@ -37,10 +37,10 @@ You only get one chance to make a good impression.</description>
       
       <item>
         <title>One Thousand Monkeys</title>
-        <link>/en/blog/2021-11-15_monkeys/</link>
+        <link>https://tiagojsilva.github.io/en/blog/2021-11-15_monkeys/</link>
         <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/en/blog/2021-11-15_monkeys/</guid>
+        <guid>https://tiagojsilva.github.io/en/blog/2021-11-15_monkeys/</guid>
         <description>I dun it!
 The button to copy the contents of the code boxes now appears both in those that have syntax (highlight, chroma) as in those that don&amp;rsquo;t have:
 1  cowsay &amp;#34;monkeys, I tell you!&amp;#34;   # output______________________&amp;lt; monkeys, I tell you! &amp;gt;----------------------\ ^__^\ (oo)\_______(__)\ )\/\||----w ||| ||How have I dun it? Dunno&amp;hellip;
@@ -49,20 +49,20 @@ Hence the title: one thousand monkeys banging on one thousand typewriters could 
       
       <item>
         <title>TinyCore Linux - Initial steps</title>
-        <link>/en/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
+        <link>https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/</link>
         <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/en/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
+        <guid>https://tiagojsilva.github.io/en/unixlike/meme/2021-10-29_tinycorelinux-install/</guid>
         <description>For this system, which will eventually be a server called verynice, I made a VM with 256MB of RAM and 640MB of disk.
 [TinyCore]1 is a very special Linux installation, destined for systems with very few resources. I&amp;rsquo;ll use the Deluxe version, CorePlus, with leather seats, GUI and possibility of disk installation, but there are leaner flavors of CoreLinux that will cheerfully boot from a 128MB flashdrive and load themselves to a RAMdrive at startup.</description>
       </item>
       
       <item>
         <title>Copy button, take 1</title>
-        <link>/en/blog/2021-11-08_copy-button-1/</link>
+        <link>https://tiagojsilva.github.io/en/blog/2021-11-08_copy-button-1/</link>
         <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>/en/blog/2021-11-08_copy-button-1/</guid>
+        <guid>https://tiagojsilva.github.io/en/blog/2021-11-08_copy-button-1/</guid>
         <description>The first time I tried to set up a Copy button for code boxes, I left an issue on Zdoc&amp;rsquo;s GitHub.
 Some days ago, another Zdoc user published the solution that worked for him, and stimulated by that, I tried again.
 Unfortunately, I must have manipulated my theme&amp;rsquo;s DOM code too much (tracking upstream is going to be impossible until I nuke it and pave it on the next Zdoc release) to be able to use his code, but I tried fiddling a little more with the code I had tried to use previously, which was based on this proposal by Tom Spencer.</description>
