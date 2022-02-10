@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>*nix on Layer9</title>
-    <link>https://tiagojsilva.github.io/en/unixlike/</link>
+    <link>/en/unixlike/</link>
     <description>Recent content in *nix on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sat, 11 Jan 2020 14:09:21 +0900</lastBuildDate>
     
-        <atom:link href="https://tiagojsilva.github.io/en/unixlike/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/en/unixlike/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>Linux RPM</title>
-        <link>https://tiagojsilva.github.io/en/unixlike/rpm/</link>
+        <link>/en/unixlike/rpm/</link>
         <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
         
-        <guid>https://tiagojsilva.github.io/en/unixlike/rpm/</guid>
+        <guid>/en/unixlike/rpm/</guid>
         <description></description>
       </item>
       
       <item>
         <title>Meme distros</title>
-        <link>https://tiagojsilva.github.io/en/unixlike/meme/</link>
+        <link>/en/unixlike/meme/</link>
         <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
         
-        <guid>https://tiagojsilva.github.io/en/unixlike/meme/</guid>
+        <guid>/en/unixlike/meme/</guid>
         <description>Gentoo
 A bespoke suit, starting with shearing the wool.</description>
       </item>
       
       <item>
         <title>Musl</title>
-        <link>https://tiagojsilva.github.io/en/unixlike/musl/</link>
+        <link>/en/unixlike/musl/</link>
         <pubDate>Tue, 12 Oct 2021 23:09:50 +0100</pubDate>
         
-        <guid>https://tiagojsilva.github.io/en/unixlike/musl/</guid>
+        <guid>/en/unixlike/musl/</guid>
         <description>The musl C library is an alternative to the equivalent GNU library (glibc) and is used by some (but few) distributions, which are generally simpler, bespoke, light in resources and with much, much less polish than GNU/Linux distributions .
 Which begs the question, of course, of what to call these distributions: musl/Linux? Although many of those use busybox as the base of the userland, others use GNU coreutils, so there&amp;rsquo;s some GNU in there as well.</description>
       </item>
       
       <item>
         <title>Dotfiles</title>
-        <link>https://tiagojsilva.github.io/en/unixlike/dotfiles/</link>
+        <link>/en/unixlike/dotfiles/</link>
         <pubDate>Sun, 15 Aug 2021 14:25:08 +0100</pubDate>
         
-        <guid>https://tiagojsilva.github.io/en/unixlike/dotfiles/</guid>
+        <guid>/en/unixlike/dotfiles/</guid>
         <description>Linux Dotfiles I&amp;rsquo;ve been gathering settings that make my life easier by solving little nagging problems and papercuts.
 Publishing those files here allows me to download them wherever I create a new user account.
 The URL for downloading will be https://tiagojsilva.github.io/unix/dotfiles/file

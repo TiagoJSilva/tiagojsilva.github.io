@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2022/01 on Layer9</title>
-    <link>https://tiagojsilva.github.io/en/updates/2022/01/</link>
+    <link>/en/updates/2022/01/</link>
     <description>Recent content in 2022/01 on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="https://tiagojsilva.github.io/en/updates/2022/01/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/en/updates/2022/01/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>Massive Search and Replace with Notepad&#43;&#43;</title>
-        <link>https://tiagojsilva.github.io/en/blog/2022-01-27_multiple-search-and-replace/</link>
+        <link>/en/blog/2022-01-27_multiple-search-and-replace/</link>
         <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://tiagojsilva.github.io/en/blog/2022-01-27_multiple-search-and-replace/</guid>
+        <guid>/en/blog/2022-01-27_multiple-search-and-replace/</guid>
         <description>In my article workflow I keep having to convert tags into Hugo shortcodes, and removing the escapes on all the characters Pandoc thinks it has to protect.
 Doing this one by one is the type of work which has me running for some kind of automation - and that&amp;rsquo;s why I say I&amp;rsquo;m the laziest man in the world.
 I tried to get some kind of plugin for Notepad++ or VSCode that would help me, but in the end they all had problems; namely, since my targets and my substitutions have many special characters, I wanted to avoid tools that used regular expressions.</description>
@@ -26,10 +26,10 @@ I tried to get some kind of plugin for Notepad++ or VSCode that would help me, b
       
       <item>
         <title>Escape From CentOS</title>
-        <link>https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</link>
+        <link>/en/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</link>
         <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://tiagojsilva.github.io/en/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</guid>
+        <guid>/en/unixlike/rpm/redhat/rocky_almalinux/2022-01-10_escape-from-centos/</guid>
         <description>How we got here The Centos distribution has always been a strange beast: how could it be that the main exclusively paid Linux distribution (Red Hat Enterprise Linux, or RHEL) had a totally free clone?
 Therefore, and for reasons I will elaborate below, it did not surprise me that the conditions of use for CentOS have changed, although the method, the time and the way everything was communicated will be a case-study on how-not-to-do&amp;hellip;</description>
       </item>

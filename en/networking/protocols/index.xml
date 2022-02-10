@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Protocols on Layer9</title>
-    <link>https://tiagojsilva.github.io/en/networking/protocols/</link>
+    <link>/en/networking/protocols/</link>
     <description>Recent content in Protocols on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Fri, 28 Feb 2020 10:08:56 +0900</lastBuildDate>
     
-        <atom:link href="https://tiagojsilva.github.io/en/networking/protocols/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/en/networking/protocols/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>BIND9: from the start</title>
-        <link>https://tiagojsilva.github.io/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
+        <link>/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</link>
         <pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://tiagojsilva.github.io/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</guid>
+        <guid>/en/networking/protocols/2021-10-30_dns-bind9-tinycorelinux/</guid>
         <description>BIND9 Installation The system where this BIND9 service was installed is the same described in the article TinyCoreLinux Installation.
 There is a BIND9 package for TinyCore, but jusk like almost everything else, the installation is very do-it-yourself1. We&amp;rsquo;re not provided with a firelighter, and not even matches; we really have to scratch a couple of sticks next to some kindling to get some fire.
 The BIND9 extension can be installed from the browser tce-ab or directly by the installer tce-load</description>

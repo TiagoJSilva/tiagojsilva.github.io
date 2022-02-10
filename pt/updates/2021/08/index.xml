@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2021/08 on Layer9</title>
-    <link>https://tiagojsilva.github.io/pt/updates/2021/08/</link>
+    <link>/pt/updates/2021/08/</link>
     <description>Recent content in 2021/08 on Layer9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="https://tiagojsilva.github.io/pt/updates/2021/08/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/pt/updates/2021/08/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>Simulação de router Cisco e Huawei </title>
-        <link>https://tiagojsilva.github.io/pt/networking/simul/gns3-ensp/</link>
+        <link>/pt/networking/simul/gns3-ensp/</link>
         <pubDate>Mon, 30 Aug 2021 03:10:41 +0100</pubDate>
         
-        <guid>https://tiagojsilva.github.io/pt/networking/simul/gns3-ensp/</guid>
+        <guid>/pt/networking/simul/gns3-ensp/</guid>
         <description>Uma vez precisei de tentar simular uma rede heterogénea, com um router Cisco e um Huawei.
 Não foi fácil, porque o IOS não está disponível publicamente e o simulador da Huawei, o eNSP, está descontinuado e só funciona em VirtualBox 5.
 Para fazer esta simulação, é necessário um CPU que suporte VM nesting (Second-Level Address Translation - SLAT)
@@ -27,10 +27,10 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
       
       <item>
         <title>Actividade Agosto 2021</title>
-        <link>https://tiagojsilva.github.io/pt/blog/2021-08-28_site-update/</link>
+        <link>/pt/blog/2021-08-28_site-update/</link>
         <pubDate>Sat, 28 Aug 2021 19:08:10 +0100</pubDate>
         
-        <guid>https://tiagojsilva.github.io/pt/blog/2021-08-28_site-update/</guid>
+        <guid>/pt/blog/2021-08-28_site-update/</guid>
         <description>Pois, tenho mexido aqui nalgumas coisas nos bastidores:
 Alterações no tema Eu queria usar um tema Hugo para documentação (documentos estruturados), se possível com um blog associado para conteúdo menos estruturado.
 Queria que tivesse (sem ordem de importância):
@@ -39,10 +39,10 @@ Queria que tivesse (sem ordem de importância):
       
       <item>
         <title>Dotfiles</title>
-        <link>https://tiagojsilva.github.io/pt/unixlike/dotfiles/</link>
+        <link>/pt/unixlike/dotfiles/</link>
         <pubDate>Sun, 15 Aug 2021 14:25:08 +0100</pubDate>
         
-        <guid>https://tiagojsilva.github.io/pt/unixlike/dotfiles/</guid>
+        <guid>/pt/unixlike/dotfiles/</guid>
         <description>Dotfiles para Linux Tenho acumulando configurações que me facilitam a vida ou que me resolvem pequenos problemas irritantes.
 Publicar esses ficheiros aqui permite-me descarregá-los e instalá-los em qualquer nova conta que eu crie num sistema Linux.
 O URL para descarregar será https://tiagojsilva.github.io/unix/dotfiles/ficheiro
@@ -52,10 +52,10 @@ Existe um arquivo TAR com todos os ficheiros; para os instalar a todos na sua pa
       
       <item>
         <title>Hello World</title>
-        <link>https://tiagojsilva.github.io/pt/blog/2021-08-09_hello-world/</link>
+        <link>/pt/blog/2021-08-09_hello-world/</link>
         <pubDate>Mon, 09 Aug 2021 22:16:15 +0100</pubDate>
         
-        <guid>https://tiagojsilva.github.io/pt/blog/2021-08-09_hello-world/</guid>
+        <guid>/pt/blog/2021-08-09_hello-world/</guid>
         <description>Sentem-se, e estejam à vontade.
 Tenho tido a sorte de fazer dos meus gostos profissão; em novo, tive de escolher um deles (Som para Cinema), mas as voltas da vida levaram-me a abraçar um outro gosto, as TI, Mesmo que no final de contas tenha voltado à casa de partida, não dei o meu tempo como perdido; tive óptimos professores e colegas e aprendi imensas coisas que sempre quis saber</description>
       </item>
