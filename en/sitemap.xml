@@ -503,17 +503,17 @@
   </url>
   
   <url>
-    <loc>https://tiagojsilva.github.io/en/microsoft/_empty/win11/</loc>
+    <loc>https://tiagojsilva.github.io/en/microsoft/win11/</loc>
     <lastmod>2020-02-28T10:08:56+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://tiagojsilva.github.io/pt/microsoft/_empty/win11/"
+                href="https://tiagojsilva.github.io/pt/microsoft/win11/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://tiagojsilva.github.io/en/microsoft/_empty/win11/"
+                href="https://tiagojsilva.github.io/en/microsoft/win11/"
                 />
   </url>
   
@@ -1148,6 +1148,16 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2022/02/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/updates/2022/02/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/updates/2022/02/"
+                />
   </url>
   
 </urlset>

@@ -71,6 +71,16 @@ VM de simulação Foi criada uma VM baseada em Windows 7, com 4GB de RAM, 2 vCPU
       </item>
       
       <item>
+        <title>Windows Pro Wrestling</title>
+        <link>https://tiagojsilva.github.io/pt/microsoft/win11/2022-02-20_pro-wrestling/</link>
+        <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/microsoft/win11/2022-02-20_pro-wrestling/</guid>
+        <description>A 16 de Fevereiro de 2022, a Microsoft anunciou a primeira grande evolução de funcionalidades para o Windows 11, com o Dev Build 22557; a lista de mudanças era longa, e apelativa, mas o que fez toda a gente ter um calafrio na espinha foi isto:
+ Similar to Windows 11 Home edition, Windows 11 Pro edition now requires internet connectivity during the initial device setup (OOBE) only. If you choose to setup device for personal use, MSA will be required for setup as well.</description>
+      </item>
+      
+      <item>
         <title>Editores na CLI Microsoft</title>
         <link>https://tiagojsilva.github.io/pt/microsoft/tools/2022-01-15_cli-editors/</link>
         <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>

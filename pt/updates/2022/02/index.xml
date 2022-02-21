@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2022/02 on Layer9</title>
+    <link>https://tiagojsilva.github.io/pt/updates/2022/02/</link>
+    <description>Recent content in 2022/02 on Layer9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    
+        <atom:link href="https://tiagojsilva.github.io/pt/updates/2022/02/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Windows Pro Wrestling</title>
+        <link>https://tiagojsilva.github.io/pt/microsoft/win11/2022-02-20_pro-wrestling/</link>
+        <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/pt/microsoft/win11/2022-02-20_pro-wrestling/</guid>
+        <description>A 16 de Fevereiro de 2022, a Microsoft anunciou a primeira grande evolução de funcionalidades para o Windows 11, com o Dev Build 22557; a lista de mudanças era longa, e apelativa, mas o que fez toda a gente ter um calafrio na espinha foi isto:
+ Similar to Windows 11 Home edition, Windows 11 Pro edition now requires internet connectivity during the initial device setup (OOBE) only. If you choose to setup device for personal use, MSA will be required for setup as well.</description>
+      </item>
+      
+    
+  </channel>
+</rss>
