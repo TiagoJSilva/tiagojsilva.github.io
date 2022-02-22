@@ -579,7 +579,7 @@
   
   <url>
     <loc>https://tiagojsilva.github.io/en/updates/2022/</loc>
-    <lastmod>2022-02-07T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -589,6 +589,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiagojsilva.github.io/en/updates/2022/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tiagojsilva.github.io/en/microsoft/win11/2022-02-20_pro-wrestling/</loc>
+    <lastmod>2022-02-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://tiagojsilva.github.io/pt/microsoft/win11/2022-02-20_pro-wrestling/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiagojsilva.github.io/en/microsoft/win11/2022-02-20_pro-wrestling/"
                 />
   </url>
   

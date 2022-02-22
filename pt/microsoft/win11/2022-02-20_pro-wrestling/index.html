@@ -1567,6 +1567,20 @@
       
       
         
+        
+          
+            
+              <a href="https://tiagojsilva.github.io/en/microsoft/win11/2022-02-20_pro-wrestling/" data-lang="en" class="lang__dropdown--item">English</a>
+            
+          
+        
+      
+        
+      
+    
+      
+      
+        
       
         
         
@@ -1905,7 +1919,7 @@
 <p><em>Tal como o Windows 11 Home Edition, a edição Windows 11 Pro agora requer uma ligação à Internet, mas apenas durante a configuração inicial do sistema (OOBE). Se escolher uma configuração para uso pessoal, será necessário também MSA. Pode partir do princípio de que uma conta Microsoft será obrigatória em futuros lançamentos WIP.</em><br />
 Para dizer a verdade, uma conta Microsoft <em>sempre foi obrigatória</em> para ser um Insider; mas o que isto revela é que a Microsoft está a ponderar eliminar uma das principais razões pelas quais muitos utilizadores preferem utilizar uma edição Pro do Windows, apesar de ser mais cara.<br />
 A partir desse momento, quem desejar as <em>outras</em> vantagens da edição Pro (BitLocker, acesso por Remote Desktop Connection a partir de outros computadores, Hyper-V e WSL2, suporte para mais do que um CPU) também precisa de ter uma conta Microsoft, ou uma conta de domínio.<br />
-O truque que se costumava usar desde o WIndows 10 era desligar todas as ligações de rede e dizer que se queria usar uma conta de domínio sem nenhum <em>Domain Controller</em> presente na rede, o que resultaba num <em>timeout</em> e na possibilidade de criar uma conta local.<br />
+O truque que se costumava usar desde o WIndows 10 era desligar todas as ligações de rede e dizer que se queria usar uma conta de domínio sem nenhum <em>Domain Controller</em> presente na rede, o que resultava num <em>timeout</em> e na possibilidade de criar uma conta local.<br />
 Talvez seja isto que a Microsoft vai bloquear, não apresentando a alternativa para criar uma conta local. <br />
 <div class="notices info" data-title="Info">
   De realçar que à data em que escrevo isto, a <em>Dev Build</em> 22557 não está disponível como ISO, por isso não pude testar o que fazer nas condições reais. Talvez volte a este assunto quando estiver disponível uma compilação para instalação directa que reflicta esta mudança de política e que me permita testar quaisquer mudanças no comportamento do Windows Setup.
@@ -2074,7 +2088,7 @@ A seguir à tag <code>&lt;/OOBE&gt;</code> mas antes da tag <code>&lt;/component
                     <span class="nt">&lt;/LocalAccount&gt;</span>
                     <span class="nt">&lt;LocalAccount</span> <span class="na">wcm:action=</span><span class="s">&#34;add&#34;</span><span class="nt">&gt;</span>
                         <span class="nt">&lt;Password&gt;</span>
-                            <span class="nt">&lt;Value&gt;</span> CattlePr0d!<span class="nt">&lt;/Value&gt;</span> 
+                            <span class="nt">&lt;Value&gt;</span>CattlePr0d!<span class="nt">&lt;/Value&gt;</span> 
                             <span class="nt">&lt;PlainText&gt;</span>true<span class="nt">&lt;/PlainText&gt;</span>
                         <span class="nt">&lt;/Password&gt;</span>
                         <span class="nt">&lt;DisplayName&gt;</span>Pimply-Faced Youth<span class="nt">&lt;/DisplayName&gt;</span>
@@ -2189,11 +2203,12 @@ A seguir à tag <code>&lt;/OOBE&gt;</code> mas antes da tag <code>&lt;/component
 </div>
 </div><p>Gravar o ficheiro como <code>unattend.xml</code> assegurando que está codificado em ASCII ou UTF-8.</p>
 <h2 id="fornecer-o-ficheiro-ao-windows-setup">Fornecer o ficheiro ao Windows Setup</h2>
-<p>Há várias maneiras de entregar o ficheiro, como visto acima.<br />
-Instalação a partir de uma drive USB<br />
-Se vai usar um programa como o Rufus (ou o <em>Media Creation Toolkit</em> da Microsoft) para criar uma drive USB de instalação, pode deixá-lo na raiz da drive. <em>Em princípio</em>, será copiado automaticamente para <code>%WINDIR%\Panther</code>.<br />
-Caso se use um ISO ou um disco óptico (como no caso de uma VM), pode-se:</p>
-<h3 id="editar-o-iso">Editar o ISO</h3>
+<p>Há várias maneiras de entregar o ficheiro, como visto acima.</p>
+<h3 id="instalação-a-partir-de-uma-drive-usb">Instalação a partir de uma drive USB</h3>
+<p>Se vai usar um programa como o Rufus (ou o <em>Media Creation Toolkit</em> da Microsoft) para criar uma drive USB de instalação, pode deixá-lo na raiz da drive. <em>Em princípio</em>, será copiado automaticamente para <code>%WINDIR%\Panther</code> (mas não testei este mecanismo).</p>
+<h3 id="instalação-a-partir-de-iso">Instalação a partir de ISO</h3>
+<p>Caso se use o ficheiro ISO (como no caso de uma VM) ou um disco óptico, existem duas opções:</p>
+<h4 id="editar-o-iso">Editar o ISO</h4>
 <p>Montar o ISO, copiar os ficheiros para uma pasta (no exemplo será <code>c:\isos\</code>), usar o DISM para abrir e montar a imagem de instalação (<code>install.wim</code>), copiar o <code>unattend.xml</code> para <code>Windows\Panther</code>, e fechar a imagem WIM.</p>
 <pre><code>dism /Mount-Image /ImageFile:&quot;c:\isos\install.wim&quot; /Index:1 /MountDir:c:\mount
 copy unattend.xml c:\mount\windows\panther\unattend.xml
@@ -2203,7 +2218,7 @@ dism /Unmount-Image /MountDir:c:\mount /Commit
 </div>
 <p>Depois usar a ferramenta que preferir para criar um novo ISO.<br />
 Não testei este passo, mas deve funcionar, é um <a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-setup-automation-overview?view=windows-11#replace-the-answer-file-in-an-offline-image" target="_blank">procedimento descrito na documentação da Microsoft</a>.</p>
-<h3 id="colocar-o-xml-numa-drive-usb">Colocar o XML numa drive USB</h3>
+<h4 id="instalar-de-iso-e-colocar-o-xml-numa-drive-usb">Instalar de ISO e colocar o XML numa drive USB</h4>
 <p>Normalmente este é o processo mais simples e o mais fácil de implementar: grava-se o XML para uma drive USB que possa ser ligada ao computador a instalar (ou à VM) mas que não possa ser utilizada para arrancar o sistema<br />
 Chegado a um momento específico do processo de instalação (depois do 2º reinicio, ou seja, quando o sistema passa de &ldquo;generalizado&rdquo; para &ldquo;especializado&rdquo;), o <code>unattend.xml</code> será lido, analisado e copiado para a pasta <code>C:\Windows\Panther\</code><br />
 <div class="notices warning" data-title="Aviso">
@@ -2310,7 +2325,7 @@ Acaba por ser necessário <strong>possuir uma drive USB física e passá-la à V
 
 </p>
 <p>Na versão 21H01 do Windows 10 isto também acontece.<br />
-<strong>Mesmo assim, recomendo apagar o ficheiro a partir de uma sessão de linha de comandos com permissões de administrador.</strong></p>
+<strong>Mesmo assim, recomendo vivamente apagar o ficheiro a partir de uma sessão de linha de comandos com permissões de administrador.</strong></p>
 <h2 id="problemas">Problemas</h2>
 <p>O link para o <em>Windows Terminal</em> no &ldquo;Power Menu&rdquo; (Win-X ou clique-direito no botão Windows) não funcionava até se abrir manualmente o Windows Terminal em <code>All Apps</code><br />
 
@@ -2479,8 +2494,13 @@ Escolham bem. A Microsoft quer principalmente dinheiro pelos seus serviços, em 
     </li>
     <li><a href="#fornecer-o-ficheiro-ao-windows-setup">Fornecer o ficheiro ao Windows Setup</a>
       <ul>
-        <li><a href="#editar-o-iso">Editar o ISO</a></li>
-        <li><a href="#colocar-o-xml-numa-drive-usb">Colocar o XML numa drive USB</a></li>
+        <li><a href="#instalação-a-partir-de-uma-drive-usb">Instalação a partir de uma drive USB</a></li>
+        <li><a href="#instalação-a-partir-de-iso">Instalação a partir de ISO</a>
+          <ul>
+            <li><a href="#editar-o-iso">Editar o ISO</a></li>
+            <li><a href="#instalar-de-iso-e-colocar-o-xml-numa-drive-usb">Instalar de ISO e colocar o XML numa drive USB</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#resultados">Resultados</a></li>

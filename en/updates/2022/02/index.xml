@@ -14,6 +14,16 @@
     
       
       <item>
+        <title>Windows Pro Wrestling</title>
+        <link>https://tiagojsilva.github.io/en/microsoft/win11/2022-02-20_pro-wrestling/</link>
+        <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://tiagojsilva.github.io/en/microsoft/win11/2022-02-20_pro-wrestling/</guid>
+        <description>On February 16th 2022, Microsoft announced the first big evolution for Windows 11, with Dev Build 22557; the list of changes was long, and juicy, but what gave everyone a chill down the spine was this:
+ Similar to Windows 11 Home edition, Windows 11 Pro edition now requires internet connectivity during the initial device setup (OOBE) only. If you choose to setup device for personal use, MSA will be required for setup as well.</description>
+      </item>
+      
+      <item>
         <title>Microsoft CLI Editors</title>
         <link>https://tiagojsilva.github.io/en/microsoft/tools/2022-01-15_cli-editors/</link>
         <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
